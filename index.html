@@ -61,6 +61,32 @@
   .desc{font-size:13.5px;color:var(--text);opacity:.9;margin:0 0 12px;line-height:1.6}
   .meta{font-size:13px;color:var(--muted);margin:4px 0}
   .meta b{color:var(--text)}
+
+  .detail-grid{display:grid;grid-template-columns:280px 1fr;gap:20px}
+  @media (max-width:760px){ .detail-grid{grid-template-columns:1fr} }
+  .detail-side{display:flex;flex-direction:column;gap:14px}
+  .detail-cover{width:100%;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:var(--panel2);display:block}
+  .detail-main{min-width:0}
+  .banner{
+    display:flex;gap:10px;align-items:flex-start;background:rgba(255,183,77,.08);
+    border:1px solid rgba(255,183,77,.35);color:#ffd699;border-radius:10px;padding:12px 14px;
+    font-size:13px;line-height:1.6;margin-bottom:16px;
+  }
+  .banner.ok{background:rgba(62,207,142,.08);border-color:rgba(62,207,142,.35);color:#a9f0cf}
+  .steps{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+  .step{
+    flex:1;min-width:170px;display:flex;gap:8px;align-items:center;
+    background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:12.5px;
+  }
+  .step .num{
+    flex:none;width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;
+  }
+  .req-box{
+    background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;
+    font-size:12.5px;color:var(--muted);margin-bottom:14px;line-height:1.6;
+  }
+  .req-box b{color:var(--text)}
   .drop{border:2px dashed var(--line);border-radius:12px;padding:32px 16px;text-align:center;cursor:pointer;background:var(--panel2);transition:.2s ease}
   .drop::before{content:"📁";display:block;font-size:26px;margin-bottom:8px;opacity:.85}
   .drop:hover{border-color:var(--accent);background:#161c2e}
@@ -108,7 +134,7 @@
   </div>
 </div>
 
-<div class="wrap narrow" id="detail-wrap" style="display:none">
+<div class="wrap" id="detail-wrap" style="display:none">
   <button class="back" id="backBtn">← กลับไปหน้ารวมเกม</button>
   <div id="panels"></div>
 </div>
@@ -219,19 +245,42 @@ GAMES.forEach((g) => {
   panel.id = `panel-${g.id}`;
   panel.style.display = "none";
   panel.innerHTML = `
-    ${g.cover ? `<img class="cover" src="${g.cover}" alt="${g.name}" loading="lazy" onerror="this.style.display='none'">` : ""}
-    <h2>${g.name} <span class="badge">${g.format}</span> <span class="badge">${g.version || ""}</span></h2>
-    ${g.desc ? `<p class="desc">${g.desc}</p>` : ""}
-    <div class="meta">ต้นฉบับที่รองรับ: <b>${g.sourceName}</b></div>
-    <div class="meta">ขนาดไฟล์ต้นฉบับ: <b>${(g.sourceSize/1024/1024).toFixed(1)} MB</b> &nbsp;|&nbsp; SHA-256: <b>${g.sourceSha256.slice(0,16)}…</b></div>
-    <div class="drop" id="drop-${g.id}">
-      <div>ลากไฟล์ ISO ต้นฉบับมาวางที่นี่ หรือ<u>คลิกเพื่อเลือกไฟล์</u></div>
-      <small>ไฟล์จะถูกอ่านและประมวลผลในเครื่องคุณเท่านั้น</small>
-      <input type="file" id="file-${g.id}">
+    <div class="detail-grid">
+      <div class="detail-side">
+        ${g.cover ? `<img class="detail-cover" src="${g.cover}" alt="${g.name}" loading="lazy" onerror="this.style.display='none'">` : ""}
+        <div class="gcard-badges">
+          <span class="${isBeta ? "status-beta" : "status-ready"}">${isBeta ? "BETA" : "READY"}</span>
+          <span class="badge">${g.format}</span>
+          <span class="badge">${g.version || ""}</span>
+        </div>
+        <h2 style="margin:0">${g.name}</h2>
+        ${g.desc ? `<p class="desc" style="margin:0">${g.desc}</p>` : ""}
+      </div>
+      <div class="detail-main">
+        <div class="banner ${isBeta ? "" : "ok"}">
+          ${isBeta
+            ? "⚠️ แพตช์นี้ยังอยู่ระหว่างพัฒนา (BETA) — ยังไม่ผ่านการทดสอบแปะแพตช์จริงครบทุกจุด ใช้ด้วยความระมัดระวัง และแนะนำให้สำรองไฟล์ต้นฉบับไว้"
+            : "✅ แพตช์เสร็จและทดสอบแล้ว — แปลครบและเล่นได้ตามปกติ ประมวลผลทั้งหมดในเครื่องคุณเอง ไฟล์ต้นฉบับไม่ถูกส่งขึ้นเซิร์ฟเวอร์"}
+        </div>
+        <div class="steps">
+          <div class="step"><span class="num">1</span>เลือกไฟล์ ISO ต้นฉบับของคุณ</div>
+          <div class="step"><span class="num">2</span>กดปุ่ม "แปะแพตช์เป็นภาษาไทย"</div>
+          <div class="step"><span class="num">3</span>รอเสร็จ ไฟล์โหลดลง Downloads</div>
+        </div>
+        <div class="req-box">
+          ไฟล์ต้นฉบับที่ต้องใช้: <b>${g.sourceName}</b><br>
+          ขนาด: <b>${(g.sourceSize/1024/1024).toFixed(1)} MB</b> &nbsp;|&nbsp; SHA-256: <b>${g.sourceSha256.slice(0,16)}…</b>
+        </div>
+        <div class="drop" id="drop-${g.id}">
+          <div>ลากไฟล์ ISO ต้นฉบับมาวางที่นี่ หรือ<u>คลิกเพื่อเลือกไฟล์</u></div>
+          <small>ไฟล์จะถูกอ่านและประมวลผลในเครื่องคุณเท่านั้น</small>
+          <input type="file" id="file-${g.id}">
+        </div>
+        <div class="bar" id="bar-${g.id}" style="display:none"><div></div></div>
+        <div class="log" id="log-${g.id}" style="display:none"></div>
+        <button class="btn" id="dl-${g.id}">ดาวน์โหลดไฟล์ที่แปะแพตช์แล้ว</button>
+      </div>
     </div>
-    <div class="bar" id="bar-${g.id}" style="display:none"><div></div></div>
-    <div class="log" id="log-${g.id}" style="display:none"></div>
-    <button class="btn" id="dl-${g.id}">ดาวน์โหลดไฟล์ที่แปะแพตช์แล้ว</button>
   `;
   panelsEl.appendChild(panel);
 
