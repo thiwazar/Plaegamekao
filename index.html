@@ -29,11 +29,28 @@
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
   header p{margin:0;color:var(--muted);font-size:14px}
-  .wrap{max-width:760px;margin:0 auto;padding:20px}
-  .tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
-  .tab{flex:1;min-width:140px;padding:12px;border-radius:10px;background:var(--panel);border:1px solid var(--line);cursor:pointer;text-align:center;font-size:14px;transition:.15s ease}
-  .tab:hover{border-color:var(--accent);color:#fff}
-  .tab.active{background:linear-gradient(135deg,var(--accent),#3f6fe0);border-color:var(--accent);color:#fff;font-weight:600;box-shadow:0 6px 18px rgba(91,140,255,.35)}
+  .wrap{max-width:980px;margin:0 auto;padding:20px}
+  .wrap.narrow{max-width:760px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-bottom:18px}
+  .gcard{
+    background:linear-gradient(180deg,var(--panel),var(--panel2) 140%);
+    border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;
+    box-shadow:0 10px 26px rgba(0,0,0,.3);display:flex;flex-direction:column;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .gcard:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,.45)}
+  .gcard .cover{width:100%;height:150px;object-fit:cover;border-radius:0;border:none;margin:0;display:block;background:var(--panel2)}
+  .gcard-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
+  .gcard-badges{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap}
+  .status-ready{background:rgba(62,207,142,.15);color:var(--good);border:1px solid rgba(62,207,142,.4);font-size:10.5px;padding:3px 9px;border-radius:6px;font-weight:700;letter-spacing:.3px}
+  .status-beta{background:rgba(255,183,77,.15);color:#ffb74d;border:1px solid rgba(255,183,77,.4);font-size:10.5px;padding:3px 9px;border-radius:6px;font-weight:700;letter-spacing:.3px}
+  .gcard h3{margin:2px 0 6px;font-size:16px}
+  .gdesc{font-size:12.5px;color:var(--muted);margin:0 0 12px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+  .gmeta-row{font-size:11.5px;color:var(--muted);margin-bottom:12px}
+  .gbtn{display:block;text-align:center;background:linear-gradient(135deg,var(--accent),#3f6fe0);color:#fff;padding:10px;border-radius:8px;font-weight:600;font-size:13.5px;border:none;cursor:pointer;transition:transform .1s ease, box-shadow .15s ease}
+  .gbtn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(91,140,255,.35)}
+  .back{display:inline-flex;align-items:center;gap:6px;color:var(--muted);cursor:pointer;margin-bottom:16px;font-size:13.5px;background:none;border:none;padding:0;font-family:inherit}
+  .back:hover{color:#fff}
   .card{
     background:linear-gradient(180deg,var(--panel),var(--panel2) 140%);
     border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px;margin-bottom:16px;
@@ -72,9 +89,16 @@
   <p>ประมวลผลทั้งหมดในเบราว์เซอร์ของคุณเอง — ไฟล์ ISO ต้นฉบับไม่ถูกส่งขึ้นเซิร์ฟเวอร์</p>
 </header>
 
-<div class="wrap">
-  <div class="tabs" id="tabs"></div>
+<div class="wrap" id="home-wrap">
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="wrap narrow" id="detail-wrap" style="display:none">
+  <button class="back" id="backBtn">← กลับไปหน้ารวมเกม</button>
   <div id="panels"></div>
+</div>
+
+<div class="wrap narrow">
   <div class="note">
     หน้านี้ต้องเปิดผ่านเว็บเซิร์ฟเวอร์จริง (http/https) ไม่ใช่เปิดไฟล์ตรงๆ (file://) เพราะต้องโหลดไฟล์แพตช์และไลบรารีถอดรหัสผ่าน fetch/CDN —
     ทดสอบในเครื่องด้วย <code>python -m http.server</code> แล้วเข้า <code>http://localhost:8000</code>, หรือโฮสต์จริงผ่าน GitHub Pages / Netlify / Cloudflare Pages ก็ได้
@@ -147,19 +171,38 @@ const GAMES = [
   }
 ];
 
-const tabsEl = document.getElementById("tabs");
+const gridEl = document.getElementById("grid");
 const panelsEl = document.getElementById("panels");
+const homeWrap = document.getElementById("home-wrap");
+const detailWrap = document.getElementById("detail-wrap");
+const backBtn = document.getElementById("backBtn");
 
-GAMES.forEach((g, i) => {
-  const tab = document.createElement("div");
-  tab.className = "tab" + (i === 0 ? " active" : "");
-  tab.textContent = g.name;
-  tab.onclick = () => selectTab(i);
-  tabsEl.appendChild(tab);
+GAMES.forEach((g) => {
+  const isBeta = (g.version || "").toLowerCase() === "beta";
+
+  const gcard = document.createElement("div");
+  gcard.className = "gcard";
+  gcard.innerHTML = `
+    ${g.cover ? `<img class="cover" src="${g.cover}" alt="${g.name}" loading="lazy" onerror="this.style.display='none'">` : ""}
+    <div class="gcard-body">
+      <div class="gcard-badges">
+        <span class="${isBeta ? "status-beta" : "status-ready"}">${isBeta ? "BETA" : "READY"}</span>
+        <span class="badge">${g.format}</span>
+        <span class="badge">${g.version || ""}</span>
+      </div>
+      <h3>${g.name}</h3>
+      ${g.desc ? `<p class="gdesc">${g.desc}</p>` : ""}
+      <div class="gmeta-row">ต้นฉบับ: ${(g.sourceSize/1024/1024).toFixed(1)} MB</div>
+      <button class="gbtn">ไปแปะแพตช์ →</button>
+    </div>
+  `;
+  gcard.querySelector(".gbtn").onclick = () => showDetail(g.id);
+  gridEl.appendChild(gcard);
 
   const panel = document.createElement("div");
   panel.className = "card";
-  panel.style.display = i === 0 ? "block" : "none";
+  panel.id = `panel-${g.id}`;
+  panel.style.display = "none";
   panel.innerHTML = `
     ${g.cover ? `<img class="cover" src="${g.cover}" alt="${g.name}" loading="lazy" onerror="this.style.display='none'">` : ""}
     <h2>${g.name} <span class="badge">${g.format}</span> <span class="badge">${g.version || ""}</span></h2>
@@ -180,10 +223,20 @@ GAMES.forEach((g, i) => {
   setupGame(g);
 });
 
-function selectTab(i) {
-  [...tabsEl.children].forEach((t, idx) => t.classList.toggle("active", idx === i));
-  [...panelsEl.children].forEach((p, idx) => p.style.display = idx === i ? "block" : "none");
+function showDetail(id) {
+  [...panelsEl.children].forEach((p) => p.style.display = p.id === `panel-${id}` ? "block" : "none");
+  homeWrap.style.display = "none";
+  detailWrap.style.display = "block";
+  window.scrollTo({ top: 0, behavior: "instant" });
 }
+
+function showHome() {
+  detailWrap.style.display = "none";
+  homeWrap.style.display = "block";
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+
+backBtn.onclick = showHome;
 
 function bytesToHex(buf) {
   return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");

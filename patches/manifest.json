@@ -1,0 +1,22 @@
+{
+  "id": "the3rdbirthday",
+  "title": "The 3rd Birthday ภาษาไทย",
+  "format": "xdelta",
+  "patch": "The_3rd_Birthday_Thai_BY_PlaeGameKao.xdelta",
+  "outputName": "The_3rd_Birthday_Thai_BY_เพจแปลเกมเก่า.iso",
+  "source": {
+    "discId": "ULES01513",
+    "size": 1467547648,
+    "sha256": "4c75201b3fec159e2dd0f64d80be07acb1ed33e2acfea83fe1f5b73594ca82f8"
+  },
+  "target": {
+    "size": 1467443200,
+    "sha256": "763867fccb482965cb9b3c3e96a1de849c8ac646e6ea9117fa21ac4b827bd24f"
+  },
+  "patchSize": 213265,
+  "patchSha256": "f77aa8a5ad67106062c29fb079228079db7a15d0c1f51117e659476b5cf485ea",
+  "roundtripVerified": true,
+  "secondaryCompression": false,
+  "creditInTitleImage": false,
+  "hudNamesEnglish": true
+}
