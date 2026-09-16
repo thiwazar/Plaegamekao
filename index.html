@@ -106,7 +106,7 @@
 </div>
 
 <script type="module">
-import { init as xdInit, xd3_decode_memory } from "https://cdn.jsdelivr.net/npm/xdelta3-wasm/+esm";
+import loadXdelta3Wasm from "./xdelta3-big.js";
 
 const GAMES = [
   {
@@ -393,19 +393,45 @@ async function applyStpatch(sourceBuf, patchBuf, g, setProgress, logLine) {
   return output.buffer;
 }
 
-// ---- XDELTA: standard VCDIFF (xdelta3), including secondary-compressed windows.
-// Decoded via the real xdelta3 C library compiled to WASM (xdelta3-wasm), not a reimplementation. ----
-let xdReady = null;
+// ---- XDELTA: standard VCDIFF (xdelta3), including DJW secondary-compressed windows.
+// Decoded via the real xdelta3 C library, compiled to WASM in-house (not a reimplementation)
+// with growable linear memory (up to 3GB) so multi-GB ISO files can be decoded, unlike the
+// public xdelta3-wasm npm package which has a hard-coded 16MB memory ceiling. ----
+let xdModule = null;
+async function getXdeltaModule(logLine) {
+  if (!xdModule) {
+    logLine("กำลังโหลดตัวถอดรหัส xdelta3 (WASM)...");
+    xdModule = await loadXdelta3Wasm();
+  }
+  return xdModule;
+}
+
+function xd3DecodeMemory(Module, inputBytes, sourceBytes, outputMax) {
+  const inPtr = Module._malloc(inputBytes.byteLength);
+  const srcPtr = Module._malloc(sourceBytes.byteLength);
+  const outPtr = Module._malloc(outputMax);
+  const outSizePtr = Module._malloc(4);
+  try {
+    Module.HEAPU8.set(inputBytes, inPtr);
+    Module.HEAPU8.set(sourceBytes, srcPtr);
+    const ret = Module._xd3_decode_memory(inPtr, inputBytes.byteLength, srcPtr, sourceBytes.byteLength, outPtr, outSizePtr, outputMax, 0);
+    const outSize = Module.getValue(outSizePtr, "i32");
+    const output = Module.HEAPU8.slice(outPtr, outPtr + outSize);
+    return { ret, output };
+  } finally {
+    Module._free(inPtr); Module._free(srcPtr); Module._free(outPtr); Module._free(outSizePtr);
+  }
+}
+
 async function applyXdelta(sourceBuf, patchBuf, g, setProgress, logLine) {
-  if (!xdReady) { logLine("กำลังโหลดตัวถอดรหัส xdelta3 (WASM)..."); xdReady = xdInit(); }
-  await xdReady;
+  const Module = await getXdeltaModule(logLine);
   setProgress(55);
-  const result = xd3_decode_memory(new Uint8Array(patchBuf), new Uint8Array(sourceBuf), g.targetSize + 1024);
-  if (!result || result.ret !== 0) {
-    throw new Error("xdelta3 decode ล้มเหลว: " + (result && result.str));
+  const { ret, output } = xd3DecodeMemory(Module, new Uint8Array(patchBuf), new Uint8Array(sourceBuf), g.targetSize + 1024);
+  if (ret !== 0) {
+    throw new Error("xdelta3 decode ล้มเหลว (code " + ret + ")");
   }
   setProgress(85);
-  return result.output.buffer.slice(result.output.byteOffset, result.output.byteOffset + result.output.byteLength);
+  return output.buffer.slice(output.byteOffset, output.byteOffset + output.byteLength);
 }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
