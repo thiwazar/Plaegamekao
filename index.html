@@ -4,34 +4,63 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>เพจแปลเกมเก่า — ระบบแปะแพตช์ไทยออนไลน์</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0f1115; --panel:#171a21; --panel2:#1e222b; --line:#2a2f3a;
-    --text:#e8eaed; --muted:#8b93a3; --accent:#5b8cff; --good:#3ecf8e; --bad:#ff5c5c;
+    --bg:#0d0f14; --panel:#171a21; --panel2:#1e222b; --line:#2a2f3a;
+    --text:#e8eaed; --muted:#8b93a3; --accent:#5b8cff; --accent2:#8ab4ff; --good:#3ecf8e; --bad:#ff5c5c;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:'Segoe UI',Tahoma,Arial,sans-serif;line-height:1.5}
-  header{padding:28px 20px 10px;text-align:center}
-  header h1{margin:0 0 6px;font-size:22px}
+  body{
+    margin:0;color:var(--text);line-height:1.6;
+    font-family:'Noto Sans Thai','Segoe UI',Tahoma,Arial,sans-serif;
+    background:
+      radial-gradient(900px 480px at 50% -8%, rgba(91,140,255,.16), transparent 60%),
+      radial-gradient(700px 400px at 100% 0%, rgba(62,207,142,.08), transparent 55%),
+      var(--bg);
+    min-height:100vh;
+  }
+  header{padding:40px 20px 14px;text-align:center}
+  header h1{
+    margin:0 0 8px;font-size:26px;font-weight:700;letter-spacing:.2px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
   header p{margin:0;color:var(--muted);font-size:14px}
   .wrap{max-width:760px;margin:0 auto;padding:20px}
   .tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
-  .tab{flex:1;min-width:140px;padding:12px;border-radius:10px;background:var(--panel);border:1px solid var(--line);cursor:pointer;text-align:center;font-size:14px}
-  .tab.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
-  .card h2{margin-top:0;font-size:18px}
+  .tab{flex:1;min-width:140px;padding:12px;border-radius:10px;background:var(--panel);border:1px solid var(--line);cursor:pointer;text-align:center;font-size:14px;transition:.15s ease}
+  .tab:hover{border-color:var(--accent);color:#fff}
+  .tab.active{background:linear-gradient(135deg,var(--accent),#3f6fe0);border-color:var(--accent);color:#fff;font-weight:600;box-shadow:0 6px 18px rgba(91,140,255,.35)}
+  .card{
+    background:linear-gradient(180deg,var(--panel),var(--panel2) 140%);
+    border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px;margin-bottom:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  .card h2{margin-top:0;font-size:19px}
+  .cover{width:100%;max-height:220px;object-fit:cover;border-radius:10px;border:1px solid var(--line);margin-bottom:14px;display:block;background:var(--panel2)}
+  .desc{font-size:13.5px;color:var(--text);opacity:.9;margin:0 0 12px;line-height:1.6}
   .meta{font-size:13px;color:var(--muted);margin:4px 0}
   .meta b{color:var(--text)}
-  .drop{border:2px dashed var(--line);border-radius:12px;padding:28px 16px;text-align:center;cursor:pointer;background:var(--panel2);transition:.15s}
-  .drop.drag{border-color:var(--accent);background:#1a2440}
+  .drop{border:2px dashed var(--line);border-radius:12px;padding:32px 16px;text-align:center;cursor:pointer;background:var(--panel2);transition:.2s ease}
+  .drop::before{content:"📁";display:block;font-size:26px;margin-bottom:8px;opacity:.85}
+  .drop:hover{border-color:var(--accent);background:#161c2e}
+  .drop.drag{border-color:var(--accent);background:#1a2440;box-shadow:0 0 0 4px rgba(91,140,255,.12)}
   .drop input{display:none}
   .drop small{color:var(--muted);display:block;margin-top:6px}
   .log{background:#0b0d12;border:1px solid var(--line);border-radius:10px;padding:12px;font-family:ui-monospace,Consolas,monospace;font-size:12.5px;white-space:pre-wrap;max-height:220px;overflow:auto;margin-top:14px}
   .row{display:flex;align-items:center;gap:8px;margin-top:6px}
   .ok{color:var(--good)} .err{color:var(--bad)}
   .bar{height:8px;background:var(--panel2);border-radius:6px;overflow:hidden;margin-top:10px;border:1px solid var(--line)}
-  .bar > div{height:100%;width:0%;background:var(--accent);transition:width .15s}
-  .btn{margin-top:14px;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:11px 18px;font-size:14px;cursor:pointer;display:none}
+  .bar > div{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--good));transition:width .15s}
+  .btn{
+    margin-top:14px;background:linear-gradient(135deg,var(--accent),#3f6fe0);color:#fff;border:none;
+    border-radius:10px;padding:12px 20px;font-size:14px;font-weight:600;cursor:pointer;display:none;
+    transition:transform .1s ease, box-shadow .15s ease;
+  }
+  .btn:hover:not([disabled]){transform:translateY(-1px);box-shadow:0 8px 20px rgba(91,140,255,.35)}
   .btn[disabled]{opacity:.5;cursor:not-allowed}
   .note{font-size:12.5px;color:var(--muted);margin-top:14px;border-top:1px solid var(--line);padding-top:10px}
   .badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:99px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);margin-left:6px}
@@ -60,6 +89,9 @@ const GAMES = [
     id: "queensgate",
     name: "Queen's Gate: Spiral Chaos",
     format: "QGDELTA1",
+    version: "v3",
+    cover: "covers/queensgate.png",
+    desc: "แปลไทยแบบฉบับเต็ม รวมบทสนทนาและเมนูในเกม แก้ปัญหาฟอนต์และตัวควบคุมพิเศษจากรุ่นก่อนหน้าแล้ว (v3: ซ่อมจุดเพี้ยนของบทที่ 4 เพิ่มเติม)",
     patchUrl: "patches/QueensGate_Thai_Repaired_v3.qgdelta",
     sourceName: "Queens Gate Spiral Chaos (English/JP ISO ต้นฉบับ)",
     sourceSize: 1388871680,
@@ -72,6 +104,9 @@ const GAMES = [
     id: "tales",
     name: "Tales of Phantasia (Full Voice Edition)",
     format: "XDELTA",
+    version: "v1.0",
+    cover: "covers/tales.png",
+    desc: "แปลไทยครบทุกบทพูด ใช้กับรุ่น Full Voice Edition เท่านั้น (เสียงพากย์อังกฤษ/ญี่ปุ่นเดิมไม่ถูกแตะต้อง)",
     patchUrl: "patches/TalesOfPhantasia_Thai_v1.0.xdelta",
     sourceName: "Tales of Phantasia Full Voice Edition English v1.0",
     sourceSize: 461273088,
@@ -84,6 +119,9 @@ const GAMES = [
     id: "soltrigger",
     name: "Sol Trigger",
     format: "STPATCH1",
+    version: "v1.0",
+    cover: "covers/soltrigger.png",
+    desc: "แปลไทยเนื้อเรื่องหลักและเมนูทั้งหมด ทดสอบผ่านจบเกมแล้วไม่พบข้อความล้นกรอบ",
     patchUrl: "patches/SolTrigger_Thai_v1.0.stp",
     sourceName: "Sol Trigger English v09 ISO",
     sourceSize: 1521942528,
@@ -91,6 +129,21 @@ const GAMES = [
     targetSize: 1522102272,
     targetSha256: "5b401be23d83bc19c4ee0d0799ea25e559d622eb5621d40fcb65fe3af25578b1",
     outName: "SolTrigger_Thai_v1.0.iso"
+  },
+  {
+    id: "the3rdbirthday",
+    name: "The 3rd Birthday",
+    format: "XDELTA",
+    version: "beta",
+    cover: "covers/the3rdbirthday.png",
+    desc: "แปลไทยบทสนทนา 443 รายการ และฟอนต์ที่แก้แล้ว (อยู่ระหว่างพัฒนา — ชื่อ HUD ยังเป็นอังกฤษชั่วคราว ยังไม่ผ่านการทดสอบแปะแพตช์จริงบนเว็บ ใช้ด้วยความระมัดระวัง)",
+    patchUrl: "patches/The_3rd_Birthday_Thai_BY_PlaeGameKao.xdelta",
+    sourceName: "The 3rd Birthday Europe (ULES01513)",
+    sourceSize: 1467547648,
+    sourceSha256: "4c75201b3fec159e2dd0f64d80be07acb1ed33e2acfea83fe1f5b73594ca82f8",
+    targetSize: 1467443200,
+    targetSha256: "763867fccb482965cb9b3c3e96a1de849c8ac646e6ea9117fa21ac4b827bd24f",
+    outName: "The_3rd_Birthday_Thai_BY_เพจแปลเกมเก่า.iso"
   }
 ];
 
@@ -108,7 +161,9 @@ GAMES.forEach((g, i) => {
   panel.className = "card";
   panel.style.display = i === 0 ? "block" : "none";
   panel.innerHTML = `
-    <h2>${g.name} <span class="badge">${g.format}</span></h2>
+    ${g.cover ? `<img class="cover" src="${g.cover}" alt="${g.name}" loading="lazy" onerror="this.style.display='none'">` : ""}
+    <h2>${g.name} <span class="badge">${g.format}</span> <span class="badge">${g.version || ""}</span></h2>
+    ${g.desc ? `<p class="desc">${g.desc}</p>` : ""}
     <div class="meta">ต้นฉบับที่รองรับ: <b>${g.sourceName}</b></div>
     <div class="meta">ขนาดไฟล์ต้นฉบับ: <b>${(g.sourceSize/1024/1024).toFixed(1)} MB</b> &nbsp;|&nbsp; SHA-256: <b>${g.sourceSha256.slice(0,16)}…</b></div>
     <div class="drop" id="drop-${g.id}">

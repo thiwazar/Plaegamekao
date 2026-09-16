@@ -1,0 +1,10 @@
+127.0.0.1 - - [16/Sep/2026 20:02:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Sep/2026 20:02:23] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Sep/2026 20:02:24] code 404, message File not found
+127.0.0.1 - - [16/Sep/2026 20:02:24] "GET /df58e7ef369c5c18.wasm HTTP/1.1" 404 -
+127.0.0.1 - - [16/Sep/2026 20:02:24] "GET /covers/queensgate.png HTTP/1.1" 200 -
+127.0.0.1 - - [16/Sep/2026 20:02:24] code 404, message File not found
+127.0.0.1 - - [16/Sep/2026 20:02:24] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [16/Sep/2026 20:02:36] "GET /covers/tales.png HTTP/1.1" 200 -
+127.0.0.1 - - [16/Sep/2026 20:02:38] "GET /covers/soltrigger.png HTTP/1.1" 200 -
+127.0.0.1 - - [16/Sep/2026 20:02:40] "GET /covers/the3rdbirthday.png HTTP/1.1" 200 -
