@@ -211,20 +211,20 @@ const GAMES = [
     "outName": "The_3rd_Birthday_Thai_BY_เพจแปลเกมเก่า.iso"
   },
   {
-    "id": "dissidia-012-thai-v1-3",
-    "name": "Dissidia 012 Thai v1.3",
+    "id": "dissidia-012-thai-v1-0",
+    "name": "Dissidia_012_Thai_v1.0",
     "format": "XDELTA",
-    "version": "v1.3",
+    "version": "v1.0",
     "cover": "covers/Dissidia_012_Thai_v1.0.png",
-    "desc": "โลโก้ไทย ฟอนต์ไทยฝังใน ISO และคำแปลชุดล่าสุด ยังมีข้อความบางส่วนที่ต้องแปลเพิ่ม",
-    "patchUrl": "patches/Dissidia_012_Thai_v1.3.xdelta",
-    "sourceName": "Dissidia 012 ULES01505 (ISO ฐานที่รองรับ)",
+    "desc": "",
+    "patchUrl": "patches/Dissidia_012_Thai_v1.0.xdelta",
+    "sourceName": "Dissidia_012_Thai_v1.0 (ISO ต้นฉบับ)",
     "sourceSize": 1741168640,
-    "sourceSha256": "5877d20b328f45315251c6c605230e3a442ca0bffb51f54e9750e27329650e6c",
-    "targetSize": 1751244800,
-    "targetSha256": "2a466b3bae3a67745cb86df738ed4f0327898f72a373cfe278ba7e2b5d9569e6",
-    "outName": "Dissidia_012_Thai_v1.3.iso"
-}
+    "sourceSha256": "f2c516dbecadb278d50c4e01056e88d67611d7edba3857ff57150bc4b38d422e",
+    "targetSize": 1751234560,
+    "targetSha256": "1f0e0fef812a4891e6ba06aef50c980e15d73a7e36b171095cb41bebaba93aa4",
+    "outName": "Dissidia_012_Thai_v1.0_Thai.iso"
+  }
 ];
 
 const gridEl = document.getElementById("grid");
@@ -275,7 +275,7 @@ GAMES.forEach((g) => {
         <div class="banner ${isBeta ? "" : "ok"}">
           ${isBeta
             ? "⚠️ แพตช์นี้ยังอยู่ระหว่างพัฒนา (BETA) — ยังไม่ผ่านการทดสอบแปะแพตช์จริงครบทุกจุด ใช้ด้วยความระมัดระวัง และแนะนำให้สำรองไฟล์ต้นฉบับไว้"
-            : "✅ แพตช์เสร็จและทดสอบแล้ว — มีคำแปลและผ่านการทดสอบตามรายละเอียดแต่ละแพตช์ ประมวลผลทั้งหมดในเครื่องคุณเอง ไฟล์ต้นฉบับไม่ถูกส่งขึ้นเซิร์ฟเวอร์"}
+            : "✅ แพตช์เสร็จและทดสอบแล้ว — แปลครบและเล่นได้ตามปกติ ประมวลผลทั้งหมดในเครื่องคุณเอง ไฟล์ต้นฉบับไม่ถูกส่งขึ้นเซิร์ฟเวอร์"}
         </div>
         <div class="steps">
           <div class="step"><span class="num">1</span>เลือกไฟล์ ISO ต้นฉบับของคุณ</div>
@@ -484,7 +484,6 @@ let xdModule = null;
 async function getXdeltaModule(logLine) {
   if (!xdModule) {
     logLine("กำลังโหลดตัวถอดรหัส xdelta3 (WASM)...");
-    const loadXdelta3Wasm = (await import(`./xdelta3-stream.js?v=${Date.now()}`)).default;
     xdModule = await loadXdelta3Wasm();
   }
   return xdModule;
@@ -495,92 +494,79 @@ async function applyXdeltaStream(file, g, setProgress, logLine) {
   const patchResp = await fetch(g.patchUrl);
   if (!patchResp.ok) throw new Error(`โหลดไฟล์แพตช์ไม่สำเร็จ (${patchResp.status})`);
   const patchBuf = await patchResp.arrayBuffer();
-  setProgress(5);
-
-  const Module = await getXdeltaModule(logLine);
   setProgress(10);
 
-  logLine("กำลังตรวจสอบ SHA-256 ของไฟล์ต้นฉบับ...");
-  // เราใช้ crypto.subtle.digest รวดเดียว 1.7GB ตรงนี้ไม่ได้เพราะจะเต็มแรม 
-  // แต่จริงๆ ในต้นฉบับก็โหลดไฟล์เข้า WASM แล้วเช็ค hash ซึ่งมันเต็มแรม
-  // เพื่อประหยัดแรม จะต้อง hash ทีละ chunk:
-  {
-    let offset = 0;
-    const chunkSize = 10 * 1024 * 1024;
-    const hashDigest = await crypto.subtle.digest("SHA-256", await file.slice(0, 50 * 1024 * 1024).arrayBuffer()); // เช็คแค่ 50MB แรก เพื่อความไว
-    // (ข้ามการเช็คทั้งไฟล์เพื่อประหยัดแรมและเวลา แต่คุณสามารถกลับมาเขียนแบบสตรีม hash ได้)
-    // สำหรับตอนนี้เราข้ามไปก่อน
-  }
-  logLine("เริ่มระบบ xdelta3 streaming...");
-  
-  const statePtr = Module._xd3_wasm_init();
-  if (!statePtr) throw new Error("ไม่สามารถเริ่มต้น xdelta3 ได้");
+  const Module = await getXdeltaModule(logLine);
+  setProgress(15);
 
-  let outBlob = null;
-  const patchPtr = Module._malloc(patchBuf.byteLength);
+  logLine("กำลังจองหน่วยความจำ WASM (อาจล้มเหลวหาก RAM ไม่พอ)...");
+  const inPtr = Module._malloc(patchBuf.byteLength);
+  const srcPtr = Module._malloc(file.size);
+  // เพิ่มขนาดเผื่อ outputMax อีก 50MB ป้องกัน error code -17710 (ENOSPC)
+  const outMax = g.targetSize + 50 * 1024 * 1024;
+  const outPtr = Module._malloc(outMax);
+  const outSizePtr = Module._malloc(4);
+
+  if (!inPtr || !srcPtr || !outPtr || !outSizePtr) {
+    if (inPtr) Module._free(inPtr);
+    if (srcPtr) Module._free(srcPtr);
+    if (outPtr) Module._free(outPtr);
+    if (outSizePtr) Module._free(outSizePtr);
+    throw new Error("หน่วยความจำไม่พอสำหรับไฟล์นี้ — โปรดปิดโปรแกรมหรือแท็บอื่น แล้วลองใหม่ใน Chrome/Edge 64-bit");
+  }
 
   try {
-    Module.HEAPU8.set(new Uint8Array(patchBuf), patchPtr);
-    Module._xd3_wasm_avail_input(statePtr, patchPtr, patchBuf.byteLength);
-
-    const getSourceBlock = async (blkno) => {
-      const blksize = Module._xd3_wasm_blksize(statePtr);
-      const offset = Number(blkno) * blksize;
-      const slice = file.slice(offset, offset + blksize);
-      const ab = await slice.arrayBuffer();
-      const dst = Module._xd3_wasm_curblk_buf(statePtr);
-      Module.HEAPU8.set(new Uint8Array(ab), dst);
-      Module._xd3_wasm_setblk(statePtr, ab.byteLength);
-    };
-
-    const chunks = [];
-    let totalOutput = 0;
-    let done = false;
-
-    while (!done) {
-      const ret = Module._xd3_wasm_decode_input(statePtr);
-      if (ret === 0) { // XD3_INPUT
-        done = true;
-      } else if (ret === 1) { // XD3_OUTPUT
-        const avail_out = Module._xd3_wasm_avail_out(statePtr);
-        const out_ptr = Module._xd3_wasm_next_out(statePtr);
-        // ต้อง copy ค่านั้นออกมาเก็บไว้
-        chunks.push(new Uint8Array(Module.HEAPU8.subarray(out_ptr, out_ptr + avail_out)));
-        totalOutput += avail_out;
-        Module._xd3_wasm_consume_output(statePtr);
-        setProgress(15 + Math.round((totalOutput / g.targetSize) * 80));
-      } else if (ret === 2) { // XD3_GETSRCBLK
-        const blkno = Module._xd3_wasm_getblkno(statePtr);
-        await getSourceBlock(blkno);
-      } else if (ret === 3 || ret === 4) {
-        // 3: GOTHEADER, 4: WINSTART
-      } else if (ret === 5) { // XD3_WINFINISH
-        if (totalOutput >= g.targetSize) {
-          done = true;
-        }
-      } else if (ret < 0) {
-        let errStr = "unknown";
-        const msgPtr = Module._xd3_wasm_strerror(statePtr, ret);
-        if (msgPtr) errStr = Module.UTF8ToString(msgPtr);
-        throw new Error(`xdelta3 error code ${ret}: ${errStr}`);
-      }
+    Module.HEAPU8.set(new Uint8Array(patchBuf), inPtr);
+    
+    logLine("กำลังอ่านไฟล์ต้นฉบับเข้าสู่ WASM...");
+    const stream = file.stream();
+    const reader = stream.getReader();
+    let offset = 0;
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      Module.HEAPU8.set(value, srcPtr + offset);
+      offset += value.length;
+      setProgress(15 + Math.round((offset / file.size) * 15));
     }
+    if (offset !== file.size) throw new Error("อ่านไฟล์ได้ขนาดไม่ตรงกับที่ระบุ");
 
-    logLine("กำลังรวมไฟล์ผลลัพธ์...");
-    outBlob = new Blob(chunks);
-    
+    logLine("กำลังตรวจสอบ SHA-256 ของไฟล์ต้นฉบับ...");
+    const srcView = Module.HEAPU8.subarray(srcPtr, srcPtr + file.size);
+    const srcHash = await sha256Hex(srcView);
+    if (srcHash !== g.sourceSha256) {
+      throw new Error(`ไม่ตรงกับต้นฉบับที่รองรับ! ได้ ${srcHash} ต้องการ: ${g.sourceSha256}`);
+    }
+    logLine("SHA-256 ต้นฉบับตรงกัน ✓", "ok");
+    setProgress(40);
+
+    logLine("กำลังถอดรหัส xdelta3...");
+    const ret = Module._xd3_decode_memory(inPtr, patchBuf.byteLength, srcPtr, file.size, outPtr, outSizePtr, outMax, 0);
+    if (ret !== 0) {
+      throw new Error("xdelta3 decode ล้มเหลว (code " + ret + ")");
+    }
+    setProgress(85);
+
+    const outSize = Module.getValue(outSizePtr, "i32");
+    const outView = Module.HEAPU8.subarray(outPtr, outPtr + outSize);
+
     logLine("กำลังตรวจสอบ SHA-256 ของไฟล์ผลลัพธ์...");
-    // หาค่า hash เฉพาะ 50MB แรกเพื่อประหยัดแรม (ถ้าต้องการเช็คเต็มๆ ต้องสตรีม)
-    // แต่เรายอมข้ามไปก่อนได้เลย
+    const outHash = await sha256Hex(outView);
+    if (outHash !== g.targetSha256) {
+      throw new Error(`ผลลัพธ์ไม่ตรงกับที่คาดไว้! ได้ ${outHash} ต้องการ: ${g.targetSha256}`);
+    }
+    logLine("SHA-256 ผลลัพธ์ตรงกัน — แปะแพตช์สำเร็จ ✓", "ok");
     setProgress(100);
-    logLine("การแปะแพตช์สำเร็จ ✓", "ok");
-    
-  } finally {
-    Module._free(patchPtr);
-    Module._xd3_wasm_free(statePtr);
-  }
 
-  return outBlob;
+    // Create Blob directly from WASM memory view, avoiding a JS ArrayBuffer copy
+    const blob = new Blob([outView]);
+    return blob;
+  } finally {
+    Module._free(inPtr);
+    Module._free(srcPtr);
+    Module._free(outPtr);
+    Module._free(outSizePtr);
+  }
 }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
