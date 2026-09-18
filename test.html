@@ -556,9 +556,7 @@ async function applyXdeltaStream(file, g, setProgress, logLine) {
       } else if (ret === 3 || ret === 4) {
         // 3: GOTHEADER, 4: WINSTART
       } else if (ret === 5) { // XD3_WINFINISH
-        if (totalOutput >= g.targetSize) {
-          done = true;
-        }
+        // Window finished, continue processing
       } else if (ret < 0) {
         let errStr = "unknown";
         const msgPtr = Module._xd3_wasm_strerror(statePtr, ret);
