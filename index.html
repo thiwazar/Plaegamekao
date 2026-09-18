@@ -491,6 +491,9 @@ function xd3DecodeMemory(Module, inputBytes, sourceBytes, outputMax) {
   const outPtr = Module._malloc(outputMax);
   const outSizePtr = Module._malloc(4);
   try {
+    if (!inPtr || !srcPtr || !outPtr || !outSizePtr) {
+      throw new Error("หน่วยความจำไม่พอสำหรับไฟล์นี้ — โปรดปิดโปรแกรมหรือแท็บอื่น แล้วลองใหม่ใน Chrome/Edge 64-bit");
+    }
     Module.HEAPU8.set(inputBytes, inPtr);
     Module.HEAPU8.set(sourceBytes, srcPtr);
     const ret = Module._xd3_decode_memory(inPtr, inputBytes.byteLength, srcPtr, sourceBytes.byteLength, outPtr, outSizePtr, outputMax, 0);
@@ -516,3 +519,4 @@ async function applyXdelta(sourceBuf, patchBuf, g, setProgress, logLine) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </body>
 </html>
+
