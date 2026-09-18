@@ -363,54 +363,58 @@ function setupGame(g) {
     logLine(`ไฟล์ที่เลือก: ${file.name} (${(file.size/1024/1024).toFixed(1)} MB)`);
 
     try {
-      logLine("กำลังอ่านไฟล์ต้นฉบับเข้าหน่วยความจำ...");
-      const sourceBuf = await file.arrayBuffer();
-      setProgress(15);
-
-      logLine("กำลังตรวจสอบ SHA-256 ของไฟล์ต้นฉบับ...");
-      const srcHash = await sha256Hex(sourceBuf);
-      setProgress(30);
-      if (srcHash !== g.sourceSha256) {
-        logLine(`ไม่ตรงกับต้นฉบับที่รองรับ! ได้ ${srcHash}`, "err");
-        logLine(`ต้องการ: ${g.sourceSha256}`, "err");
-        logLine("ตรวจสอบว่าใช้ ISO รุ่น/ไฟล์ที่ถูกต้องตามที่ระบุไว้ด้านบน", "err");
-        return;
-      }
-      logLine("SHA-256 ต้นฉบับตรงกัน ✓", "ok");
-
-      logLine("กำลังโหลดไฟล์แพตช์...");
-      const patchResp = await fetch(g.patchUrl);
-      if (!patchResp.ok) throw new Error(`โหลดไฟล์แพตช์ไม่สำเร็จ (${patchResp.status}) — ตรวจว่าเสิร์ฟผ่าน HTTP และมีไฟล์ ${g.patchUrl}`);
-      const patchBuf = await patchResp.arrayBuffer();
-      setProgress(45);
-
-      logLine("กำลังแปะแพตช์...");
-      let outputBuf;
-      if (g.format === "QGDELTA1") {
-        outputBuf = await applyQgdelta(sourceBuf, patchBuf, g, setProgress, logLine);
-      } else if (g.format === "STPATCH1") {
-        outputBuf = await applyStpatch(sourceBuf, patchBuf, g, setProgress, logLine);
-      } else if (g.format === "XDELTA") {
-        outputBuf = await applyXdelta(sourceBuf, patchBuf, g, setProgress, logLine);
+      let outputBlob;
+      if (g.format === "XDELTA") {
+        outputBlob = await applyXdeltaStream(file, g, setProgress, logLine);
       } else {
-        throw new Error("รูปแบบแพตช์ไม่รู้จัก: " + g.format);
-      }
-      setProgress(90);
+        logLine("กำลังอ่านไฟล์ต้นฉบับเข้าหน่วยความจำ...");
+        const sourceBuf = await file.arrayBuffer();
+        setProgress(15);
 
-      logLine("กำลังตรวจสอบ SHA-256 ของไฟล์ผลลัพธ์...");
-      const outHash = await sha256Hex(outputBuf);
-      if (outHash !== g.targetSha256) {
-        logLine(`ผลลัพธ์ไม่ตรงกับที่คาดไว้! ได้ ${outHash}`, "err");
-        logLine(`ต้องการ: ${g.targetSha256}`, "err");
-        logLine("ไฟล์ผลลัพธ์ถูกยกเลิก ไม่ปลอดภัยที่จะใช้งาน", "err");
-        return;
+        logLine("กำลังตรวจสอบ SHA-256 ของไฟล์ต้นฉบับ...");
+        const srcHash = await sha256Hex(sourceBuf);
+        setProgress(30);
+        if (srcHash !== g.sourceSha256) {
+          logLine(`ไม่ตรงกับต้นฉบับที่รองรับ! ได้ ${srcHash}`, "err");
+          logLine(`ต้องการ: ${g.sourceSha256}`, "err");
+          logLine("ตรวจสอบว่าใช้ ISO รุ่น/ไฟล์ที่ถูกต้องตามที่ระบุไว้ด้านบน", "err");
+          return;
+        }
+        logLine("SHA-256 ต้นฉบับตรงกัน ✓", "ok");
+
+        logLine("กำลังโหลดไฟล์แพตช์...");
+        const patchResp = await fetch(g.patchUrl);
+        if (!patchResp.ok) throw new Error(`โหลดไฟล์แพตช์ไม่สำเร็จ (${patchResp.status}) — ตรวจว่าเสิร์ฟผ่าน HTTP และมีไฟล์ ${g.patchUrl}`);
+        const patchBuf = await patchResp.arrayBuffer();
+        setProgress(45);
+
+        logLine("กำลังแปะแพตช์...");
+        let outputBuf;
+        if (g.format === "QGDELTA1") {
+          outputBuf = await applyQgdelta(sourceBuf, patchBuf, g, setProgress, logLine);
+        } else if (g.format === "STPATCH1") {
+          outputBuf = await applyStpatch(sourceBuf, patchBuf, g, setProgress, logLine);
+        } else {
+          throw new Error("รูปแบบแพตช์ไม่รู้จัก: " + g.format);
+        }
+        setProgress(90);
+
+        logLine("กำลังตรวจสอบ SHA-256 ของไฟล์ผลลัพธ์...");
+        const outHash = await sha256Hex(outputBuf);
+        if (outHash !== g.targetSha256) {
+          logLine(`ผลลัพธ์ไม่ตรงกับที่คาดไว้! ได้ ${outHash}`, "err");
+          logLine(`ต้องการ: ${g.targetSha256}`, "err");
+          logLine("ไฟล์ผลลัพธ์ถูกยกเลิก ไม่ปลอดภัยที่จะใช้งาน", "err");
+          return;
+        }
+        logLine("SHA-256 ผลลัพธ์ตรงกัน — แปะแพตช์สำเร็จ ✓", "ok");
+        setProgress(100);
+        
+        outputBlob = new Blob([outputBuf]);
       }
-      logLine("SHA-256 ผลลัพธ์ตรงกัน — แปะแพตช์สำเร็จ ✓", "ok");
-      setProgress(100);
 
       if (outputBlobUrl) URL.revokeObjectURL(outputBlobUrl);
-      const blob = new Blob([outputBuf]);
-      outputBlobUrl = URL.createObjectURL(blob);
+      outputBlobUrl = URL.createObjectURL(outputBlob);
       dlBtn.style.display = "inline-block";
       dlBtn.onclick = () => {
         const a = document.createElement("a");
@@ -485,35 +489,84 @@ async function getXdeltaModule(logLine) {
   return xdModule;
 }
 
-function xd3DecodeMemory(Module, inputBytes, sourceBytes, outputMax) {
-  const inPtr = Module._malloc(inputBytes.byteLength);
-  const srcPtr = Module._malloc(sourceBytes.byteLength);
-  const outPtr = Module._malloc(outputMax);
-  const outSizePtr = Module._malloc(4);
-  try {
-    if (!inPtr || !srcPtr || !outPtr || !outSizePtr) {
-      throw new Error("หน่วยความจำไม่พอสำหรับไฟล์นี้ — โปรดปิดโปรแกรมหรือแท็บอื่น แล้วลองใหม่ใน Chrome/Edge 64-bit");
-    }
-    Module.HEAPU8.set(inputBytes, inPtr);
-    Module.HEAPU8.set(sourceBytes, srcPtr);
-    const ret = Module._xd3_decode_memory(inPtr, inputBytes.byteLength, srcPtr, sourceBytes.byteLength, outPtr, outSizePtr, outputMax, 0);
-    const outSize = Module.getValue(outSizePtr, "i32");
-    const output = Module.HEAPU8.slice(outPtr, outPtr + outSize);
-    return { ret, output };
-  } finally {
-    Module._free(inPtr); Module._free(srcPtr); Module._free(outPtr); Module._free(outSizePtr);
-  }
-}
+async function applyXdeltaStream(file, g, setProgress, logLine) {
+  logLine("กำลังโหลดไฟล์แพตช์...");
+  const patchResp = await fetch(g.patchUrl);
+  if (!patchResp.ok) throw new Error(`โหลดไฟล์แพตช์ไม่สำเร็จ (${patchResp.status})`);
+  const patchBuf = await patchResp.arrayBuffer();
+  setProgress(10);
 
-async function applyXdelta(sourceBuf, patchBuf, g, setProgress, logLine) {
   const Module = await getXdeltaModule(logLine);
-  setProgress(55);
-  const { ret, output } = xd3DecodeMemory(Module, new Uint8Array(patchBuf), new Uint8Array(sourceBuf), g.targetSize + 1024);
-  if (ret !== 0) {
-    throw new Error("xdelta3 decode ล้มเหลว (code " + ret + ")");
+  setProgress(15);
+
+  logLine("กำลังจองหน่วยความจำ WASM (อาจล้มเหลวหาก RAM ไม่พอ)...");
+  const inPtr = Module._malloc(patchBuf.byteLength);
+  const srcPtr = Module._malloc(file.size);
+  // เพิ่มขนาดเผื่อ outputMax อีก 50MB ป้องกัน error code -17710 (ENOSPC)
+  const outMax = g.targetSize + 50 * 1024 * 1024;
+  const outPtr = Module._malloc(outMax);
+  const outSizePtr = Module._malloc(4);
+
+  if (!inPtr || !srcPtr || !outPtr || !outSizePtr) {
+    if (inPtr) Module._free(inPtr);
+    if (srcPtr) Module._free(srcPtr);
+    if (outPtr) Module._free(outPtr);
+    if (outSizePtr) Module._free(outSizePtr);
+    throw new Error("หน่วยความจำไม่พอสำหรับไฟล์นี้ — โปรดปิดโปรแกรมหรือแท็บอื่น แล้วลองใหม่ใน Chrome/Edge 64-bit");
   }
-  setProgress(85);
-  return output.buffer.slice(output.byteOffset, output.byteOffset + output.byteLength);
+
+  try {
+    Module.HEAPU8.set(new Uint8Array(patchBuf), inPtr);
+    
+    logLine("กำลังอ่านไฟล์ต้นฉบับเข้าสู่ WASM...");
+    const stream = file.stream();
+    const reader = stream.getReader();
+    let offset = 0;
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      Module.HEAPU8.set(value, srcPtr + offset);
+      offset += value.length;
+      setProgress(15 + Math.round((offset / file.size) * 15));
+    }
+    if (offset !== file.size) throw new Error("อ่านไฟล์ได้ขนาดไม่ตรงกับที่ระบุ");
+
+    logLine("กำลังตรวจสอบ SHA-256 ของไฟล์ต้นฉบับ...");
+    const srcView = Module.HEAPU8.subarray(srcPtr, srcPtr + file.size);
+    const srcHash = await sha256Hex(srcView);
+    if (srcHash !== g.sourceSha256) {
+      throw new Error(`ไม่ตรงกับต้นฉบับที่รองรับ! ได้ ${srcHash} ต้องการ: ${g.sourceSha256}`);
+    }
+    logLine("SHA-256 ต้นฉบับตรงกัน ✓", "ok");
+    setProgress(40);
+
+    logLine("กำลังถอดรหัส xdelta3...");
+    const ret = Module._xd3_decode_memory(inPtr, patchBuf.byteLength, srcPtr, file.size, outPtr, outSizePtr, outMax, 0);
+    if (ret !== 0) {
+      throw new Error("xdelta3 decode ล้มเหลว (code " + ret + ")");
+    }
+    setProgress(85);
+
+    const outSize = Module.getValue(outSizePtr, "i32");
+    const outView = Module.HEAPU8.subarray(outPtr, outPtr + outSize);
+
+    logLine("กำลังตรวจสอบ SHA-256 ของไฟล์ผลลัพธ์...");
+    const outHash = await sha256Hex(outView);
+    if (outHash !== g.targetSha256) {
+      throw new Error(`ผลลัพธ์ไม่ตรงกับที่คาดไว้! ได้ ${outHash} ต้องการ: ${g.targetSha256}`);
+    }
+    logLine("SHA-256 ผลลัพธ์ตรงกัน — แปะแพตช์สำเร็จ ✓", "ok");
+    setProgress(100);
+
+    // Create Blob directly from WASM memory view, avoiding a JS ArrayBuffer copy
+    const blob = new Blob([outView]);
+    return blob;
+  } finally {
+    Module._free(inPtr);
+    Module._free(srcPtr);
+    Module._free(outPtr);
+    Module._free(outSizePtr);
+  }
 }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
