@@ -212,19 +212,19 @@ const GAMES = [
   },
   {
     "id": "dissidia-012-thai-v1-3",
-    "name": "Dissidia_012_Thai_v1.3",
+    "name": "Dissidia 012 Thai v1.3",
     "format": "XDELTA",
     "version": "v1.3",
     "cover": "covers/Dissidia_012_Thai_v1.3.png",
-    "desc": "",
+    "desc": "โลโก้ไทย ฟอนต์ไทยฝังใน ISO และคำแปลชุดล่าสุด ยังมีข้อความบางส่วนที่ต้องแปลเพิ่ม",
     "patchUrl": "patches/Dissidia_012_Thai_v1.3.xdelta",
-    "sourceName": "Dissidia_012_Thai_v1.3 (ISO ต้นฉบับ)",
+    "sourceName": "Dissidia 012 ULES01505 (ISO ฐานที่รองรับ)",
     "sourceSize": 1741168640,
-    "sourceSha256": "f2c516dbecadb278d50c4e01056e88d67611d7edba3857ff57150bc4b38d422e",
-    "targetSize": 1751234560,
-    "targetSha256": "1f0e0fef812a4891e6ba06aef50c980e15d73a7e36b171095cb41bebaba93aa4",
-    "outName": "Dissidia_012_Thai_v1.3_Thai.iso"
-  }
+    "sourceSha256": "5877d20b328f45315251c6c605230e3a442ca0bffb51f54e9750e27329650e6c",
+    "targetSize": 1751244800,
+    "targetSha256": "2a466b3bae3a67745cb86df738ed4f0327898f72a373cfe278ba7e2b5d9569e6",
+    "outName": "Dissidia_012_Thai_v1.3.iso"
+}
 ];
 
 const gridEl = document.getElementById("grid");
@@ -275,7 +275,7 @@ GAMES.forEach((g) => {
         <div class="banner ${isBeta ? "" : "ok"}">
           ${isBeta
             ? "⚠️ แพตช์นี้ยังอยู่ระหว่างพัฒนา (BETA) — ยังไม่ผ่านการทดสอบแปะแพตช์จริงครบทุกจุด ใช้ด้วยความระมัดระวัง และแนะนำให้สำรองไฟล์ต้นฉบับไว้"
-            : "✅ แพตช์เสร็จและทดสอบแล้ว — แปลครบและเล่นได้ตามปกติ ประมวลผลทั้งหมดในเครื่องคุณเอง ไฟล์ต้นฉบับไม่ถูกส่งขึ้นเซิร์ฟเวอร์"}
+            : "✅ แพตช์เสร็จและทดสอบแล้ว — มีคำแปลและผ่านการทดสอบตามรายละเอียดแต่ละแพตช์ ประมวลผลทั้งหมดในเครื่องคุณเอง ไฟล์ต้นฉบับไม่ถูกส่งขึ้นเซิร์ฟเวอร์"}
         </div>
         <div class="steps">
           <div class="step"><span class="num">1</span>เลือกไฟล์ ISO ต้นฉบับของคุณ</div>
