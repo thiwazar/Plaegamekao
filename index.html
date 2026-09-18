@@ -484,7 +484,7 @@ let xdModule = null;
 async function getXdeltaModule(logLine) {
   if (!xdModule) {
     logLine("กำลังโหลดตัวถอดรหัส xdelta3 (WASM)...");
-    const loadXdelta3Wasm = (await import("./xdelta3-stream.js")).default;
+    const loadXdelta3Wasm = (await import(`./xdelta3-stream.js?v=${Date.now()}`)).default;
     xdModule = await loadXdelta3Wasm();
   }
   return xdModule;
