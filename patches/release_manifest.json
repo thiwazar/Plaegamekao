@@ -1,0 +1,20 @@
+{
+  "game_id": "ULES01505",
+  "supported_source": {
+    "bytes": 1741168640,
+    "sha256": "5877d20b328f45315251c6c605230e3a442ca0bffb51f54e9750e27329650e6c",
+    "note": "Restored original English menu resource file_01240 from extraction; no Redump hash verification"
+  },
+  "output": {
+    "name": "Dissidia_012_Thai_Complete_Embedded.iso",
+    "bytes": 1751234560,
+    "sha256": "1f0e0fef812a4891e6ba06aef50c980e15d73a7e36b171095cb41bebaba93aa4"
+  },
+  "patch": {
+    "name": "Dissidia_012_Thai_v1.0.xdelta",
+    "bytes": 5621485,
+    "sha256": "8d57e65452b28e15591e263a70c70ba4780decb054992eafea45aeaf368eeb04"
+  },
+  "roundtrip_verified": true,
+  "runtime_test": "PPSSPP Windows 1.20.4: Thai main menu with stock external fonts; handheld unverified"
+}
