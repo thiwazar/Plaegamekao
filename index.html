@@ -31,6 +31,18 @@
   header p{margin:0;color:var(--muted);font-size:14px}
   .wrap{max-width:980px;margin:0 auto;padding:20px}
   .wrap.narrow{max-width:760px}
+  .platform-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+  .ptab{
+    padding:8px 16px;border-radius:99px;background:var(--panel);border:1px solid var(--line);
+    color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;transition:.15s ease;
+  }
+  .ptab:hover{border-color:var(--accent);color:#fff}
+  .ptab.active{background:linear-gradient(135deg,var(--accent),#3f6fe0);border-color:var(--accent);color:#fff}
+  .plat-badge{
+    display:inline-block;font-size:10.5px;padding:3px 9px;border-radius:6px;font-weight:700;letter-spacing:.3px;
+    background:rgba(139,147,163,.15);border:1px solid rgba(139,147,163,.4);color:#b8c0cf;
+  }
+  .empty-state{text-align:center;color:var(--muted);padding:40px 20px;font-size:14px}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-bottom:18px}
   .gcard{
     background:linear-gradient(180deg,var(--panel),var(--panel2) 140%);
@@ -125,6 +137,7 @@
 </header>
 
 <div class="wrap" id="home-wrap">
+  <div class="platform-tabs" id="platformTabs"></div>
   <div class="grid" id="grid"></div>
   <div class="support">
     <h2>☕ สนับสนุนเพจ</h2>
@@ -153,6 +166,7 @@ const GAMES = [
   {
     "id": "queensgate",
     "name": "Queen's Gate: Spiral Chaos",
+    "platform": "PSP",
     "format": "QGDELTA1",
     "version": "v3",
     "cover": "covers/QueensGate_Thai_Repaired_v3.png",
@@ -168,6 +182,7 @@ const GAMES = [
   {
     "id": "tales",
     "name": "Tales of Phantasia (Full Voice Edition)",
+    "platform": "PSP",
     "format": "XDELTA",
     "version": "v1.0",
     "cover": "covers/TalesOfPhantasia_Thai_v1.0.png",
@@ -183,6 +198,7 @@ const GAMES = [
   {
     "id": "soltrigger",
     "name": "Sol Trigger",
+    "platform": "PSP",
     "format": "STPATCH1",
     "version": "v1.1",
     "cover": "covers/SolTrigger_Thai_v1.1.png",
@@ -198,6 +214,7 @@ const GAMES = [
   {
     "id": "the3rdbirthday",
     "name": "The 3rd Birthday",
+    "platform": "PSP",
     "format": "XDELTA",
     "version": "beta",
     "cover": "covers/The_3rd_Birthday_Thai_BY_PlaeGameKao.png",
@@ -211,19 +228,20 @@ const GAMES = [
     "outName": "The_3rd_Birthday_Thai_BY_เพจแปลเกมเก่า.iso"
   },
   {
-    "id": "dissidia-012-thai-v1-0",
-    "name": "Dissidia_012_Thai_v1.0",
+    "id": "dissidia-012-thai-v1-3",
+    "name": "Dissidia 012",
+    "platform": "PSP",
     "format": "XDELTA",
-    "version": "v1.0",
+    "version": "v1.3",
     "cover": "covers/Dissidia_012_Thai_v1.0.png",
-    "desc": "",
-    "patchUrl": "patches/Dissidia_012_Thai_v1.0.xdelta",
-    "sourceName": "Dissidia_012_Thai_v1.0 (ISO ต้นฉบับ)",
+    "desc": "แปลไทยรวมคำแปลเดิม 3,511 ตำแหน่ง แปลเพิ่ม 993 ข้อความ เพิ่มโลโก้ไทยหน้าเปิดเกม (ต้องใช้ ISO ฐานที่คืนเมนูอังกฤษแล้ว ไม่ใช่ ISO ต้นฉบับดิบ ถ้าใช้ผิดไฟล์จะขึ้น SHA-256 ไม่ตรง)",
+    "patchUrl": "patches/Dissidia_012_Thai_v1.3.xdelta",
+    "sourceName": "Dissidia 012 (English menu restored base — ไม่ใช่ ISO ต้นฉบับดิบตรงๆ)",
     "sourceSize": 1741168640,
-    "sourceSha256": "f2c516dbecadb278d50c4e01056e88d67611d7edba3857ff57150bc4b38d422e",
-    "targetSize": 1751234560,
-    "targetSha256": "1f0e0fef812a4891e6ba06aef50c980e15d73a7e36b171095cb41bebaba93aa4",
-    "outName": "Dissidia_012_Thai_v1.0_Thai.iso"
+    "sourceSha256": "5877d20b328f45315251c6c605230e3a442ca0bffb51f54e9750e27329650e6c",
+    "targetSize": 1751244800,
+    "targetSha256": "2a466b3bae3a67745cb86df738ed4f0327898f72a373cfe278ba7e2b5d9569e6",
+    "outName": "Dissidia_012_Thai_v1.3.iso"
   }
 ];
 
@@ -232,28 +250,58 @@ const panelsEl = document.getElementById("panels");
 const homeWrap = document.getElementById("home-wrap");
 const detailWrap = document.getElementById("detail-wrap");
 const backBtn = document.getElementById("backBtn");
+const platformTabsEl = document.getElementById("platformTabs");
+
+const PLATFORMS = ["ทั้งหมด", ...new Set(GAMES.map(g => g.platform || "PSP"))];
+let activePlatform = "ทั้งหมด";
+
+function renderPlatformTabs() {
+  platformTabsEl.innerHTML = "";
+  PLATFORMS.forEach((p) => {
+    const tab = document.createElement("div");
+    tab.className = "ptab" + (p === activePlatform ? " active" : "");
+    tab.textContent = p;
+    tab.onclick = () => { activePlatform = p; renderPlatformTabs(); renderGrid(); };
+    platformTabsEl.appendChild(tab);
+  });
+}
+
+function renderGrid() {
+  gridEl.innerHTML = "";
+  const filtered = GAMES.filter(g => activePlatform === "ทั้งหมด" || (g.platform || "PSP") === activePlatform);
+  if (filtered.length === 0) {
+    gridEl.innerHTML = `<div class="empty-state">ยังไม่มีเกมในหมวดนี้</div>`;
+    return;
+  }
+  filtered.forEach((g) => {
+    const isBeta = (g.version || "").toLowerCase() === "beta";
+    const gcard = document.createElement("div");
+    gcard.className = "gcard";
+    gcard.innerHTML = `
+      ${g.cover ? `<img class="cover" src="${g.cover}" alt="${g.name}" loading="lazy" onerror="this.style.display='none'">` : ""}
+      <div class="gcard-body">
+        <div class="gcard-badges">
+          <span class="${isBeta ? "status-beta" : "status-ready"}">${isBeta ? "BETA" : "READY"}</span>
+          <span class="plat-badge">${g.platform || "PSP"}</span>
+          <span class="badge">${g.format}</span>
+          <span class="badge">${g.version || ""}</span>
+        </div>
+        <h3>${g.name}</h3>
+        ${g.desc ? `<p class="gdesc">${g.desc}</p>` : ""}
+        <div class="gmeta-row">ต้นฉบับ: ${(g.sourceSize/1024/1024).toFixed(1)} MB</div>
+        <button class="gbtn">ไปแปะแพตช์ →</button>
+      </div>
+    `;
+    gcard.querySelector(".gbtn").onclick = () => showDetail(g.id);
+    gridEl.appendChild(gcard);
+  });
+}
+
+renderPlatformTabs();
+renderGrid();
 
 GAMES.forEach((g) => {
   const isBeta = (g.version || "").toLowerCase() === "beta";
-
-  const gcard = document.createElement("div");
-  gcard.className = "gcard";
-  gcard.innerHTML = `
-    ${g.cover ? `<img class="cover" src="${g.cover}" alt="${g.name}" loading="lazy" onerror="this.style.display='none'">` : ""}
-    <div class="gcard-body">
-      <div class="gcard-badges">
-        <span class="${isBeta ? "status-beta" : "status-ready"}">${isBeta ? "BETA" : "READY"}</span>
-        <span class="badge">${g.format}</span>
-        <span class="badge">${g.version || ""}</span>
-      </div>
-      <h3>${g.name}</h3>
-      ${g.desc ? `<p class="gdesc">${g.desc}</p>` : ""}
-      <div class="gmeta-row">ต้นฉบับ: ${(g.sourceSize/1024/1024).toFixed(1)} MB</div>
-      <button class="gbtn">ไปแปะแพตช์ →</button>
-    </div>
-  `;
-  gcard.querySelector(".gbtn").onclick = () => showDetail(g.id);
-  gridEl.appendChild(gcard);
 
   const panel = document.createElement("div");
   panel.className = "card";
@@ -265,6 +313,7 @@ GAMES.forEach((g) => {
         ${g.cover ? `<img class="detail-cover" src="${g.cover}" alt="${g.name}" loading="lazy" onerror="this.style.display='none'">` : ""}
         <div class="gcard-badges">
           <span class="${isBeta ? "status-beta" : "status-ready"}">${isBeta ? "BETA" : "READY"}</span>
+          <span class="plat-badge">${g.platform || "PSP"}</span>
           <span class="badge">${g.format}</span>
           <span class="badge">${g.version || ""}</span>
         </div>
