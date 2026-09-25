@@ -1,0 +1,67 @@
+{
+  "status": "ready_for_upload_not_deployed",
+  "site": "https://thiwazar.github.io/Plaegamekao/",
+  "full_iso_blob_tests": [
+    {
+      "source": "EUR FULL UNDUB",
+      "windows": 209,
+      "blobParts": 12914,
+      "materializedBytes": 12656659,
+      "outputSize": 1751283712,
+      "sha256": "04b201e5bbf718c18a614628b64333d18829888cdb93654ac513e82ad7ef1af7"
+    },
+    {
+      "source": "ไทย v1.3",
+      "windows": 209,
+      "blobParts": 228,
+      "materializedBytes": 39151,
+      "outputSize": 1751283712,
+      "sha256": "04b201e5bbf718c18a614628b64333d18829888cdb93654ac513e82ad7ef1af7"
+    }
+  ],
+  "worker_handler_tests": {
+    "environment": "Shipping Web Worker message handler executed with Node browser-compatible File/Blob/fetch APIs; not a browser or worker_threads run",
+    "results": [
+      {
+        "case": "Thai v1.3",
+        "size": 1751283712,
+        "sha256": "04b201e5bbf718c18a614628b64333d18829888cdb93654ac513e82ad7ef1af7",
+        "alreadyPatched": false,
+        "materializedBytes": 39151,
+        "seconds": 24.753
+      },
+      {
+        "case": "EUR FULL UNDUB",
+        "size": 1751283712,
+        "sha256": "04b201e5bbf718c18a614628b64333d18829888cdb93654ac513e82ad7ef1af7",
+        "alreadyPatched": false,
+        "materializedBytes": 12656659,
+        "seconds": 25.43
+      },
+      {
+        "case": "Already patched",
+        "size": 1751283712,
+        "sha256": "04b201e5bbf718c18a614628b64333d18829888cdb93654ac513e82ad7ef1af7",
+        "alreadyPatched": true,
+        "seconds": 12.808
+      },
+      {
+        "case": "Wrong size",
+        "rejected": true
+      }
+    ]
+  },
+  "browser_final_worker_fixture": {
+    "passed": true,
+    "outputSize": 760288,
+    "sha256": "35642b86a48b89710c8245e6ab66260fab083e8a51154d5e69d7a8df0edd777e",
+    "materializedBytes": 227680
+  },
+  "limitations": [
+    "No real PSP or PSP Go hardware test",
+    "Final full-size output composition verified in Node; final browser worker verified with small multi-window fixture",
+    "No deployed GitHub Pages test",
+    "Other games retained but not repatched",
+    "No mobile device test"
+  ]
+}

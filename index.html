@@ -128,6 +128,13 @@
   .support p{margin:0 0 16px;color:var(--muted);font-size:13.5px}
   .support img{width:180px;height:180px;border-radius:12px;background:#fff;padding:10px;display:block;margin:0 auto}
   .support small{display:block;margin-top:10px;color:var(--muted);font-size:12px}
+  .fontfix-note{font-size:12px;color:var(--muted);line-height:1.7}
+  .fontfix-warning{color:#ffcd80}
+  .source-option{display:block;margin:6px 0;overflow-wrap:anywhere}
+  .cancel-patch{margin-left:10px;background:var(--panel2);border:1px solid var(--line)}
+  .drop.is-busy{opacity:.65;cursor:wait}
+  .drop:focus-visible,.btn:focus-visible,.gbtn:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+  .log{overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -154,13 +161,13 @@
 
 <div class="wrap narrow">
   <div class="note">
-    หน้านี้ต้องเปิดผ่านเว็บเซิร์ฟเวอร์จริง (http/https) ไม่ใช่เปิดไฟล์ตรงๆ (file://) เพราะต้องโหลดไฟล์แพตช์และไลบรารีถอดรหัสผ่าน fetch/CDN —
-    ทดสอบในเครื่องด้วย <code>python -m http.server</code> แล้วเข้า <code>http://localhost:8000</code>, หรือโฮสต์จริงผ่าน GitHub Pages / Netlify / Cloudflare Pages ก็ได้
+    ไฟล์ ISO ประมวลผลบนอุปกรณ์ของคุณเท่านั้น สำหรับไฟล์ขนาดใหญ่ แนะนำ Chrome หรือ Edge รุ่นปัจจุบัน และเปิดหน้านี้ไว้จนดาวน์โหลดเสร็จ
   </div>
 </div>
 
 <script type="module">
-import loadXdelta3Wasm from "./xdelta3-big.js";
+import {FONTFIX_GAME} from "./fontfix-config.mjs";
+import {setupFontFix} from "./fontfix-ui.mjs";
 
 const GAMES = [
   {
@@ -227,22 +234,7 @@ const GAMES = [
     "targetSha256": "763867fccb482965cb9b3c3e96a1de849c8ac646e6ea9117fa21ac4b827bd24f",
     "outName": "The_3rd_Birthday_Thai_BY_เพจแปลเกมเก่า.iso"
   },
-  {
-    "id": "dissidia-012-thai-v1-3",
-    "name": "Dissidia 012",
-    "platform": "PSP",
-    "format": "XDELTA",
-    "version": "v1.3",
-    "cover": "covers/Dissidia_012_Thai_v1.0.png",
-    "desc": "แปลไทยรวมคำแปลเดิม 3,511 ตำแหน่ง แปลเพิ่ม 993 ข้อความ เพิ่มโลโก้ไทยหน้าเปิดเกม (ต้องใช้ ISO ฐานที่คืนเมนูอังกฤษแล้ว ไม่ใช่ ISO ต้นฉบับดิบ ถ้าใช้ผิดไฟล์จะขึ้น SHA-256 ไม่ตรง)",
-    "patchUrl": "patches/Dissidia_012_Thai_v1.3.xdelta",
-    "sourceName": "Dissidia 012 (English menu restored base — ไม่ใช่ ISO ต้นฉบับดิบตรงๆ)",
-    "sourceSize": 1741168640,
-    "sourceSha256": "5877d20b328f45315251c6c605230e3a442ca0bffb51f54e9750e27329650e6c",
-    "targetSize": 1751244800,
-    "targetSha256": "2a466b3bae3a67745cb86df738ed4f0327898f72a373cfe278ba7e2b5d9569e6",
-    "outName": "Dissidia_012_Thai_v1.3.iso"
-  }
+  FONTFIX_GAME
 ];
 
 const gridEl = document.getElementById("grid");
@@ -274,14 +266,14 @@ function renderGrid() {
     return;
   }
   filtered.forEach((g) => {
-    const isBeta = (g.version || "").toLowerCase() === "beta";
+    const isBeta = g.streaming || (g.version || "").toLowerCase() === "beta";
     const gcard = document.createElement("div");
     gcard.className = "gcard";
     gcard.innerHTML = `
       ${g.cover ? `<img class="cover" src="${g.cover}" alt="${g.name}" loading="lazy" onerror="this.style.display='none'">` : ""}
       <div class="gcard-body">
         <div class="gcard-badges">
-          <span class="${isBeta ? "status-beta" : "status-ready"}">${isBeta ? "BETA" : "READY"}</span>
+          <span class="${isBeta ? "status-beta" : "status-ready"}">${isBeta ? (g.streaming ? "TEST" : "BETA") : "READY"}</span>
           <span class="plat-badge">${g.platform || "PSP"}</span>
           <span class="badge">${g.format}</span>
           <span class="badge">${g.version || ""}</span>
@@ -301,7 +293,7 @@ renderPlatformTabs();
 renderGrid();
 
 GAMES.forEach((g) => {
-  const isBeta = (g.version || "").toLowerCase() === "beta";
+  const isBeta = g.streaming || (g.version || "").toLowerCase() === "beta";
 
   const panel = document.createElement("div");
   panel.className = "card";
@@ -312,7 +304,7 @@ GAMES.forEach((g) => {
       <div class="detail-side">
         ${g.cover ? `<img class="detail-cover" src="${g.cover}" alt="${g.name}" loading="lazy" onerror="this.style.display='none'">` : ""}
         <div class="gcard-badges">
-          <span class="${isBeta ? "status-beta" : "status-ready"}">${isBeta ? "BETA" : "READY"}</span>
+          <span class="${isBeta ? "status-beta" : "status-ready"}">${isBeta ? (g.streaming ? "TEST" : "BETA") : "READY"}</span>
           <span class="plat-badge">${g.platform || "PSP"}</span>
           <span class="badge">${g.format}</span>
           <span class="badge">${g.version || ""}</span>
@@ -322,18 +314,20 @@ GAMES.forEach((g) => {
       </div>
       <div class="detail-main">
         <div class="banner ${isBeta ? "" : "ok"}">
-          ${isBeta
+          ${g.streaming
+            ? "🧪 FontFix TEST — ผ่านการตรวจไฟล์และทดสอบฟอนต์บน PC ยังต้องยืนยันบน PSP / PSP Go จริง"
+            : isBeta
             ? "⚠️ แพตช์นี้ยังอยู่ระหว่างพัฒนา (BETA) — ยังไม่ผ่านการทดสอบแปะแพตช์จริงครบทุกจุด ใช้ด้วยความระมัดระวัง และแนะนำให้สำรองไฟล์ต้นฉบับไว้"
             : "✅ แพตช์เสร็จและทดสอบแล้ว — แปลครบและเล่นได้ตามปกติ ประมวลผลทั้งหมดในเครื่องคุณเอง ไฟล์ต้นฉบับไม่ถูกส่งขึ้นเซิร์ฟเวอร์"}
         </div>
         <div class="steps">
           <div class="step"><span class="num">1</span>เลือกไฟล์ ISO ต้นฉบับของคุณ</div>
-          <div class="step"><span class="num">2</span>กดปุ่ม "แปะแพตช์เป็นภาษาไทย"</div>
-          <div class="step"><span class="num">3</span>รอเสร็จ ไฟล์โหลดลง Downloads</div>
+          <div class="step"><span class="num">2</span>ระบบตรวจไฟล์และเริ่มแปะแพตช์</div>
+          <div class="step"><span class="num">3</span>รอเสร็จแล้วกดดาวน์โหลด ISO</div>
         </div>
         <div class="req-box">
           ไฟล์ต้นฉบับที่ต้องใช้: <b>${g.sourceName}</b><br>
-          ขนาด: <b>${(g.sourceSize/1024/1024).toFixed(1)} MB</b> &nbsp;|&nbsp; SHA-256: <b>${g.sourceSha256.slice(0,16)}…</b>
+          ${g.streaming ? g.sources.map(source => `<span class="source-option">${source.name}: <b>${(source.size/1024/1024).toFixed(1)} MB</b> · SHA-256 <code>${source.sha256.slice(0,16)}…</code></span>`).join("") + "<small>เลือกไฟล์ที่คุณมี ระบบตรวจเนื้อหาให้ ไม่ต้องเปลี่ยนชื่อไฟล์</small>" : `ขนาด: <b>${(g.sourceSize/1024/1024).toFixed(1)} MB</b> &nbsp;|&nbsp; SHA-256: <b>${g.sourceSha256.slice(0,16)}…</b>`}
         </div>
         <div class="drop" id="drop-${g.id}">
           <div>ลากไฟล์ ISO ต้นฉบับมาวางที่นี่ หรือ<u>คลิกเพื่อเลือกไฟล์</u></div>
@@ -375,6 +369,7 @@ async function sha256Hex(data) {
 }
 
 function setupGame(g) {
+  if (g.streaming) { setupFontFix(g); return; }
   const drop = document.getElementById(`drop-${g.id}`);
   const input = document.getElementById(`file-${g.id}`);
   const log = document.getElementById(`log-${g.id}`);
@@ -533,6 +528,7 @@ let xdModule = null;
 async function getXdeltaModule(logLine) {
   if (!xdModule) {
     logLine("กำลังโหลดตัวถอดรหัส xdelta3 (WASM)...");
+    const {default: loadXdelta3Wasm} = await import("./xdelta3-big.js");
     xdModule = await loadXdelta3Wasm();
   }
   return xdModule;
