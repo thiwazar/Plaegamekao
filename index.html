@@ -52,6 +52,7 @@
   }
   .gcard:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,.45)}
   .gcard .cover{width:100%;height:150px;object-fit:cover;border-radius:0;border:none;margin:0;display:block;background:var(--panel2)}
+  .gcard .cover[src$="Vagrant_Story_USA.jpg"]{object-fit:contain}
   .gcard-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
   .gcard-badges{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap}
   .status-ready{background:rgba(62,207,142,.15);color:var(--good);border:1px solid rgba(62,207,142,.4);font-size:10.5px;padding:3px 9px;border-radius:6px;font-weight:700;letter-spacing:.3px}
@@ -140,7 +141,7 @@
 <body>
 <header>
   <h1>ระบบแปะแพตช์ไทยออนไลน์ — เพจแปลเกมเก่า</h1>
-  <p>ประมวลผลทั้งหมดในเบราว์เซอร์ของคุณเอง — ไฟล์ ISO ต้นฉบับไม่ถูกส่งขึ้นเซิร์ฟเวอร์</p>
+  <p>ประมวลผลทั้งหมดในเบราว์เซอร์ของคุณเอง — ไฟล์เกมต้นฉบับไม่ถูกส่งขึ้นเซิร์ฟเวอร์</p>
 </header>
 
 <div class="wrap" id="home-wrap">
@@ -161,13 +162,15 @@
 
 <div class="wrap narrow">
   <div class="note">
-    ไฟล์ ISO ประมวลผลบนอุปกรณ์ของคุณเท่านั้น สำหรับไฟล์ขนาดใหญ่ แนะนำ Chrome หรือ Edge รุ่นปัจจุบัน และเปิดหน้านี้ไว้จนดาวน์โหลดเสร็จ
+    ไฟล์เกมประมวลผลบนอุปกรณ์ของคุณเท่านั้น สำหรับไฟล์ขนาดใหญ่ แนะนำ Chrome หรือ Edge รุ่นปัจจุบัน และเปิดหน้านี้ไว้จนดาวน์โหลดเสร็จ
   </div>
 </div>
 
 <script type="module">
 import {FONTFIX_GAME} from "./fontfix-config.mjs";
 import {setupFontFix} from "./fontfix-ui.mjs";
+import {VAGRANT_GAME} from "./vagrant-config.mjs";
+import {setupVagrant} from "./vagrant-ui.mjs";
 
 const GAMES = [
   {
@@ -234,7 +237,8 @@ const GAMES = [
     "targetSha256": "763867fccb482965cb9b3c3e96a1de849c8ac646e6ea9117fa21ac4b827bd24f",
     "outName": "The_3rd_Birthday_Thai_BY_เพจแปลเกมเก่า.iso"
   },
-  FONTFIX_GAME
+  FONTFIX_GAME,
+  VAGRANT_GAME
 ];
 
 const gridEl = document.getElementById("grid");
@@ -314,23 +318,23 @@ GAMES.forEach((g) => {
       </div>
       <div class="detail-main">
         <div class="banner ${isBeta ? "" : "ok"}">
-          ${g.streaming
+          ${g.warning ? g.warning : g.streaming
             ? "🧪 FontFix TEST — ผ่านการตรวจไฟล์และทดสอบฟอนต์บน PC ยังต้องยืนยันบน PSP / PSP Go จริง"
             : isBeta
             ? "⚠️ แพตช์นี้ยังอยู่ระหว่างพัฒนา (BETA) — ยังไม่ผ่านการทดสอบแปะแพตช์จริงครบทุกจุด ใช้ด้วยความระมัดระวัง และแนะนำให้สำรองไฟล์ต้นฉบับไว้"
             : "✅ แพตช์เสร็จและทดสอบแล้ว — แปลครบและเล่นได้ตามปกติ ประมวลผลทั้งหมดในเครื่องคุณเอง ไฟล์ต้นฉบับไม่ถูกส่งขึ้นเซิร์ฟเวอร์"}
         </div>
         <div class="steps">
-          <div class="step"><span class="num">1</span>เลือกไฟล์ ISO ต้นฉบับของคุณ</div>
+          <div class="step"><span class="num">1</span>เลือกไฟล์ ${g.fileType || 'ISO'} ต้นฉบับของคุณ</div>
           <div class="step"><span class="num">2</span>ระบบตรวจไฟล์และเริ่มแปะแพตช์</div>
-          <div class="step"><span class="num">3</span>รอเสร็จแล้วกดดาวน์โหลด ISO</div>
+          <div class="step"><span class="num">3</span>ดาวน์โหลด ${g.fileType === 'BIN' ? 'BIN และ CUE' : 'ISO'}</div>
         </div>
         <div class="req-box">
           ไฟล์ต้นฉบับที่ต้องใช้: <b>${g.sourceName}</b><br>
           ${g.streaming ? g.sources.map(source => `<span class="source-option">${source.name}: <b>${(source.size/1024/1024).toFixed(1)} MB</b> · SHA-256 <code>${source.sha256.slice(0,16)}…</code></span>`).join("") + "<small>เลือกไฟล์ที่คุณมี ระบบตรวจเนื้อหาให้ ไม่ต้องเปลี่ยนชื่อไฟล์</small>" : `ขนาด: <b>${(g.sourceSize/1024/1024).toFixed(1)} MB</b> &nbsp;|&nbsp; SHA-256: <b>${g.sourceSha256.slice(0,16)}…</b>`}
         </div>
         <div class="drop" id="drop-${g.id}">
-          <div>ลากไฟล์ ISO ต้นฉบับมาวางที่นี่ หรือ<u>คลิกเพื่อเลือกไฟล์</u></div>
+          <div>ลากไฟล์ ${g.fileType || 'ISO'} ต้นฉบับมาวางที่นี่ หรือ<u>คลิกเพื่อเลือกไฟล์</u></div>
           <small>ไฟล์จะถูกอ่านและประมวลผลในเครื่องคุณเท่านั้น</small>
           <input type="file" id="file-${g.id}">
         </div>
@@ -369,6 +373,7 @@ async function sha256Hex(data) {
 }
 
 function setupGame(g) {
+  if (g.id === VAGRANT_GAME.id) { setupVagrant(g); return; }
   if (g.streaming) { setupFontFix(g); return; }
   const drop = document.getElementById(`drop-${g.id}`);
   const input = document.getElementById(`file-${g.id}`);

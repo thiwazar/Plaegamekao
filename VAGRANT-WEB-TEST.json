@@ -1,0 +1,45 @@
+{
+  "environment": "Shipping worker handler and VCDIFF decoder tested in Node with File/Blob; not a browser or emulator test",
+  "results": [
+    {
+      "case": "original USA BIN",
+      "passed": true,
+      "seconds": 10.4
+    },
+    {
+      "case": "already V9",
+      "passed": true,
+      "seconds": 5.13
+    },
+    {
+      "case": "wrong size",
+      "passed": true,
+      "seconds": 0.001
+    },
+    {
+      "case": "wrong extension",
+      "passed": true,
+      "seconds": 0
+    },
+    {
+      "case": "wrong hash same size",
+      "passed": true,
+      "seconds": 3.728
+    },
+    {
+      "case": "corrupt patch",
+      "passed": true,
+      "seconds": 3.771
+    }
+  ],
+  "sourceSha256": "25221d7f8fdb2c4490af12d9e82f0e58bdd6acb43387f9082b3c5e79dfe090c0",
+  "targetSha256": "75cd068b335723fe34448d4c1d22b6de5951552c4049df59dc5ec9609adb16ca",
+  "cueMatches": true,
+  "ui_inspection": {
+    "local_browser_game_detail_opened": true,
+    "cover_visible": true,
+    "ps1_category_present": true,
+    "bin_instructions_present": true,
+    "full_browser_patch_tested": false
+  }
+}
