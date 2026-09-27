@@ -57,6 +57,7 @@
   .gcard-badges{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap}
   .status-ready{background:rgba(62,207,142,.15);color:var(--good);border:1px solid rgba(62,207,142,.4);font-size:10.5px;padding:3px 9px;border-radius:6px;font-weight:700;letter-spacing:.3px}
   .status-beta{background:rgba(255,183,77,.15);color:#ffb74d;border:1px solid rgba(255,183,77,.4);font-size:10.5px;padding:3px 9px;border-radius:6px;font-weight:700;letter-spacing:.3px}
+  .status-progress{background:rgba(138,180,255,.14);color:var(--accent2);border:1px solid rgba(138,180,255,.4);font-size:10.5px;padding:3px 9px;border-radius:6px;font-weight:700;letter-spacing:.3px}
   .gcard h3{margin:2px 0 6px;font-size:16px}
   .gdesc{font-size:12.5px;color:var(--muted);margin:0 0 12px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1}
   .gmeta-row{font-size:11.5px;color:var(--muted);margin-bottom:12px}
@@ -129,6 +130,20 @@
   .support p{margin:0 0 16px;color:var(--muted);font-size:13.5px}
   .support img{width:180px;height:180px;border-radius:12px;background:#fff;padding:10px;display:block;margin:0 auto}
   .support small{display:block;margin-top:10px;color:var(--muted);font-size:12px}
+  .upcoming{margin:6px 0 24px}
+  .upcoming-head{margin-bottom:12px}
+  .upcoming-head h2{margin:0 0 3px;font-size:19px}
+  .upcoming-head p{margin:0;color:var(--muted);font-size:13px}
+  .upcoming-card{
+    position:relative;overflow:hidden;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;
+    padding:20px;background:linear-gradient(120deg,rgba(91,140,255,.15),var(--panel) 48%,var(--panel2));
+    border:1px solid rgba(138,180,255,.25);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.3);
+  }
+  .upcoming-card::after{content:"";position:absolute;width:180px;height:180px;right:-70px;top:-105px;border-radius:50%;background:rgba(91,140,255,.13);filter:blur(2px)}
+  .upcoming-icon{width:64px;height:64px;display:grid;place-items:center;border-radius:16px;background:rgba(13,15,20,.55);border:1px solid rgba(138,180,255,.25);font-size:30px}
+  .upcoming-card h3{margin:8px 0 3px;font-size:18px}
+  .upcoming-card p{margin:0;color:var(--muted);font-size:13px}
+  @media (max-width:520px){.upcoming-card{grid-template-columns:1fr}.upcoming-icon{width:54px;height:54px}}
   .fontfix-note{font-size:12px;color:var(--muted);line-height:1.7}
   .fontfix-warning{color:#ffcd80}
   .source-option{display:block;margin:6px 0;overflow-wrap:anywhere}
@@ -147,6 +162,23 @@
 <div class="wrap" id="home-wrap">
   <div class="platform-tabs" id="platformTabs"></div>
   <div class="grid" id="grid"></div>
+  <section class="upcoming" aria-labelledby="upcoming-title">
+    <div class="upcoming-head">
+      <h2 id="upcoming-title">🎮 โปรเจกต์ที่กำลังแปล</h2>
+      <p>ติดตามเกมใหม่ที่กำลังอยู่ระหว่างการแปลภาษาไทย</p>
+    </div>
+    <article class="upcoming-card">
+      <div class="upcoming-icon" aria-hidden="true">⚔️</div>
+      <div>
+        <div class="gcard-badges">
+          <span class="status-progress">กำลังแปล</span>
+          <span class="plat-badge">PS VITA</span>
+        </div>
+        <h3>Odin Sphere Leifthrasir</h3>
+        <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ รายละเอียดและความคืบหน้าจะประกาศให้ทราบในภายหลัง</p>
+      </div>
+    </article>
+  </section>
   <div class="support">
     <h2>☕ สนับสนุนเพจ</h2>
     <p>ถ้าแพตช์มีประโยชน์ อยากเลี้ยงกาแฟผู้แปลสักแก้ว สแกน QR ด้านล่างได้เลยครับ</p>
