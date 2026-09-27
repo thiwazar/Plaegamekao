@@ -134,6 +134,7 @@
   .upcoming-head{margin-bottom:12px}
   .upcoming-head h2{margin:0 0 3px;font-size:19px}
   .upcoming-head p{margin:0;color:var(--muted);font-size:13px}
+  .upcoming-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
   .upcoming-card{
     position:relative;overflow:hidden;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;
     padding:20px;background:linear-gradient(120deg,rgba(91,140,255,.15),var(--panel) 48%,var(--panel2));
@@ -143,7 +144,8 @@
   .upcoming-icon{width:64px;height:64px;display:grid;place-items:center;border-radius:16px;background:rgba(13,15,20,.55);border:1px solid rgba(138,180,255,.25);font-size:30px}
   .upcoming-card h3{margin:8px 0 3px;font-size:18px}
   .upcoming-card p{margin:0;color:var(--muted);font-size:13px}
-  @media (max-width:520px){.upcoming-card{grid-template-columns:1fr}.upcoming-icon{width:54px;height:54px}}
+  @media (max-width:760px){.upcoming-list{grid-template-columns:1fr}}
+  @media (max-width:520px){.upcoming-card{grid-template-columns:auto 1fr;padding:16px;gap:12px}.upcoming-icon{width:52px;height:52px;font-size:24px}.upcoming-card h3{font-size:16px}}
   .fontfix-note{font-size:12px;color:var(--muted);line-height:1.7}
   .fontfix-warning{color:#ffcd80}
   .source-option{display:block;margin:6px 0;overflow-wrap:anywhere}
@@ -167,17 +169,74 @@
       <h2 id="upcoming-title">🎮 โปรเจกต์ที่กำลังแปล</h2>
       <p>ติดตามเกมใหม่ที่กำลังอยู่ระหว่างการแปลภาษาไทย</p>
     </div>
-    <article class="upcoming-card">
-      <div class="upcoming-icon" aria-hidden="true">⚔️</div>
-      <div>
-        <div class="gcard-badges">
-          <span class="status-progress">กำลังแปล</span>
-          <span class="plat-badge">PS VITA</span>
+    <div class="upcoming-list">
+      <article class="upcoming-card">
+        <div class="upcoming-icon" aria-hidden="true">⚔️</div>
+        <div>
+          <div class="gcard-badges">
+            <span class="status-progress">กำลังแปล</span>
+            <span class="plat-badge">PS VITA</span>
+          </div>
+          <h3>Odin Sphere Leifthrasir</h3>
+          <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
         </div>
-        <h3>Odin Sphere Leifthrasir</h3>
-        <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ รายละเอียดและความคืบหน้าจะประกาศให้ทราบในภายหลัง</p>
-      </div>
-    </article>
+      </article>
+      <article class="upcoming-card">
+        <div class="upcoming-icon" aria-hidden="true">👑</div>
+        <div>
+          <div class="gcard-badges">
+            <span class="status-progress">กำลังแปล</span>
+            <span class="plat-badge">PSP</span>
+          </div>
+          <h3>Queen's Blade</h3>
+          <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
+        </div>
+      </article>
+      <article class="upcoming-card">
+        <div class="upcoming-icon" aria-hidden="true">🗝️</div>
+        <div>
+          <div class="gcard-badges">
+            <span class="status-progress">กำลังแปล</span>
+            <span class="plat-badge">NINTENDO 3DS</span>
+          </div>
+          <h3>Persona Q: Shadow of the Labyrinth</h3>
+          <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
+        </div>
+      </article>
+      <article class="upcoming-card">
+        <div class="upcoming-icon" aria-hidden="true">🎬</div>
+        <div>
+          <div class="gcard-badges">
+            <span class="status-progress">กำลังแปล</span>
+            <span class="plat-badge">NINTENDO 3DS</span>
+          </div>
+          <h3>Persona Q2: New Cinema Labyrinth</h3>
+          <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
+        </div>
+      </article>
+      <article class="upcoming-card">
+        <div class="upcoming-icon" aria-hidden="true">🐉</div>
+        <div>
+          <div class="gcard-badges">
+            <span class="status-progress">กำลังแปล</span>
+            <span class="plat-badge">PS VITA</span>
+          </div>
+          <h3>Dragon's Crown</h3>
+          <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
+        </div>
+      </article>
+      <article class="upcoming-card">
+        <div class="upcoming-icon" aria-hidden="true">🌸</div>
+        <div>
+          <div class="gcard-badges">
+            <span class="status-progress">กำลังแปล</span>
+            <span class="plat-badge">PS VITA</span>
+          </div>
+          <h3>Muramasa Rebirth</h3>
+          <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
+        </div>
+      </article>
+    </div>
   </section>
   <div class="support">
     <h2>☕ สนับสนุนเพจ</h2>
