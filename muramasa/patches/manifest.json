@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "release": "0.1.0-test",
+  "titleId": "PCSE00240",
+  "gameVersion": "1.06",
+  "translatedRecords": 4963,
+  "guiLabels": 279,
+  "files": [
+    {
+      "name": "NinPri.cpk",
+      "sourceSize": 454872552,
+      "sourceSha256": "a6e6ccdbb8c953d5ca102a69d91fdfd6cda4a6e85ce7a285d8ebe8989030a18e",
+      "targetSize": 473437672,
+      "targetSha256": "39eb60a0b3d88d3bc6d33e4e2fe92c91a520f53a024afb02cf7563b975e19f3f",
+      "patch": "patches/NinPri.xdelta",
+      "patchSize": 18586511,
+      "patchSha256": "f826cdcf1449e6a839df8cda25a97fca57519272921dbc5ecfe5cd36ccb017a6"
+    },
+    {
+      "name": "NinPriPatch.cpk",
+      "sourceSize": 25401736,
+      "sourceSha256": "6dfea12333a5a6aa66808e6832ed1769816017e24c642d7df8df04499455058c",
+      "targetSize": 37575048,
+      "targetSha256": "95002e24add528fd41148cd0b9b14dc632cf92d8404a000e85186dff43f35ee6",
+      "patch": "patches/NinPriPatch.xdelta",
+      "patchSize": 12184652,
+      "patchSha256": "9dc22027142587b17a448f50bb7704c04b36aca2cadf7c05b804e618e86558f8"
+    }
+  ]
+}

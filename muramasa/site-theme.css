@@ -1,0 +1,13 @@
+/* Plaegamekao library theme; all URLs remain relative for GitHub Pages. */
+:root{color-scheme:light;--bg:#e9dfc9;--panel:#fff9ea;--line:#d4b77c;--text:#273c35;--muted:#756b5b;--gold:#195c43;--cyan:#247a52}
+body{background:linear-gradient(#e9dfc9e8,#e9dfc9f5),url('../covers/cozy-library-bg.webp') center/cover fixed}
+header{background:#fff9eae8;border-radius:0 0 16px 16px}
+.brand{font-family:Tahoma,system-ui,sans-serif;letter-spacing:0}
+.brand-sub{letter-spacing:.08em}.release{border-color:var(--line)}
+.patch-panel{box-shadow:0 12px 36px #58432214}
+.dropzone{background:#f6ead0;border-color:#ab956f}
+.dropzone:hover,.dropzone.dragging{background:#eee0bc}
+.primary{color:#fff9ea}.primary:hover:not(:disabled){background:#247a52}
+.guide li{color:var(--text)}.guide li:before{border-color:var(--line)}
+.path{background:#fff9ea}.status.error{color:#b8473f}.status.success{color:#195c43}
+footer{color:var(--muted)}

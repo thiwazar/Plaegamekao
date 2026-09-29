@@ -330,17 +330,6 @@
           <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
         </div>
       </article>
-      <article class="upcoming-card">
-        <div class="upcoming-icon" aria-hidden="true">🌸</div>
-        <div>
-          <div class="gcard-badges">
-            <span class="status-progress">กำลังแปล</span>
-            <span class="plat-badge">PS VITA</span>
-          </div>
-          <h3>Muramasa Rebirth</h3>
-          <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
-        </div>
-      </article>
     </div>
   </section>
   <div class="support">
@@ -434,7 +423,17 @@ const GAMES = [
     "outName": "The_3rd_Birthday_Thai_BY_เพจแปลเกมเก่า.iso"
   },
   FONTFIX_GAME,
-  VAGRANT_GAME
+  VAGRANT_GAME,
+  {
+    id: "muramasa",
+    name: "Muramasa Rebirth",
+    platform: "PS Vita",
+    format: "CPK / XDELTA",
+    version: "beta",
+    desc: "แพตช์ไทย PCSE00240 อัปเดต 1.06 · รุ่นทดสอบ 0.1.0 สร้างไฟล์ NinPri.cpk และ NinPriPatch.cpk ในเครื่องของคุณ ยังมีภาพข้อความบางส่วนเป็นอังกฤษ",
+    sourceSize: 480274288,
+    pageUrl: "./muramasa/index.html"
+  }
 ];
 
 const gridEl = document.getElementById("grid");
@@ -493,6 +492,7 @@ renderPlatformTabs();
 renderGrid();
 
 GAMES.forEach((g) => {
+  if (g.pageUrl) return;
   const isBeta = g.streaming || (g.version || "").toLowerCase() === "beta";
 
   const panel = document.createElement("div");
@@ -546,6 +546,8 @@ GAMES.forEach((g) => {
 });
 
 function showDetail(id) {
+  const game = GAMES.find(g => g.id === id);
+  if (game?.pageUrl) { window.location.assign(game.pageUrl); return; }
   [...panelsEl.children].forEach((p) => p.style.display = p.id === `panel-${id}` ? "block" : "none");
   homeWrap.style.display = "none";
   detailWrap.style.display = "block";
