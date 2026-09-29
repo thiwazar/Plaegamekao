@@ -102,6 +102,25 @@
           "size": 3694,
           "sha256": "f8655eb62d2abb1b383633873362c230d0a59d9d48505aa2f7aaa5da064fe1f3"
         }
+      ],
+      "alternatives": [
+        {
+          "name": "eboot.bin",
+          "patch": "odin-eboot-5mb-v1.dat",
+          "source_size": 4988880,
+          "source_sha256": "ee74327e9e8cc5510412cc0e5119b51b060d9ca05bddc9327d9f453d3ee906a0",
+          "target_size": 12638404,
+          "target_sha256": "e6b96a5399330831ef85408bf9539026368929f3b53dfb2ba758c78666e3307c",
+          "patch_sha256": "bf641fa928f6b8ff703766af4419d17228ae7bf93eab3a7908d88ae11d2778c4",
+          "patch_size": 12640333,
+          "parts": [
+            {
+              "url": "odin-eboot-5mb-v1.dat",
+              "size": 12640333,
+              "sha256": "bf641fa928f6b8ff703766af4419d17228ae7bf93eab3a7908d88ae11d2778c4"
+            }
+          ]
+        }
       ]
     }
   ],

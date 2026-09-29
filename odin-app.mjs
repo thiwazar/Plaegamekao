@@ -4,14 +4,14 @@ const completed=new Set();
 function status(text,kind=''){$('status').textContent=text;$('status').className=kind;}
 function discard(){if(url)URL.revokeObjectURL(url);url=null;$('download').hidden=true;$('save-tip').hidden=true;}
 function controls(value){busy=value;$('archive').disabled=value;$('game-file').disabled=value;$('start').disabled=value||!file;$('cancel').hidden=!value;}
-function select(){discard();index=Number($('archive').value);file=null;$('game-file').value='';$('chosen').textContent='ยังไม่ได้เลือกไฟล์';$('expected').textContent=`${manifest.files[index].name} · ต้นฉบับ ${(manifest.files[index].source_size/1e6).toFixed(1)} MB`;$('progress-row').hidden=true;controls(false);status('พร้อมรับไฟล์ต้นฉบับที่ยังไม่ลงแพตช์');}
+function select(){discard();index=Number($('archive').value);file=null;$('game-file').value='';$('chosen').textContent='ยังไม่ได้เลือกไฟล์';$('expected').textContent=`${manifest.files[index].name} · ต้นฉบับ ${[manifest.files[index],...(manifest.files[index].alternatives||[])].map(e=>(e.source_size/1e6).toFixed(1)).join(' หรือ ')} MB`;$('progress-row').hidden=true;controls(false);status('พร้อมรับไฟล์ต้นฉบับที่ยังไม่ลงแพตช์');}
 function fail(msg){worker?.terminate();worker=null;controls(false);status(msg,'error');}
 $('archive').onchange=select;
 $('game-file').onchange=e=>{discard();file=e.target.files[0]||null;$('chosen').textContent=file?`${file.name} · ${(file.size/1e6).toFixed(1)} MB`:'ยังไม่ได้เลือกไฟล์';controls(false);status('พร้อมตรวจไฟล์');};
 $('start').onclick=()=>{
  if(!file||busy)return;discard();controls(true);$('progress-row').hidden=false;$('progress').value=0;$('percent').textContent='0%';status('กำลังประมวลผลในเครื่องของคุณ เปิดแท็บนี้ไว้จนเสร็จ');
  try{
-  worker=new Worker(new URL('./odin-worker.mjs',import.meta.url),{type:'module'});
+  worker=new Worker(new URL('./odin-worker.mjs?v=eboot5-v1',import.meta.url),{type:'module'});
   worker.onerror=()=>fail('เครื่องมือหยุดทำงาน ลองปิดแท็บอื่น หรือใช้ตัวแพตช์ Windows สำรอง');
   worker.onmessage=({data})=>{
    if(data.type==='progress'){$('phase').textContent=data.phase;$('progress').value=data.percent;$('percent').textContent=`${data.percent}%`;}
@@ -26,6 +26,6 @@ $('cancel').onclick=()=>{worker?.terminate();worker=null;controls(false);$('prog
 window.addEventListener('beforeunload',e=>{if(busy){e.preventDefault();e.returnValue='';}});
 try{
  if(!window.Worker||!window.DecompressionStream)throw Error('กรุณาใช้ Chrome หรือ Edge รุ่นปัจจุบัน');
- const r=await fetch('./odin-manifest.json');if(!r.ok)throw Error('โหลดรายการแพตช์ไม่สำเร็จ');manifest=await r.json();if(manifest.files.length!==4)throw Error('รายการแพตช์ไม่ถูกต้อง');
+ const r=await fetch('./odin-manifest.json?v=eboot5-v1');if(!r.ok)throw Error('โหลดรายการแพตช์ไม่สำเร็จ');manifest=await r.json();if(manifest.files.length!==4)throw Error('รายการแพตช์ไม่ถูกต้อง');
  manifest.files.forEach((f,i)=>{const option=document.createElement('option');option.value=i;option.textContent=`${i+1}. ${f.name}`;$('archive').append(option);});select();
 }catch(e){status(e.message,'error');}

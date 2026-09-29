@@ -35,6 +35,12 @@ export async function applyPatch(source,patch,entry,report=()=>{}) {
       } else if(op===1) {
         let n=await r.u32(); if(n===0||size+n>entry.target_size)throw Error('ข้อมูลแพตช์เกินขอบเขต');
         size+=n; while(n) {const count=Math.min(n,1024*1024); parts.push(await r.take(count)); n-=count;}
+      } else if(op===2) {
+        const offset=await r.u64(),n=await r.u32();
+        if(n===0||n>1024*1024||offset+n>source.size||size+n>entry.target_size)throw Error('Invalid XOR range');
+        const base=new Uint8Array(await source.slice(offset,offset+n).arrayBuffer()),delta=await r.take(n);
+        for(let i=0;i<n;i++)base[i]^=delta[i];
+        parts.push(base);size+=n;
       } else throw Error('คำสั่งแพตช์ไม่ถูกต้อง');
       if(ops%100===0)report(size/entry.target_size);
     }

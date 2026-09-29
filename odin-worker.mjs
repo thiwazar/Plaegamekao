@@ -1,8 +1,10 @@
 import {hashBlob} from './odin-sha256.mjs';
-import {applyPatch,verifySource} from './odin-core.mjs';
-self.onmessage=async({data:{file,entry}})=>{
+import {applyPatch,verifySource} from './odin-core.mjs?v=eboot5-v1';
+self.onmessage=async({data:{file,entry:requestedEntry}})=>{
  const report=(phase,percent)=>self.postMessage({type:'progress',phase,percent:Math.round(percent)});
  try {
+  const entry=[requestedEntry,...(requestedEntry.alternatives||[])].find(e=>e.source_size===file.size);
+  if(!entry)throw Error('ขนาดต้นฉบับไม่ตรงรุ่นที่รองรับ');
   await verifySource(file,entry,p=>report('ตรวจไฟล์ต้นฉบับ',p*30));
   const chunks=[];let total=0;
   for(const part of entry.parts) {
