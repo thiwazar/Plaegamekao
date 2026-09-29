@@ -1,0 +1,110 @@
+{
+  "title_id": "PCSB00986",
+  "version": "beta-0.1",
+  "format": "OSDP0001 gzip",
+  "files": [
+    {
+      "name": "Odin2_BT_UK.CPK",
+      "patch": "patches/Odin2_BT_UK.CPK.osdp.gz",
+      "source_size": 1341686120,
+      "source_sha256": "7d02e16e7d01edf9291e86b9e4aedcfdee2d53b861c232d53c7b88b909f27681",
+      "target_size": 1346943696,
+      "target_sha256": "596af202aea49d4561480d282a908f2a921b793ea748842cfc83ad54fb49f330",
+      "patch_sha256": "077996f37843f781d5594afe2d069a42b347faa88951f824cfeb0c45dcbe1b1b",
+      "patch_size": 358354,
+      "copied_bytes": 1341681664,
+      "literal_bytes": 5262032,
+      "parts": [
+        {
+          "url": "odin-patch-0-0.dat",
+          "size": 358354,
+          "sha256": "077996f37843f781d5594afe2d069a42b347faa88951f824cfeb0c45dcbe1b1b"
+        }
+      ]
+    },
+    {
+      "name": "Odin2_RE_UK.CPK",
+      "patch": "patches/Odin2_RE_UK.CPK.osdp.gz",
+      "source_size": 300782216,
+      "source_sha256": "06800307c0d7887d24ccd5860194e762f3fc0b1be2c5bcc3167a09f782617607",
+      "target_size": 689614992,
+      "target_sha256": "80b6f60aef79f87b3ae37bf172374be75f2e5fc8c7b44505dac9d91d6c1e13ad",
+      "patch_sha256": "398ff2f488300d83a9ca6e6771fd09fdf59652367ea9d6920c1bb37185548085",
+      "patch_size": 85488360,
+      "copied_bytes": 300818432,
+      "literal_bytes": 388796560,
+      "parts": [
+        {
+          "url": "odin-patch-1-0.dat",
+          "size": 16777216,
+          "sha256": "6fb48af72577f2742ad68d2fce6d8462f383a52b209f381697c4898a7b19f43e"
+        },
+        {
+          "url": "odin-patch-1-1.dat",
+          "size": 16777216,
+          "sha256": "da263dc6a3c7178cae19fc391b0030865f8e1e17abf6dc3fa2285883a3e5a87c"
+        },
+        {
+          "url": "odin-patch-1-2.dat",
+          "size": 16777216,
+          "sha256": "2cf7b6f9c80db5acdc92a55af97bb57d35b8cc22d316b0b7db528ef1042398d0"
+        },
+        {
+          "url": "odin-patch-1-3.dat",
+          "size": 16777216,
+          "sha256": "5ab6b5ceb561edb0f58b49dfc4327883c5b5282d676b1670084c3d5a8bf72a39"
+        },
+        {
+          "url": "odin-patch-1-4.dat",
+          "size": 16777216,
+          "sha256": "6dfd3d993e20092810f60ead041d838627837a6f2d62f9c540d62cf470e3cb81"
+        },
+        {
+          "url": "odin-patch-1-5.dat",
+          "size": 1602280,
+          "sha256": "014503476e0c6f2689fcbfe791614d9ee9eddecae2bcd9fd6167ad9ff0ca506a"
+        }
+      ]
+    },
+    {
+      "name": "Odin2_OR_UK.CPK",
+      "patch": "patches/Odin2_OR_UK.CPK.osdp.gz",
+      "source_size": 172498048,
+      "source_sha256": "3b46277e738a98b2202387bba6931b909502847ef86bf2c1279112a2322b8c99",
+      "target_size": 179963936,
+      "target_sha256": "5e272d04fedc1a1808909d608044765d862fdf857223134e44dd1cd23ebb3d5e",
+      "patch_sha256": "6fbe67c1c30905323ff4f26d617d7b7d0f8c45f789e2c09e5a9f8e2de37d07d6",
+      "patch_size": 1716124,
+      "copied_bytes": 172439552,
+      "literal_bytes": 7524384,
+      "parts": [
+        {
+          "url": "odin-patch-2-0.dat",
+          "size": 1716124,
+          "sha256": "6fbe67c1c30905323ff4f26d617d7b7d0f8c45f789e2c09e5a9f8e2de37d07d6"
+        }
+      ]
+    },
+    {
+      "name": "eboot.bin",
+      "patch": "patches/eboot.bin.osdp.gz",
+      "source_size": 12638404,
+      "source_sha256": "0e33ad9e29fce172fa542cac95c4087ec301315e44f40186ede9a804654c3364",
+      "target_size": 12638404,
+      "target_sha256": "e6b96a5399330831ef85408bf9539026368929f3b53dfb2ba758c78666e3307c",
+      "patch_sha256": "f8655eb62d2abb1b383633873362c230d0a59d9d48505aa2f7aaa5da064fe1f3",
+      "patch_size": 3694,
+      "copied_bytes": 12605636,
+      "literal_bytes": 32768,
+      "parts": [
+        {
+          "url": "odin-patch-3-0.dat",
+          "size": 3694,
+          "sha256": "f8655eb62d2abb1b383633873362c230d0a59d9d48505aa2f7aaa5da064fe1f3"
+        }
+      ]
+    }
+  ],
+  "platform": "Vita3K on Windows",
+  "hardware_ps_vita_supported": false
+}
