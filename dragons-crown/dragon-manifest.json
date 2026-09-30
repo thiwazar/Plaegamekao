@@ -1,0 +1,45 @@
+{
+  "title_id": "PCSE00019",
+  "version": "draft-0.1",
+  "format": "OSDP0001 gzip",
+  "files": [
+    {
+      "name": "eboot.bin",
+      "source_size": 7949785,
+      "target_size": 7949785,
+      "source_sha256": "dd42d8ef26296272c45c9becb40a2b8a837f783e2e848aa72a841a286449c8f2",
+      "target_sha256": "2878e956c4c0384d26a6ed82a24380caf986fcf73d39d2db35465204bf4f33ad",
+      "patch": "eboot.bin.osdp.gz",
+      "patch_size": 11751,
+      "patch_sha256": "7c25a3e469f88aff722f89c18a3e3c9ce35975cf203478c0aeec153982f305b9",
+      "copied_bytes": 7896537,
+      "literal_bytes": 53248,
+      "parts": [
+        {
+          "url": "eboot.bin.osdp.gz",
+          "size": 11751,
+          "sha256": "7c25a3e469f88aff722f89c18a3e3c9ce35975cf203478c0aeec153982f305b9"
+        }
+      ]
+    },
+    {
+      "name": "DRACRO.CPK",
+      "source_size": 990738072,
+      "target_size": 1002497688,
+      "source_sha256": "f6c7963fa5e19d2cefe129a68c40b4d17f41ee860ca585707a9b1da4d7b07865",
+      "target_sha256": "c03fecb128fbed754f0ae89ed313bb04ea52c5cce15637591864e28e62981206",
+      "patch": "DRACRO.CPK.osdp.gz",
+      "patch_size": 1579446,
+      "patch_sha256": "bbbbfb6df8cd25eccb9b15627cc9a8b06a314775fa5f27838da67061820ae757",
+      "copied_bytes": 990703616,
+      "literal_bytes": 11794072,
+      "parts": [
+        {
+          "url": "DRACRO.CPK.osdp.gz",
+          "size": 1579446,
+          "sha256": "bbbbfb6df8cd25eccb9b15627cc9a8b06a314775fa5f27838da67061820ae757"
+        }
+      ]
+    }
+  ]
+}
