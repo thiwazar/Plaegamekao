@@ -26,6 +26,6 @@ $('cancel').onclick=()=>{worker?.terminate();worker=null;controls(false);$('prog
 window.addEventListener('beforeunload',e=>{if(busy){e.preventDefault();e.returnValue='';}});
 try{
  if(!window.Worker||!window.DecompressionStream)throw Error('กรุณาใช้ Chrome หรือ Edge รุ่นปัจจุบัน');
- const r=await fetch('./dragon-manifest.json');if(!r.ok)throw Error('โหลดรายการแพตช์ไม่สำเร็จ');manifest=await r.json();if(manifest.files.length!==2)throw Error('รายการแพตช์ไม่ถูกต้อง');
+ const r=await fetch('./dragon-manifest.json?v=0.2',{cache:'no-store'});if(!r.ok)throw Error('โหลดรายการแพตช์ไม่สำเร็จ');manifest=await r.json();if(manifest.files.length!==2)throw Error('รายการแพตช์ไม่ถูกต้อง');
  manifest.files.forEach((f,i)=>{const option=document.createElement('option');option.value=i;option.textContent=`${i+1}. ${f.name}`;$('archive').append(option);});select();
 }catch(e){status(e.message,'error');}
