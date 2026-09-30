@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bravely Second Thai 1.2 — Online Patcher</title>
+<style>
+:root{color-scheme:dark;--bg:#0d0f14;--panel:#171a21;--line:#2a2f3a;--text:#e8eaed;--muted:#9aa3b3;--a:#5b8cff;--ok:#3ecf8e;--bad:#ff6666}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans Thai","Segoe UI",sans-serif}
+main{max-width:820px;margin:0 auto;padding:32px 18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0}
+h1{font-size:25px;margin:0 0 8px}.muted{color:var(--muted)}.drop{border:2px dashed var(--line);padding:32px 18px;border-radius:14px;text-align:center;cursor:pointer}
+.drop:hover{border-color:var(--a)}input{display:none}.log{white-space:pre-wrap;background:#090b10;border-radius:10px;padding:14px;margin-top:14px;min-height:70px;font-family:Consolas,monospace;font-size:12px}
+.ok{color:var(--ok)}.bad{color:var(--bad)}code{overflow-wrap:anywhere}.badge{display:inline-block;padding:4px 9px;border:1px solid var(--line);border-radius:99px;margin-right:6px;font-size:12px}
+a{color:#8ab4ff}
+</style>
+</head><body><main>
+<p><a href="../">← กลับหน้ารวมเกม</a></p>
+<div class="card">
+<span class="badge">Nintendo 3DS</span><span class="badge">Thai 1.2</span>
+<h1>Bravely Second: End Layer — ภาษาไทย</h1>
+<p class="muted">ตัวตรวจไฟล์สำหรับ Online Patcher รุ่นใหม่ · ไฟล์เกมอ่านในเครื่องของคุณ ไม่อัปโหลดขึ้นเซิร์ฟเวอร์</p>
+</div>
+<div class="card">
+<h2>1. เลือกไฟล์เกมต้นฉบับ .3ds</h2>
+<div class="drop" id="drop">ลากไฟล์ .3ds มาวาง หรือคลิกเพื่อเลือก<input id="file" type="file" accept=".3ds"></div>
+<div class="log" id="log">รอเลือกไฟล์…</div>
+</div>
+<div class="card">
+<h2>สถานะตัวแพตช์</h2>
+<p>รองรับฐานที่ตรวจพบ: <code>CTR-P-BSEE</code> / Title ID <code>000400000017BA00</code></p>
+<p class="muted">หน้านี้เป็นขั้นตรวจฐานเกมก่อนแปะแพตช์ ตัว patch payload จะถูกเพิ่มหลังยืนยัน SHA-256 ของไฟล์ต้นฉบับที่รองรับ เพื่อป้องกันการแปะผิด revision แล้วเกิดจอค้างบนเครื่องจริง</p>
+</div>
+</main>
+<script>
+const d=document.querySelector('#drop'),i=document.querySelector('#file'),l=document.querySelector('#log');
+d.onclick=()=>i.click();d.ondragover=e=>e.preventDefault();d.ondrop=e=>{e.preventDefault();if(e.dataTransfer.files[0])check(e.dataTransfer.files[0])};i.onchange=()=>i.files[0]&&check(i.files[0]);
+const hex=a=>[...new Uint8Array(a)].map(x=>x.toString(16).padStart(2,'0')).join('').toUpperCase();
+const ascii=a=>new TextDecoder('ascii').decode(a).replace(/\0.*$/,'').trim();
+async function check(f){
+ l.textContent='กำลังตรวจ NCSD/NCCH…';
+ try{
+  if(f.size<0x4200)throw Error('ไฟล์เล็กเกินไป');
+  const h=new Uint8Array(await f.slice(0,0x4200).arrayBuffer());
+  if(ascii(h.slice(0x100,0x104))!=='NCSD')throw Error('ไม่พบ NCSD header — ไม่ใช่ .3ds แบบที่รองรับ');
+  const dv=new DataView(h.buffer), po=dv.getUint32(0x120,true)*0x200;
+  const need=po+0x200;
+  let n=h;
+  if(need>h.length)n=new Uint8Array(await f.slice(0,need).arrayBuffer());
+  if(ascii(n.slice(po+0x100,po+0x104))!=='NCCH')throw Error('ไม่พบ NCCH partition หลัก');
+  const product=ascii(n.slice(po+0x150,po+0x160));
+  const pidRaw=hex(n.slice(po+0x118,po+0x120));
+  const ok=product==='CTR-P-BSEE' && pidRaw==='00BA170000000400';
+  l.innerHTML='ไฟล์: '+f.name+'\nขนาด: '+f.size.toLocaleString()+' bytes\nProduct: '+product+'\nProgram ID (raw): '+pidRaw+'\n\n'+
+    (ok?'<span class="ok">✓ ฐานเกมตรงกับ Bravely Second ที่รองรับ</span>':'<span class="bad">✗ Region / Title ID ไม่ตรงกับฐานที่รองรับ</span>');
+ }catch(e){l.innerHTML='<span class="bad">ผิดพลาด: '+e.message+'</span>'}
+}
+</script></body></html>
