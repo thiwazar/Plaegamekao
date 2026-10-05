@@ -30,10 +30,5 @@ try {
   $('source-name').textContent=manifest.sources.map(s=>s.name+' ('+s.size/1048576+' MB)').join(' หรือ ');
   $('source-sha').textContent=manifest.sources.map(s=>s.name+'\n'+s.sha256).join('\n\n');
   $('target-sha').textContent=manifest.targetSha256;
-  for(const source of manifest.sources) {
-    const a=document.createElement('a');a.href=source.patchUrl;a.download=source.patchUrl;
-    a.textContent='ดาวน์โหลด IPS สำหรับ '+source.id;
-    const p=document.createElement('p');p.append(a);$('patch-links').append(p);
-  }
   $('file').disabled=false;status('พร้อมใช้งาน เลือก ROM ต้นฉบับเพื่อเริ่ม');
 } catch(error) {status(error.message,true);}
