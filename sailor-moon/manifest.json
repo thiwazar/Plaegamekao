@@ -1,0 +1,37 @@
+{
+  "game": "Sailor Moon Another Story",
+  "version": "v1.0",
+  "sources": [
+    {
+      "id": "japan",
+      "name": "Bishoujo Senshi Sailormoon - Another Story (Japan).sfc",
+      "size": 3145728,
+      "sha256": "b85f5970ea619b7a6671a4de8cce430e2654a2e5bbef5e74ef35d4702dadb67b",
+      "patchUrl": "SailorMoon_Thai_v1.0_from_japan.ips",
+      "patchSha256": "1287a60494e40349cd16a13913410079d94815d6a0aa5bcf0cc6fe3dd190c424",
+      "patchSize": 1083507,
+      "records": 764
+    },
+    {
+      "id": "english-v2.08",
+      "name": "Bishoujo Senshi Sailormoon - Another Story (English v2.08).sfc",
+      "size": 4194304,
+      "sha256": "9690863eea45167e69b522c124b517bdc3457e70dc080ddbf925462a989acec9",
+      "patchUrl": "SailorMoon_Thai_v1.0_from_english-v2.08.ips",
+      "patchSha256": "643f52afb4e0943bce53ff7614fa5b55aeca8c56b983cc1222955d26f7afccf3",
+      "patchSize": 572074,
+      "records": 550
+    }
+  ],
+  "targetSize": 4194304,
+  "targetSha256": "2c1c3c323aa20e56fbb81453e4584d4eedeca7f9bc9a1f6cf84b3fa4535020d2",
+  "outputName": "SailorMoon_Thai_v1.0.sfc",
+  "translation": {
+    "dialogueTranslated": 3355,
+    "dialogueTotal": 3357,
+    "descriptions": 193,
+    "profileFields": 50,
+    "menus": "English",
+    "review": "ยังไม่ได้ทดสอบเล่นจบเกม คำแปลบางส่วนยังเป็นฉบับร่าง"
+  }
+}

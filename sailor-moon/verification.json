@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "patchChecks": [
+    "japan without header",
+    "japan with header",
+    "english-v2.08 without header",
+    "english-v2.08 with header"
+  ],
+  "wrongRomRejected": true,
+  "corruptPatchRejected": true,
+  "truncatedPatchRejected": true,
+  "wrongOutputRejected": true,
+  "existingGamesPreserved": [
+    "dragonscrown",
+    "odinsphere",
+    "queensgate",
+    "tales",
+    "soltrigger",
+    "the3rdbirthday",
+    "ragnarok-tactics",
+    "fontfix-placeholder",
+    "vagrant-placeholder",
+    "muramasa"
+  ],
+  "totalGames": 11,
+  "targetSha256": "2c1c3c323aa20e56fbb81453e4584d4eedeca7f9bc9a1f6cf84b3fa4535020d2"
+}
