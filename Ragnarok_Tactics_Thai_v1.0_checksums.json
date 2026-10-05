@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "game": "Ragnarok Tactics",
+  "game_id": "ULUS10594",
+  "region": "USA",
+  "source_size": 645431296,
+  "source_sha256": "173c00ca937932f2e75e3036f81a0cc500356b6165328b85647771c93f1ce7f8",
+  "target_size": 652126208,
+  "target_sha256": "e3954badd0be0c38830d617b9a4501771844757904c55d4c5fa37ddd689365b6",
+  "target_crc32": "B41DF694",
+  "patch_format": "XDELTA",
+  "patch_file": "Ragnarok_Tactics_Thai_v1.0.xdelta",
+  "patch_sha256": "ffd933bad2739d79d5601374e00d40053142b4c0141b079c418a483b2456c37b"
+}
