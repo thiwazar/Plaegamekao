@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "game": "Ragnarok Tactics",
+  "game_id": "ULUS10594",
+  "region": "USA",
+  "source_size": 645431296,
+  "source_sha256": "bc556e7cf3ed05889a3a7b59fca736af0f476b7e043ad54d85b04a5bf6371382",
+  "source_crc32": "1C8607A3",
+  "target_size": 652126208,
+  "target_sha256": "e3954badd0be0c38830d617b9a4501771844757904c55d4c5fa37ddd689365b6",
+  "target_crc32": "B41DF694",
+  "patch_sha256": "61e9697462d5b0be90896439dd79c00920472edded4ed5d987e9cbb9abe51415"
+}
