@@ -259,6 +259,11 @@
   }
   .gcard .cover[src="dragons-crown/cover.png"]{height:auto;aspect-ratio:3/2;object-fit:contain}
   .gcard .cover[src="covers/Muramasa_Thai_Plaegamekao.png"]{height:auto;aspect-ratio:3/2;object-fit:contain;background:#06152c}
+.upcoming-cover{width:132px;height:178px;object-fit:contain;border:1px solid #d2b47d;border-radius:9px;background:#efe5d0}
+.cover-placeholder{display:flex;align-items:center;justify-content:center;text-align:center;font-family:Georgia,serif;color:#195c43}
+.upcoming-card{grid-template-columns:132px minmax(0,1fr)}
+.upcoming-card h3{overflow-wrap:anywhere}
+@media(max-width:520px){.upcoming-card{grid-template-columns:88px minmax(0,1fr)}.upcoming-cover{width:88px;height:124px}}
 </style>
 </head>
 <body>
@@ -272,54 +277,82 @@
   <div class="platform-tabs" id="platformTabs"></div>
   <div class="grid" id="grid"></div>
   <section class="upcoming" aria-labelledby="upcoming-title">
-    <div class="upcoming-head">
-      <h2 id="upcoming-title">🎮 โปรเจกต์ที่กำลังแปล</h2>
-      <p>ติดตามเกมใหม่ที่กำลังอยู่ระหว่างการแปลภาษาไทย</p>
-    </div>
+    <div class="upcoming-head"><h2 id="upcoming-title">🎮 โปรเจกต์ที่กำลังแปลและรอแปล</h2><p>สถานะอัปเดต 5 ตุลาคม 2569 · Ragnarok Tactics เสร็จแล้ว อยู่ในรายการแพตช์ด้านบน</p></div>
     <div class="upcoming-list">
-<article class="upcoming-card">
-        <div class="upcoming-icon" aria-hidden="true">👑</div>
-        <div>
-          <div class="gcard-badges">
-            <span class="status-progress">กำลังแปล</span>
-            <span class="plat-badge">PSP</span>
-          </div>
-          <h3>Queen's Blade</h3>
-          <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
-        </div>
+      <article class="upcoming-card">
+        <div class="upcoming-cover cover-placeholder" aria-label="ยังไม่มีภาพปก Queen's Blade">Queen’s<br>Blade</div>
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PSP</span></div>
+        <h3>Queen's Blade</h3><p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p></div>
       </article>
       <article class="upcoming-card">
-        <div class="upcoming-icon" aria-hidden="true">🗝️</div>
-        <div>
-          <div class="gcard-badges">
-            <span class="status-progress">กำลังแปล</span>
-            <span class="plat-badge">NINTENDO 3DS</span>
-          </div>
-          <h3>Persona Q: Shadow of the Labyrinth</h3>
-          <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
-        </div>
+        <img class="upcoming-cover" src="covers/in-progress/persona-q.jpg" alt="ปก Persona Q: Shadow of the Labyrinth" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">NINTENDO 3DS</span></div>
+        <h3>Persona Q: Shadow of the Labyrinth</h3><p>มีชุดทดสอบฟอนต์และแพตช์เว็บ V16 แล้ว อยู่ระหว่างตรวจสอบก่อนเผยแพร่</p></div>
       </article>
       <article class="upcoming-card">
-        <div class="upcoming-icon" aria-hidden="true">🎬</div>
-        <div>
-          <div class="gcard-badges">
-            <span class="status-progress">กำลังแปล</span>
-            <span class="plat-badge">NINTENDO 3DS</span>
-          </div>
-          <h3>Persona Q2: New Cinema Labyrinth</h3>
-          <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
-        </div>
+        <img class="upcoming-cover" src="covers/in-progress/shining-ark.jpg" alt="ปก Shining Ark" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PSP</span></div>
+        <h3>Shining Ark</h3><p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p></div>
       </article>
-<article class="upcoming-card">
-        <div class="upcoming-icon" aria-hidden="true">🌸</div>
-        <div>
-          <div class="gcard-badges">
-            <span class="status-progress">กำลังแปล</span>
-            <span class="plat-badge">PS VITA</span>
-          </div>
-          <h3>Muramasa Rebirth</h3>
-          <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
-        </div>
+      <article class="upcoming-card">
+        <img class="upcoming-cover" src="covers/in-progress/persona-q2.jpg" alt="ปก Persona Q2: New Cinema Labyrinth" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">NINTENDO 3DS</span></div>
+        <h3>Persona Q2: New Cinema Labyrinth</h3><p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p></div>
+      </article>
+      <article class="upcoming-card">
+        <img class="upcoming-cover" src="covers/in-progress/shining-blade.jpg" alt="ปก Shining Blade" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PSP</span></div>
+        <h3>Shining Blade</h3><p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p></div>
+      </article>
+      <article class="upcoming-card">
+        <img class="upcoming-cover" src="covers/in-progress/valkyrie-profile.jpg" alt="ปก Valkyrie Profile: Lenneth" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PSP</span></div>
+        <h3>Valkyrie Profile: Lenneth</h3><p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p></div>
+      </article>
+      <article class="upcoming-card">
+        <img class="upcoming-cover" src="covers/in-progress/heroes-phantasia.jpg" alt="ปก Heroes Phantasia" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PSP</span></div>
+        <h3>Heroes Phantasia</h3><p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p></div>
+      </article>
+      <article class="upcoming-card">
+        <img class="upcoming-cover" src="covers/in-progress/dqm-joker.jpg" alt="ปก Dragon Quest Monsters: Joker" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">NINTENDO DS</span></div>
+        <h3>Dragon Quest Monsters: Joker</h3><p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p></div>
+      </article>
+      <article class="upcoming-card">
+        <img class="upcoming-cover" src="covers/in-progress/busou-shinki.jpg" alt="ปก Busou Shinki: Battle Masters Mk.2" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PSP</span></div>
+        <h3>Busou Shinki: Battle Masters Mk.2</h3><p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p></div>
+      </article>
+      <article class="upcoming-card">
+        <img class="upcoming-cover" src="covers/in-progress/masou-kishin-iii.jpg" alt="ปก Super Robot Taisen OG Saga: Masou Kishin III – Pride of Justice" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PS VITA</span></div>
+        <h3>Super Robot Taisen OG Saga: Masou Kishin III – Pride of Justice</h3><p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p></div>
+      </article>
+      <article class="upcoming-card">
+        <img class="upcoming-cover" src="covers/in-progress/circle-of-the-moon.jpg" alt="ปก Castlevania: Circle of the Moon" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">GBA</span></div>
+        <h3>Castlevania: Circle of the Moon</h3><p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p></div>
+      </article>
+      <article class="upcoming-card">
+        <img class="upcoming-cover" src="covers/in-progress/harmony-of-dissonance.jpg" alt="ปก Castlevania: Harmony of Dissonance" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">GBA</span></div>
+        <h3>Castlevania: Harmony of Dissonance</h3><p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p></div>
+      </article>
+      <article class="upcoming-card">
+        <img class="upcoming-cover" src="covers/in-progress/fatal-frame-ii.jpg" alt="ปก Fatal Frame II: Crimson Butterfly" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PS2</span></div>
+        <h3>Fatal Frame II: Crimson Butterfly</h3><p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p></div>
+      </article>
+      <article class="upcoming-card">
+        <img class="upcoming-cover" src="covers/in-progress/fatal-frame-iii.jpg" alt="ปก Fatal Frame III: The Tormented" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PS2</span></div>
+        <h3>Fatal Frame III: The Tormented</h3><p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p></div>
+      </article>
+      <article class="upcoming-card">
+        <img class="upcoming-cover" src="covers/in-progress/soul-sacrifice-delta.jpg" alt="ปก Soul Sacrifice Delta" loading="lazy">
+        <div><div class="gcard-badges"><span class="status-progress">รอแปล</span><span class="plat-badge">PS VITA</span></div>
+        <h3>Soul Sacrifice Delta</h3><p>อยู่ในคิวรอแปลภาษาไทยโดยเพจแปลเกมเก่า</p></div>
       </article>
     </div>
   </section>
@@ -418,6 +451,9 @@ const GAMES = [
   },
   {
     "id": "ragnarok-tactics",
+    "cover": "covers/in-progress/ragnarok-tactics.jpg",
+    "pageUrl": "./patches/Ragnarok_Tactics_Thai_v1.0.bps",
+    "buttonLabel": "ดาวน์โหลดแพตช์ BPS",
     "name": "Ragnarok Tactics",
     "platform": "PSP",
     "format": "BPS",
@@ -479,7 +515,7 @@ function renderGrid() {
         <h3>${g.name}</h3>
         ${g.desc ? `<p class="gdesc">${g.desc}</p>` : ""}
         <div class="gmeta-row">ต้นฉบับ: ${(g.sourceSize/1024/1024).toFixed(1)} MB</div>
-        <button class="gbtn">ไปแปะแพตช์ →</button>
+        <button class="gbtn">${g.buttonLabel || "ไปแปะแพตช์ →"}</button>
       </div>
     `;
     gcard.querySelector(".gbtn").onclick = () => showDetail(g.id);
