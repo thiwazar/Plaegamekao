@@ -257,6 +257,7 @@
     header::after{position:absolute;left:22px;bottom:88px}
     .platform-tabs{gap:6px}.ptab{padding:8px 14px}
   }
+  .gcard .cover[src="dragons-crown/cover.png"]{height:auto;aspect-ratio:3/2;object-fit:contain}
 </style>
 </head>
 <body>
@@ -319,18 +320,7 @@
           <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
         </div>
       </article>
-      <article class="upcoming-card">
-        <div class="upcoming-icon" aria-hidden="true">🐉</div>
-        <div>
-          <div class="gcard-badges">
-            <span class="status-progress">กำลังแปล</span>
-            <span class="plat-badge">PS VITA</span>
-          </div>
-          <h3>Dragon's Crown</h3>
-          <p>โปรเจกต์แปลภาษาไทยกำลังอยู่ระหว่างดำเนินการ</p>
-        </div>
-      </article>
-      <article class="upcoming-card">
+<article class="upcoming-card">
         <div class="upcoming-icon" aria-hidden="true">🌸</div>
         <div>
           <div class="gcard-badges">
@@ -369,6 +359,7 @@ import {VAGRANT_GAME} from "./vagrant-config.mjs";
 import {setupVagrant} from "./vagrant-ui.mjs";
 
 const GAMES = [
+  {id:"dragonscrown", name:"Dragon’s Crown", platform:"PS Vita", format:"แพตช์ออนไลน์", version:"beta", cover:"dragons-crown/cover.png", desc:"แพตช์ไทย PCSE00019 1.00 · รุ่น 0.2 · พร้อมตั้งชื่อไทยและแก้สระบนล่าง", sourceSize:998687857, pageUrl:"./dragons-crown/"},
   {
     "id": "queensgate",
     "name": "Queen's Gate: Spiral Chaos",
@@ -508,6 +499,7 @@ renderPlatformTabs();
 renderGrid();
 
 GAMES.forEach((g) => {
+  if (g.pageUrl) return;
   const isBeta = g.streaming || (g.version || "").toLowerCase() === "beta";
 
   const panel = document.createElement("div");
@@ -561,6 +553,8 @@ GAMES.forEach((g) => {
 });
 
 function showDetail(id) {
+  const game = GAMES.find(g => g.id === id);
+  if (game?.pageUrl) { window.location.href = game.pageUrl; return; }
   [...panelsEl.children].forEach((p) => p.style.display = p.id === `panel-${id}` ? "block" : "none");
   homeWrap.style.display = "none";
   detailWrap.style.display = "block";
