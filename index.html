@@ -388,15 +388,7 @@
           <p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p>
         </div>
       </article></div></div>
-<div class="translation-platform-group"><h3 class="translation-platform-title">PS2 <span class="badge">2 เกม</span></h3><div class="upcoming-list"><article class="upcoming-card">
-        <img class="upcoming-cover" src="covers/in-progress/fatal-frame-ii.jpg" alt="Fatal Frame II: Crimson Butterfly" loading="lazy" width="120" height="160">
-        <div>
-          <div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PS2</span></div>
-          <h3>Fatal Frame II: Crimson Butterfly</h3>
-          <p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p>
-        </div>
-      </article>
-<article class="upcoming-card">
+<div class="translation-platform-group"><h3 class="translation-platform-title">PS2 <span class="badge">1 เกม</span></h3><div class="upcoming-list"><article class="upcoming-card">
         <img class="upcoming-cover" src="covers/in-progress/fatal-frame-iii.jpg" alt="Fatal Frame III: The Tormented" loading="lazy" width="120" height="160">
         <div>
           <div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PS2</span></div>
@@ -446,6 +438,7 @@ import {FONTFIX_GAME} from "./fontfix-config.mjs";
 import {setupFontFix} from "./fontfix-ui.mjs";
 import {VAGRANT_GAME} from "./vagrant-config.mjs";
 import {setupVagrant} from "./vagrant-ui.mjs";
+import {hashBlob} from "./dragons-crown/dragon-sha256.mjs";
 
 const GAMES = [
   {"id": "sailor-moon", "name": "Sailor Moon Another Story", "platform": "SNES", "format": "IPS / แปะแพทช์บนเว็บ", "version": "v1.0", "cover": "sailor-moon/cover.webp", "desc": "ภาษาไทย v1.0 รองรับ ROM Japan และ English v2.08 เลือกแพทช์อัตโนมัติ ฟอนต์ขาวขอบดำ คำอธิบายไทย เมนูอังกฤษ ยังไม่ได้ทดสอบเล่นจบเกม", "sourceSize": 3145728, "pageUrl": "./sailor-moon/", "downloadOnly": false},
@@ -453,6 +446,23 @@ const GAMES = [
     {id:"dragonscrown", name:"Dragon’s Crown", platform:"PS Vita", format:"แปะแพตช์บนเว็บ", version:"beta", cover:"dragons-crown/cover.png", desc:"แพตช์ไทย PCSE00019 1.00 · ฉบับร่าง 0.2 · เพิ่มตั้งชื่อไทยและแก้สระบนล่าง สร้าง eboot.bin และ DRACRO.CPK ในเบราว์เซอร์สำหรับ Vita3K", sourceSize:998687857, pageUrl:"./dragons-crown/", downloadOnly:false},
 
   {id:"odinsphere", name:"Odin Sphere Leifthrasir", platform:"PS Vita", format:"แปะแพตช์บนเว็บ", version:"beta", cover:"OdinSphere_Thai_Vita3K_Beta01.png", desc:"แพตช์ไทยเกม PS Vita · PCSB00986 · Beta 0.1 ทดสอบบน Vita3K เลือกไฟล์ต้นฉบับและสร้างไฟล์ไทยในเบราว์เซอร์ ยังไม่ได้ทดสอบจบเกม", sourceSize:1827604788, pageUrl:"./odin-sphere.html", downloadOnly:false},
+
+  {
+    id: "fatal-frame-ii",
+    name: "Fatal Frame II: Crimson Butterfly",
+    platform: "PS2",
+    format: "SPARSE1",
+    version: "v1.0",
+    cover: "covers/in-progress/fatal-frame-ii.jpg",
+    desc: "แพตช์ภาษาไทยฉบับล่าสุด แปลข้อความเนื้อเรื่อง เมนู เอกสาร และเนื้อเพลงตอนจบ ใช้ฟอนต์ Noto Sans Thai พร้อมแก้ตำแหน่งสระและวรรณยุกต์",
+    patchUrl: "fatal-frame-ii/manifest.json",
+    sourceName: "Fatal Frame II (U) Undub v1.0.2 ISO",
+    sourceSize: 3332839424,
+    sourceSha256: "233ba3b13aeb23b01c42586ab7ec8cb80effee866d3385642f630fcea2fc3034",
+    targetSize: 3333660672,
+    targetSha256: "bbcfd3e9d1143d7a39ded57bd6e43c7b1607e52d640c93da7c38b37ca1622c5b",
+    outName: "Fatal_Frame_II_Thai_v1.0.iso"
+  },
   {
     "id": "queensgate",
     "name": "Queen's Gate: Spiral Chaos",
@@ -709,6 +719,8 @@ function setupGame(g) {
       let outputBlob;
       if (g.format === "XDELTA") {
         outputBlob = await applyXdeltaStream(file, g, setProgress, logLine);
+      } else if (g.format === "SPARSE1") {
+        outputBlob = await applySparsePatch(file, g, setProgress, logLine);
       } else {
         logLine("กำลังอ่านไฟล์ต้นฉบับเข้าหน่วยความจำ...");
         const sourceBuf = await file.arrayBuffer();
@@ -769,6 +781,50 @@ function setupGame(g) {
       console.error(err);
     }
   }
+}
+
+// Sparse patching keeps multi-gigabyte PS2 ISOs outside WASM/JavaScript memory.
+// Unchanged ranges remain File slices; only the small replacement pieces are downloaded.
+async function applySparsePatch(file, g, setProgress, logLine) {
+  if (file.size !== g.sourceSize) throw new Error(`ขนาดไฟล์ต้นฉบับไม่ตรง ต้องเป็น ${g.sourceSize} ไบต์`);
+  logLine("กำลังตรวจสอบ SHA-256 ของไฟล์ต้นฉบับ...");
+  const sourceHash = await hashBlob(file, ratio => setProgress(5 + Math.round(ratio * 30)));
+  if (sourceHash !== g.sourceSha256) throw new Error(`ไม่ตรงกับต้นฉบับที่รองรับ! ได้ ${sourceHash} ต้องการ: ${g.sourceSha256}`);
+  logLine("SHA-256 ต้นฉบับตรงกัน ✓", "ok");
+
+  const manifestResponse = await fetch(g.patchUrl);
+  if (!manifestResponse.ok) throw new Error(`โหลดข้อมูลแพตช์ไม่สำเร็จ (${manifestResponse.status})`);
+  const manifest = await manifestResponse.json();
+  if (manifest.format !== "FF2SPARSE1" || manifest.sourceSha256 !== g.sourceSha256 ||
+      manifest.targetSha256 !== g.targetSha256 || manifest.targetSize !== g.targetSize) {
+    throw new Error("ข้อมูลแพตช์ไม่ตรงกับเกมรุ่นที่เลือก");
+  }
+
+  const baseUrl = new URL(g.patchUrl, location.href);
+  const pieces = [];
+  let cursor = 0;
+  for (let index = 0; index < manifest.parts.length; index++) {
+    const part = manifest.parts[index];
+    if (part.offset < cursor || part.offset + part.length > manifest.targetSize) throw new Error("ช่วงข้อมูลในแพตช์ไม่ถูกต้อง");
+    if (part.offset > cursor) pieces.push(file.slice(cursor, Math.min(part.offset, file.size)));
+    const response = await fetch(new URL(part.url, baseUrl));
+    if (!response.ok) throw new Error(`โหลดชิ้นส่วนแพตช์ไม่สำเร็จ (${response.status})`);
+    const bytes = await response.arrayBuffer();
+    if (bytes.byteLength !== part.length || await sha256Hex(bytes) !== part.sha256) throw new Error(`ชิ้นส่วนแพตช์ ${index + 1} เสียหาย`);
+    pieces.push(bytes);
+    cursor = part.offset + part.length;
+    setProgress(38 + Math.round(((index + 1) / manifest.parts.length) * 17));
+  }
+  if (cursor < manifest.targetSize) pieces.push(file.slice(cursor, Math.min(manifest.targetSize, file.size)));
+
+  const output = new Blob(pieces, {type: "application/octet-stream"});
+  if (output.size !== g.targetSize) throw new Error("ขนาดไฟล์ผลลัพธ์ไม่ถูกต้อง");
+  logLine("กำลังตรวจสอบ SHA-256 ของไฟล์ภาษาไทย...");
+  const outputHash = await hashBlob(output, ratio => setProgress(55 + Math.round(ratio * 45)));
+  if (outputHash !== g.targetSha256) throw new Error(`ผลลัพธ์ไม่ตรงกับที่คาดไว้! ได้ ${outputHash} ต้องการ: ${g.targetSha256}`);
+  logLine("SHA-256 ผลลัพธ์ตรงกัน — แปะแพตช์สำเร็จ ✓", "ok");
+  setProgress(100);
+  return output;
 }
 
 // ---- QGDELTA1: zip containing manifest.json + index.json + chunks/*, each chunk overwrites

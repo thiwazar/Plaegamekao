@@ -1,0 +1,27 @@
+{
+  "format": "FF2SPARSE1",
+  "sourceSize": 3332839424,
+  "sourceSha256": "233ba3b13aeb23b01c42586ab7ec8cb80effee866d3385642f630fcea2fc3034",
+  "targetSize": 3333660672,
+  "targetSha256": "bbcfd3e9d1143d7a39ded57bd6e43c7b1607e52d640c93da7c38b37ca1622c5b",
+  "parts": [
+    {
+      "offset": 32848,
+      "length": 502221,
+      "url": "part-00.bin",
+      "sha256": "a3197ec38f92620987dd5f52e2ad46574cf01ac097964c39b88c2f788a165942"
+    },
+    {
+      "offset": 2975816,
+      "length": 180667,
+      "url": "part-01.bin",
+      "sha256": "4329eb545018f95ff93243678c61125367b7589db43997686bac676fe45475ef"
+    },
+    {
+      "offset": 3332839424,
+      "length": 821248,
+      "url": "part-02.bin",
+      "sha256": "ed40ff992078017ba5818c8057645668231cc8f71ede618a45f7a665d9655fba"
+    }
+  ]
+}
