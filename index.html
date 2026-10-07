@@ -537,15 +537,24 @@ const GAMES = [
     "version": "beta",
     "displayVersion": "v3 ทดลอง",
     "cover": "covers/in-progress/ragnarok-tactics.jpg",
-    "desc": "แพตช์ทดลองภาษาไทย v3 ต่อจากรุ่น 1.0 เพิ่มคำแปลสคริปต์ RTZ และ EBOOT; ยังมีข้อความที่ต้องตรวจและยังไม่ได้ทดสอบเล่นครบเกม",
+    "desc": "แพตช์ทดลองภาษาไทย v3 เพิ่มคำแปลสคริปต์ RTZ และ EBOOT ระบบรับ ISO ต้นฉบับแล้วแปะ v1.0 และ v3 ต่อให้อัตโนมัติ; ยังมีข้อความที่ต้องตรวจและยังไม่ได้ทดสอบเล่นครบเกม",
     "patchUrl": "patches/Ragnarok_Tactics_Thai_v3.xdelta",
-    "sourceName": "Ragnarok Tactics USA (ULUS10594) ISO ที่ลงแพตช์ v1.0 แล้ว",
-    "sourceSize": 652126208,
-    "sourceSha256": "e3954badd0be0c38830d617b9a4501771844757904c55d4c5fa37ddd689365b6",
+    "chainPatches": {
+      "first": {
+        "patchUrl": "patches/Ragnarok_Tactics_Thai_v1.0.xdelta",
+        "sourceSize": 645431296,
+        "sourceSha256": "173c00ca937932f2e75e3036f81a0cc500356b6165328b85647771c93f1ce7f8",
+        "targetSize": 652126208,
+        "targetSha256": "e3954badd0be0c38830d617b9a4501771844757904c55d4c5fa37ddd689365b6"
+      }
+    },
+    "sourceName": "Ragnarok Tactics USA (ULUS10594) ISO ต้นฉบับ",
+    "sourceSize": 645431296,
+    "sourceSha256": "173c00ca937932f2e75e3036f81a0cc500356b6165328b85647771c93f1ce7f8",
     "targetSize": 757524480,
     "targetSha256": "a242faa0aeaa0d47688e3f4b8f49def46be5fdaee1cb34b0015944f51744bb51",
     "outName": "Ragnarok_Tactics_TH_v3.iso",
-    "warning": "รุ่นทดลอง v3 ต้องใช้ ISO ภาษาไทย v1.0 ที่แปะแพตช์แล้ว หากมี ISO ต้นฉบับ ให้ <a href=\"patches/Ragnarok_Tactics_Thai_v1.0.xdelta\" download>ดาวน์โหลดแพตช์ v1.0 ก่อน</a> แล้วนำ ISO ที่ได้มาใช้ที่นี่ • ยังไม่ผ่านการทดสอบเล่นครบเกม"
+    "warning": "เลือก ISO USA ต้นฉบับได้เลย ระบบจะตรวจไฟล์และแปะแพตช์ v1.0 แล้วต่อด้วย v3 ให้อัตโนมัติในเครื่อง ไม่ต้องลง v1.0 แยก • ยังไม่ผ่านการทดสอบเล่นครบเกม"
   },  FONTFIX_GAME,
   VAGRANT_GAME,
   {
@@ -738,7 +747,7 @@ function setupGame(g) {
     try {
       let outputBlob;
       if (g.format === "XDELTA") {
-        outputBlob = await applyXdeltaStream(file, g, setProgress, logLine);
+        outputBlob = g.chainPatches ? await applyXdeltaChain(file, g, setProgress, logLine) : await applyXdeltaStream(file, g, setProgress, logLine);
       } else if (g.format === "SPARSE1") {
         outputBlob = await applySparsePatch(file, g, setProgress, logLine);
       } else {
@@ -909,6 +918,22 @@ async function getXdeltaModule(logLine) {
   return xdModule;
 }
 
+async function applyXdeltaChain(file, g, setProgress, logLine) {
+  const first = g.chainPatches.first;
+  if (!first) throw new Error("ข้อมูลแพตช์ขั้นแรกไม่ครบ");
+  logLine("ขั้นที่ 1/2: กำลังแปะแพตช์ภาษาไทย v1.0 จาก ISO ต้นฉบับ");
+  const intermediate = await applyXdeltaStream(file, {
+    ...g,
+    patchUrl: first.patchUrl,
+    sourceSize: first.sourceSize,
+    sourceSha256: first.sourceSha256,
+    targetSize: first.targetSize,
+    targetSha256: first.targetSha256
+  }, pct => setProgress(Math.round(pct * 0.45)), logLine);
+  logLine("ขั้นที่ 1/2 สำเร็จ — กำลังแปะแพตช์ v3 ต่อ");
+  return await applyXdeltaStream(intermediate, g,
+    pct => setProgress(45 + Math.round(pct * 0.55)), logLine);
+}
 async function applyXdeltaStream(file, g, setProgress, logLine) {
   logLine("กำลังโหลดไฟล์แพตช์...");
   const patchResp = await fetch(g.patchUrl);
