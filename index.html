@@ -529,7 +529,24 @@ const GAMES = [
     "outName": "The_3rd_Birthday_Thai_v1.1_UNDUB.iso",
     "warning": "รุ่น 1.1 รองรับ EUR UNDUB ตามขนาดและ SHA-256 ด้านล่าง ดาวน์โหลดแพตช์ประมาณ 712 KB แล้วสร้าง ISO ในเครื่อง แนะนำ Chrome / Edge บนคอมพิวเตอร์"
 },
-  {    "id": "ragnarok-tactics",    "name": "Ragnarok Tactics",    "platform": "PSP",    "format": "XDELTA",    "version": "1.0",    "cover": "covers/in-progress/ragnarok-tactics.jpg",    "desc": "แพตช์ภาษาไทยรุ่น 1.0 สำหรับระบบแปะออนไลน์ ปรับเมนู ฟอนต์ขอบเข้ม ชื่ออาชีพ ข้อความสร้างตัวละคร คำสั่งต่อสู้ และคำอธิบายอาชีพแล้ว",    "patchUrl": "patches/Ragnarok_Tactics_Thai_v1.0.xdelta",    "sourceName": "Ragnarok Tactics USA (ULUS10594) ISO ต้นฉบับ",    "sourceSize": 645431296,    "sourceSha256": "173c00ca937932f2e75e3036f81a0cc500356b6165328b85647771c93f1ce7f8",    "targetSize": 652126208,    "targetSha256": "e3954badd0be0c38830d617b9a4501771844757904c55d4c5fa37ddd689365b6",    "outName": "Ragnarok_Tactics_TH_v1.0.iso"  },  FONTFIX_GAME,
+  {
+    "id": "ragnarok-tactics",
+    "name": "Ragnarok Tactics",
+    "platform": "PSP",
+    "format": "XDELTA",
+    "version": "beta",
+    "displayVersion": "v3 ทดลอง",
+    "cover": "covers/in-progress/ragnarok-tactics.jpg",
+    "desc": "แพตช์ทดลองภาษาไทย v3 ต่อจากรุ่น 1.0 เพิ่มคำแปลสคริปต์ RTZ และ EBOOT; ยังมีข้อความที่ต้องตรวจและยังไม่ได้ทดสอบเล่นครบเกม",
+    "patchUrl": "patches/Ragnarok_Tactics_Thai_v3.xdelta",
+    "sourceName": "Ragnarok Tactics USA (ULUS10594) ISO ที่ลงแพตช์ v1.0 แล้ว",
+    "sourceSize": 652126208,
+    "sourceSha256": "e3954badd0be0c38830d617b9a4501771844757904c55d4c5fa37ddd689365b6",
+    "targetSize": 757524480,
+    "targetSha256": "a242faa0aeaa0d47688e3f4b8f49def46be5fdaee1cb34b0015944f51744bb51",
+    "outName": "Ragnarok_Tactics_TH_v3.iso",
+    "warning": "รุ่นทดลอง v3 ต้องใช้ ISO ภาษาไทย v1.0 ที่แปะแพตช์แล้ว หากมี ISO ต้นฉบับ ให้ <a href=\"patches/Ragnarok_Tactics_Thai_v1.0.xdelta\" download>ดาวน์โหลดแพตช์ v1.0 ก่อน</a> แล้วนำ ISO ที่ได้มาใช้ที่นี่ • ยังไม่ผ่านการทดสอบเล่นครบเกม"
+  },  FONTFIX_GAME,
   VAGRANT_GAME,
   {
     id: "muramasa",
@@ -583,7 +600,7 @@ function renderGrid() {
           <span class="${isBeta ? "status-beta" : "status-ready"}">${isBeta ? (g.streaming ? "TEST" : "BETA") : "READY"}</span>
           <span class="plat-badge">${g.platform || "PSP"}</span>
           <span class="badge">${g.format}</span>
-          <span class="badge">${g.version || ""}</span>
+          <span class="badge">${g.displayVersion || g.version || ""}</span>
         </div>
         <h3>${g.name}</h3>
         ${g.desc ? `<p class="gdesc">${g.desc}</p>` : ""}
@@ -615,7 +632,7 @@ GAMES.forEach((g) => {
           <span class="${isBeta ? "status-beta" : "status-ready"}">${isBeta ? (g.streaming ? "TEST" : "BETA") : "READY"}</span>
           <span class="plat-badge">${g.platform || "PSP"}</span>
           <span class="badge">${g.format}</span>
-          <span class="badge">${g.version || ""}</span>
+          <span class="badge">${g.displayVersion || g.version || ""}</span>
         </div>
         <h2 style="margin:0">${g.name}</h2>
         ${g.desc ? `<p class="desc" style="margin:0">${g.desc}</p>` : ""}
