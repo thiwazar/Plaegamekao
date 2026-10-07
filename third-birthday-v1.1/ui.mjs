@@ -33,7 +33,7 @@ export function setupBirthday(g){
           url=URL.createObjectURL(data.file);download.style.display='inline-block';download.textContent=data.alreadyPatched?'ดาวน์โหลด ISO ภาษาไทย 1.1':'ดาวน์โหลด ISO ภาษาไทย 1.1';
           download.onclick=()=>{const a=document.createElement('a');a.href=url;a.download=g.outName;document.body.append(a);a.click();a.remove();};
           progress(100,'ไฟล์พร้อมดาวน์โหลด');busyState(false);input.value='';
-          line('รุ่น 1.1 แก้การรองรับ ISO ต้นฉบับ ใช้เนื้อหาและเสียงตาม ISO ภาษาไทยอ้างอิง ยังไม่ได้ทดสอบเล่นจบเกม','fontfix-warning');
+          line('รุ่น 1.1 ย้ายเฉพาะคำแปลและฟอนต์ รักษาเสียง UNDUB เดิม ยังไม่ได้ทดสอบเล่นจบเกม','fontfix-warning');
         }
       };
       current.postMessage({type:'start',file:sourceFile});

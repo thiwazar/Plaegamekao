@@ -1,0 +1,21 @@
+{
+  "output": "The_3rd_Birthday_Thai_v1.1_UNDUB.iso",
+  "sourceSize": 1387927552,
+  "sourceSha256": "2fb32105671fb740cd0b28ee228d262b1874caab3f55c95481e43efe157dba72",
+  "targetSize": 1387823104,
+  "targetSha256": "1ce394b72a5e569d1cffdafef2d19df9712562897a0bf86d58c5c20bc9cacd5c",
+  "replacedResources": [
+    16,
+    19
+  ],
+  "unchangedResourcesVerified": 759,
+  "otherIsoFilesPreserved": 11,
+  "runtimeTextIds": 6019,
+  "physicalTextRecords": 6507,
+  "changedTextRecords": 4871,
+  "textIdTablePreserved": true,
+  "textFlagsPreserved": true,
+  "packageGrowthSectors": -51,
+  "undubGroupMetadataPreservedExceptRelocation": true,
+  "inGameVerified": "Boot and Thai system dialog in PPSSPP 1.20.4; full game untested"
+}

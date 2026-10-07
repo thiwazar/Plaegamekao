@@ -2,8 +2,14 @@
   "passed": true,
   "workerEndToEnd": true,
   "wrongSizeRejected": true,
-  "downloadBlobSha256": "0fd98685111a79704af15fe0346eedc811338e1e09789050c6df7e00cd83403a",
-  "size": 1468573696,
-  "browserUiPreviouslyVerified": true,
-  "gameplayTested": false
+  "downloadBlobSha256": "1ce394b72a5e569d1cffdafef2d19df9712562897a0bf86d58c5c20bc9cacd5c",
+  "size": 1387823104,
+  "gameplayTested": false,
+  "xdelta3RoundTripVerified": true,
+  "ppssppVersion": "1.20.4",
+  "bootTested": true,
+  "thaiSystemDialogVisuallyVerified": true,
+  "fullGameTested": false,
+  "unchangedUndubResourcesVerified": 759,
+  "otherIsoFilesPreserved": 11
 }
