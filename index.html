@@ -554,7 +554,7 @@ const GAMES = [
     "targetSize": 757524480,
     "targetSha256": "a242faa0aeaa0d47688e3f4b8f49def46be5fdaee1cb34b0015944f51744bb51",
     "outName": "Ragnarok_Tactics_TH_v3.iso",
-    "warning": "เลือก ISO USA ต้นฉบับได้เลย ระบบจะตรวจไฟล์และแปะแพตช์ v1.0 แล้วต่อด้วย v3 ให้อัตโนมัติในเครื่อง ไม่ต้องลง v1.0 แยก • ยังไม่ผ่านการทดสอบเล่นครบเกม"
+    "warning": "เลือกได้ทั้ง ISO USA ต้นฉบับ หรือ ISO ที่แปะแพตช์ภาษาไทย v1.0 แล้ว ระบบตรวจไฟล์และต่อแพตช์ให้อัตโนมัติ • ยังไม่ผ่านการทดสอบเล่นครบเกม"
   },  FONTFIX_GAME,
   VAGRANT_GAME,
   {
@@ -921,18 +921,31 @@ async function getXdeltaModule(logLine) {
 async function applyXdeltaChain(file, g, setProgress, logLine) {
   const first = g.chainPatches.first;
   if (!first) throw new Error("ข้อมูลแพตช์ขั้นแรกไม่ครบ");
-  logLine("ขั้นที่ 1/2: กำลังแปะแพตช์ภาษาไทย v1.0 จาก ISO ต้นฉบับ");
-  const intermediate = await applyXdeltaStream(file, {
+  let v1Iso = file;
+  if (file.size === first.sourceSize) {
+    logLine("ขั้นที่ 1/2: กำลังแปะแพตช์ภาษาไทย v1.0 จาก ISO ต้นฉบับ");
+    v1Iso = await applyXdeltaStream(file, {
+      ...g,
+      patchUrl: first.patchUrl,
+      sourceSize: first.sourceSize,
+      sourceSha256: first.sourceSha256,
+      targetSize: first.targetSize,
+      targetSha256: first.targetSha256
+    }, pct => setProgress(Math.round(pct * 0.45)), logLine);
+    logLine("ขั้นที่ 1/2 สำเร็จ — กำลังแปะแพตช์ v3 ต่อ");
+  } else if (file.size === first.targetSize) {
+    logLine("ตรวจพบไฟล์ภาษาไทย v1.0 แล้ว — ข้ามไปแปะแพตช์ v3");
+  } else {
+    throw new Error("ขนาด ISO ไม่ตรงกับต้นฉบับ USA หรือไฟล์ที่แปะแพตช์ภาษาไทย v1.0 แล้ว");
+  }
+  const v1Base = {
     ...g,
-    patchUrl: first.patchUrl,
-    sourceSize: first.sourceSize,
-    sourceSha256: first.sourceSha256,
-    targetSize: first.targetSize,
-    targetSha256: first.targetSha256
-  }, pct => setProgress(Math.round(pct * 0.45)), logLine);
-  logLine("ขั้นที่ 1/2 สำเร็จ — กำลังแปะแพตช์ v3 ต่อ");
-  return await applyXdeltaStream(intermediate, g,
-    pct => setProgress(45 + Math.round(pct * 0.55)), logLine);
+    sourceSize: first.targetSize,
+    sourceSha256: first.targetSha256
+  };
+  const isRaw = file.size === first.sourceSize;
+  return await applyXdeltaStream(v1Iso, v1Base,
+    pct => setProgress((isRaw ? 45 : 0) + Math.round(pct * (isRaw ? 0.55 : 1))), logLine);
 }
 async function applyXdeltaStream(file, g, setProgress, logLine) {
   logLine("กำลังโหลดไฟล์แพตช์...");
