@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "workerEndToEnd": true,
+  "wrongSizeRejected": true,
+  "downloadBlobSha256": "0fd98685111a79704af15fe0346eedc811338e1e09789050c6df7e00cd83403a",
+  "size": 1468573696,
+  "browserUiPreviouslyVerified": true,
+  "gameplayTested": false
+}
