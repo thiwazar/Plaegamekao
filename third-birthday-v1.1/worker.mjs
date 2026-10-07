@@ -1,8 +1,8 @@
 import '../vendor/sha256.umd.min.js';
 import {decodeWindows} from './vcdiff.mjs';
-const SOURCE_SIZE=1387927552, TARGET_SIZE=1387823104;
+const SOURCE_SIZE=1387927552, TARGET_SIZE=1388953600;
 const SOURCE_HASH='2fb32105671fb740cd0b28ee228d262b1874caab3f55c95481e43efe157dba72';
-const TARGET_HASH='1ce394b72a5e569d1cffdafef2d19df9712562897a0bf86d58c5c20bc9cacd5c';
+const TARGET_HASH='c15d776fcbb235ea6d45dc7fe074de17896a815b4e01ddf19a1f0bf155046561';
 const send=(type,data={})=>self.postMessage({type,...data});
 const progress=(value,phase)=>send('progress',{value,phase});
 const log=message=>send('log',{message});
@@ -27,10 +27,10 @@ self.onmessage=async({data})=>{
   if(manifest.sourceSha256!==SOURCE_HASH || manifest.targetSha256!==TARGET_HASH || manifest.targetSize!==TARGET_SIZE || !Array.isArray(manifest.parts) || manifest.parts.length!==1)throw new Error('ข้อมูลแพตช์ไม่ตรงกับรุ่น 1.1');
   const outputHash=await self.hashwasm.createSHA256();outputHash.init();
   const outputParts=[];let total=0;
-  log('กำลังโหลดแพตช์ประมาณ 202 KB — ISO ไม่ถูกอัปโหลด');
+  log('กำลังโหลดแพตช์ประมาณ 712 KB — ISO ไม่ถูกอัปโหลด');
   for(let i=0;i<manifest.parts.length;i++){
    const part=manifest.parts[i];
-   if(part.url!=='The_3rd_Birthday_Thai_v1.1_UNDUB.xdelta' || part.size!==202048)throw new Error('รายการไฟล์แพตช์ไม่ถูกต้อง');
+   if(part.url!=='The_3rd_Birthday_Thai_v1.1_UNDUB.xdelta' || part.size!==712263)throw new Error('รายการไฟล์แพตช์ไม่ถูกต้อง');
    log('โหลดและตรวจแพตช์ส่วน '+(i+1)+'/'+manifest.parts.length);
    const r=await fetch(new URL(part.url,import.meta.url));
    if(!r.ok)throw new Error('โหลดแพตช์ส่วน '+(i+1)+' ไม่สำเร็จ ('+r.status+')');

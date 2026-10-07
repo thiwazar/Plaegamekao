@@ -2,15 +2,14 @@
   "passed": true,
   "workerEndToEnd": true,
   "wrongSizeRejected": true,
-  "downloadBlobSha256": "1ce394b72a5e569d1cffdafef2d19df9712562897a0bf86d58c5c20bc9cacd5c",
-  "size": 1387823104,
-  "gameplayTested": true,
+  "downloadBlobSha256": "c15d776fcbb235ea6d45dc7fe074de17896a815b4e01ddf19a1f0bf155046561",
+  "size": 1388953600,
+  "gameplayTested": false,
   "xdelta3RoundTripVerified": true,
   "ppssppVersion": "1.20.4",
   "bootTested": true,
-  "thaiSystemDialogVisuallyVerified": true,
+  "thaiTitleAndCreditVisuallyVerified": true,
   "fullGameTested": false,
-  "unchangedUndubResourcesVerified": 759,
-  "otherIsoFilesPreserved": 11,
-  "initialSceneThaiDialogueVisuallyVerified": true
+  "unchangedUndubResourcesVerified": 758,
+  "otherIsoFilesPreserved": 11
 }

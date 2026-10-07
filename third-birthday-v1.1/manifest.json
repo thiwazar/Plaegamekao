@@ -2,15 +2,15 @@
   "version": "1.1",
   "sourceSize": 1387927552,
   "sourceSha256": "2fb32105671fb740cd0b28ee228d262b1874caab3f55c95481e43efe157dba72",
-  "targetSize": 1387823104,
-  "targetSha256": "1ce394b72a5e569d1cffdafef2d19df9712562897a0bf86d58c5c20bc9cacd5c",
+  "targetSize": 1388953600,
+  "targetSha256": "c15d776fcbb235ea6d45dc7fe074de17896a815b4e01ddf19a1f0bf155046561",
   "outName": "The_3rd_Birthday_Thai_v1.1_UNDUB.iso",
   "parts": [
     {
       "url": "The_3rd_Birthday_Thai_v1.1_UNDUB.xdelta",
-      "size": 202048,
-      "targetSize": 1387823104,
-      "sha256": "0eae5f3cdaaa3dea1d7875b30356a742431bc44f53672f0957e53d5f2f2eec8e"
+      "size": 712263,
+      "targetSize": 1388953600,
+      "sha256": "ee31faed5d55858f2ce923df5ddc28502ed2c24a881d7c86742d68d274a09fee"
     }
   ]
 }
