@@ -4,12 +4,13 @@
   "wrongSizeRejected": true,
   "downloadBlobSha256": "1ce394b72a5e569d1cffdafef2d19df9712562897a0bf86d58c5c20bc9cacd5c",
   "size": 1387823104,
-  "gameplayTested": false,
+  "gameplayTested": true,
   "xdelta3RoundTripVerified": true,
   "ppssppVersion": "1.20.4",
   "bootTested": true,
   "thaiSystemDialogVisuallyVerified": true,
   "fullGameTested": false,
   "unchangedUndubResourcesVerified": 759,
-  "otherIsoFilesPreserved": 11
+  "otherIsoFilesPreserved": 11,
+  "initialSceneThaiDialogueVisuallyVerified": true
 }

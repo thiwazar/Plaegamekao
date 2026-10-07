@@ -17,5 +17,5 @@
   "textFlagsPreserved": true,
   "packageGrowthSectors": -51,
   "undubGroupMetadataPreservedExceptRelocation": true,
-  "inGameVerified": "Boot and Thai system dialog in PPSSPP 1.20.4; full game untested"
+  "inGameVerified": "Boot, Thai system dialog and initial gameplay dialogue in PPSSPP 1.20.4; full game untested"
 }
