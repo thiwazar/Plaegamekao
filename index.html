@@ -435,7 +435,8 @@
 
 <script type="module">
 import {FONTFIX_GAME} from "./fontfix-config.mjs";
-import {setupFontFix} from "./fontfix-ui.mjs";
+import {setupFontFix} from "./fontfix-ui.mjs";
+import {setupBirthday} from "./third-birthday-v1.1/ui.mjs";
 import {VAGRANT_GAME} from "./vagrant-config.mjs";
 import {setupVagrant} from "./vagrant-ui.mjs";
 import {hashBlob} from "./dragons-crown/dragon-sha256.mjs";
@@ -511,22 +512,23 @@ const GAMES = [
     "targetSha256": "0b7b9f7fadf28f4bc6e639966f0670919eee7df37b3ab89dfd6d88d8cf5c9447",
     "outName": "SolTrigger_Thai_v1.1.iso"
   },
-  {
-    "id": "the3rdbirthday",
-    "name": "The 3rd Birthday",
-    "platform": "PSP",
-    "format": "XDELTA",
-    "version": "beta",
-    "cover": "covers/The_3rd_Birthday_Thai_BY_PlaeGameKao.png",
-    "desc": "แปลไทยบทสนทนา 443 รายการ และฟอนต์ที่แก้แล้ว (อยู่ระหว่างพัฒนา — ชื่อ HUD ยังเป็นอังกฤษชั่วคราว ยังไม่ผ่านการทดสอบแปะแพตช์จริงบนเว็บ ใช้ด้วยความระมัดระวัง)",
-    "patchUrl": "patches/The_3rd_Birthday_Thai_BY_PlaeGameKao.xdelta",
-    "sourceName": "The 3rd Birthday Europe (ULES01513)",
-    "sourceSize": 1467547648,
-    "sourceSha256": "4c75201b3fec159e2dd0f64d80be07acb1ed33e2acfea83fe1f5b73594ca82f8",
-    "targetSize": 1467443200,
-    "targetSha256": "763867fccb482965cb9b3c3e96a1de849c8ac646e6ea9117fa21ac4b827bd24f",
-    "outName": "The_3rd_Birthday_Thai_BY_เพจแปลเกมเก่า.iso"
-  },
+  {
+    "id": "the3rdbirthday",
+    "name": "The 3rd Birthday",
+    "platform": "PSP",
+    "format": "XDELTA",
+    "version": "v1.1",
+    "cover": "covers/The_3rd_Birthday_Thai_BY_PlaeGameKao.png",
+    "desc": "ภาษาไทย 1.1 แก้การแปะแพตช์ให้รองรับ EUR UNDUB ตรวจผลลัพธ์ตรงกับ ISO ภาษาไทยอ้างอิงทุกไบต์ เนื้อหาและเสียงตามตัวภาษาไทยเดิม ยังไม่ได้ทดสอบเล่นจบเกม",
+    "patchUrl": "third-birthday-v1.1/manifest.json",
+    "sourceName": "The 3rd Birthday EUR UNDUB (The_3rd_Birthday_EUR_UNDUB.iso)",
+    "sourceSize": 1387927552,
+    "sourceSha256": "2fb32105671fb740cd0b28ee228d262b1874caab3f55c95481e43efe157dba72",
+    "targetSize": 1468573696,
+    "targetSha256": "0fd98685111a79704af15fe0346eedc811338e1e09789050c6df7e00cd83403a",
+    "outName": "The_3rd_Birthday_Thai_v1.1.iso",
+    "warning": "รุ่น 1.1 รองรับ EUR UNDUB ตามขนาดและ SHA-256 ด้านล่าง ดาวน์โหลดแพตช์ประมาณ 555 MB แล้วสร้าง ISO ในเครื่อง แนะนำ Chrome / Edge บนคอมพิวเตอร์"
+},
   {    "id": "ragnarok-tactics",    "name": "Ragnarok Tactics",    "platform": "PSP",    "format": "XDELTA",    "version": "1.0",    "cover": "covers/in-progress/ragnarok-tactics.jpg",    "desc": "แพตช์ภาษาไทยรุ่น 1.0 สำหรับระบบแปะออนไลน์ ปรับเมนู ฟอนต์ขอบเข้ม ชื่ออาชีพ ข้อความสร้างตัวละคร คำสั่งต่อสู้ และคำอธิบายอาชีพแล้ว",    "patchUrl": "patches/Ragnarok_Tactics_Thai_v1.0.xdelta",    "sourceName": "Ragnarok Tactics USA (ULUS10594) ISO ต้นฉบับ",    "sourceSize": 645431296,    "sourceSha256": "173c00ca937932f2e75e3036f81a0cc500356b6165328b85647771c93f1ce7f8",    "targetSize": 652126208,    "targetSha256": "e3954badd0be0c38830d617b9a4501771844757904c55d4c5fa37ddd689365b6",    "outName": "Ragnarok_Tactics_TH_v1.0.iso"  },  FONTFIX_GAME,
   VAGRANT_GAME,
   {
@@ -678,6 +680,7 @@ async function sha256Hex(data) {
 
 function setupGame(g) {
   if (g.id === VAGRANT_GAME.id) { setupVagrant(g); return; }
+  if (g.id === "the3rdbirthday") { setupBirthday(g); return; }
   if (g.streaming) { setupFontFix(g); return; }
   const drop = document.getElementById(`drop-${g.id}`);
   const input = document.getElementById(`file-${g.id}`);

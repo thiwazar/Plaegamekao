@@ -1,2 +1,8 @@
-The 3rd Birthday Thai v1.1
-EUR UNDUB compatibility update. Verified reference ISO SHA-256: 0fd98685111a79704af15fe0346eedc811338e1e09789050c6df7e00cd83403a
+The 3rd Birthday ภาษาไทย v1.1
+แก้การรองรับ ISO ต้นฉบับ EUR UNDUB เป็นหลัก ไม่ใช่คำแปลใหม่
+ใช้ ISO ขนาด 1387927552 ไบต์
+SHA-256 ต้นฉบับ: 2fb32105671fb740cd0b28ee228d262b1874caab3f55c95481e43efe157dba72
+SHA-256 ผลลัพธ์: 0fd98685111a79704af15fe0346eedc811338e1e09789050c6df7e00cd83403a
+ผลลัพธ์มีเนื้อหาและเสียงเหมือน ISO ภาษาไทยอ้างอิงที่ผู้ใช้เคยแพตช์สำเร็จ
+ระบบอ่าน ISO และแพตช์ทีละส่วน ไม่อัปโหลด ISO
+ยังไม่ได้ทดสอบเล่นเกม
