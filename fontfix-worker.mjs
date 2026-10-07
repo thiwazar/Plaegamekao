@@ -16,10 +16,10 @@ self.onmessage = async ({data}) => {
   try {
     const file=data.file;
     if(!file || !/\.iso$/i.test(file.name))throw new Error('กรุณาเลือกไฟล์ .iso โดยตรง ไม่ใช่ ZIP หรือ CSO');
-    if(![...game.sources.map(s=>s.size),game.targetSize].includes(file.size))throw new Error('ขนาด ISO ไม่ตรงกับรุ่นที่รองรับ กรุณาเลือก EUR FULL UNDUB หรือไทย v1.3');
+    if(![...game.sources.map(s=>s.size),game.targetSize].includes(file.size))throw new Error('ขนาด ISO ไม่ตรงกับรุ่นที่รองรับ กรุณาเลือก '+game.sources.map(s=>s.name).join(' / '));
     log('กำลังตรวจไฟล์ต้นทางทีละส่วน…');
     const hash=await digest(file,p=>progress(Math.round(p*30),'กำลังตรวจ ISO ต้นทาง'));
-    if(file.size===game.targetSize && hash===game.targetSha256){log('ไฟล์นี้เป็น FontFix TEST ที่ถูกต้องอยู่แล้ว ไม่ต้องแพตช์ซ้ำ');send('complete',{file,alreadyPatched:true,sha256:hash});return;}
+    if(file.size===game.targetSize && hash===game.targetSha256){log('ไฟล์นี้เป็น FontFix '+game.version+' ที่ถูกต้องอยู่แล้ว ไม่ต้องแพตช์ซ้ำ');send('complete',{file,alreadyPatched:true,sha256:hash});return;}
     const selected=game.sources.find(s=>s.size===file.size && s.sha256===hash);
     if(!selected)throw new Error('SHA-256 ไม่ตรงกับไฟล์ที่รองรับ ระบบหยุดโดยไม่แก้ต้นฉบับ (ได้ '+hash+')');
     log('ตรวจพบ '+selected.name+' — เลือกแพตช์ตรงรุ่นแล้ว');send('source',{name:selected.name});

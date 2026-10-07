@@ -30,10 +30,10 @@ export function setupFontFix(g){
         else if(data.type==='error')failure(data.message);
         else if(data.type==='complete'){
           current.terminate();worker=null;
-          url=URL.createObjectURL(data.file);download.style.display='inline-block';download.textContent=data.alreadyPatched?'ดาวน์โหลด ISO เดิม (แก้ฟอนต์แล้ว)':'ดาวน์โหลด ISO ที่แก้ฟอนต์แล้ว';
+          url=URL.createObjectURL(data.file);download.style.display='inline-block';download.textContent=data.alreadyPatched?'ดาวน์โหลด ISO เดิม (แก้ฟอนต์แล้ว)':'ดาวน์โหลด ISO '+g.version;
           download.onclick=()=>{const a=document.createElement('a');a.href=url;a.download=g.outName;document.body.append(a);a.click();a.remove();};
           progress(100,'ไฟล์พร้อมดาวน์โหลด');busyState(false);input.value='';
-          line('รุ่น TEST: ยังต้องยืนยันผลบนเครื่อง PSP / PSP Go จริง','fontfix-warning');
+          line('รุ่น '+g.version+': ยังต้องยืนยันผลบนเครื่อง PSP / PSP Go จริง','fontfix-warning');
         }
       };
       current.postMessage({type:'start',file:sourceFile});
