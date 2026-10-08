@@ -4,37 +4,63 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>แพตช์ไทย Castlevania: Harmony of Dissonance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{color-scheme:dark;font-family:system-ui,"Noto Sans Thai",sans-serif;background:#0b1020;color:#f5f4ef}
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 80% 0,#30204b 0,transparent 42%),linear-gradient(150deg,#111727,#090d18)}
-    main{width:min(680px,calc(100% - 32px));margin:0 auto;padding:48px 0 60px}
-    .eyebrow{color:#c7a8f5;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
-    h1{font-size:clamp(1.9rem,5vw,3.1rem);line-height:1.15;margin:.45em 0}.lead{color:#c8c6d3;line-height:1.8}
-    .card{background:#161c30;border:1px solid #42425b;border-radius:20px;padding:26px;margin:28px 0;box-shadow:0 18px 40px #0005}
-    label{display:block;font-weight:700;margin-bottom:12px}input[type=file]{display:block;width:100%;padding:16px;background:#0c1222;color:#e8e7f1;border:1px dashed #9073b8;border-radius:12px;cursor:pointer}
-    button{background:#b88af0;color:#120c20;border:0;border-radius:11px;padding:14px 24px;font:inherit;font-weight:800;cursor:pointer;margin-top:18px;width:100%}button:hover{background:#d1a9ff}button:disabled{opacity:.55;cursor:wait}
-    #status{margin:18px 0 0;min-height:1.7em;line-height:1.6;color:#d4cae3}#status.error{color:#ff9d9d}#status.ok{color:#aef0c1}
-    .steps{padding-left:1.35em;line-height:1.9;color:#ddd9e4}.details{color:#b9b5c7;font-size:.9rem;line-height:1.7;border-top:1px solid #353a50;padding-top:18px;margin-top:24px}
-    a{color:#d6b8ff}code{overflow-wrap:anywhere;color:#e3d4f7}
+    :root{font-family:"Noto Sans Thai",Tahoma,sans-serif;color:#273c35;background:#efe4cc}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:linear-gradient(180deg,#f4ead5,#e9d9b7)}
+    main{width:min(980px,calc(100% - 28px));margin:24px auto 44px;padding:24px;background:#fff9ea;border:1px solid #cda968;border-radius:18px;box-shadow:0 16px 36px #59482525}
+    a{color:#1e72bc}a:hover{color:#15518b}
+    .back{font-size:13px}
+    h1{color:#195c43;font-size:clamp(1.45rem,3vw,2rem);line-height:1.3;margin:12px 0 8px}
+    .badge{display:inline-block;background:#e8f2e9;border:1px solid #83aa90;border-radius:6px;color:#195c43;font-size:12px;font-weight:700;padding:4px 9px}
+    .content{display:grid;grid-template-columns:minmax(220px,280px) 1fr;gap:20px;margin-top:16px}
+    .cover{display:block;width:100%;border-radius:10px;border:1px solid #cda968;box-shadow:0 7px 17px #49371e2b}
+    .caption{font-size:12px;color:#756b5b;margin:10px 0 0}
+    .lead{margin:2px 0 16px;line-height:1.75;font-size:14px}
+    .req{background:#f9efd9;border:1px solid #dbb979;border-radius:10px;padding:13px 15px;font-size:13px;line-height:1.7}
+    .req strong{display:block;color:#195c43;margin-bottom:4px}
+    .steps{padding-left:1.4em;line-height:1.9;font-size:13px}
+    .card{background:#eaf5eb;border:1px dashed #83aa90;border-radius:10px;padding:17px;margin-top:14px;text-align:center}
+    label{display:block;font-weight:700;margin-bottom:9px;font-size:14px}
+    input[type=file]{display:block;width:100%;padding:12px;background:#fffdf7;color:#273c35;border:1px solid #c7af7d;border-radius:8px;cursor:pointer}
+    button{background:linear-gradient(135deg,#318cdf,#246fca);color:#fff;border:1px solid #2365b2;border-radius:8px;padding:11px 20px;font:inherit;font-weight:700;cursor:pointer;margin-top:14px;width:100%;box-shadow:0 5px 12px #236fca38}
+    button:hover{background:#236fca}button:disabled{opacity:.6;cursor:wait}
+    #status{margin:12px 0 0;min-height:1.6em;font-size:12px;line-height:1.6;color:#665841}#status.error{color:#a32626}#status.ok{color:#247a52}
+    .details{color:#756b5b;font-size:12px;line-height:1.7;border-top:1px solid #dcc9a5;padding-top:14px;margin-top:23px}
+    code{overflow-wrap:anywhere}
+    @media(max-width:680px){main{padding:17px}.content{grid-template-columns:1fr}.cover{width:min(100%,300px);margin:auto}.caption{text-align:center}}
   </style>
 </head>
 <body>
 <main>
-  <div class="eyebrow">เพจแปลเกมเก่า · แพตช์ภาษาไทย</div>
-  <h1>Castlevania:<br>Harmony of Dissonance</h1>
-  <p class="lead">เลือกไฟล์เกมต้นฉบับของคุณ แล้วกดปุ่มเดียวเพื่อรับไฟล์เกมภาษาไทย การแพตช์ทำในเบราว์เซอร์บนเครื่องของคุณ ไฟล์เกมจะไม่ถูกส่งไปที่เว็บไซต์</p>
-  <section class="card" aria-label="แพตช์เกม">
-    <label for="rom">ไฟล์เกมต้นฉบับ (.gba)</label>
-    <input id="rom" type="file" accept=".gba,.agb,.bin,application/octet-stream">
-    <button id="patch" type="button">สร้างไฟล์เกมภาษาไทย</button>
-    <p id="status" role="status" aria-live="polite">รองรับ Castlevania: Harmony of Dissonance เวอร์ชันยุโรป รหัส ACHP ขนาด 8 MB</p>
-  </section>
-  <ol class="steps">
-    <li>เตรียมไฟล์เกมต้นฉบับเวอร์ชันยุโรป (ACHP) ที่คุณมีสิทธิ์ใช้</li>
-    <li>เลือกไฟล์ด้านบนและกด “สร้างไฟล์เกมภาษาไทย”</li>
-    <li>รอไฟล์ <code>Castlevania_Harmony_of_Dissonance_THAI.gba</code> ดาวน์โหลด แล้วนำไปเปิดในอีมูเลเตอร์ GBA</li>
-  </ol>
-  <p class="details">เครื่องมือนี้ตรวจ SHA-256 ของไฟล์ต้นฉบับก่อนแพตช์ เพื่อป้องกันการใช้เกมคนละเวอร์ชัน ไม่มีรอมเกมต้นฉบับอยู่ในหน้านี้ เครดิตคำแปล: เพจแปลเกมเก่า · <a href="https://thiwazar.github.io/Plaegamekao/index.html">กลับหน้าเว็บหลัก</a></p>
+  <a class="back" href="./index.html">← กลับไปรายการเกมทั้งหมด</a>
+  <h1>Castlevania: Harmony of Dissonance</h1>
+  <span class="badge">GBA · ภาษาไทย BETA</span>
+  <div class="content">
+    <div>
+      <img class="cover" src="./covers/in-progress/harmony-of-dissonance.jpg" alt="ภาพปก Castlevania: Harmony of Dissonance">
+      <p class="caption">แพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p>
+    </div>
+    <div>
+      <p class="lead">แปลบทสนทนา ชื่อไอเทม ศัตรู และเมนู พร้อมฟอนต์ไทย 8×8/8×12 ยังมีข้อความภาษาอังกฤษบางรายการ เลือกรอมต้นฉบับแล้วสร้างไฟล์ภาษาไทยได้บนเครื่องของคุณ</p>
+      <div class="req"><strong>ไฟล์ต้นฉบับที่รองรับ</strong>Castlevania: Harmony of Dissonance เวอร์ชันยุโรป รหัส ACHP ขนาด 8 MB<br><small>ระบบตรวจ SHA-256 ก่อนแปะแพตช์ กรุณาใช้ไฟล์ต้นฉบับที่ไม่ได้ดัดแปลง</small></div>
+      <ol class="steps">
+        <li>เตรียมไฟล์เกมต้นฉบับเวอร์ชันยุโรป (ACHP) ที่คุณมีสิทธิ์ใช้</li>
+        <li>เลือกไฟล์และกด “สร้างไฟล์เกมภาษาไทย”</li>
+        <li>ดาวน์โหลดไฟล์ <code>Castlevania_Harmony_of_Dissonance_THAI.gba</code> แล้วเปิดในอีมูเลเตอร์ GBA</li>
+      </ol>
+      <section class="card" aria-label="แพตช์เกม">
+        <label for="rom">เลือกไฟล์ ROM ต้นฉบับ</label>
+        <input id="rom" type="file" accept=".gba,.agb,.bin,application/octet-stream">
+        <button id="patch" type="button">สร้างไฟล์เกมภาษาไทย</button>
+        <p id="status" role="status" aria-live="polite">ไฟล์ ROM ไม่ถูกส่งขึ้นเซิร์ฟเวอร์</p>
+      </section>
+    </div>
+  </div>
+  <p class="details">ไฟล์เกมประมวลผลในเบราว์เซอร์บนเครื่องของคุณ ไม่มีรอมเกมต้นฉบับอยู่ในหน้านี้ · เครดิตคำแปล: เพจแปลเกมเก่า</p>
 </main>
 <script>
 "use strict";
