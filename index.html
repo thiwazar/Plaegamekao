@@ -388,14 +388,7 @@
           <p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p>
         </div>
       </article></div></div>
-<div class="translation-platform-group"><h3 class="translation-platform-title">PS2 <span class="badge">1 เกม</span></h3><div class="upcoming-list"><article class="upcoming-card">
-        <img class="upcoming-cover" src="covers/in-progress/fatal-frame-iii.jpg" alt="Fatal Frame III: The Tormented" loading="lazy" width="120" height="160">
-        <div>
-          <div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PS2</span></div>
-          <h3>Fatal Frame III: The Tormented</h3>
-          <p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p>
-        </div>
-      </article></div></div></section>
+</section>
 <section class="upcoming" aria-labelledby="waiting-title">
 <div class="upcoming-head"><h2 id="waiting-title">📋 เกมที่รอแปล</h2><p>โปรเจกต์ในคิวรอแปล แยกตามเครื่องเกม และเรียงชื่อ A–Z</p></div><div class="translation-platform-group"><h3 class="translation-platform-title">PSP <span class="badge">1 เกม</span></h3><div class="upcoming-list"><article class="upcoming-card">
 <img class="upcoming-cover" src="covers/in-progress/ys-seven.jpg" alt="Ys Seven" loading="lazy" width="120" height="160">
@@ -462,7 +455,44 @@ const GAMES = [
     sourceSha256: "233ba3b13aeb23b01c42586ab7ec8cb80effee866d3385642f630fcea2fc3034",
     targetSize: 3334328320,
     targetSha256: "415f36e5191f7aad3381b7acb8cbeacc7509764293ba134c0d8fd85c0d91f9c3",
-    outName: "Fatal_Frame_II_Thai_v1.3.iso"
+    outName: "Fatal_Frame_II_Thai_v1.3.iso"
+
+  },
+
+  {
+
+    id: "fatal-frame-iii",
+
+    name: "Fatal Frame III: The Tormented",
+
+    platform: "PS2",
+
+    format: "SPARSE1",
+
+    version: "beta",
+
+    displayVersion: "v1.0 TEST",
+
+    cover: "covers/in-progress/fatal-frame-iii.jpg",
+
+    desc: "รุ่นทดสอบ v1.0 แปลข้อความ 3,014 รายการ ใช้ฟอนต์ Noto Sans Thai และมีโลโก้ไทย/ชื่อบทไทย ยังมีข้อความภาพและบางเมนูเป็นอังกฤษ; ยังไม่ได้ตรวจใน PCSX2",
+
+    warning: "🧪 รุ่นทดสอบ v1.0 — คำแปลข้อความ 3,014 จาก 3,019 รายการ ยังมีข้อความภาพ/เมนูที่ไม่ครบและ 127 จุดที่ต้องตรวจการตัดบรรทัด ยังไม่ยืนยันใน PCSX2",
+
+    patchUrl: "fatal-frame-iii/manifest.json",
+
+    sourceName: "Fatal Frame III USA Undub (By Somebody Special)",
+
+    sourceSize: 2715582464,
+
+    sourceSha256: "257e316b17a56586a83646ea527035cc977ad51efe6f5b56234f23160067b88b",
+
+    targetSize: 2717966336,
+
+    targetSha256: "5ddd1b45dd2f105e60a775fb64f9298acb3f732d4902c4f2f8f1ec2d937a7120",
+
+    outName: "Fatal_Frame_III_Thai_v1.0_TEST.iso"
+
   },
   {
     "id": "queensgate",
@@ -825,7 +855,7 @@ async function applySparsePatch(file, g, setProgress, logLine) {
   const manifestResponse = await fetch(g.patchUrl);
   if (!manifestResponse.ok) throw new Error(`โหลดข้อมูลแพตช์ไม่สำเร็จ (${manifestResponse.status})`);
   const manifest = await manifestResponse.json();
-  if (manifest.format !== "FF2SPARSE1" || manifest.sourceSha256 !== g.sourceSha256 ||
+  if (!(manifest.format === "FF2SPARSE1" || manifest.format === "FF3SPARSE1") || manifest.sourceSha256 !== g.sourceSha256 ||
       manifest.targetSha256 !== g.targetSha256 || manifest.targetSize !== g.targetSize) {
     throw new Error("ข้อมูลแพตช์ไม่ตรงกับเกมรุ่นที่เลือก");
   }
