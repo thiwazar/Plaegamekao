@@ -1,0 +1,34 @@
+{
+  "format": "FF1SPARSE1",
+  "name": "Project_Zero_Undub_v1",
+  "sourceSize": 3750100992,
+  "sourceSha256": "3f1ef58186ea8f362a484c677432424c412e198820a82ad82c438e0dfdea79ea",
+  "targetSize": 3750100992,
+  "targetSha256": "97bc4f6b97734d3d2af937c6255cb8f93f30a48b72ab7e75216a4895df20f1f7",
+  "parts": [
+    {
+      "offset": 3874432,
+      "length": 1797,
+      "url": "part-00.bin",
+      "sha256": "08b0040a8faeb825dcb3bb3d92f35202db29962bd9445d33695322fcf42b23fa"
+    },
+    {
+      "offset": 10891588,
+      "length": 2,
+      "url": "part-01.bin",
+      "sha256": "c593a560a797487f2ba20870e3e0c1dc38015a8fa081c4204d568224a09f916b"
+    },
+    {
+      "offset": 946337796,
+      "length": 146551,
+      "url": "part-02.bin",
+      "sha256": "085a176b6bc76ce858f51c8d022cd818b0b3ce52aee11b8a1b9d7cecd8c755c6"
+    },
+    {
+      "offset": 1005584769,
+      "length": 142951,
+      "url": "part-03.bin",
+      "sha256": "10f39d7a00af68ed02f62c6d2be6548c87a271858a37c4d35655bf405a5abe8a"
+    }
+  ]
+}
