@@ -107,6 +107,7 @@
   .gcard .cover{width:100%;height:150px;object-fit:cover;border-radius:0;border:none;margin:0;display:block;background:var(--panel2)}
 
   .gcard .cover[src$="Vagrant_Story_USA.jpg"]{object-fit:contain}
+  .gcard .cover[src$="Shining_Blade_Thai_v1.png"]{height:260px;object-fit:contain;background:#171a21}
 
   .gcard-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
 
@@ -554,7 +555,7 @@
   <div class="grid" id="grid"></div>
 
   <section class="upcoming" aria-labelledby="upcoming-title">
-<div class="upcoming-head"><h2 id="upcoming-title">🎮 โปรเจกต์ที่กำลังแปล</h2><p>แยกตามเครื่องเกม และเรียงชื่อ A–Z</p></div><div class="translation-platform-group"><h3 class="translation-platform-title">PSP <span class="badge">6 เกม</span></h3><div class="upcoming-list"><article class="upcoming-card">
+<div class="upcoming-head"><h2 id="upcoming-title">🎮 โปรเจกต์ที่กำลังแปล</h2><p>แยกตามเครื่องเกม และเรียงชื่อ A–Z</p></div><div class="translation-platform-group"><h3 class="translation-platform-title">PSP <span class="badge">5 เกม</span></h3><div class="upcoming-list"><article class="upcoming-card">
         <img class="upcoming-cover" src="covers/in-progress/busou-shinki.jpg" alt="Busou Shinki: Battle Masters Mk.2" loading="lazy" width="120" height="160">
         <div>
           <div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PSP</span></div>
@@ -600,14 +601,7 @@
           <p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p>
         </div>
       </article>
-<article class="upcoming-card">
-        <img class="upcoming-cover" src="covers/in-progress/shining-blade.jpg" alt="Shining Blade" loading="lazy" width="120" height="160">
-        <div>
-          <div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PSP</span></div>
-          <h3>Shining Blade</h3>
-          <p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p>
-        </div>
-      </article>
+
 <article class="upcoming-card">
         <img class="upcoming-cover" src="covers/in-progress/valkyrie-profile.jpg" alt="Valkyrie Profile: Lenneth" loading="lazy" width="120" height="160">
         <div>
@@ -731,6 +725,7 @@ import {FONTFIX_GAME} from "./fontfix-config.mjs";
 
 import {setupFontFix} from "./fontfix-ui.mjs";
 import {setupBirthday} from "./third-birthday-v1.1/ui.mjs";
+import {setupShiningBlade} from "./shining-blade-v1/ui.mjs";
 
 import {VAGRANT_GAME} from "./vagrant-config.mjs";
 
@@ -741,6 +736,7 @@ import {hashBlob} from "./dragons-crown/dragon-sha256.mjs";
 
 
 const GAMES = [
+  {"id": "shining-blade-v1", "name": "Shining Blade", "platform": "PSP", "format": "XDELTA", "version": "v1", "cover": "covers/Shining_Blade_Thai_v1.png", "desc": "ภาษาไทย v1 โดยเพจแปลเกมเก่า รวมบทสนทนา ชื่อไอเทมและคำอธิบายชุดใหม่ พร้อมฟอนต์ไทย แก้ปัญหาค้างหน้าโหลดแล้ว ยังมีข้อความภาพและเมนูบางส่วนเป็นภาษาเดิม", "patchUrl": "shining-blade-v1/manifest.json", "sourceName": "Shining Blade (gugule) — NPJH50530", "sourceSize": 1013305344, "sourceSha256": "61d9833f919b9af60c82e9b0ef9c501ee7b19eb9163f0472a151a86ae3e495e0", "targetSize": 1013305344, "targetSha256": "ded21145e368a694a01090194dbc3ecaa44a5bb46162f23ddeae8fe17fa85a50", "outName": "Shining_Blade_Thai_v1.iso", "warning": "รองรับ ISO Shining Blade (gugule) ตาม SHA-256 ที่ระบุ ดาวน์โหลดแพตช์ประมาณ 307 MB • ทดสอบผ่านหน้าโหลดและฉากเริ่มเกมบน PPSSPP 1.20.4 แล้ว ยังไม่ได้ทดสอบเล่นจบเกม"},
   {"id": "project-zero-undub-v1", "name": "Project Zero / Fatal Frame", "platform": "PS2", "format": "SPARSE1", "version": "beta", "displayVersion": "Project_Zero_Undub_v1 · ทดสอบ", "cover": "covers/Project_Zero_Undub_v1.png", "desc": "ภาษาไทยรุ่นทดสอบ ใส่คำแปล 2,171 รายการ สำหรับ Project Zero Undub v1.3.3 ยังมีข้อความเดิมในบางส่วน", "warning": "รุ่นทดสอบ: เลือก English ในเกมและบูตใหม่ ฟอนต์บางตัวยังต้องปรับความคมชัด; EVENT ที่ไม่มีคำแปลคงเดิม และยังไม่ได้ทดสอบจบเกม", "patchUrl": "project-zero-undub-v1/manifest.json", "sourceName": "Project Zero (Undub v1.3.3) — SLES_508.21", "sourceSize": 3750100992, "sourceSha256": "3f1ef58186ea8f362a484c677432424c412e198820a82ad82c438e0dfdea79ea", "targetSize": 3750100992, "targetSha256": "97bc4f6b97734d3d2af937c6255cb8f93f30a48b72ab7e75216a4895df20f1f7", "outName": "Project_Zero_Undub_v1.iso"},
 
   {id:"circle-of-the-moon", name:"Castlevania: Circle of the Moon", platform:"GBA", format:"IPS / แปะแพตช์บนเว็บ", version:"v1.0", cover:"circle-of-the-moon/cover.webp", desc:"แพตช์ภาษาไทย v1.0 โดยเพจแปลเกมเก่า สำหรับ ROM ยุโรป AAMP ขนาด 8 MB บันทึกข้อความไทย 520 รายการ; ยังมีข้อความอังกฤษและตัวอักษรบางจุดที่ต้องแก้เพิ่มเติม", sourceSize:8388608, pageUrl:"./circle-of-the-moon/?v=20261009-4", downloadOnly:false},
@@ -1267,6 +1263,7 @@ function setupGame(g) {
   if (g.id === VAGRANT_GAME.id) { setupVagrant(g); return; }
 
   if (g.id === "the3rdbirthday") { setupBirthday(g); return; }
+  if (g.id === "shining-blade-v1") { setupShiningBlade(g); return; }
   if (g.streaming) { setupFontFix(g); return; }
 
   const drop = document.getElementById(`drop-${g.id}`);
@@ -1877,9 +1874,11 @@ async function applyXdeltaStream(file, g, setProgress, logLine) {
 
 }
 
+if (location.hash === '#shining-blade-v1') showDetail('shining-blade-v1');
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js">
+</script>
 
 </body>
 

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "workerEndToEnd": true,
+  "wrongSizeRejected": true,
+  "corruptPatchRejected": true,
+  "downloadBlobSha256": "ded21145e368a694a01090194dbc3ecaa44a5bb46162f23ddeae8fe17fa85a50",
+  "size": 1013305344,
+  "browserUiPreviouslyVerified": true,
+  "initialGameplayTested": true,
+  "desktopAndMobileLayout": true,
+  "browserWrongSizeRecovery": true
+}

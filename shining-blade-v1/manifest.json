@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "sourceName": "Shining Blade (gugule).iso",
+  "sourceSize": 1013305344,
+  "sourceSha256": "61d9833f919b9af60c82e9b0ef9c501ee7b19eb9163f0472a151a86ae3e495e0",
+  "targetSize": 1013305344,
+  "targetSha256": "ded21145e368a694a01090194dbc3ecaa44a5bb46162f23ddeae8fe17fa85a50",
+  "outName": "Shining_Blade_Thai_v1.iso",
+  "parts": [
+    {
+      "url": "patch-01.xdelta",
+      "size": 30608262,
+      "targetSize": 721420288,
+      "sha256": "1b48879332cdfadc3b75c5b6a9782ff827352782b0fec830e88802645a5bb66e"
+    },
+    {
+      "url": "patch-02.xdelta",
+      "size": 33548676,
+      "targetSize": 33554432,
+      "sha256": "78c2e4cc288234c636eebce83b7b68615d4220b5cebb113375a0d1dcfe02c763"
+    },
+    {
+      "url": "patch-03.xdelta",
+      "size": 33552157,
+      "targetSize": 33554432,
+      "sha256": "8d9cceb78ba5dfeeed7e211bc33019be158ab699ec614143d93e3ded72701ae2"
+    },
+    {
+      "url": "patch-04.xdelta",
+      "size": 33550712,
+      "targetSize": 33554432,
+      "sha256": "58bc2f572f2ab0c7736f5422b0f86fb21787770bed0d8d9b357e7277cac5d9a5"
+    },
+    {
+      "url": "patch-05.xdelta",
+      "size": 25166255,
+      "targetSize": 25165824,
+      "sha256": "77626573ebbab863e4dbd77bcf5d71bd89b6302a2d6b3649ac326faf23920ac4"
+    },
+    {
+      "url": "patch-06.xdelta",
+      "size": 33507998,
+      "targetSize": 33554432,
+      "sha256": "d604617ed2f296d43adde0bc832a6cc1194ee417511bae7372d037d04523a2f4"
+    },
+    {
+      "url": "patch-07.xdelta",
+      "size": 33509068,
+      "targetSize": 33554432,
+      "sha256": "6d04c8cbf75de4a36b21a1600aa2b4e13366e02b951b801a69f8dc068d035c8a"
+    },
+    {
+      "url": "patch-08.xdelta",
+      "size": 33517365,
+      "targetSize": 33554432,
+      "sha256": "e0d8726eae4c1699bbb561c72748b60a8371ddd03507fba44409e2104cf01170"
+    },
+    {
+      "url": "patch-09.xdelta",
+      "size": 33516515,
+      "targetSize": 33554432,
+      "sha256": "bea752352c9665348beafebaf8fd526f62ed249294a12674cb7d0892d53540cf"
+    },
+    {
+      "url": "patch-10.xdelta",
+      "size": 31024499,
+      "targetSize": 31838208,
+      "sha256": "5e9b98072ab9dffe53303b4f1c4f0669a496b76daf5a1dcb120be0cd4d37f201"
+    }
+  ]
+}
