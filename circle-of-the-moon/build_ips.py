@@ -4,9 +4,9 @@ from hashlib import sha256
 from pathlib import Path
 import sys
 
-OUTPUT = Path(__file__).with_name("CotM_Thai_v1.0_AAMP.ips")
+OUTPUT = Path(__file__).with_name("CotM_Thai_v1.0.1_AAMP.ips")
 SOURCE_SHA = "f2a7d5dca15d5a0f11cc4135517b5ddb4d76d522bac6f40b38b76439dafd2292"
-TARGET_SHA = "4b514d8f7e2f1868c45def4c277b5b5cd91ba7930a5de514b59470936da06d73"
+TARGET_SHA = "aa2deb369cd6e525a9cd480c23435aabb46ec4d70c98484d8ea01a8ccf98c52a"
 
 
 def digest(data):

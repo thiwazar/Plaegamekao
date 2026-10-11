@@ -1,5 +1,5 @@
 const SOURCE_SHA = 'f2a7d5dca15d5a0f11cc4135517b5ddb4d76d522bac6f40b38b76439dafd2292';
-const TARGET_SHA = '4b514d8f7e2f1868c45def4c277b5b5cd91ba7930a5de514b59470936da06d73';
+const TARGET_SHA = 'aa2deb369cd6e525a9cd480c23435aabb46ec4d70c98484d8ea01a8ccf98c52a';
 const ROM_SIZE = 8388608;
 const $ = id => document.getElementById(id);
 const input = $('rom'), button = $('apply'), status = $('status'), drop = $('drop');
@@ -72,12 +72,12 @@ button.addEventListener('click', async () => {
     const url = URL.createObjectURL(new Blob([output], {type: 'application/octet-stream'}));
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'Castlevania_Circle_of_the_Moon_Thai_v1.0.gba';
+    link.download = 'Castlevania_Circle_of_the_Moon_Thai_v1.0.1.gba';
     document.body.append(link);
     link.click();
     link.remove();
     setTimeout(() => URL.revokeObjectURL(url), 60000);
-    report('สร้างไฟล์ภาษาไทย v1.0 สำเร็จ และตรวจ SHA-256 ผ่าน', 'success');
+    report('สร้างไฟล์ภาษาไทย v1.0.1 สำเร็จ และตรวจ SHA-256 ผ่าน', 'success');
   } catch (error) {
     report(error.message, 'error');
   } finally {
@@ -86,7 +86,7 @@ button.addEventListener('click', async () => {
 });
 
 try {
-  const response = await fetch('./CotM_Thai_v1.0_AAMP.ips');
+  const response = await fetch('./CotM_Thai_v1.0.1_AAMP.ips');
   if (!response.ok) throw new Error(`โหลดแพตช์ไม่ได้ (${response.status})`);
   patch = new Uint8Array(await response.arrayBuffer());
   if (patch.length < 8 || new TextDecoder('ascii').decode(patch.subarray(0, 5)) !== 'PATCH') throw new Error('ไฟล์แพตช์ไม่ถูกต้อง');
