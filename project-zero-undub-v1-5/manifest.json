@@ -1,0 +1,52 @@
+{
+  "format": "FF1SPARSE1",
+  "name": "Project_Zero_Undub_v1_5",
+  "sourceSize": 3750100992,
+  "sourceSha256": "3f1ef58186ea8f362a484c677432424c412e198820a82ad82c438e0dfdea79ea",
+  "targetSize": 3750100992,
+  "targetSha256": "6686aa35a0a01c4559a8c7605064a0ab9ebb3c33b33e20798e7804bc66c71235",
+  "parts": [
+    {
+      "offset": 3872612,
+      "length": 3617,
+      "url": "part-00.bin",
+      "sha256": "a3bb9b00e329b0a4cac64676fe67f3b277a3241cb2595e03c46883b344b3cc9c"
+    },
+    {
+      "offset": 4499428,
+      "length": 705,
+      "url": "part-01.bin",
+      "sha256": "931addc792caf65143cdb327bfc114713b4a697147e4d24bc873c15c0781ac25"
+    },
+    {
+      "offset": 10891588,
+      "length": 2,
+      "url": "part-02.bin",
+      "sha256": "3033b0d6984c0a6bbfe4c2a2e3baa1eec14448b48c04edf738031f574ec8c0c9"
+    },
+    {
+      "offset": 946337796,
+      "length": 145145,
+      "url": "part-03.bin",
+      "sha256": "459d30b72feb6aecef5b7de4846b5114bf470e4f01edb21f2f9539bd689755c0"
+    },
+    {
+      "offset": 1005443284,
+      "length": 284436,
+      "url": "part-04.bin",
+      "sha256": "4476904754616324b7633c8beaed0f91c70e653ea6170fabd70309bab4390c53"
+    },
+    {
+      "offset": 1058764928,
+      "length": 364288,
+      "url": "part-05.bin",
+      "sha256": "0648e40bbce1fa51155911cf140620f224cc7833ba9db0e90ec82aeb40387757"
+    },
+    {
+      "offset": 1090429168,
+      "length": 21904,
+      "url": "part-06.bin",
+      "sha256": "0540e5d942241085961526eeb33d4833d1676d950fe0de8ba39c02ff0593a96b"
+    }
+  ]
+}
