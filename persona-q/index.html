@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="th"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Persona Q ภาษาไทย v.1 — แปลเกมเก่า</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#17121f;color:#f8f0ff}body{max-width:1050px;margin:auto;padding:24px}a{color:#e4b8ff}header{margin-bottom:24px}main{display:grid;grid-template-columns:minmax(190px,300px) 1fr;gap:28px}img{width:100%;border-radius:16px}section{background:#27202f;border:1px solid #51405f;border-radius:16px;padding:22px;margin-bottom:18px}h1{font-size:clamp(24px,4vw,36px);line-height:1.3}h2{font-size:21px}.badge{background:#693588;border-radius:20px;padding:4px 14px;display:inline-block}.note{color:#f1d08e}button,.button{display:inline-block;border:0;border-radius:10px;padding:14px 20px;font:inherit;background:#cf96f1;color:#211229;text-decoration:none;cursor:pointer}button:disabled{opacity:.5;cursor:wait}input{max-width:100%;margin:12px 0}progress{width:100%;height:20px}#log{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:1.7}code{overflow-wrap:anywhere;font-size:12px}small{color:#c5b8ce}li{margin-bottom:8px}[hidden]{display:none!important}@media(max-width:650px){main{grid-template-columns:1fr}aside img{max-width:240px}body{padding:16px}}
+</style>
+<header><a href="../">← กลับหน้าแปลเกมเก่า</a></header>
+<main><aside><img src="cover.png" alt="ปก Persona Q ภาษาไทย"><p><span class="badge">v.1</span> Nintendo 3DS · USA</p></aside><div>
+<h1>Persona Q<br>Shadow of the Labyrinth</h1><p>แพตช์ภาษาไทย โดยเพจแปลเกมเก่า</p>
+<p class="note">ยังมีข้อความและภาพภาษาอังกฤษบางส่วน การตรวจไฟล์ผ่านไม่ได้หมายถึงทดสอบเล่นจบทุกฉาก กรุณาสำรองเซฟก่อนใช้งาน</p>
+<section><h2>แพตช์ออนไลน์ — v.1</h2><p>เลือก ROM <b>.3ds USA แบบถอดรหัสแล้ว</b> ที่คุณสำรองจากเกมของตนเอง ขนาด 2,147,483,648 ไบต์ ไม่รองรับ CIA หรือ ROM ที่เคยแพตช์</p>
+<p><small>ประมวลผลในเครื่องคุณ ไฟล์เกมไม่ถูกอัปโหลด ใช้ Chrome / Edge บนคอมพิวเตอร์ และเตรียมพื้นที่ว่างอย่างน้อย 5 GB</small></p>
+<label for="rom">ไฟล์ ROM ต้นฉบับ</label><br><input id="rom" type="file" accept=".3ds"><br><button id="patch">ตรวจไฟล์และแปะแพตช์</button>
+<p><progress id="progress" value="0" max="100" hidden></progress><span id="percent" aria-live="polite"></span></p><pre id="log" role="status" aria-live="polite"></pre>
+<a id="download" class="button" hidden download="Persona_Q_Thai_v1.3ds">ดาวน์โหลด ROM ที่แพตช์แล้ว</a>
+<details><summary>SHA-256 ต้นฉบับที่รองรับ</summary><code>36191a2c8688f933ade9d61b7c0d10d983d0858727775da995af66c9c057e7a8</code></details></section>
+<section id="luma"><h2>ดาวน์โหลด Luma — v.1</h2><p class="note">กำลังตรวจชุด Luma แบบเล็ก — ยังไม่เปิดดาวน์โหลด เนื่องจากการทดสอบล่าสุดยังไม่แสดงข้อความไทย ห้ามใช้ไฟล์แพตช์ออนไลน์ .qgdelta วางบน SD โดยตรง</p><p>สำหรับเครื่อง USA Title ID <code>0004000000123400</code> เท่านั้น</p></section>
+</div></main>
+<script src="jszip.min.js"></script><script src="sha256.umd.min.js"></script><script type="module" src="app.mjs"></script></html>

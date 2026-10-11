@@ -1,0 +1,17 @@
+{
+  "id": "persona-q-thai-v1",
+  "name": "Persona Q: Shadow of the Labyrinth",
+  "platform": "Nintendo 3DS",
+  "format": "QGDELTA1",
+  "version": "v.1",
+  "cover": "cover.png",
+  "desc": "ภาษาไทย พร้อมฟอนต์ผู้ใช้และปรับระยะอักษร",
+  "patchUrl": "Persona_Q_Thai_v1.qgdelta",
+  "sourceName": "Persona Q - Shadow of the Labyrinth (USA).3ds",
+  "sourceSize": 2147483648,
+  "sourceSha256": "36191a2c8688f933ade9d61b7c0d10d983d0858727775da995af66c9c057e7a8",
+  "targetSize": 2147483648,
+  "targetSha256": "be232e06102dbba174c6f940fab0d158a2ad78c47a0e9a572606e9e038fd7050",
+  "outName": "Persona_Q_Thai_v1.3ds",
+  "patchSha256": "0efc31fe07197a285e3948ec3f79d81ece96a2e4b0bf38d913d79fb71de066a2"
+}
