@@ -1,0 +1,20 @@
+{
+  "title": "Monster Race ภาษาไทย",
+  "version": "v1.0",
+  "sourceName": "Monster Race (Japan) — SLPM 861.43",
+  "sourceSize": 198120720,
+  "sourceSha256": "c30b46781ae99ab94679cfff3732bcf3cdb11432b65d791fda6ac392f605d714",
+  "targetSize": 198120720,
+  "targetSha256": "65f49913eb33e39a102dad55ec3419059537010c2672ef2c1bdde40b11524612",
+  "patch": "patch/Monster_Race_Thai_v1.0.mrsp",
+  "patchSize": 268099,
+  "patchSha256": "553deae8ec88d42187ef2b8d4a862720bd9d2aebb9207c85b41957f392e5b410",
+  "changedRuns": 5190,
+  "changedBytes": 392855,
+  "status": "v1.0 TEST; integrity-verified, emulator play test pending",
+  "outputFiles": [
+    "Monster_Race_Thai_v1.0.bin",
+    "Monster_Race_Thai_v1.0.cue"
+  ]
+}
+
