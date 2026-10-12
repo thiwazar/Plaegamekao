@@ -1,0 +1,17 @@
+export const PATCH = {
+  version: "V1",
+  sourceName: "Shining Ark (Enrish Google Translate).iso",
+  sourceId: "NPJH50717",
+  sourceSize: 1549983744,
+  sourceSha256: "474dd61d9f7a04e3e9f599cd410c165a8e3357dab4e839d17e1a0506969c244f",
+  targetSize: 1549983744,
+  targetSha256: "966658578dcce7a719bb9cd433cde4af56a12adef6e8667ac5f385a1b1c221de",
+  outName: "Shining_Ark_Thai_V1.iso",
+  parts: [
+    { url: "patch-01.xdelta", size: 33964629, targetSize: 1241513984, sha256: "42a60b05deb1993eb53e32e6f19545a57a1617f21157878ed9e2f4fe5fe530a1" },
+    { url: "patch-02.xdelta", size: 46329934, targetSize: 50331648, sha256: "e2be8f8bb6569acd5c774c3658f0716df9af8350c4bab66838596590dab5fb3c" },
+    { url: "patch-03.xdelta", size: 40096519, targetSize: 134217728, sha256: "8f85efec676fe5580308483fcdfcb49ef0812f2915e8bbc54cbddc6f8d8ef75e" },
+    { url: "patch-04.xdelta", size: 45700547, targetSize: 67108864, sha256: "dbf015ccd53120029f0911b0a8e0d29b08be2cafa89eacbf72b8d4393773339d" },
+    { url: "patch-05.xdelta", size: 33507060, targetSize: 56811520, sha256: "de143242f63dbff248ec2cfc831597aae847fd16812d40c72a60f2f52b2917d9" }
+  ]
+};

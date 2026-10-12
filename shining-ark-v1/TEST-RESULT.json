@@ -1,0 +1,12 @@
+{
+  "game": "Shining Ark",
+  "sourceId": "NPJH50717",
+  "sourceSize": 1549983744,
+  "targetSize": 1549983744,
+  "targetSha256": "966658578dcce7a719bb9cd433cde4af56a12adef6e8667ac5f385a1b1c221de",
+  "patchPartCount": 5,
+  "patchTotalBytes": 199598689,
+  "decodedWindows": 93,
+  "allPatchPartSha256Verified": true,
+  "outputSha256MatchesThaiIso": true
+}
