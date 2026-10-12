@@ -15,6 +15,15 @@
   "outputFiles": [
     "Monster_Race_Thai_v1.0.bin",
     "Monster_Race_Thai_v1.0.cue"
+  ],
+  "alternatives": [
+    {
+      "sourceSha256": "01d36116f561c8cb29805ef44b530fce497b48b2a4dabe091775a448634d8f95",
+      "patch": "patch/Monster_Race_Thai_v1.0_japan-alt.mrsp",
+      "patchSize": 286451,
+      "patchSha256": "d05dd0af0cc3aba317a44df8f18f0597138b310167e27064088097b2a13eada6",
+      "changedRuns": 10992,
+      "changedBytes": 444711
+    }
   ]
 }
-

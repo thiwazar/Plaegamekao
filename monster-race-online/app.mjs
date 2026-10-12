@@ -35,7 +35,7 @@ drop.addEventListener('dragleave', () => drop.classList.remove('drag'));
 drop.addEventListener('drop', (event) => {
   event.preventDefault();
   drop.classList.remove('drag');
-  choose(event.dataTransfer.files[0]);
+  if (!input.disabled) choose(event.dataTransfer.files[0]);
 });
 
 function download(name, blob) {
@@ -52,32 +52,47 @@ function download(name, blob) {
 button.addEventListener('click', async () => {
   if (!selectedFile || !patchBytes || !manifest) return;
   button.disabled = true;
+  input.disabled = true;
   try {
     if (selectedFile.size !== manifest.sourceSize) {
       throw new Error('ขนาด BIN ไม่ตรงกับแผ่นญี่ปุ่น SLPM 861.43 ที่รองรับ');
     }
     report('กำลังอ่าน BIN และตรวจ SHA-256…');
     const source = new Uint8Array(await selectedFile.arrayBuffer());
-    if (await sha256(source) !== manifest.sourceSha256) {
+    const sourceHash = await sha256(source);
+    const variant = sourceHash === manifest.sourceSha256 ? manifest :
+      (manifest.alternatives || []).find(item => item.sourceSha256 === sourceHash);
+    if (!variant) {
       throw new Error('BIN นี้ไม่ตรงกับแผ่นต้นฉบับที่รองรับ กรุณาใช้ Monster Race ญี่ปุ่น SLPM 861.43 ที่ยังไม่ดัดแปลง');
     }
 
-    const view = new DataView(patchBytes.buffer, patchBytes.byteOffset, patchBytes.byteLength);
-    const magic = new TextDecoder('ascii').decode(patchBytes.subarray(0, 9));
-    if (magic !== 'MRSPARSE1' || patchBytes.length < 93) throw new Error('ไฟล์แพตช์ไม่ถูกต้อง');
+    let activeBytes = patchBytes;
+    if (variant !== manifest) {
+      report('ตรวจพบ BIN ญี่ปุ่นที่รองรับ กำลังโหลดแพตช์ที่ตรงกับไฟล์…');
+      const response = await fetch('./' + variant.patch, {cache: 'no-store'});
+      if (!response.ok) throw new Error('โหลดแพตช์สำหรับ BIN นี้ไม่ได้ (' + response.status + ')');
+      activeBytes = new Uint8Array(await response.arrayBuffer());
+      if (activeBytes.length !== variant.patchSize || await sha256(activeBytes) !== variant.patchSha256) {
+        throw new Error('ไฟล์แพตช์ที่ดาวน์โหลดมาไม่ผ่านการตรวจสอบ');
+      }
+    }
+
+    const view = new DataView(activeBytes.buffer, activeBytes.byteOffset, activeBytes.byteLength);
+    const magic = new TextDecoder('ascii').decode(activeBytes.subarray(0, 9));
+    if (magic !== 'MRSPARSE1' || activeBytes.length < 93) throw new Error('ไฟล์แพตช์ไม่ถูกต้อง');
     const sourceSize = Number(view.getBigUint64(9, true));
     const targetSize = Number(view.getBigUint64(17, true));
     const recordCount = view.getUint32(25, true);
-    const patchSourceSha = hex(patchBytes.subarray(29, 61));
-    const patchTargetSha = hex(patchBytes.subarray(61, 93));
+    const patchSourceSha = hex(activeBytes.subarray(29, 61));
+    const patchTargetSha = hex(activeBytes.subarray(61, 93));
     if (sourceSize !== manifest.sourceSize || targetSize !== manifest.targetSize ||
-        patchSourceSha !== manifest.sourceSha256 || patchTargetSha !== manifest.targetSha256) {
+        patchSourceSha !== variant.sourceSha256 || patchTargetSha !== manifest.targetSha256) {
       throw new Error('ข้อมูลในแพตช์ไม่ตรงกับรุ่น v1.0');
     }
 
     report('กำลังถอดแพตช์และปรับ BIN ในเครื่องนี้…');
     if (!('DecompressionStream' in window)) throw new Error('เบราว์เซอร์นี้ไม่รองรับการถอดแพตช์ กรุณาใช้ Chrome หรือ Edge รุ่นปัจจุบัน');
-    const compressed = new Blob([patchBytes.subarray(93)]).stream();
+    const compressed = new Blob([activeBytes.subarray(93)]).stream();
     const recordsBuffer = await new Response(compressed.pipeThrough(new DecompressionStream('deflate'))).arrayBuffer();
     const records = new Uint8Array(recordsBuffer);
     const recordsView = new DataView(records.buffer);
@@ -113,6 +128,7 @@ button.addEventListener('click', async () => {
   } catch (error) {
     report(error.message || 'เกิดข้อผิดพลาดระหว่างสร้างแพตช์', 'error');
   } finally {
+    input.disabled = false;
     button.disabled = !selectedFile || !patchBytes;
   }
 });
