@@ -1,0 +1,19 @@
+{
+  "title": "Monster Complete World ภาษาไทย",
+  "version": "1.0",
+  "sourceName": "Monster Complete World (Japan) — SLPS 018.70",
+  "sourceSize": 503158656,
+  "sourceSha256": "a4b7ade710f9cbe0b347ad51ff77c61671e145be593b21501982b49f3b709d17",
+  "targetSize": 504675696,
+  "targetSha256": "60f00b592c06fbdc750aca5b5fcf84b5213f9e17f4ec1fecf1732199c309cadb",
+  "patch": "patch/Monster_Complete_World_Thai_v1.0.mcwpatch",
+  "patchSize": 1250063,
+  "patchSha256": "2cfe243bb88b03af90ad24c664a8a3c1ebda014aea95bdd8ebf2ff5ac66f5822",
+  "changedRuns": 1767,
+  "outputFiles": [
+    "Monster_Complete_World_Thai_v1.0.bin",
+    "Monster_Complete_World_Thai_v1.0.cue"
+  ],
+  "build": "Thai v4 with corrected Thai spacing",
+  "status": "ตรวจแพตช์และโค้ดผ่านแล้ว ยังไม่ได้ทดสอบเล่นจบเกม"
+}

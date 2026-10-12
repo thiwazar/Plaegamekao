@@ -1,0 +1,15 @@
+{
+  "custom_codes_lookup_and_render_verified": 16932,
+  "all_styles_verified": true,
+  "japanese_controls_and_font_regression": true,
+  "real_menu_preparation_executed": true,
+  "longest_strings_integrated_tested": 100,
+  "max_tiles_in_long_string_test": 58,
+  "gpu_io_stubbed": true,
+  "boot_bss_clear_executed": true,
+  "payload_survives_boot": true,
+  "heap_start_verified": true,
+  "all_static_fields_readback_verified": true,
+  "pointer_relocations_verified": true,
+  "full_emulator_boot_tested": false
+}

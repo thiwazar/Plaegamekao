@@ -1,0 +1,9 @@
+{
+  "unique_strings_pixel_positions_verified": 6720,
+  "newline_resets_pixel_cursor": true,
+  "original_japanese_pitch_preserved": true,
+  "actual_sprite_x_calculation_verified": true,
+  "thai_single_pixels": 7,
+  "thai_pair_pixels": 14,
+  "full_emulator_tested": false
+}
