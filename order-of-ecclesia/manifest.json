@@ -1,14 +1,14 @@
 {
-  "version": "1.6.1",
+  "version": "1.6.2",
   "sourceName": "Akumajou Dracula - Ubawareta Kokuin (Japan)",
   "exampleFilename": "2803 - Akumajou Dracula - Ubawareta Kokuin (Japan).nds",
   "gameCode": "YR9J",
   "sourceSize": 67108864,
   "sourceSha256": "502d672335abbef1ef1ef181c606c59fcb9fcaec05159ac15c88aa72c191a283",
   "targetSize": 67108864,
-  "targetSha256": "a3e8540cc9b5fd758b5bcb76761dcc63b6653020cad1fd62f80523fc030468de",
-  "outputName": "Castlevania_Order_of_Ecclesia_Thai_v1.6.1.nds",
-  "patch": "Castlevania_OoE_Thai_v1.6.1_JP.bps",
-  "patchSize": 211971,
-  "patchSha256": "73350832a1ff1f244461f6ec1892e5c2fe08acaa7b5a8f2a79dd8984fb24c6a6"
+  "targetSha256": "2f50a8919586e43f8266ae9c7262fcb858a278a593b580da9418035179c49ab8",
+  "outputName": "Castlevania_Order_of_Ecclesia_Thai_v1.6.2.nds",
+  "patch": "Castlevania_OoE_Thai_v1.6.2_JP.bps",
+  "patchSize": 212001,
+  "patchSha256": "37cec01d769b0bcd7af4f209d5cea75796038f753ed9d6f77df97a8498888192"
 }
