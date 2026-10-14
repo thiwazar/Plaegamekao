@@ -1,4 +1,4 @@
-﻿Castlevania: Order of Ecclesia ภาษาไทย v1.6
+﻿Castlevania: Order of Ecclesia ภาษาไทย v1.6.1
 โดยเพจแปลเกมเก่า
 
 แปะแพตช์ออนไลน์: https://thiwazar.github.io/Plaegamekao/order-of-ecclesia/
@@ -13,9 +13,10 @@ SHA-256 ต้นฉบับ: 502d672335abbef1ef1ef181c606c59fcb9fcaec05159ac15
 หรือใช้ไฟล์ .bps กับโปรแกรมที่รองรับ BPS โดยเลือก ROM ญี่ปุ่นต้นฉบับเป็น Source
 เว็บประมวลผล ROM ในอุปกรณ์ของผู้ใช้ ไม่อัปโหลด ROM ขึ้นเซิร์ฟเวอร์
 
-ชื่อผลลัพธ์: Castlevania_Order_of_Ecclesia_Thai_v1.6.nds
-SHA-256 ผลลัพธ์: 9dbe812bd0c0529a1950de1b7ca0cc4cccc1bd56f0f5dab6af955ec630938f1b
+ชื่อผลลัพธ์: Castlevania_Order_of_Ecclesia_Thai_v1.6.1.nds
+SHA-256 ผลลัพธ์: a3e8540cc9b5fd758b5bcb76761dcc63b6653020cad1fd62f80523fc030468de
 
+v1.6.1: แก้ตัวเลือก "เลขที่" เป็น "ไม่" ครบทั้ง 3 จุด
 v1.6: แก้หน้าสอนกริฟแม่เหล็ก คืนโครงสร้างบทสนทนา NPC ที่ว่าง และแปลบทสนทนาหลักช่วงเริ่มหมู่บ้าน
 ตรวจรหัสข้อความหลัก 1,922 รายการ คืนโครงสร้างบทสนทนาที่ว่าง 223 รายการ และตรวจผลลัพธ์แพตช์ตรงทุกไบต์
 ยังรอผลทดสอบบนเครื่องจริงสำหรับรุ่นนี้
