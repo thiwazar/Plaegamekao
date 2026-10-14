@@ -1,0 +1,14 @@
+{
+  "id": "persona-q2-thai-v1",
+  "name": "Persona Q2: New Cinema Labyrinth",
+  "version": "v1.0",
+  "format": "QGDELTA2",
+  "sourceSize": 4294967296,
+  "sourceSha256": "f466f89029059fce7c577fba86eda7bd8bd375185681b2f204bd55ab80ed824e",
+  "targetSize": 4294967296,
+  "targetSha256": "0b75266930e0fba1a4d120356bcc6cde1ca56faed275b4099929726f2510b88e",
+  "patchUrl": "Persona_Q2_Thai_v1.0.qgdelta",
+  "patchSha256": "f373f71561ec95d57ee9a2042971841e50fd6914ed406a6139fbde8dc41f29b9",
+  "patchSize": 33162603,
+  "outName": "Persona_Q2_Thai_v1.0.3ds"
+}
