@@ -713,6 +713,7 @@ import {hashBlob} from "./dragons-crown/dragon-sha256.mjs";
 
 
 const GAMES = [
+  {"id": "black-rock-shooter-v1", "name": "Black Rock Shooter: The Game", "platform": "PSP", "format": "SPARSE1", "version": "v1.0", "displayVersion": "v1.0", "cover": "black-rock-shooter-v1/cover.png", "desc": "หลังโลกถูกกองทัพต่างดาวรุกรานยาวนาน 19 ปี มนุษย์ที่เหลืออยู่ปลุก Black Rock Shooter ขึ้นมาเป็นความหวังสุดท้าย ออกต่อสู้ท่ามกลางซากอารยธรรมและค้นหาความลับของตัวตนเธอ", "patchUrl": "black-rock-shooter-v1/manifest.json", "sourceName": "Black Rock Shooter - The Game (Europe) — NPEH00138", "sourceSize": 1360363520, "sourceSha256": "e793abded53defc25842d4bcce9541e505ca3a223275d70801d8aa90108e8e82", "targetSize": 1398808576, "targetSha256": "da9d4ab00b21dab72917cda2dd7dc58c03c539f349cb3ee85553d0e485fb33e6", "outName": "Black_Rock_Shooter_Thai_v1.0.iso", "warning": "ใช้ ISO Europe ต้นฉบับที่ยังไม่ลงแพตช์ เมื่อเปิดรุ่น v1.0 ให้โหลดเซฟปกติแทน Save State จากรุ่นก่อน"},
   {id:"persona-q2-thai-v1", name:"Persona Q2: New Cinema Labyrinth", platform:"Nintendo 3DS", format:"3DS · แปะแพตช์บนเว็บ", version:"v1.0", displayVersion:"v1.0", cover:"persona-q2/cover.png", desc:"เหล่าจอมโจรหัวใจหลงเข้าสู่โรงภาพยนตร์ปริศนา ร่วมมือกับผู้ใช้เพอร์โซนาจาก Persona 3 และ Persona 4 ฝ่าโลกภาพยนตร์และเขาวงกตเพื่อหาทางกลับบ้าน", sourceSize:4294967296, pageUrl:"./persona-q2/", downloadOnly:false},
   {id:"valkyrie-profile-2", name:"Valkyrie Profile 2: Silmeria", platform:"PS2", format:"ISO · แปะแพตช์บนเว็บ", version:"beta", displayVersion:"TEST 005", cover:"valkyrie-profile-2/cover.webp", desc:"เจ้าหญิงอลิเซียแห่งดิแพนกับวิญญาณวัลคิรีซิลเมเรียในร่างเดียวกัน หนีการไล่ล่าของโอดิน · แปลข้อความ 7,286 รายการ รุ่นทดสอบ ใช้ ISO USA SLUS-21452", sourceSize:4661706752, sourceName:"Valkyrie Profile 2: Silmeria (USA) — SLUS-21452 ISO ต้นฉบับ", pageUrl:"./valkyrie-profile-2/"},
   {"id": "kuon-thai-v2", "name": "Kuon (คุอง)", "platform": "PS2", "format": "SPARSE1", "version": "beta", "displayVersion": "v2 TEST", "cover": "kuon-v2/cover.webp", "desc": "ภาษาไทย 1,975 รายการ พร้อมฟอนต์ Noto Sans Thai ปกและเมนูหลักภาษาไทย v2 แพตช์ออนไลน์สำหรับ Kuon Europe", "warning": "รุ่นทดสอบ v2: ยังไม่ได้ทดสอบเล่นจบเกม ข้อความในภาพหรือวิดีโอบางส่วนอาจยังเป็นภาษาเดิม เลือก English และตั้งภาพ 16:9 เปิดเกมใหม่ ไม่ใช้ save state หน้าเมนูรุ่นก่อน", "patchUrl": "kuon-v2/manifest.json", "manifestSha256": "1342d0a74913d2dbe7d8cb2f361f64eb7cabd1d25d5ed120ea5f40b9bcfe4fb9", "sourceName": "Kuon (Europe) (En,Fr,De) — SLES_534.11", "sourceSize": 2896003072, "sourceSha256": "0c34c70d86c5c9c4f7ff7150a1d9ff4035262dea6f7002b1d4b974969ed890b0", "targetSize": 2896003072, "targetSha256": "68b6ec3d3fb15b93e8197c20a6675894be81f73c4d6f0a505933b47ce5af2628", "outName": "Kuon_Thai_NotoSans_Cover_v2.iso"},
@@ -1878,6 +1879,7 @@ async function applyXdeltaStream(file, g, setProgress, logLine) {
 
 if (location.hash === '#shining-blade-v1') showDetail('shining-blade-v1');
 if (location.hash === '#shining-ark-v1') showDetail('shining-ark-v1');
+if (location.hash === '#black-rock-shooter-v1') showDetail('black-rock-shooter-v1');
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js">

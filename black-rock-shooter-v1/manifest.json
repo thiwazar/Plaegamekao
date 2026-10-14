@@ -1,0 +1,671 @@
+{
+  "format": "FF1SPARSE1",
+  "game": "Black Rock Shooter: The Game",
+  "version": "1.0",
+  "sourceSize": 1360363520,
+  "sourceSha256": "e793abded53defc25842d4bcce9541e505ca3a223275d70801d8aa90108e8e82",
+  "targetSize": 1398808576,
+  "targetSha256": "da9d4ab00b21dab72917cda2dd7dc58c03c539f349cb3ee85553d0e485fb33e6",
+  "parts": [
+    {
+      "url": "part-000.dat",
+      "offset": 32768,
+      "length": 149504,
+      "sha256": "e2315499ce3290b66354f9927fb33f94856a0e3d139c68786b860bdcc600852f"
+    },
+    {
+      "url": "part-001.dat",
+      "offset": 114655232,
+      "length": 2811904,
+      "sha256": "435d7fd384a1cd4111b6c512752a919ce68968042985dfa4e28dd4bb472265b7"
+    },
+    {
+      "url": "part-002.dat",
+      "offset": 117538816,
+      "length": 2048,
+      "sha256": "4ed24cf5a577e3ce1f9335c08ec167170216604e02297ec064291c72c9c2336b"
+    },
+    {
+      "url": "part-003.dat",
+      "offset": 117721088,
+      "length": 180224,
+      "sha256": "bd67d5fde6f63d08191af6c70e9b0b9b69d06f542c333f3abd4d60bd0c21bea8"
+    },
+    {
+      "url": "part-004.dat",
+      "offset": 118081536,
+      "length": 8388608,
+      "sha256": "6436f23ff26c999b5c2fc6b3a860c304d4c290c175b7e4ac16ef757fd2c2b696"
+    },
+    {
+      "url": "part-005.dat",
+      "offset": 126470144,
+      "length": 1800192,
+      "sha256": "4046223e3de39cf4eb61e448f26940e9094a874a8f64327c496ac746ef92b0fa"
+    },
+    {
+      "url": "part-006.dat",
+      "offset": 128516096,
+      "length": 2048,
+      "sha256": "d1c4c13050b68480a53f7191d297bd2fd3c8d6240ba6f4a18f1f049ddd249855"
+    },
+    {
+      "url": "part-007.dat",
+      "offset": 128792576,
+      "length": 987136,
+      "sha256": "c0ce41be7969b82ec03ef09dd5b68140ba832351b9fd12d285bc16458c2b421f"
+    },
+    {
+      "url": "part-008.dat",
+      "offset": 131530752,
+      "length": 2048,
+      "sha256": "480fe5ec1ac2ca7429c6b06c6fd61c99b3eaf12a9f3bdd6f9785e66f7232bbd7"
+    },
+    {
+      "url": "part-009.dat",
+      "offset": 131807232,
+      "length": 983040,
+      "sha256": "7e4259197a496baf57be30dc0f1e50a7dfecaa393867fbd9898b633c45c7039d"
+    },
+    {
+      "url": "part-010.dat",
+      "offset": 136118272,
+      "length": 2048,
+      "sha256": "2832db2828d338b660942662a10de8c59f73aeffc32de1b6e077c9919c237e4e"
+    },
+    {
+      "url": "part-011.dat",
+      "offset": 136394752,
+      "length": 1007616,
+      "sha256": "645d135f09a5ba8ff864d28fddb53d580659243463f2d6247fb66945a4b9e36f"
+    },
+    {
+      "url": "part-012.dat",
+      "offset": 139952128,
+      "length": 2940928,
+      "sha256": "9076b6235d823048d4694d360fab789b9c575ccb0315f5c236f5394bb2b140cd"
+    },
+    {
+      "url": "part-013.dat",
+      "offset": 143392768,
+      "length": 5146624,
+      "sha256": "def83e7c3adaf8cec02aec7114254abf079e2ab68f2c20b49f7caa8625ada803"
+    },
+    {
+      "url": "part-014.dat",
+      "offset": 148668416,
+      "length": 1284096,
+      "sha256": "8bc01590c4cf24c76f92b4f697e4d979eb0866b583e52e871e2b4aaee1d6458d"
+    },
+    {
+      "url": "part-015.dat",
+      "offset": 151093248,
+      "length": 919552,
+      "sha256": "35efd500535dabe5796a041b4c240e37819ba27777317a97c1be1322790b74a5"
+    },
+    {
+      "url": "part-016.dat",
+      "offset": 152426496,
+      "length": 659456,
+      "sha256": "2dee0978a699ed0925676d94b32dc4516d4688e53c6e94b1b84118f0e40b948e"
+    },
+    {
+      "url": "part-017.dat",
+      "offset": 153714688,
+      "length": 2048,
+      "sha256": "45e2e8bbe0dc87f15727911296d704f586dbd9c5b0f6704b3e1f70b3217ceabd"
+    },
+    {
+      "url": "part-018.dat",
+      "offset": 154132480,
+      "length": 659456,
+      "sha256": "90685acf86c615fa6e7f65575fc509cad7f9861a54ff1928a71ad4d7c9b43dbb"
+    },
+    {
+      "url": "part-019.dat",
+      "offset": 156925952,
+      "length": 2048,
+      "sha256": "edabb0df40c90abdb035992793059f2b5866d05f9513ffcf43740e77d1a60e7e"
+    },
+    {
+      "url": "part-020.dat",
+      "offset": 157343744,
+      "length": 659456,
+      "sha256": "c959b5469c011ba70d85c623e43213b6af3ca7feab95c8eee8aaf260fe2ba33c"
+    },
+    {
+      "url": "part-021.dat",
+      "offset": 159711232,
+      "length": 2048,
+      "sha256": "1a7e83a20158ccb0e527e2d1a15e05a746739d02bd883a3db1d887c9d632d106"
+    },
+    {
+      "url": "part-022.dat",
+      "offset": 159930368,
+      "length": 759808,
+      "sha256": "0152928dab19dd4c24087806e1f095c4fdc086bb02acc55fb9e7f4960b38f9c1"
+    },
+    {
+      "url": "part-023.dat",
+      "offset": 160825344,
+      "length": 104448,
+      "sha256": "5090f1e2ce14b3f70b94ba30c6008bd6760dfbbf67a48e607185dd46c72f4275"
+    },
+    {
+      "url": "part-024.dat",
+      "offset": 161710080,
+      "length": 2048,
+      "sha256": "e941dc1de17cf8ac061bafabca8b4e1d5224bcc13ab3236f529f43277998db30"
+    },
+    {
+      "url": "part-025.dat",
+      "offset": 161929216,
+      "length": 759808,
+      "sha256": "0152928dab19dd4c24087806e1f095c4fdc086bb02acc55fb9e7f4960b38f9c1"
+    },
+    {
+      "url": "part-026.dat",
+      "offset": 162824192,
+      "length": 104448,
+      "sha256": "214c2d7e9b0f64a2772bbd72138085d3808f667756c4888b93d03f0baa4b6aa0"
+    },
+    {
+      "url": "part-027.dat",
+      "offset": 165249024,
+      "length": 2048,
+      "sha256": "bac43741f136aa5807c0eadc526aec7cb3a477616fda0c859c8edd5fc1ab7793"
+    },
+    {
+      "url": "part-028.dat",
+      "offset": 165468160,
+      "length": 759808,
+      "sha256": "0152928dab19dd4c24087806e1f095c4fdc086bb02acc55fb9e7f4960b38f9c1"
+    },
+    {
+      "url": "part-029.dat",
+      "offset": 166363136,
+      "length": 100352,
+      "sha256": "7f2436c004fe3dabc0e603a63f6e7870895df9497a7930f92da8aa03796f964f"
+    },
+    {
+      "url": "part-030.dat",
+      "offset": 168329216,
+      "length": 2048,
+      "sha256": "b4f4019244130ea245142230e4bd1c0b34082b69e8f883f60e467000c1689541"
+    },
+    {
+      "url": "part-031.dat",
+      "offset": 168732672,
+      "length": 598016,
+      "sha256": "82799764217a4a5a6fc979abc129b66a1c5679f5263cfa67d4ef30d48ad66a46"
+    },
+    {
+      "url": "part-032.dat",
+      "offset": 169672704,
+      "length": 2048,
+      "sha256": "b00b0b796d1e03386501d964990be204ee1a248b7c0a9473f5b6cb47bd634028"
+    },
+    {
+      "url": "part-033.dat",
+      "offset": 170076160,
+      "length": 600064,
+      "sha256": "d9b98f07f3327b501662f4a926f61c772f313482fbcb59a44cc18c0141ae2dba"
+    },
+    {
+      "url": "part-034.dat",
+      "offset": 172982272,
+      "length": 2048,
+      "sha256": "96647d329aeefb4603858c43f3c718448f735bdf615b0afd444a6dbcd23a6880"
+    },
+    {
+      "url": "part-035.dat",
+      "offset": 173385728,
+      "length": 593920,
+      "sha256": "f90777077868df4092f1afa46c2a99064ca0af7eac204fab2df56c2c6d97252d"
+    },
+    {
+      "url": "part-036.dat",
+      "offset": 175603712,
+      "length": 624640,
+      "sha256": "a5a880a989419f227b979e39950535e9da3939ae23452e4ecbee30c420613817"
+    },
+    {
+      "url": "part-037.dat",
+      "offset": 176545792,
+      "length": 462848,
+      "sha256": "c5748648d80c1b29ff7f12e6abd4636a85f693ff28d739bff0a67c06d7ab7c24"
+    },
+    {
+      "url": "part-038.dat",
+      "offset": 177086464,
+      "length": 194560,
+      "sha256": "3f0d607ad3bef826cff87f6d1501c0fab6cdb87d6300ee0fe763fd9a38c08407"
+    },
+    {
+      "url": "part-039.dat",
+      "offset": 177864704,
+      "length": 2048,
+      "sha256": "83ae986e018cefec1954453786476600958391fff9bd88b27421d1e301b90d99"
+    },
+    {
+      "url": "part-040.dat",
+      "offset": 178184192,
+      "length": 462848,
+      "sha256": "17f02660b10f73cf2253e3faf44fe271fd9f602ea334081f6a4a63d3adddc1a4"
+    },
+    {
+      "url": "part-041.dat",
+      "offset": 178724864,
+      "length": 192512,
+      "sha256": "0dbee6b164ac32cbfa0adb18acf1b136e2106f6fbe1acf83c894df09e62acbcf"
+    },
+    {
+      "url": "part-042.dat",
+      "offset": 181272576,
+      "length": 2048,
+      "sha256": "4e6973d845cfcbfdfb6433a8015ea7514e2ac69220c0cba5adc65d2466935c00"
+    },
+    {
+      "url": "part-043.dat",
+      "offset": 181592064,
+      "length": 462848,
+      "sha256": "c5748648d80c1b29ff7f12e6abd4636a85f693ff28d739bff0a67c06d7ab7c24"
+    },
+    {
+      "url": "part-044.dat",
+      "offset": 182132736,
+      "length": 196608,
+      "sha256": "f19d8881886572236fb510577981dc825b5a654a65c130bfc64164ed4697657d"
+    },
+    {
+      "url": "part-045.dat",
+      "offset": 184549376,
+      "length": 436224,
+      "sha256": "ac2d8dab95e0b0e734ea51299c0e5c0f14130e4bcfc76c0611117c258231a649"
+    },
+    {
+      "url": "part-046.dat",
+      "offset": 185434112,
+      "length": 2048,
+      "sha256": "40fb8934767152d64b2cf81baff3abbf49f2288286aa84aca7f5b6492cfbb4e4"
+    },
+    {
+      "url": "part-047.dat",
+      "offset": 185847808,
+      "length": 309248,
+      "sha256": "88ff0917c88d6a4e92404f9c994f3cd0e40f96cae6e216a0dc8363dcd69d863b"
+    },
+    {
+      "url": "part-048.dat",
+      "offset": 186568704,
+      "length": 309248,
+      "sha256": "d234d559d988e79d41384c7b698b7507b028fcfbffe86c7bcdc017307c0a82f8"
+    },
+    {
+      "url": "part-049.dat",
+      "offset": 187289600,
+      "length": 309248,
+      "sha256": "babdadf3e6bd2699c7508a5469a9ba18608553e130b7e055c25502da2aa82615"
+    },
+    {
+      "url": "part-050.dat",
+      "offset": 188010496,
+      "length": 309248,
+      "sha256": "4a6617c6ee534be4a52e17b07df768c2edb3283d42ed559c81af8a833648df21"
+    },
+    {
+      "url": "part-051.dat",
+      "offset": 188422144,
+      "length": 651264,
+      "sha256": "c643b0f89d12f5dfe5099fef7c59830faab7945b35d244c7682728f73b88f8d5"
+    },
+    {
+      "url": "part-052.dat",
+      "offset": 189175808,
+      "length": 585728,
+      "sha256": "9032063fc2767111531eb8f15c78c5c989bed8c2fd5d2559dd390ffc2bcbc0b9"
+    },
+    {
+      "url": "part-053.dat",
+      "offset": 189863936,
+      "length": 684032,
+      "sha256": "2d008fa550ec21d1922348987bcaf1cd806f36c043e319063aecf9e71874e0b2"
+    },
+    {
+      "url": "part-054.dat",
+      "offset": 190650368,
+      "length": 684032,
+      "sha256": "1c11d8eeff8bccf144f027e9f6c0f244f97ec9b9a03c0e36d16a6606543244cf"
+    },
+    {
+      "url": "part-055.dat",
+      "offset": 191561728,
+      "length": 901120,
+      "sha256": "e02f0383781052526c6ae6ac8f30fbe448ddc00d6144a53c704a9290d21b60d2"
+    },
+    {
+      "url": "part-056.dat",
+      "offset": 194084864,
+      "length": 2048,
+      "sha256": "c7186b0c5a7f95dfc778c5eec035b55f33d6f53b90ff3b290320af359acffff4"
+    },
+    {
+      "url": "part-057.dat",
+      "offset": 194314240,
+      "length": 892928,
+      "sha256": "ac145975c63d73688c9139f6cffa76ac8794d3ac5ca70653345fafefefebcf80"
+    },
+    {
+      "url": "part-058.dat",
+      "offset": 196837376,
+      "length": 1429504,
+      "sha256": "a2f36fadb86726f2cfd7d1b89146ab686e0602c2459b430cb56c07ec921b4011"
+    },
+    {
+      "url": "part-059.dat",
+      "offset": 201588736,
+      "length": 1437696,
+      "sha256": "6ed4b8bd36141432f0018f7298aefa7b638fe2c5f5cfe7d9dc08bde13a8ac723"
+    },
+    {
+      "url": "part-060.dat",
+      "offset": 207650816,
+      "length": 2048,
+      "sha256": "f113e16c183d033141180bb7c7a80fa28cebc1f2e6bc930bcba5b260793bf13e"
+    },
+    {
+      "url": "part-061.dat",
+      "offset": 207855616,
+      "length": 681984,
+      "sha256": "478d682ebd79a73a0e16488a9706050cdd89dc1db15f76a78cba17a0e8deb2fa"
+    },
+    {
+      "url": "part-062.dat",
+      "offset": 208740352,
+      "length": 649216,
+      "sha256": "d0811fa13445fad455f9a20f1e1268c2a03240273978dc331531afbbf742dacf"
+    },
+    {
+      "url": "part-063.dat",
+      "offset": 209592320,
+      "length": 649216,
+      "sha256": "6dcf1b7ed70f8a596be469e84647d4337a5222708871137c7ed61b5d9349f2a0"
+    },
+    {
+      "url": "part-064.dat",
+      "offset": 210511872,
+      "length": 856064,
+      "sha256": "e578c8e96f5796ae416c6e84ebed91515502a1356af3ff272c08c56ab974c9ce"
+    },
+    {
+      "url": "part-065.dat",
+      "offset": 212434944,
+      "length": 2048,
+      "sha256": "bc1c78d4a0a1f9e01249fd4017532a2ca20c513c6c2258039c22a86d7f3f6ca4"
+    },
+    {
+      "url": "part-066.dat",
+      "offset": 212707328,
+      "length": 860160,
+      "sha256": "fd3e246e981b7ce7a0d0ec3e0027eaabfe0d8747e631857a3ea306a1bff4c6eb"
+    },
+    {
+      "url": "part-067.dat",
+      "offset": 216924160,
+      "length": 2048,
+      "sha256": "675f97adb2e32edf36b3f439f38e0c4589155221bb9159057e3ef467a47e3086"
+    },
+    {
+      "url": "part-068.dat",
+      "offset": 217196544,
+      "length": 843776,
+      "sha256": "074d270295131da6e1c0f7a997693ec931ed2803916502f7c3e016ada8f98c92"
+    },
+    {
+      "url": "part-069.dat",
+      "offset": 348291072,
+      "length": 7004160,
+      "sha256": "8ef087ee77ef33d5b567aa7d671ba717bda827f80a9927cc399b74fd40832628"
+    },
+    {
+      "url": "part-070.dat",
+      "offset": 355663872,
+      "length": 1921024,
+      "sha256": "a7da25341c0589c0823e519b662cd53ed5c14573f9dfd30b58721758b213d69d"
+    },
+    {
+      "url": "part-071.dat",
+      "offset": 358187008,
+      "length": 3510272,
+      "sha256": "4f061ee61b3b4e9d7a565de76bbee576dfdb482942c60ea5fcc2733674910a5a"
+    },
+    {
+      "url": "part-072.dat",
+      "offset": 362053632,
+      "length": 290816,
+      "sha256": "e18374d94de18ba8f3547e0ca97ca323fabf2301812189720afc3d58456a08c0"
+    },
+    {
+      "url": "part-073.dat",
+      "offset": 362643456,
+      "length": 8388608,
+      "sha256": "6219992bf1da75b384d40b4f57095b26f6b6a990b3b544216b6fef12e6b5e2ab"
+    },
+    {
+      "url": "part-074.dat",
+      "offset": 371032064,
+      "length": 3678208,
+      "sha256": "9d2a7bb9b483dd9b915b5433cb98f0d405fde3a124dac95d1d2fe0c1b995c32e"
+    },
+    {
+      "url": "part-075.dat",
+      "offset": 374898688,
+      "length": 776192,
+      "sha256": "b77af6ce8aad6b7466a93a4d2f879c141d3b71dfd6ed4dc21c9ae95a130217aa"
+    },
+    {
+      "url": "part-076.dat",
+      "offset": 375947264,
+      "length": 329728,
+      "sha256": "d3c5a98907949c58b8c90957d39a7ff6355df03ba54978a2f34f26a98ff1a023"
+    },
+    {
+      "url": "part-077.dat",
+      "offset": 376406016,
+      "length": 186368,
+      "sha256": "a2bcfcd937b825d0a3e591c401dad09570f3d7d87e926d86885193218de1bae9"
+    },
+    {
+      "url": "part-078.dat",
+      "offset": 376864768,
+      "length": 548864,
+      "sha256": "ac7fff97749b043bbd43a0f87ddfb36a063b0ee5fde7c37e30855bdb27450636"
+    },
+    {
+      "url": "part-079.dat",
+      "offset": 377520128,
+      "length": 763904,
+      "sha256": "e854302de2f1db8bdfc1550e1b1237a4595c6046dbfee5fc6d73822ed4d30677"
+    },
+    {
+      "url": "part-080.dat",
+      "offset": 378667008,
+      "length": 2123776,
+      "sha256": "2a735673dc1e1b4bb88a9fedb8e10a9db02ea282a0321b7851776fa6625b8cd7"
+    },
+    {
+      "url": "part-081.dat",
+      "offset": 381091840,
+      "length": 600064,
+      "sha256": "c2f80f6f586162714d96f0cb8c12d0307c2b4f6be98913a462290f125442c71e"
+    },
+    {
+      "url": "part-082.dat",
+      "offset": 381943808,
+      "length": 268288,
+      "sha256": "f4e4b670c0abd2e128b4e5843c3f2667efe6d8b92805e53c7f90064229274c24"
+    },
+    {
+      "url": "part-083.dat",
+      "offset": 382337024,
+      "length": 405504,
+      "sha256": "8fdd83f3390462bfff2d37913fd5044eabb3f6cf93ba32270c54a76e12935162"
+    },
+    {
+      "url": "part-084.dat",
+      "offset": 382992384,
+      "length": 2842624,
+      "sha256": "ec6ec4b196dc4613d17ff20d264e4d30b2ef167698585045349ca14615e7f576"
+    },
+    {
+      "url": "part-085.dat",
+      "offset": 386203648,
+      "length": 681984,
+      "sha256": "05081e602a4f8c279993461cd2ab1290d69660b4f429393eed61063e7866c255"
+    },
+    {
+      "url": "part-086.dat",
+      "offset": 387153920,
+      "length": 700416,
+      "sha256": "65dd81c1a97c7675e872240902b327a0a3023568b5143e4222694b865c15d0f6"
+    },
+    {
+      "url": "part-087.dat",
+      "offset": 388366336,
+      "length": 784384,
+      "sha256": "db489cd18b149130ea65eed422585053ad2662ba8c3835f798f6163f7e7a2c8e"
+    },
+    {
+      "url": "part-088.dat",
+      "offset": 389906432,
+      "length": 782336,
+      "sha256": "05bcff68f6572ecc602266a7c0b6a8dfd49bb4e7b90539f92f71c3db065d5b13"
+    },
+    {
+      "url": "part-089.dat",
+      "offset": 390987776,
+      "length": 976896,
+      "sha256": "d251fece23abe4867118a69b9fde2a06d02c263d19051ad00bbb69bf894f16b8"
+    },
+    {
+      "url": "part-090.dat",
+      "offset": 392069120,
+      "length": 1228800,
+      "sha256": "3c1a6d4a60f5e569541d35b891177b8db31aea4fe8b76657f84db71d05d3a2bd"
+    },
+    {
+      "url": "part-091.dat",
+      "offset": 394035200,
+      "length": 1818624,
+      "sha256": "8c78a3fb78c7bfcfeb864338c21d70d46f11358fc5109edcd5e5bfe2d34b7485"
+    },
+    {
+      "url": "part-092.dat",
+      "offset": 396001280,
+      "length": 1667072,
+      "sha256": "bcda5baf7e09bd7e91e741467349aec5220112b0314488de751814d624d32cbc"
+    },
+    {
+      "url": "part-093.dat",
+      "offset": 397934592,
+      "length": 585728,
+      "sha256": "5cd92a9d85dcb141c13ddd97a91c4461131816ed680f250aa06400db83660c8f"
+    },
+    {
+      "url": "part-094.dat",
+      "offset": 398852096,
+      "length": 1241088,
+      "sha256": "2f58e88aac1a46f4f601edf57ce5476fea8bda5e719f9b68503707f60a0dc543"
+    },
+    {
+      "url": "part-095.dat",
+      "offset": 400228352,
+      "length": 1716224,
+      "sha256": "42a60af4613158599a218cdd25ab1d3a5fc4fd1071852b55c4acde1cc89001fc"
+    },
+    {
+      "url": "part-096.dat",
+      "offset": 402128896,
+      "length": 784384,
+      "sha256": "edf85640fca9023e2cd497278d54bbe0ce4878d63001117a80cb4837d4756cf4"
+    },
+    {
+      "url": "part-097.dat",
+      "offset": 403243008,
+      "length": 770048,
+      "sha256": "02b007bf61825e5e9153af577c097c4fc6150d7b5bfff4734740108abc5985fe"
+    },
+    {
+      "url": "part-098.dat",
+      "offset": 407633920,
+      "length": 182272,
+      "sha256": "76adb0bc0e85d4045c598e204a88dee27c1e5f771c8917167b6f0e90a9a002f3"
+    },
+    {
+      "url": "part-099.dat",
+      "offset": 407928832,
+      "length": 3534848,
+      "sha256": "a64a41024a83010a74b9a15577331236d35aa9c7ac639ac013ca3571099ca40d"
+    },
+    {
+      "url": "part-100.dat",
+      "offset": 411631616,
+      "length": 544768,
+      "sha256": "a360136c55ec107e43d2f90543a739e0f655d82fc4621d6f6ad045ecddd28ab1"
+    },
+    {
+      "url": "part-101.dat",
+      "offset": 412352512,
+      "length": 733184,
+      "sha256": "68dc60187a24a38b369a5ba56e2c59983f5cc429ab790a8c675f02db1a1418d6"
+    },
+    {
+      "url": "part-102.dat",
+      "offset": 413368320,
+      "length": 724992,
+      "sha256": "a15eebbdb95030e65b9116c15a39c3b753b09320cda6ea8c51c7503d54a054a4"
+    },
+    {
+      "url": "part-103.dat",
+      "offset": 421068800,
+      "length": 188416,
+      "sha256": "09b3b41d9a3210d7d3d3677cc321f4fe0d86ce5132b6b850d136eba41ea4d2da"
+    },
+    {
+      "url": "part-104.dat",
+      "offset": 479657984,
+      "length": 202752,
+      "sha256": "966d3daa4fe914078fa4cd65f37d550fb164f6ea6f3584bdb447be975facceff"
+    },
+    {
+      "url": "part-105.dat",
+      "offset": 1360363520,
+      "length": 8388608,
+      "sha256": "19f0de01cf8a47a219d9f990f273ba279e597b53de652ae6163770532739e162"
+    },
+    {
+      "url": "part-106.dat",
+      "offset": 1368752128,
+      "length": 8388608,
+      "sha256": "d340e8888c64ba684c815e3a8194a319a5b530d7a6281d17115456aa8fe8dd7f"
+    },
+    {
+      "url": "part-107.dat",
+      "offset": 1377140736,
+      "length": 8388608,
+      "sha256": "25e4f70f0315b486f25e7279bac9d9a5c9434b4aa61c87fc05eb0e76395f5724"
+    },
+    {
+      "url": "part-108.dat",
+      "offset": 1385529344,
+      "length": 8388608,
+      "sha256": "f4c2c785e69ae2f21204e1efd9a4569c7ddb0d04afd5807610396af2572e851d"
+    },
+    {
+      "url": "part-109.dat",
+      "offset": 1393917952,
+      "length": 4890624,
+      "sha256": "8b26e8d70f05ce253184b4ffef865afd15f91364e8e7e9ae114e930963b71ede"
+    }
+  ]
+}
