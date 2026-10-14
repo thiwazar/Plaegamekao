@@ -247,8 +247,7 @@
 
   .support{
 
-    background:linear-gradient(180deg,var(--panel),var(--panel2) 140%);
-    border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px;margin-bottom:16px;
+    background:linear-gradient(180deg,var(--panel),var(--panel2) 140%);    border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px;margin-bottom:16px;
 
     box-shadow:0 10px 30px rgba(0,0,0,.35);text-align:center;
 
@@ -498,7 +497,6 @@
 
     header h1{font-size:22px;line-height:1.35}
     .hero-mascot{right:2px;width:135px;bottom:-8px}
-
     #home-wrap,#detail-wrap{margin:14px;border-radius:18px;padding:16px}
 
     .grid{grid-template-columns:1fr}
@@ -557,7 +555,7 @@
   <div class="grid" id="grid"></div>
 
   <section class="upcoming" aria-labelledby="upcoming-title">
-<div class="upcoming-head"><h2 id="upcoming-title">🎮 โปรเจกต์ที่กำลังแปล</h2><p>แยกตามเครื่องเกม และเรียงชื่อ A–Z</p></div><div class="translation-platform-group"><h3 class="translation-platform-title">PSP <span class="badge">5 เกม</span></h3><div class="upcoming-list"><article class="upcoming-card">
+<div class="upcoming-head"><h2 id="upcoming-title">🎮 โปรเจกต์ที่กำลังแปล</h2><p>แยกตามเครื่องเกม และเรียงชื่อ A–Z</p></div><div class="translation-platform-group"><h3 class="translation-platform-title">PSP <span class="badge">4 เกม</span></h3><div class="upcoming-list"><article class="upcoming-card">
         <img class="upcoming-cover" src="covers/in-progress/busou-shinki.jpg" alt="Busou Shinki: Battle Masters Mk.2" loading="lazy" width="120" height="160">
         <div>
           <div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PSP</span></div>
@@ -595,14 +593,7 @@
 
       </article>
 
-<article class="upcoming-card">
-        <img class="upcoming-cover" src="covers/in-progress/shining-ark.jpg" alt="Shining Ark" loading="lazy" width="120" height="160">
-        <div>
-          <div class="gcard-badges"><span class="status-progress">อยู่ระหว่างแปล</span><span class="plat-badge">PSP</span></div>
-          <h3>Shining Ark</h3>
-          <p>กำลังจัดทำแพตช์ภาษาไทยโดยเพจแปลเกมเก่า</p>
-        </div>
-      </article>
+
 
 <article class="upcoming-card">
         <img class="upcoming-cover" src="covers/in-progress/valkyrie-profile.jpg" alt="Valkyrie Profile: Lenneth" loading="lazy" width="120" height="160">
@@ -748,7 +739,6 @@ const GAMES = [
     platform: "PS2",
 
     format: "SPARSE1",
-
     version: "v1.3",
 
     cover: "covers/Fatal_Frame_II_Thai_v1.0.png",
@@ -999,7 +989,6 @@ const PLATFORMS = ["ทั้งหมด", ...new Set(GAMES.map(g => g.platform
 let activePlatform = "ทั้งหมด";
 
 
-
 function renderPlatformTabs() {
 
   platformTabsEl.innerHTML = "";
@@ -1248,7 +1237,6 @@ async function sha256Hex(data) {
 
 
 function setupGame(g) {
-
   if (g.id === VAGRANT_GAME.id) { setupVagrant(g); return; }
 
   if (g.id === "the3rdbirthday") { setupBirthday(g); return; }
@@ -1496,7 +1484,6 @@ async function applySparsePatch(file, g, setProgress, logLine) {
     throw new Error("ข้อมูลแพตช์ไม่ตรงกับเกมรุ่นที่เลือก");
 
   }
-
 
 
   const baseUrl = new URL(g.patchUrl, location.href);
