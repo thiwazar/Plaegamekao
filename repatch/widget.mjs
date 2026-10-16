@@ -1,4 +1,4 @@
-import {mount} from './app.mjs';
+import {mount} from './app.mjs?v=separate1';
 import {GAMES} from './core.mjs';
 for(const host of document.querySelectorAll('[data-repatch-game]')){
  const key=host.dataset.repatchGame,game=GAMES[key];
