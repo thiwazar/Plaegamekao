@@ -1463,6 +1463,11 @@ function setupGame(g) {
 // Unchanged ranges remain File slices; only the small replacement pieces are downloaded.
 
 async function applySparsePatch(file, g, setProgress, logLine) {
+  if (g.id === "black-rock-shooter-v1") {
+    const {applyBrsStablePatch} = await import("./brs-stable-patch.mjs?v=20261016-1");
+    return applyBrsStablePatch(file, g, setProgress, logLine, hashBlob, sha256Hex);
+  }
+
 
   if (file.size !== g.sourceSize) throw new Error(`ขนาดไฟล์ต้นฉบับไม่ตรง ต้องเป็น ${g.sourceSize} ไบต์`);
 
