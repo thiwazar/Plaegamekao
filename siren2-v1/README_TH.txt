@@ -19,15 +19,6 @@ https://thiwazar.github.io/Plaegamekao/siren2-v1/
 4. รอจนตรวจผลสำเร็จ ควรมีพื้นที่ว่างอย่างน้อย 6 GB
 ISO ประมวลผลในเครื่อง ไม่อัปโหลดเกมขึ้นเซิร์ฟเวอร์
 
-วิธีลงเองด้วย xdelta UI
-Patch: Forbidden_Siren_2_Thai_v1.0.xdelta
-Source: ISO Europe/PAL SCES-53851 ต้นฉบับ
-Output: Forbidden_Siren_2_Thai_v1.0.iso (ห้ามเลือกทับต้นฉบับ)
-จากนั้นกด Apply
-
-หรือใช้คำสั่ง:
-xdelta3 -d -s "original.iso" "Forbidden_Siren_2_Thai_v1.0.xdelta" "Forbidden_Siren_2_Thai_v1.0.iso"
-
 หลังลงแพตช์
 - เปิดไฟล์ภาษาไทยใน PCSX2 หรืออุปกรณ์ที่รองรับ
 - เลือก English ในเกม

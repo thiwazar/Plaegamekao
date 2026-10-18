@@ -2,7 +2,7 @@ import {RELEASE} from './core.mjs';
 const choose=document.querySelector('#choose'),start=document.querySelector('#start'),status=document.querySelector('#status'),progress=document.querySelector('#progress'),selected=document.querySelector('#selected');
 let sourceHandle,file,worker;
 const supported=Boolean(window.showOpenFilePicker&&window.showSaveFilePicker&&window.Worker);
-if(!supported){choose.disabled=true;status.textContent='แปะบนเว็บด้วย Chrome หรือ Edge บนคอมพิวเตอร์ หรือดาวน์โหลดแพตช์ไปใช้กับ xdelta ตามคู่มือด้านล่าง';}
+if(!supported){choose.disabled=true;status.textContent='กรุณาเปิดหน้านี้ด้วย Chrome หรือ Edge บนคอมพิวเตอร์เพื่อแปะแพตช์บนเว็บ';}
 choose.addEventListener('click',async()=>{
   try{
     [sourceHandle]=await showOpenFilePicker({multiple:false,types:[{description:'PlayStation 2 ISO',accept:{'application/octet-stream':['.iso']}}]});file=await sourceHandle.getFile();
@@ -27,14 +27,4 @@ start.addEventListener('click',async()=>{
     worker.onerror=()=>{status.className='error';status.textContent='ตัวแปะแพตช์หยุดทำงาน กรุณาปิดแท็บอื่นแล้วลองอีกครั้ง';finish();};
     worker.postMessage({file,sourceHandle,outputHandle});
   }catch(e){if(e.name!=='AbortError'){status.className='error';status.textContent=e.message;}}
-});
-const download=document.querySelector('#offline');
-download.addEventListener('click',async()=>{
-  download.disabled=true;
-  try{
-    const {loadPatch}=await import('./core.mjs');const url=new URL('./manifest.json',location.href);
-    const response=await fetch(url,{cache:'no-cache'});if(!response.ok)throw Error('โหลดข้อมูลแพตช์ไม่สำเร็จ');
-    const bytes=await loadPatch(await response.json(),url);const objectUrl=URL.createObjectURL(new Blob([bytes]));
-    const a=document.createElement('a');a.href=objectUrl;a.download='Forbidden_Siren_2_Thai_v1.0.xdelta';a.click();setTimeout(()=>URL.revokeObjectURL(objectUrl),60000);
-  }catch(e){status.className='error';status.textContent=e.message;}finally{download.disabled=false;}
 });
