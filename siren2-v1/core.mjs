@@ -1,5 +1,5 @@
 import {Sha256, hashBlob} from './sha256.mjs';
-import {decodeWindows} from './vcdiff.mjs?v=stall-fix-1';
+import {decodeWindows} from './vcdiff.mjs?v=stream-1';
 export const RELEASE = Object.freeze({
   version:'1.0', gameId:'SCES-53851', region:'Europe / PAL',
   sourceSize:5844074496,
@@ -28,18 +28,19 @@ export function validateManifest(manifest) {
   }
   if(total!==manifest.patchSize || total>512*1024*1024 || !/^[a-f0-9]{64}$/.test(manifest.patchSha256))fail('ขนาดแพตช์ไม่ถูกต้อง');
 }
-export async function loadPatch(manifest,baseUrl,progress=()=>{},fetcher=fetch) {
+export async function* streamPatch(manifest,baseUrl,progress=()=>{},fetcher=fetch) {
   validateManifest(manifest);
-  const joined=new Uint8Array(manifest.patchSize);let offset=0;const totalHash=new Sha256();
+  let offset=0;const totalHash=new Sha256();
   for(const part of manifest.parts){
+    progress(offset/manifest.patchSize);
     const response=await fetcher(new URL(part.url,manifest.assetBase||baseUrl));
     if(!response.ok)fail(`ดาวน์โหลดแพตช์ไม่สำเร็จ (${response.status})`);
     const bytes=new Uint8Array(await response.arrayBuffer());
     if(bytes.length!==part.size || new Sha256().update(bytes).hex()!==part.sha256)fail('ไฟล์แพตช์เสียหาย กรุณาโหลดหน้าเว็บใหม่แล้วลองอีกครั้ง');
-    joined.set(bytes,offset);totalHash.update(bytes);offset+=bytes.length;progress(offset/manifest.patchSize);
+    totalHash.update(bytes);offset+=bytes.length;progress(offset/manifest.patchSize);
+    yield bytes;
   }
   if(totalHash.hex()!==manifest.patchSha256)fail('SHA-256 ของแพตช์ไม่ตรง');
-  return joined;
 }
 export async function applyToWriter(source,patch,writer,progress=()=>{},activity=()=>{}) {
   const hash=new Sha256();let size=0,windows=0;

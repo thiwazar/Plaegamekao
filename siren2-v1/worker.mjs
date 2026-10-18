@@ -1,4 +1,4 @@
-import {RELEASE,validateSource,loadPatch,applyToWriter} from './core.mjs?v=stall-fix-1';
+import {RELEASE,validateSource,streamPatch,applyToWriter} from './core.mjs?v=stream-1';
 let running=false;
 self.onmessage=async ({data})=>{
   if(running)return;running=true;let writer;
@@ -11,9 +11,11 @@ self.onmessage=async ({data})=>{
     const response=await fetch(manifestUrl,{cache:'no-cache'});
     if(!response.ok)throw Error('โหลดข้อมูลแพตช์ไม่สำเร็จ');
     const manifest=await response.json();
-    const patch=await loadPatch(manifest,manifestUrl,p=>progress('ดาวน์โหลดแพตช์',40+p*10));
+    let downloaded=0,written=0;
+    const update=phase=>progress(phase,40+downloaded*10+written*49);
+    const patch=streamPatch(manifest,manifestUrl,p=>{downloaded=p;update('ทยอยดาวน์โหลดและตรวจแพตช์');});
     writer=await outputHandle.createWritable();
-    const result=await applyToWriter(file,patch,writer,p=>progress('เขียน ISO ภาษาไทยลงไดรฟ์',50+p*49),(phase,p)=>progress(phase,50+p*49));
+    const result=await applyToWriter(file,patch,writer,p=>{written=p;update('เขียน ISO ภาษาไทยลงไดรฟ์');},phase=>update(phase));
     progress('บันทึกไฟล์ขั้นสุดท้าย กรุณารอไดรฟ์ทำงานเสร็จ',99);
     await writer.close();writer=null;
     self.postMessage({type:'done',...result,name:RELEASE.outName});

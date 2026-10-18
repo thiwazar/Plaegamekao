@@ -1,4 +1,4 @@
-import {RELEASE} from './core.mjs?v=stall-fix-1';
+import {RELEASE} from './core.mjs?v=stream-1';
 const choose=document.querySelector('#choose'),start=document.querySelector('#start'),status=document.querySelector('#status'),progress=document.querySelector('#progress'),selected=document.querySelector('#selected');
 let sourceHandle,file,worker;
 const supported=Boolean(window.showOpenFilePicker&&window.showSaveFilePicker&&window.Worker);
@@ -17,7 +17,7 @@ start.addEventListener('click',async()=>{
     const outputHandle=await showSaveFilePicker({suggestedName:RELEASE.outName,types:[{description:'ISO ภาษาไทย',accept:{'application/octet-stream':['.iso']}}]});
     if(await sourceHandle.isSameEntry(outputHandle))throw Error('เลือกไฟล์ปลายทางคนละไฟล์กับ ISO ต้นฉบับ');
     choose.disabled=true;start.disabled=true;progress.value=0;status.className='';
-    worker=new Worker(new URL('./worker.mjs?v=stall-fix-1',import.meta.url),{type:'module'});
+    worker=new Worker(new URL('./worker.mjs?v=stream-1',import.meta.url),{type:'module'});
     let lastUpdate=Date.now(),lastPhase='เริ่มทำงาน',lastValue=0;
     const watchdog=setInterval(()=>{
       const seconds=Math.floor((Date.now()-lastUpdate)/1000);

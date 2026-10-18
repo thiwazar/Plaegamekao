@@ -17,6 +17,30 @@ class Reader {
   }
   section(n) { if (!Number.isSafeInteger(n) || n < 0 || n > this.end - this.p) throw new Error('ขนาดส่วนแพตช์ไม่ถูกต้อง'); const r = new Reader(this.b, this.p, this.p + n); this.p += n; return r; }
 }
+// Buffers one verified download part and one delta window, never the full patch.
+class StreamReader {
+  constructor(input) {
+    this.iterator=(input instanceof Uint8Array ? (async function*(){yield input;})() : input)[Symbol.asyncIterator]();
+    this.chunk=new Uint8Array();this.offset=0;this.done=false;
+  }
+  async available() {
+    while(this.offset===this.chunk.length&&!this.done){
+      this.chunk=new Uint8Array();this.offset=0;
+      const next=await this.iterator.next();this.done=Boolean(next.done);
+      if(!this.done){if(!(next.value instanceof Uint8Array))throw Error('Invalid patch chunk');this.chunk=next.value;}
+    }
+    return !this.done;
+  }
+  async byte(){if(!await this.available())throw Error('แพตช์ขาดหาย');return this.chunk[this.offset++];}
+  async integer(){let n=0;for(let i=0;i<8;i++){const b=await this.byte();n=n*128+(b&127);if(!Number.isSafeInteger(n))throw Error('ค่าในแพตช์ใหญ่เกินขอบเขต');if(!(b&128))return n;}throw Error('รูปแบบจำนวนเต็มไม่ถูกต้อง');}
+  async section(n){
+    if(!Number.isSafeInteger(n)||n<0||n>64*1024*1024)throw Error('ส่วนแพตช์ใหญ่เกินขอบเขต');
+    const bytes=new Uint8Array(n);let p=0;
+    while(p<n){if(!await this.available())throw Error('แพตช์ขาดหาย');const count=Math.min(n-p,this.chunk.length-this.offset);bytes.set(this.chunk.subarray(this.offset,this.offset+count),p);p+=count;this.offset+=count;}
+    return new Reader(bytes);
+  }
+  async close(){this.chunk=new Uint8Array();await this.iterator.return?.();}
+}
 function table() {
   const t = [[['RUN', 0, 0]]];
   for (let s = 0; s <= 17; s++) t.push([['ADD', s, 0]]);
@@ -37,19 +61,20 @@ export function adler32(data) {
   return ((b << 16) | a) >>> 0;
 }
 export async function* decodeWindows(source, patchBytes, expectedSize, activity=()=>{}) {
-  const r = new Reader(patchBytes);
-  if ([0xd6,0xc3,0xc4,0].some(v => r.byte() !== v)) throw new Error('ไม่ใช่แพตช์ VCDIFF ที่รองรับ');
-  const header = r.byte();
+  const r = new StreamReader(patchBytes);
+  try {
+  for (const v of [0xd6,0xc3,0xc4,0]) if (await r.byte() !== v) throw new Error('ไม่ใช่แพตช์ VCDIFF ที่รองรับ');
+  const header = await r.byte();
   if (header & ~4) throw new Error('แพตช์ใช้การบีบอัดหรือตารางที่ตัวอ่านนี้ไม่รองรับ');
-  if (header & 4) r.section(r.integer());
+  if (header & 4) await r.section(await r.integer());
   let writtenTotal = 0, windowIndex = 0;
-  while (r.p < r.end) {
-    const flag = r.byte();
+  while (await r.available()) {
+    const flag = await r.byte();
     if ((flag & ~5) !== 0) throw new Error('แพตช์ใช้ source window ที่ไม่รองรับ');
     let sourceLength = 0, sourceOffset = 0;
-    if (flag & 1) { sourceLength = r.integer(); sourceOffset = r.integer(); }
+    if (flag & 1) { sourceLength = await r.integer(); sourceOffset = await r.integer(); }
     if (sourceLength > MAX_SOURCE_WINDOW || sourceOffset > source.size - sourceLength) throw new Error('ขอบเขต ISO ต้นทางในแพตช์ไม่ถูกต้อง');
-    const delta = r.section(r.integer());
+    const delta = await r.section(await r.integer());
     const targetLength = delta.integer();
     if (!targetLength || targetLength > MAX_TARGET_WINDOW || targetLength > expectedSize - writtenTotal) throw new Error('ขนาดผลลัพธ์ในแพตช์ไม่ถูกต้อง');
     if (delta.byte() !== 0) throw new Error('แพตช์นี้บีบอัดภายใน กรุณาใช้แพตช์ Siren 2 v1.0 ที่มากับเว็บ');
@@ -98,4 +123,5 @@ export async function* decodeWindows(source, patchBytes, expectedSize, activity=
     yield {bytes:target, written:writtenTotal, windowIndex};
   }
   if (writtenTotal !== expectedSize) throw new Error('ขนาด ISO ปลายทางไม่ตรง');
+  } finally { await r.close(); }
 }
