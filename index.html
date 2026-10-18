@@ -693,6 +693,19 @@ import {hashBlob} from "./dragons-crown/dragon-sha256.mjs";
 
 
 const GAMES = [
+  {
+    id: "tales-of-destiny-2-thai-v1",
+    name: "Tales of Destiny 2",
+    platform: "PS2",
+    format: "PS2 · แพตช์ ISO",
+    version: "beta",
+    displayVersion: "v.1 BETA",
+    pageOnly: true,
+    desc: "แพตช์ไทย v.1 อยู่ระหว่างทดสอบ · แปลเป็นไทยแล้วประมาณ 82% ของระเบียนบทสนทนา · เมนูและรายการอุปกรณ์บางส่วนยังอยู่ระหว่างตรวจแก้",
+    sourceSize: 3234037760,
+    pageUrl: "./tales-of-destiny-2/"
+  },
+
   {id:"masou-kishin-iii", name:"Super Robot Wars OG Saga: Masou Kishin III — PRIDE OF JUSTICE", platform:"PS Vita", format:"แพตช์ออนไลน์ / rePatch", version:"v1.0", cover:"masou-kishin-iii/cover.png", desc:"ภาษาไทย v1.0 สำหรับ PCSG00190 รุ่น 1.00 สร้างชุด rePatch ในเบราว์เซอร์ หรือดาวน์โหลดชุดสำหรับเครื่อง Vita พร้อมวิธีติดตั้ง ทดสอบ Vita3K ช่วงต้นแล้ว ยังไม่ได้ยืนยันทุกฉากและเครื่องจริง", sourceSize:8557289, pageUrl:"./masou-kishin-iii/", downloadOnly:false},
   {"id": "black-rock-shooter-v1", "name": "Black Rock Shooter: The Game", "platform": "PSP", "format": "SPARSE1", "version": "v1.0", "displayVersion": "v1.0", "cover": "black-rock-shooter-v1/cover.png", "desc": "หลังโลกถูกกองทัพต่างดาวรุกรานยาวนาน 19 ปี มนุษย์ที่เหลืออยู่ปลุก Black Rock Shooter ขึ้นมาเป็นความหวังสุดท้าย ออกต่อสู้ท่ามกลางซากอารยธรรมและค้นหาความลับของตัวตนเธอ", "patchUrl": "black-rock-shooter-v1/manifest.json", "sourceName": "Black Rock Shooter - The Game (Europe) — NPEH00138", "sourceSize": 1360363520, "sourceSha256": "e793abded53defc25842d4bcce9541e505ca3a223275d70801d8aa90108e8e82", "targetSize": 1398808576, "targetSha256": "da9d4ab00b21dab72917cda2dd7dc58c03c539f349cb3ee85553d0e485fb33e6", "outName": "Black_Rock_Shooter_Thai_v1.0.iso", "warning": "ใช้ ISO Europe ต้นฉบับที่ยังไม่ลงแพตช์ เมื่อเปิดรุ่น v1.0 ให้โหลดเซฟปกติแทน Save State จากรุ่นก่อน"},
   {id:"persona-q2-thai-v1", name:"Persona Q2: New Cinema Labyrinth", platform:"Nintendo 3DS", format:"3DS · แปะแพตช์บนเว็บ", version:"v1.0", displayVersion:"v1.0", cover:"persona-q2/cover.png", desc:"เหล่าจอมโจรหัวใจหลงเข้าสู่โรงภาพยนตร์ปริศนา ร่วมมือกับผู้ใช้เพอร์โซนาจาก Persona 3 และ Persona 4 ฝ่าโลกภาพยนตร์และเขาวงกตเพื่อหาทางกลับบ้าน", sourceSize:4294967296, pageUrl:"./persona-q2/", downloadOnly:false},
@@ -1049,7 +1062,7 @@ function renderGrid() {
 
         <div class="gmeta-row">ต้นฉบับ: ${(g.sourceSize/1024/1024).toFixed(1)} MB</div>
 
-        <button class="gbtn">${g.downloadOnly ? "ดาวน์โหลดแพตช์และคู่มือ →" : "ไปแปะแพตช์ →"}</button>
+        <button class="gbtn">${g.downloadOnly ? "ดาวน์โหลดแพตช์และคู่มือ →" : (g.pageOnly ? "ดูรายละเอียดเบต้า →" : "ไปแปะแพตช์ →")}</button>
 
       </div>
 
