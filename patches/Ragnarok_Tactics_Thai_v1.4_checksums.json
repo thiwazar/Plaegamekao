@@ -1,0 +1,23 @@
+{
+  "version": "1.4",
+  "game": "Ragnarok Tactics USA",
+  "game_id": "ULUS10594",
+  "source_name": "Ragnarok_Tactics_USA_PSP-PLAYASiA.iso",
+  "source_bytes": 645431296,
+  "source_sha256": "bc556e7cf3ed05889a3a7b59fca736af0f476b7e043ad54d85b04a5bf6371382",
+  "output_bytes": 757524480,
+  "output_sha256": "4b081849d609b214d2f7ce4ff0fa56dd64b6e7ebfa58bc45cd6b3d5b5590d05b",
+  "patch": "Ragnarok_Tactics_Thai_v1.4.xdelta",
+  "patch_bytes": 88817522,
+  "patch_sha256": "f21ca176450ce1f8f6c4b0d31e4adafcda6ab700daf7f9dae50787c546737020",
+  "patch_roundtrip": "PASS_STREAM_DECODE_EXACT_SHA256",
+  "user_test": "New Game Wolf level 1 confirmed on this exact build",
+  "system_thai_active_strings": 17,
+  "story_assets": "unchanged from prior test build",
+  "job_level_up": "NOT_VERIFIED",
+  "full_game_translation": "NOT_COMPLETE",
+  "website_updated": false,
+  "decoder_check_only_exit": 0,
+  "decoder_stdout_exit": 3221225477,
+  "decoder_stdout_note": "Complete output matches exact target SHA-256; Windows xdelta3 3.2.0 stdout teardown returned access violation. Independent -J decode/check exited 0."
+}
