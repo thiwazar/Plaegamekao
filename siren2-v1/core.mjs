@@ -1,5 +1,5 @@
 import {Sha256, hashBlob} from './sha256.mjs';
-import {decodeWindows} from './vcdiff.mjs';
+import {decodeWindows} from './vcdiff.mjs?v=stall-fix-1';
 export const RELEASE = Object.freeze({
   version:'1.0', gameId:'SCES-53851', region:'Europe / PAL',
   sourceSize:5844074496,
@@ -41,10 +41,18 @@ export async function loadPatch(manifest,baseUrl,progress=()=>{},fetcher=fetch) 
   if(totalHash.hex()!==manifest.patchSha256)fail('SHA-256 ของแพตช์ไม่ตรง');
   return joined;
 }
-export async function applyToWriter(source,patch,writer,progress=()=>{}) {
+export async function applyToWriter(source,patch,writer,progress=()=>{},activity=()=>{}) {
   const hash=new Sha256();let size=0,windows=0;
-  for await(const window of decodeWindows(source,patch,RELEASE.targetSize)){
-    hash.update(window.bytes);await writer.write(window.bytes);size+=window.bytes.length;windows++;progress(size/RELEASE.targetSize);
+  for await(const window of decodeWindows(source,patch,RELEASE.targetSize,(phase,bytes)=>activity(phase,bytes/RELEASE.targetSize))){
+    activity('ตรวจข้อมูล ISO ภาษาไทย',size/RELEASE.targetSize);
+    hash.update(window.bytes);
+    // Smaller writes keep disk progress observable and bound each pending write.
+    for(let offset=0;offset<window.bytes.length;offset+=1024*1024){
+      const chunk=window.bytes.subarray(offset,offset+1024*1024);
+      activity('เขียน ISO ภาษาไทยลงไดรฟ์',size/RELEASE.targetSize);
+      await writer.write(chunk);size+=chunk.length;progress(size/RELEASE.targetSize);
+    }
+    windows++;
   }
   const digest=hash.hex();
   if(size!==RELEASE.targetSize || digest!==RELEASE.targetSha256)fail('ISO ภาษาไทยไม่ผ่านการตรวจสอบ ผลลัพธ์ยังไม่ถูกบันทึก กรุณาลองใหม่');

@@ -36,7 +36,7 @@ export function adler32(data) {
   }
   return ((b << 16) | a) >>> 0;
 }
-export async function* decodeWindows(source, patchBytes, expectedSize) {
+export async function* decodeWindows(source, patchBytes, expectedSize, activity=()=>{}) {
   const r = new Reader(patchBytes);
   if ([0xd6,0xc3,0xc4,0].some(v => r.byte() !== v)) throw new Error('ไม่ใช่แพตช์ VCDIFF ที่รองรับ');
   const header = r.byte();
@@ -58,22 +58,18 @@ export async function* decodeWindows(source, patchBytes, expectedSize) {
     if (flag & 4) checksum = (delta.byte()*0x1000000 + delta.byte()*0x10000 + delta.byte()*0x100 + delta.byte()) >>> 0;
     const data = delta.section(dataLength), instructions = delta.section(instructionLength), addresses = delta.section(addressLength);
     if (delta.p !== delta.end) throw new Error('ความยาวแพตช์ไม่ตรงกับ header');
+    activity('อ่าน ISO ต้นฉบับ',writtenTotal);
     const dictionary = sourceLength ? new Uint8Array(await source.slice(sourceOffset, sourceOffset + sourceLength).arrayBuffer()) : new Uint8Array();
     if (dictionary.length !== sourceLength) throw new Error('อ่าน ISO ต้นทางไม่ครบ');
     const target = new Uint8Array(targetLength), near = new Float64Array(4), same = new Float64Array(768);
-    let nextNear = 0, written = 0, materializedBytes = 0;
-    const spans = [];
-    const addSpan=(sourceStart,targetStart,length)=>{
-      const prev=spans[spans.length-1];
-      if(prev && ((sourceStart!==null && prev.sourceStart!==null && prev.sourceStart+prev.length===sourceStart) || (sourceStart===null && prev.sourceStart===null && prev.targetStart+prev.length===targetStart)))prev.length+=length;
-      else spans.push({sourceStart,targetStart,length});
-    };
+    let nextNear = 0, written = 0;
+    activity('ประมวลผลแพตช์',writtenTotal);
     while (instructions.p < instructions.end) {
       for (const [kind, fixedSize, mode] of CODE_TABLE[instructions.byte()]) {
         const size = fixedSize || instructions.integer();
         if (size <= 0 || size > targetLength - written) throw new Error('คำสั่งแพตช์เกินขนาดหน้าต่าง');
-        if (kind === 'ADD') { const part = data.section(size); const literal=part.b.subarray(part.p, part.end); target.set(literal, written); addSpan(null,written,size); materializedBytes+=size; written += size; }
-        else if (kind === 'RUN') { target.fill(data.byte(), written, written + size); addSpan(null,written,size); materializedBytes+=size; written += size; }
+        if (kind === 'ADD') { const part = data.section(size); const literal=part.b.subarray(part.p, part.end); target.set(literal, written); written += size; }
+        else if (kind === 'RUN') { target.fill(data.byte(), written, written + size); written += size; }
         else {
           let address;
           if (mode === 0) address = addresses.integer();
@@ -84,14 +80,14 @@ export async function* decodeWindows(source, patchBytes, expectedSize) {
           near[nextNear] = address; nextNear = (nextNear+1)%4; same[address%768] = address;
           let count = size;
           if (address < sourceLength) {
-            const n = Math.min(count, sourceLength-address); addSpan(sourceOffset+address,null,n); target.set(dictionary.subarray(address,address+n), written); written += n; address += n; count -= n;
+            const n = Math.min(count, sourceLength-address); target.set(dictionary.subarray(address,address+n), written); written += n; address += n; count -= n;
           }
           if (count) {
-            const from = address - sourceLength; const copyStart=written;
+            const from = address - sourceLength;
             if (from < 0 || from >= written) throw new Error('COPY อ้างอิงข้อมูลที่ยังไม่มี');
             if (from+count <= written) { target.set(target.subarray(from,from+count),written); written += count; }
             else { for (let i=0;i<count;i++) target[written+i]=target[from+i]; written += count; }
-            addSpan(null,copyStart,count); materializedBytes+=count;
+
           }
         }
       }
@@ -99,8 +95,7 @@ export async function* decodeWindows(source, patchBytes, expectedSize) {
     if (written !== targetLength || data.p !== data.end || addresses.p !== addresses.end) throw new Error('ถอดรหัสแพตช์ได้ข้อมูลไม่ครบ');
     if (checksum !== undefined && adler32(target) !== checksum) throw new Error('Checksum ของแพตช์ไม่ตรง');
     writtenTotal += targetLength; windowIndex++;
-    const parts=spans.map(s=>s.sourceStart!==null ? source.slice(s.sourceStart,s.sourceStart+s.length) : new Blob([target.subarray(s.targetStart,s.targetStart+s.length)]));
-    yield {bytes:target, parts, materializedBytes, written:writtenTotal, windowIndex};
+    yield {bytes:target, written:writtenTotal, windowIndex};
   }
   if (writtenTotal !== expectedSize) throw new Error('ขนาด ISO ปลายทางไม่ตรง');
 }

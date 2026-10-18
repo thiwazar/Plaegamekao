@@ -1,4 +1,4 @@
-import {RELEASE} from './core.mjs';
+import {RELEASE} from './core.mjs?v=stall-fix-1';
 const choose=document.querySelector('#choose'),start=document.querySelector('#start'),status=document.querySelector('#status'),progress=document.querySelector('#progress'),selected=document.querySelector('#selected');
 let sourceHandle,file,worker;
 const supported=Boolean(window.showOpenFilePicker&&window.showSaveFilePicker&&window.Worker);
@@ -17,10 +17,15 @@ start.addEventListener('click',async()=>{
     const outputHandle=await showSaveFilePicker({suggestedName:RELEASE.outName,types:[{description:'ISO ภาษาไทย',accept:{'application/octet-stream':['.iso']}}]});
     if(await sourceHandle.isSameEntry(outputHandle))throw Error('เลือกไฟล์ปลายทางคนละไฟล์กับ ISO ต้นฉบับ');
     choose.disabled=true;start.disabled=true;progress.value=0;status.className='';
-    worker=new Worker(new URL('./worker.mjs',import.meta.url),{type:'module'});
-    const finish=()=>{choose.disabled=false;start.disabled=false;worker.terminate();worker=null;};
+    worker=new Worker(new URL('./worker.mjs?v=stall-fix-1',import.meta.url),{type:'module'});
+    let lastUpdate=Date.now(),lastPhase='เริ่มทำงาน',lastValue=0;
+    const watchdog=setInterval(()=>{
+      const seconds=Math.floor((Date.now()-lastUpdate)/1000);
+      if(seconds>=15)status.textContent=`${lastPhase} · ${lastValue.toFixed(1)}% · รอ ${seconds} วินาที${seconds>=120?' — ยังไม่มีความคืบหน้า ตรวจพื้นที่ว่างและการเชื่อมต่อไดรฟ์ หากจะลองใหม่ให้ปิดแท็บนี้ก่อน':''}`;
+    },1000);
+    const finish=()=>{clearInterval(watchdog);choose.disabled=false;start.disabled=false;worker.terminate();worker=null;};
     worker.onmessage=({data})=>{
-      if(data.type==='progress'){progress.value=data.value;status.textContent=`${data.phase} · ${Math.floor(data.value)}%`;}
+      if(data.type==='progress'){lastUpdate=Date.now();lastPhase=data.phase;lastValue=data.value;progress.value=data.value;status.textContent=`${data.phase} · ${data.value.toFixed(1)}%`;}
       else if(data.type==='done'){progress.value=100;status.className='ok';status.textContent='สำเร็จ! บันทึก Forbidden_Siren_2_Thai_v1.0.iso แล้ว เปิดเกมใหม่และเลือก English ในเกม';finish();}
       else{status.className='error';status.textContent=data.message;finish();}
     };
