@@ -1,0 +1,35 @@
+{
+  "version": "1.4.2",
+  "release_status": "TEST_BUILD",
+  "game_id": "ULUS10594",
+  "source_bytes": 645431296,
+  "source_sha256": "bc556e7cf3ed05889a3a7b59fca736af0f476b7e043ad54d85b04a5bf6371382",
+  "output_bytes": 757524480,
+  "output_sha256": "fdd9840f48434d5e07587f6d5dc00d8f75fb9e2717b7116427d9689fb9de4acd",
+  "patch": "Ragnarok_Tactics_Thai_v1.4.2.xdelta",
+  "patch_bytes": 88782691,
+  "patch_sha256": "6ba9e8685b7630af636a7279bc9eaa8daf814fa5041be9b7fa21093185b57c97",
+  "eboot_ui_records": 21,
+  "shop_texture_labels": 43,
+  "runtime_verification": {
+    "boot": "PASS",
+    "loaded_translations": 21,
+    "loaded_pointers": "PASS",
+    "shop_texture_readback": "PASS",
+    "new_game_enemy_level": "NOT_TESTED_THIS_BUILD",
+    "level_up": "NOT_TESTED_THIS_BUILD",
+    "job_level_up": "NOT_TESTED_THIS_BUILD",
+    "visible_layout": {
+      "shop_main": "PASS_OBSERVED",
+      "shop_categories": "PASS_OBSERVED",
+      "hat_names_4_and_prices": "PASS_OBSERVED",
+      "guild_title_and_hint": "PASS_OBSERVED",
+      "help_title_and_first_5_topics": "PASS_OBSERVED",
+      "greeting_and_shopkeeper": "PASS_OBSERVED",
+      "save_copy_loaded": "PASS"
+    }
+  },
+  "full_game_tested": false,
+  "website_updated": false,
+  "browser_wasm_decode": "PASS_EXACT_OUTPUT_SHA256"
+}
