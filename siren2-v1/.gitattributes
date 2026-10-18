@@ -1,0 +1,6 @@
+*.webp -text
+*.dat -text
+*.mjs text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.txt text eol=lf

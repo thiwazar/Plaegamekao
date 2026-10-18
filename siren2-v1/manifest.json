@@ -1,0 +1,111 @@
+{
+  "format": "SIREN2_VCDIFF_1",
+  "game": "Forbidden Siren 2",
+  "version": "1.0",
+  "gameId": "SCES-53851",
+  "region": "Europe / PAL",
+  "sourceSize": 5844074496,
+  "sourceSha256": "019d6cea66328a9d9c99205141223f442fd8597f84ba021c01120824464cbfe7",
+  "targetSize": 5844074496,
+  "targetSha256": "479a8d73b990cc4f20213b11672bdd43ba492e247e1cd89561e6d99a2f3f92c4",
+  "patchSize": 391235510,
+  "patchSha256": "19291c9f0bf0ccf721946f2a4c184d1fe1f60e876e7b9274a0d92b9dff8e7283",
+  "parts": [
+    {
+      "url": "patch-000.dat",
+      "size": 20971520,
+      "sha256": "3adfaf43e86e9d494b51955fb4b01fdc33d704b78652b026749ef74439f175c3"
+    },
+    {
+      "url": "patch-001.dat",
+      "size": 20971520,
+      "sha256": "1f45216f47c4a80e34dcc76869a2a62ebfecb33d692fed93f13eca9fcd430c4f"
+    },
+    {
+      "url": "patch-002.dat",
+      "size": 20971520,
+      "sha256": "101c905102e79c79d9ecc5cb5894b20ea6debc287feee54d6851cad548e36052"
+    },
+    {
+      "url": "patch-003.dat",
+      "size": 20971520,
+      "sha256": "cdf608c321520db6821cf4c4004fa5c0519d904c285e74d3194c394fb9aa0952"
+    },
+    {
+      "url": "patch-004.dat",
+      "size": 20971520,
+      "sha256": "6ee58437d4ae52cdf578dfb2e8bca33912555eeeabcd890247b709e24281c7ca"
+    },
+    {
+      "url": "patch-005.dat",
+      "size": 20971520,
+      "sha256": "25df3bc75658950cb36205bcb06b0f532c700e968e7f97bb29f6adddfa9014dd"
+    },
+    {
+      "url": "patch-006.dat",
+      "size": 20971520,
+      "sha256": "e534e468c5d1c9985766064dc11f7d0fc5ec8427df5ec589bd1e41883918219e"
+    },
+    {
+      "url": "patch-007.dat",
+      "size": 20971520,
+      "sha256": "b59893d95fe1288f9ed6c96dfcb0d73593b505bba8a4b5803bee7faa619c60fc"
+    },
+    {
+      "url": "patch-008.dat",
+      "size": 20971520,
+      "sha256": "cde8da2d7a30dab99dc06824da5f61c4ad3f3a5a29af31d08269e45a92db4c0b"
+    },
+    {
+      "url": "patch-009.dat",
+      "size": 20971520,
+      "sha256": "1a7bc9a2d5295e412d486c2705c2b01d3a5cef0c2c5274d5d32bace1a432f556"
+    },
+    {
+      "url": "patch-010.dat",
+      "size": 20971520,
+      "sha256": "05e0409b81cba7b96718c82c3a94346873a9581a02c314430186eb1df1b12c71"
+    },
+    {
+      "url": "patch-011.dat",
+      "size": 20971520,
+      "sha256": "f5cb0105b1d209f6d466b6203f60b370984944f4ecc9af12953883f9ad284e1f"
+    },
+    {
+      "url": "patch-012.dat",
+      "size": 20971520,
+      "sha256": "8ce47e8057d93ac30797af489d3f3691378c15d4480f402a6e8b84e635d13051"
+    },
+    {
+      "url": "patch-013.dat",
+      "size": 20971520,
+      "sha256": "56772a7d0e7f488bd72ca8ccd5d75a529fb8ffa0446a479479e1ddfd41d56f02"
+    },
+    {
+      "url": "patch-014.dat",
+      "size": 20971520,
+      "sha256": "edde9c115c2b228260f0a9a23ea901dbafcd2dd4d08258037a7fdaff80342c7e"
+    },
+    {
+      "url": "patch-015.dat",
+      "size": 20971520,
+      "sha256": "568c1c59ae24497978c314af321fb273b98b56eff52087b1905c3feedec77aba"
+    },
+    {
+      "url": "patch-016.dat",
+      "size": 20971520,
+      "sha256": "b14b9bfabd257fcbbc7f7c0cbeb71dd98d5e30df1300828292027fc0f02a4408"
+    },
+    {
+      "url": "patch-017.dat",
+      "size": 20971520,
+      "sha256": "0cc12364852f926ad348d0c0722b2525e82a9e74a1d17875d9d11cd7ccf275c1"
+    },
+    {
+      "url": "patch-018.dat",
+      "size": 13748150,
+      "sha256": "d7d5a0579203be1415e0ecfbe647a911bde150ba33e2f63bdb4e56010c86f5ef"
+    }
+  ],
+  "assetBase": "https://raw.githubusercontent.com/thiwazar/Plaegamekao/78788d5de0c0b9665df14a50237586b4f76780f9/siren2-v1/"
+}
