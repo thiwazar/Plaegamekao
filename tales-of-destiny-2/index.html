@@ -25,6 +25,8 @@
     ul{margin:8px 0;padding-left:24px}
     li{margin:5px 0}
     .notice{margin-top:24px;padding:15px 17px;border-left:4px solid var(--gold);border-radius:8px;background:#fff2d7}
+    .download{display:inline-block;margin:10px 0;padding:12px 20px;border-radius:10px;background:var(--green);color:#fff;text-decoration:none;font-weight:700}
+    .hash{display:block;overflow-wrap:anywhere;font:13px/1.6 Consolas,monospace;color:var(--muted)}
     footer{margin:18px 0;text-align:center;color:var(--muted);font-size:13px}
     @media(max-width:520px){body{padding:12px}.card{border-radius:14px}}
   </style>
@@ -42,6 +44,15 @@
         <strong>ประมาณ 82%</strong>
       </section>
 
+      <h2>ดาวน์โหลดแพตช์ทดสอบ</h2>
+      <p>แพตช์ภาษาไทย v.1 เบต้า (Xdelta, 2.2 MB) เป็นไฟล์ส่วนต่าง ไม่รวมตัวเกม ใช้กับ ISO ที่คุณมีสิทธิ์ใช้งานเท่านั้น</p>
+      <a class="download" href="./TOD2_Thai_Beta_v1.xdelta" download>ดาวน์โหลดแพตช์ภาษาไทย v.1 เบต้า</a>
+      <p>ต้นทางที่รองรับ: Tales of Destiny 2 (Eng-menus) รุ่น PS2 รหัส SLPS_251.72 เท่านั้น ตรวจ SHA-256 ของ ISO ต้นทางก่อนใช้:</p>
+      <code class="hash">553416634354781b2b3d0a504e8ea4f87bea070bed59f089135c8ac81c2b9cc2</code>
+      <p>ใช้โปรแกรม Xdelta3 หรือโปรแกรมแพตช์ Xdelta ที่รองรับ VCDIFF เลือก ISO ต้นทางและไฟล์ .xdelta นี้ แล้วบันทึกเป็น ISO ใหม่ ห้ามเขียนทับ ISO ต้นฉบับ หากแฮชต้นทางไม่ตรง ไม่ควรฝืนใช้แพตช์</p>
+      <p>SHA-256 ของ ISO หลังแพตช์ที่ถูกต้อง:</p>
+      <code class="hash">6a6454ebb23fc0414aba6c9ea29dfcfb91491502eb45ea61eef5bc81a7e97c3b</code>
+
       <h2>แปลส่วนใดแล้ว</h2>
       <ul>
         <li>บทสนทนาและข้อความเนื้อเรื่องในฉากต่าง ๆ</li>
@@ -55,6 +66,7 @@
         <li>ทดสอบฉากต้นเกมแล้ว พบว่าบทสนทนาภาษาไทยแสดงขึ้นและกดปุ่ม O เพื่อไปต่อได้</li>
         <li>ยังเป็นรุ่นเบต้า และยังไม่ได้ทดสอบเล่นครบทั้งเกม</li>
         <li>เมนู ชื่ออุปกรณ์ และคำอธิบายบางรายการยังอาจเป็นภาษาอังกฤษหรืออยู่ระหว่างตรวจแก้</li>
+        <li>ชื่อไทยในหน้าต่อสู้และบางเมนูอาจแสดงเป็นตัวอักษรเพี้ยนในรุ่นนี้</li>
         <li>ข้อความที่ฝังอยู่ในภาพหรือวิดีโออาจยังไม่แปล</li>
       </ul>
 
