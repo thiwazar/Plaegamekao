@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "edition": "CotM 12x12 Thai Font Edition",
+  "sourceName": "Resident Evil - Deadly Silence (Europe) (En,Fr,De,Es,It)",
+  "exampleFilename": "Resident Evil - Deadly Silence (Europe) (En,Fr,De,Es,It).nds",
+  "gameCode": "ABHP",
+  "sourceSize": 134217728,
+  "sourceCrc32": "a7db026d",
+  "sourceSha256": "6ecc75cee77f154902cb8c4c08f9d5bed5dce52d02408c4f1a7704a52bd47ce6",
+  "targetSize": 134217728,
+  "targetCrc32": "2b4ffa6c",
+  "targetSha256": "3177b962e453069a96181ad56af492fdd4d9451b0f2d8a4c89fef8df7022b39c",
+  "outputName": "Resident_Evil_Deadly_Silence_THAI_CotM_12x12.nds",
+  "patch": "Resident_Evil_Deadly_Silence_THAI_CotM_12x12.bps",
+  "patchSize": 185928,
+  "patchSha256": "bac02430cbefe3b1164a78ede7a829f36f8379803291668bcadfe455329b0e4c"
+}
