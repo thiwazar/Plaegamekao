@@ -8,7 +8,7 @@
     "VERSION": "01.02"
   },
   "hardware_test": "NOT_TESTED",
-  "vita3k": "Not working, as reported by publisher; cause unconfirmed",
+  "vita3k": "Currently not working, as reported by publisher; this distribution is for PS Vita hardware only",
   "font_xml_coverage": {
     "game_data/fonts/fairfax.fnt": {
       "required_thai_pua": 421,
@@ -178,5 +178,6 @@
       "size": 104475,
       "sha256": "ec667a833ce410b7587f6c56f34f40e92a3827ab554e5fb13121866561128366"
     }
-  ]
+  ],
+  "target_platform": "PS Vita hardware only"
 }
