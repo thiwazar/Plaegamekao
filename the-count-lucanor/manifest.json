@@ -1,0 +1,182 @@
+{
+  "release": "TEST 001",
+  "title_id": "PCSB01131",
+  "base_metadata": {
+    "APP_VER": "01.00",
+    "TITLE": "The Count Lucanor",
+    "TITLE_ID": "PCSB01131",
+    "VERSION": "01.02"
+  },
+  "hardware_test": "NOT_TESTED",
+  "vita3k": "Not working, as reported by publisher; cause unconfirmed",
+  "font_xml_coverage": {
+    "game_data/fonts/fairfax.fnt": {
+      "required_thai_pua": 421,
+      "missing": []
+    },
+    "game_data/fonts/fairfax_bold.fnt": {
+      "required_thai_pua": 421,
+      "missing": []
+    },
+    "game_data/fonts/indienova.fnt": {
+      "required_thai_pua": 421,
+      "missing": []
+    },
+    "game_data/fonts/indienova_bold.fnt": {
+      "required_thai_pua": 421,
+      "missing": []
+    }
+  },
+  "files": [
+    {
+      "path": "rePatch/PCSB01131/game_data/font/anglefont/nokiafc14.fnt",
+      "size": 91659,
+      "sha256": "794b0f421297f08514e83f73ff6e70f6b77809c57ff0b8276fc152f715f75963"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/font/anglefont/nokiafc14.png",
+      "size": 11647,
+      "sha256": "1d69cfbfa0fc6ed8999690c20e729b527636fa3023631a6a0e421f0a0fedb59b"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/font/anglefont/nokiafc16.fnt",
+      "size": 92593,
+      "sha256": "8ebade52d0a92e852551245c50663683e44f8bf7035e2c84e10d3cdb0d333722"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/font/anglefont/nokiafc16.png",
+      "size": 10496,
+      "sha256": "5206d05bb973eb107e5df83bde2a5ea095791e34a2936d2b28a9f1fa1aca95a7"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/font/anglefont/nokiafc24.fnt",
+      "size": 92900,
+      "sha256": "f4f592888fb7894eca99f88952c978e8b22f4cefccc810448defa511b5d6e8f5"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/font/anglefont/nokiafc24.png",
+      "size": 12693,
+      "sha256": "8cb68981af0a18e1cfe4296f3e4127aaad02bb0b55f563981896e61d7d85ecde"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/font/anglefont/nokiafc32.fnt",
+      "size": 93135,
+      "sha256": "649cc1a99953bfebccb4713301ad42e41eae0153ce2611dd3fd7d65ebd148ac8"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/font/anglefont/nokiafc32.png",
+      "size": 16810,
+      "sha256": "35fba2e129e0f4a6435c66410dc5c0d0b08c68ec7bb5882baad7e78d22a9d071"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/font/anglefont/nokiafc8.fnt",
+      "size": 90280,
+      "sha256": "817666bae96cf4c8ea79edd9a3f344b5d0a431ce2f37a0868f0f000b8af04f3b"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/font/anglefont/nokiafc8.png",
+      "size": 7528,
+      "sha256": "059ca3c72a3198d47bf3f7f76e33d70e9d933c775970cb69fa57d249112fa686"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/fonts/fairfax.fnt",
+      "size": 175968,
+      "sha256": "5799b62afe153383eec2fbe8bf2ec1761a46461ee2c8c1920c8c7f5373191bc5"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/fonts/fairfax.png",
+      "size": 19198,
+      "sha256": "1dc8365c191f0aed9ee509dc405beff9a86eea8122e01db21eec2f2516eb41da"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/fonts/fairfax_bold.fnt",
+      "size": 176047,
+      "sha256": "ddcd04b5b681c0ea23737e637c11604075b147bdc3bf69ec4975abe05a3595bb"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/fonts/fairfax_bold.png",
+      "size": 19170,
+      "sha256": "54c7a22ea02fd2f8b6ce3cf89725091770eaadaf332e84c9bd22e2575d7aa367"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/fonts/indienova.fnt",
+      "size": 329354,
+      "sha256": "d9d1fbfb466579cf9f0bd819b2a911748a81d8647d43eed76c61b397a65902b3"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/fonts/indienova.png",
+      "size": 97674,
+      "sha256": "a97f2e46cb5d1693948e3ba6f55ef81afb7b0ee0f9f7c072f397f17368ce526a"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/fonts/indienova_bold.fnt",
+      "size": 330245,
+      "sha256": "182aa658e40757edfe623947f875d4ccd6dbadaa1cf0dce2c71ff08835b94883"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/fonts/indienova_bold.png",
+      "size": 112250,
+      "sha256": "82cd180ea4aa3292df6b2a9fb6aae4ab0798691bf35bc1cc8a1a68522d1240c4"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/languages.json",
+      "size": 1673959,
+      "sha256": "4b825c80da49df63d6149897d36f96f9a5a798bf9e1580d7327a75b5ac8faa02"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/strings/GameUiResources_en.properties",
+      "size": 9205,
+      "sha256": "3a25aafc62bc99912bb4aa2bc8400f7afbb3cb320bbc1513d314c68521dced74"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/strings/ItemResources_en.properties",
+      "size": 6719,
+      "sha256": "d48304b75458b7f6488c94b3b2e3c90197b340112633215955e97769496a081d"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/strings/MapResources_en.properties",
+      "size": 217,
+      "sha256": "48746a3242d525cbe5ce0396aa232844c270db859ef3e1098bdcd3062aea038e"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/strings/QuestResources_en.properties",
+      "size": 189,
+      "sha256": "fc7aa165dbeba2e7667990d1f003f65ab3d6e83758388d5fb7c914656cb7e682"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/strings/TextResources_en.properties",
+      "size": 217133,
+      "sha256": "660d60aec5d6147f7d69c586be2eddcdc39b12e9a4fcf535bb6a6c006d378597"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/strings/english/GameUiResources_en.properties",
+      "size": 9205,
+      "sha256": "3a25aafc62bc99912bb4aa2bc8400f7afbb3cb320bbc1513d314c68521dced74"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/strings/english/ItemResources_en.properties",
+      "size": 6719,
+      "sha256": "d48304b75458b7f6488c94b3b2e3c90197b340112633215955e97769496a081d"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/strings/english/MapResources_en.properties",
+      "size": 217,
+      "sha256": "48746a3242d525cbe5ce0396aa232844c270db859ef3e1098bdcd3062aea038e"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/strings/english/QuestResources_en.properties",
+      "size": 189,
+      "sha256": "fc7aa165dbeba2e7667990d1f003f65ab3d6e83758388d5fb7c914656cb7e682"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/strings/english/TextResources_en.properties",
+      "size": 217133,
+      "sha256": "660d60aec5d6147f7d69c586be2eddcdc39b12e9a4fcf535bb6a6c006d378597"
+    },
+    {
+      "path": "rePatch/PCSB01131/game_data/strings/lucanor_strings.zip",
+      "size": 104475,
+      "sha256": "ec667a833ce410b7587f6c56f34f40e92a3827ab554e5fb13121866561128366"
+    }
+  ]
+}
