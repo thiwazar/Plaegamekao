@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "sourceName": "Yoko In Dawn Of Sorrow",
+  "exampleFilename": "Yoko In Dawn Of Sorrow.nds",
+  "gameCode": "ACVE",
+  "sourceSize": 67108864,
+  "sourceCrc32": "52179697",
+  "sourceSha256": "001e71ad5d0651108324bdf12b9bd08a5109149d3f2cb733e21e01480fb20b55",
+  "targetSize": 67108864,
+  "targetCrc32": "337ab0f7",
+  "targetSha256": "c50b3083bc1ed3df9a22b2dbc8a82f0a30bd1138e461f721a072d1793e9d8093",
+  "outputName": "Yoko In Dawn Of Sorrow (Thai).nds",
+  "patch": "yoko-thai.bps",
+  "patchSize": 101957,
+  "patchSha256": "f412d3dbd34f99d686bdb2adb74355901018dfd335821e19cdc17ce2056cf872"
+}
