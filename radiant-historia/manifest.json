@@ -1,0 +1,10 @@
+{
+  "version": "v1.0",
+  "sourceSize": 134217728,
+  "sourceSha256": "2dfb6544317750bc2bed23612f1cd946c96a06966514952c5f28d34d464155ba",
+  "targetSize": 134217728,
+  "targetSha256": "4d9066d48f93375799ab75bf4282a515e94d8fc08a4dd1ff51c8632699d5aa1e",
+  "patchUrl": "Radiant_Historia_Thai_v1.0_web.xdelta",
+  "patchSha256": "9b14632a3f83ddcb96aefa2a569dd1f80fc642b726cd96c650fd5103d0874e7e",
+  "outName": "Radiant_Historia_THAI.nds"
+}
