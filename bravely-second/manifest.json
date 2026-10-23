@@ -1,0 +1,17 @@
+{
+  "id": "bravely-second-thai-build009",
+  "name": "Bravely Second: End Layer",
+  "platform": "Nintendo 3DS",
+  "version": "build009 / release010",
+  "format": "QGDELTA2",
+  "titleId": "000400000017BA00",
+  "sourceName": "Bravely Second - End Layer (USA) (En,Fr,Es).3ds",
+  "sourceSize": 4294967296,
+  "sourceSha256": "1209b54aaf327cb4c75b002bb5629e91484ad78f89e03f20b7d85c885f9177ff",
+  "targetSize": 4294967296,
+  "targetSha256": "d61f52811730f70d2e755bdeb4947b44bd7e0813855e73ea60cc5a5f7be5fd85",
+  "patchUrl": "BravelySecond_Thai_build009.qgdelta",
+  "patchSha256": "a96dd836f0c29ee1d4a86d4c957e6a43c12f0589fe5d5b7b19908aed6fdbcd9f",
+  "patchSize": 58793270,
+  "outName": "BravelySecond_Thai_build009.3ds"
+}
