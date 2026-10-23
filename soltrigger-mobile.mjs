@@ -66,9 +66,6 @@ export async function writeStpatch(file, game, blocks, writer, progress = () => 
 export async function applySolTriggerMobile(file, game, progress, log, hashBlob, sha256Hex) {
   if (file.size !== game.sourceSize) throw new Error('ขนาด ISO ไม่ตรง ต้องใช้ Sol Trigger English v09 ต้นฉบับ');
   if (!navigator.storage?.getDirectory) throw new Error('เบราว์เซอร์นี้ไม่มีพื้นที่สร้างไฟล์ชั่วคราว กรุณาใช้ Chrome หรือ Brave รุ่นล่าสุดในโหมดปกติ');
-  const estimate = await navigator.storage.estimate?.().catch(() => null);
-  const required = game.targetSize + 128 * 1024 * 1024;
-  if (estimate?.quota && estimate.quota - (estimate.usage || 0) < required) throw new Error('พื้นที่เว็บไซต์ไม่พอสำหรับสร้าง ISO กรุณาเพิ่มพื้นที่ว่างอย่างน้อย 2 GB แล้วลองใหม่');
   const root = await navigator.storage.getDirectory();
   const dir = await root.getDirectoryHandle('soltrigger-patch-temp', {create: true});
   // Expire only this patcher's own day-old temporary output files.
@@ -76,6 +73,9 @@ export async function applySolTriggerMobile(file, game, progress, log, hashBlob,
     const stamp = Number(/^sol-(\d+)-/.exec(name)?.[1]);
     if (stamp && Date.now() - stamp > 86400000) await dir.removeEntry(name).catch(() => {});
   }
+  const estimate = await navigator.storage.estimate?.().catch(() => null);
+  const required = game.targetSize + 128 * 1024 * 1024;
+  if (estimate?.quota && estimate.quota - (estimate.usage || 0) < required) throw new Error('พื้นที่เว็บไซต์ไม่พอสำหรับสร้าง ISO กรุณาเพิ่มพื้นที่ว่างอย่างน้อย 2 GB แล้วลองใหม่');
   const name = `sol-${Date.now()}-${crypto.randomUUID()}.iso`;
   let writer, fetchReader;
   try {
