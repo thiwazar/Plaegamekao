@@ -48,12 +48,12 @@ export function applyBps(source, patch, expectedSize) {
   return output;
 }
 export async function patchRom(source, patch, manifest, progress=()=>{}) {
-  if(source.length!==manifest.sourceSize)throw new Error('ขนาดไฟล์ไม่ตรง: ต้องใช้ ROM ญี่ปุ่นต้นฉบับ .nds ขนาด 67,108,864 ไบต์ (64 MiB)');
-  if(String.fromCharCode(...source.subarray(12,16))!==manifest.gameCode)throw new Error('ภูมิภาคไม่ตรง: กรุณาใช้ ROM Japan (JAP/JP) รหัส YR9J ไม่ใช่ USA/EUR');
-  progress('กำลังตรวจ SHA-256 ของ ROM ญี่ปุ่น…');
-  if(await sha256(source)!==manifest.sourceSha256)throw new Error('ROM ไม่ตรงกับต้นฉบับที่รองรับ กรุณาใช้ Japan ที่ยังไม่แปลหรือดัดแปลง และตรวจ SHA-256 ด้านล่าง');
+  if(source.length!==manifest.sourceSize)throw new Error('ขนาดไฟล์ไม่ตรง: ต้องใช้ ROM USA Undub .nds ขนาด 67,108,864 ไบต์ (64 MiB)');
+  if(String.fromCharCode(...source.subarray(12,16))!==manifest.gameCode)throw new Error(`ภูมิภาคไม่ตรง: กรุณาใช้ ROM USA Undub รหัส ${manifest.gameCode}`);
+  progress('กำลังตรวจ SHA-256 ของ ROM USA Undub…');
+  if(await sha256(source)!==manifest.sourceSha256)throw new Error('ROM ไม่ตรงกับฐาน USA Undub ที่รองรับ กรุณาตรวจ SHA-256 ด้านล่าง');
   if(await sha256(patch)!==manifest.patchSha256)throw new Error('แพตช์ไม่ผ่านการตรวจสอบ กรุณาโหลดหน้าใหม่');
-  progress('กำลังสร้าง ROM ภาษาไทย v1.5…');
+  progress(`กำลังสร้าง ROM ภาษาไทย v${manifest.version}…`);
   const output=applyBps(source,patch,manifest.targetSize);
   progress('กำลังตรวจสอบไฟล์ภาษาไทย…');
   if(await sha256(output)!==manifest.targetSha256)throw new Error('ไฟล์ภาษาไทยไม่ผ่านการตรวจสอบ จึงไม่สร้างลิงก์ดาวน์โหลด');
