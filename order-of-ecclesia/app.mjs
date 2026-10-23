@@ -6,7 +6,7 @@ function finish(){worker?.terminate();worker=null;button.disabled=!selected||!pa
 function choose(file){if(worker)return;clearDownload();selected=null;button.disabled=true;
   if(!file)return;
   if(!/\.nds$/i.test(file.name)){report('เลือกไฟล์ .nds โดยตรง หากเป็น ZIP ให้แตกไฟล์ก่อน','error');return;}
-  if(file.size!==67108864){report('ขนาด ROM ไม่ตรง ต้องเป็น Japan ต้นฉบับ 67,108,864 ไบต์ (64 MiB)','error');return;}
+  if(file.size!==67108864){report('ขนาด ROM ไม่ตรง ต้องเป็น USA Undub ฐานที่รองรับ ขนาด 67,108,864 ไบต์ (64 MiB)','error');return;}
   selected=file;document.querySelector('#filename').textContent=file.name;button.disabled=!patch;report(patch?'เลือกไฟล์แล้ว กดสร้าง ROM ภาษาไทยเพื่อตรวจและแปะแพตช์':'เลือกไฟล์แล้ว กำลังโหลดแพตช์…');
 }
 input.addEventListener('change',()=>choose(input.files[0]));
@@ -24,7 +24,7 @@ button.addEventListener('click',()=>{
       else if(data.type==='error'){report(data.text,'error');finish();}
       else if(data.type==='done'){
         url=URL.createObjectURL(new Blob([data.buffer],{type:'application/octet-stream'}));download.href=url;download.download=manifest.outputName;download.hidden=false;
-        report('สร้าง ROM ภาษาไทย v1.5 สำเร็จ ตรวจ SHA-256 ผ่านแล้ว กดดาวน์โหลดด้านล่าง','success');finish();download.focus();
+        report(`สร้าง ROM ภาษาไทย v${manifest.version} สำเร็จ ตรวจ SHA-256 ผ่านแล้ว กดดาวน์โหลดด้านล่าง`,'success');finish();download.focus();
       }
     };
     worker.onerror=()=>{report('ไม่สามารถทำงานได้ ลองโหลดหน้าใหม่หรือใช้ Chrome / Edge รุ่นปัจจุบัน','error');finish();};
@@ -36,5 +36,5 @@ try{
   document.querySelector('#source-hash').textContent=manifest.sourceSha256;document.querySelector('#target-hash').textContent=manifest.targetSha256;
   const result=await fetch(new URL(manifest.patch,import.meta.url));if(!result.ok)throw new Error('โหลดแพตช์ไม่ได้ กรุณาโหลดหน้าใหม่');patch=await result.arrayBuffer();
   if(patch.byteLength!==manifest.patchSize)throw new Error('ไฟล์แพตช์ไม่ครบ กรุณาโหลดหน้าใหม่');
-  button.disabled=!selected;report('พร้อมใช้งาน เลือก ROM ญี่ปุ่นต้นฉบับ .nds');
+  button.disabled=!selected;report('พร้อมใช้งาน เลือก ROM USA Undub ฐานที่รองรับ .nds');
 }catch(error){patch=null;report(error.message,'error');}
