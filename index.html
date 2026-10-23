@@ -699,6 +699,7 @@ import {hashBlob} from "./dragons-crown/dragon-sha256.mjs";
 
 
 const GAMES = [
+  {"id":"dementium-the-ward-thai-v1","name":"Dementium: The Ward — เดเมนเทียม วอร์ดสยอง","platform":"Nintendo DS","format":"XDELTA","version":"v1.0","displayVersion":"v1.0","fileType":"NDS","cover":"dementium-the-ward/cover.png","desc":"ภาษาไทย v1.0 · ข้อความ ฟอนต์ไทย สมุด ภาพและคำบรรยาย · สำหรับ ROM USA รหัส YDTE · แปลโดยเพจแปลเกมเก่า","patchUrl":"dementium-the-ward/Dementium_The_Ward_Thai_v1.0.xdelta","sourceName":"Dementium: The Ward (USA) — YDTE","sourceSize":67108864,"sourceSha256":"397f9f93a32dbb4001d86586faf70304005b9cb255c912e4f0c3b2eb724ab52e","targetSize":67108864,"targetSha256":"2972241f8f34433dc704ec9ddb8c9781ab0c58592b643a60dc7de57b90fa6cef","outName":"Dementium_The_Ward_Thai_v1.0.nds","warning":"ใช้ ROM USA ต้นฉบับที่ยังไม่ลงแพตช์ · ตรวจ SHA-256 ก่อนและหลังแพตช์ · ภาพตกแต่งที่อ่านไม่ชัดและเสียงพากย์คงเดิม · ยังไม่ได้ทดสอบรุ่น v1.0 ใน melonDS"},
   {"id":"dementium-ii-thai-v1","name":"Dementium II — เดเมนเทียม II","platform":"Nintendo DS","format":"XDELTA","version":"v1.0","displayVersion":"v1.0","fileType":"NDS","cover":"dementium-ii/cover.png","desc":"ภาษาไทย v1.0 · บทพูด เมนู โปสการ์ด และเอกสาร · สำหรับ ROM USA รหัส BDEE · แปลโดยเพจแปลเกมเก่า","patchUrl":"dementium-ii/Dementium_II_USA_Thai_v1.0.xdelta","sourceName":"Dementium II (USA) — BDEE rev0","sourceSize":67108864,"sourceSha256":"07a4aec1f02fff7e257665eb589abdec2076e74f3183b059ab33263cacf1f217","targetSize":67108864,"targetSha256":"708abcbb0b46e84cf80a3d6f85f7ab0051a8ad53d40fe7e9f0b68c930cda4522","outName":"Dementium_II_USA_Thai_v1.0.nds","warning":"ใช้ ROM USA ต้นฉบับที่ยังไม่ลงแพตช์ · ตรวจ SHA-256 ก่อนและหลังแพตช์ · ยังไม่ได้ทดสอบเล่นจบ ภาพสวิตช์สำรองและข้อความตกแต่งบางส่วนยังคงเดิม"},
   {"id":"yoko-of-sorrow","name":"Castlevania: Yoko of Sorrow — โยโกะกับเรื่องราววิปลาส","platform":"Nintendo DS","format":"BPS / แปะแพตช์บนเว็บ","version":"v1.0","cover":"yoko-of-sorrow/cover.png","desc":"แพตช์ภาษาไทยสำหรับ Yoko In Dawn Of Sorrow · ใช้ ROM ฉบับ Yoko ขนาด 64 MiB · แปลโดยเพจแปลเกมเก่า","sourceSize":67108864,"pageUrl":"./yoko-of-sorrow/","downloadOnly":false},
   {id:"the-count-lucanor", name:"The Count Lucanor — เคานต์ลูคานอร์", platform:"PS Vita", format:"ดาวน์โหลด rePatch", version:"beta", displayVersion:"TEST 001", cover:"the-count-lucanor/cover.png", desc:"ภาษาไทย PCSB01131 · สำหรับเครื่อง PS Vita เท่านั้น · ตอนนี้ Vita3K ใช้งานไม่ได้ · ติดตั้งผ่าน rePatch", sourceSize:987081, pageUrl:"./the-count-lucanor/", downloadOnly:false},
@@ -1901,6 +1902,7 @@ async function applyXdeltaStream(file, g, setProgress, logLine) {
 
 }
 
+if (location.hash === '#dementium-the-ward-thai-v1') showDetail('dementium-the-ward-thai-v1');
 if (location.hash === '#dementium-ii-thai-v1') showDetail('dementium-ii-thai-v1');
 if (location.hash === '#soltrigger') showDetail('soltrigger');
 if (location.hash === '#shining-blade-v1') showDetail('shining-blade-v1');
