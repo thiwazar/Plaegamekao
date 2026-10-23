@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "region": "USA Undub",
   "sourceName": "Castlevania - Order of Ecclesia (USA)(En, Fr)[Undub]",
   "exampleFilename": "Castlevania - Order of Ecclesia (USA)(En, Fr)[Undub].nds",
@@ -7,11 +7,11 @@
   "sourceSize": 67108864,
   "sourceSha256": "ed9338e373a81876eaf9009e1d79a57ece84208cac35e1d8f7791f1700f49397",
   "targetSize": 67108864,
-  "targetSha256": "4be63cfde8f9effe5d13884b7dd274fa88dc9760b788df641ff3fdc26329ae6f",
-  "outputName": "Castlevania_Order_of_Ecclesia_Thai_USA_v1.0.1.nds",
-  "patch": "Castlevania_OoE_Thai_USA_v1.0.1.bps",
-  "patchSize": 137591,
-  "patchSha256": "5cd1d730cf352ef35bd759625a695bbb82bd221b316e5c14caaeff39b96c7d91",
+  "targetSha256": "d974beda6f916901f9c89fc1eace16c21640a145d91f91ea5737afb6cdeb08ec",
+  "outputName": "Castlevania_Order_of_Ecclesia_Thai_USA_v1.0.2.nds",
+  "patch": "Castlevania_OoE_Thai_USA_v1.0.2.bps",
+  "patchSize": 137571,
+  "patchSha256": "dc3309a0376c7cb7c094684f0f1f6d88171c665ccf4b1033e29177c3ae5eaace",
   "sourceCrc32": "5b270b8f",
-  "targetCrc32": "ee6b28b3"
+  "targetCrc32": "2c708bb6"
 }
