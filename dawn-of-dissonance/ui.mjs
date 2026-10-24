@@ -2,7 +2,7 @@ let busy=false;
 const cards=[...document.querySelectorAll('.card')];
 const refresh=()=>cards.forEach(c=>{c.querySelector('button').disabled=busy||!c.querySelector('input').files.length;c.querySelector('input').disabled=busy;});
 try{
- const response=await fetch('./variants.json');if(!response.ok)throw Error('โหลดข้อมูลเวอร์ชันไม่ได้');
+ const response=await fetch('./variants.json',{cache:'no-store'});if(!response.ok)throw Error('โหลดข้อมูลเวอร์ชันไม่ได้');
  const variants=await response.json();
  for(const v of variants){
   const card=document.getElementById(v.id),input=card.querySelector('input'),button=card.querySelector('button'),status=card.querySelector('.status'),progress=card.querySelector('progress'),link=card.querySelector('.download');let url;

@@ -8,9 +8,9 @@
     "sourceSize": 134217728,
     "sourceSha256": "4b410370c5959a63640210d574409c1d1bac047d879dd9d918982126526c852e",
     "targetSize": 134217728,
-    "targetSha256": "e4488e88dda5f20912d58cb99a4c355b06b5d26d30b5dd53185e9a1d4b26a0b5",
+    "targetSha256": "ea4c7d1d67b5d652e946c7049c32822d94ccf590c542b19d9f804510244b853c",
     "patch": "DoD_Normal_Thai_v1.0.xdelta",
-    "patchSha256": "c0859e5cef9db98ce5e60775a33132fb524fe5072f2481918e03f4901804d537",
+    "patchSha256": "54011d3a47665f1ce5fcfe2ff55ac2b4e05b10d1e4d39acd30ef9272f7bba1f0",
     "output": "DoD_Normal_Thai_v1.0.nds",
     "cover": "normal-cover.png"
   },
@@ -23,9 +23,9 @@
     "sourceSize": 134217728,
     "sourceSha256": "2c79f914fbcf8b63174eeb4b7ac99e88fe944f41005d64c9835ca9f72c46a416",
     "targetSize": 134217728,
-    "targetSha256": "bc230152df9c9d297ef87cb9c15a626e4a4462b4825bd8431beb84cdb832392c",
+    "targetSha256": "88ee27ea9ac60d444de172766562b8639d170a2ce9b2c8bdcb4dc10fcd29a4db",
     "patch": "DoD_Belnades_Thai_v1.0.xdelta",
-    "patchSha256": "3b106ff5c8d461a7c3c37e8f4769714af06c9a82434d0b58cd095827716806d1",
+    "patchSha256": "0fd2c7edefcac5bd6899dbc369dea6bb7a267702993e45e1739a4bfcce738264",
     "output": "DoD_Belnades_Thai_v1.0.nds",
     "cover": "belnades-cover.png"
   }
