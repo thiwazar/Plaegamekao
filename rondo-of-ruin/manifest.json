@@ -1,0 +1,14 @@
+{
+  "game": "Castlevania: Rondo of Ruin",
+  "version": "Thai build 2026-10-25",
+  "sourceName": "Rondo of Ruin v1.1.0 (Rondo of Blood Richter) (USA)",
+  "gameCode": "ACBE",
+  "sourceSize": 134217728,
+  "sourceSha256": "e149a4ada6ed67e2be883b6c5dbbcace743e54759244c1efafd8c41ee0fe02be",
+  "targetSize": 134217728,
+  "targetSha256": "b4fafbe95df4009092b53cb36700bcb3de11c4049f6b9143b9d19dcfdc998874",
+  "patch": "RoR_TH.bps",
+  "patchSize": 455102,
+  "patchSha256": "84f5f3b4bb389ee31e7fa8a1219f7fb2c45f6b97da95e4f9cf6528a5932a4f77",
+  "outputName": "Castlevania_Rondo_of_Ruin_Thai_2026-10-25.nds"
+}
