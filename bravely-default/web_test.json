@@ -1,7 +1,7 @@
 {
   "baseline_commit": "9dfaa26beddaa489850f977a347566e632da6754",
   "local_browser": {
-    "browser": "Microsoft Edge (Chromium), headless",
+    "browser": "Google Chrome (Chromium), headless",
     "source": "6b4a89fa3385e967ab1db282b1616dc58df659c90a0626850d468334c70a0af2",
     "target": "3ef92bb8e39923e7ffed1693d1cc099aaa88643e688ff61558d9434f9ab5a7e7",
     "full_4GiB_patch": "PASS",
