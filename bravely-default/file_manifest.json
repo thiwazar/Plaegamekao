@@ -1,0 +1,1147 @@
+{
+  "build": 3,
+  "files": [
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Battle/crowd.fs",
+      "size": 1808252,
+      "sha256": "dff69cdb0a0ebad5dfc6918179f8c27c04e4f1f76c3a6a83f9df10b2eab1f9eb",
+      "changed_from_build002": true
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Battle/index.fs",
+      "size": 1468,
+      "sha256": "854eae216738ae14cce091bf72edc01fe42ce1d376f22fe5ccdab3c6382fe0f8",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Colony/FenceParameter.btb",
+      "size": 72,
+      "sha256": "7735251460f2ea60f251d46b4f416cee95117aa80ec18b81180fa08bd62d599e",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Colony/MessageData.btb",
+      "size": 3340,
+      "sha256": "a397efa99341927a0cee31a4b9ba9bf1dfa6a67c1302fd503f9a75168a74c4fa",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Colony/PlantParameter.btb",
+      "size": 2028,
+      "sha256": "09d1519c5d3071aaa03b3223c749b88819137b922e022821e4be1ce749fb8f43",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/DReportTable/crowd.fs",
+      "size": 893064,
+      "sha256": "09ec760a6343469c4cf0494f7640c80f7a4749b73aceb55b0d446bb5e1a4ece4",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/DReportTable/index.fs",
+      "size": 776,
+      "sha256": "85f31eecd1cb34bf753f7c45a66a0ef85dc627432cb359ac76ab4e894b310ff1",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/EventPictureTable/EventPictureTable.tbl",
+      "size": 3352,
+      "sha256": "aacecc216b15a7fd69b5baef7901b306d55939f60ec9aeae52f224ac7ed7eb05",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/ImportTable/ImportTable.tbl",
+      "size": 300,
+      "sha256": "997aeeb1664aaa0882b2a879d58a006bfb982872dcda1589ddb6d3c571d1ae08",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/MenuTable/crowd.fs",
+      "size": 205438,
+      "sha256": "e89788e9ab5f8b8d2e4b413e2645063ad9e83bb7a59e45876b033bb195f045a9",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/MenuTable/index.fs",
+      "size": 404,
+      "sha256": "d758070c68e52b030a560ade0495133b762d8241819048c044ba3cd11e57cdc2",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/MessageTable/crowd.fs",
+      "size": 99334,
+      "sha256": "1e3e27a4b50e4de37c45c4ddcf17adeabdfa79592fb7517a2e5a24cd2c0a4a13",
+      "changed_from_build002": true
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/MessageTable/index.fs",
+      "size": 448,
+      "sha256": "74d1185dda89f71ec75d44ceae0ac7e7c63ae8686ed66768036a9d33091572f2",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/MiniMapIconTable/crowd.fs",
+      "size": 10464,
+      "sha256": "d033613558c88e3eebbcce6200bc6643cd2f999203338e791afde6041a4c0d11",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/MiniMapIconTable/index.fs",
+      "size": 844,
+      "sha256": "b4a351b04077dc0317e66ec9b8469d928c5d03cabbaa69b4345591a5944d996d",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Paramater/crowd.fs",
+      "size": 1416086,
+      "sha256": "bf210ef52dc9509823e1797ef089f35224e8df52568bd423040492f0ef2dabb7",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Paramater/index.fs",
+      "size": 2280,
+      "sha256": "077f30c8ae1a84dc9229307c9e1e35661c9715052e09030d0ad331592de8020f",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/PartyChat/crowd.fs",
+      "size": 715220,
+      "sha256": "cde80c78886e8a53726ae5a2154bdf9fab1c318ec372e54262a9e2bc8b14b305",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/PartyChat/index.fs",
+      "size": 1024,
+      "sha256": "59795a50628c3aab6d9a1227d3c608cf7e787c250f063b9c7e9265d3c04f0482",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/QuestTable/TutorialQuestOpenTable.tbl",
+      "size": 1068,
+      "sha256": "6658beee63d52edeb02cb16fd509eeaf66673d953eecab0e900123d2392bfcab",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/QuestTable/TutorialQuestTable.tbl",
+      "size": 22460,
+      "sha256": "16baf134e5dc7e1bbdad5d0910a7d2e031e555cf4246b5d2149fc4ef3d574eaa",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/ShipTable/ShipTableData.btb",
+      "size": 1336,
+      "sha256": "1836efc6a07eb91c8ed9c4341421bfd84b4a0e417f352b9e17a1d278dbaaf5ac",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Shop/crowd.fs",
+      "size": 65052,
+      "sha256": "1bf6556d7f04b1180274bf446caa9b4ab89d223f6c9717a1816e43f799744ca1",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Shop/index.fs",
+      "size": 2860,
+      "sha256": "ef5fca34b2cfdf4f853ea7c221f47b5442a18a3e99831a284647037432698950",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Subtitles/GyroMovie/GYRO_POD_A.subtitles",
+      "size": 3570,
+      "sha256": "43828ac8b59f5c591fc152965cc5b821213d9deffdb5a4ee38c11634d72108aa",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Subtitles/GyroMovie/GYRO_POD_B.subtitles",
+      "size": 264,
+      "sha256": "0a45ed94bb01d532efa91fcb99d7fd6b5fbea2c167fd5251a4a7bc977a538b4f",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Subtitles/GyroMovie/GYRO_POD_C.subtitles",
+      "size": 860,
+      "sha256": "b382d7f69e97acdfbc9dc6421d8fde2d3087699726e6828276ee8566f9f9169f",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Subtitles/Movie/BDFF_BEGIN.subtitles",
+      "size": 4090,
+      "sha256": "6dd3cf52141cb07aea3c76560b921e7ca101a463a2512918b97c36e150049aa4",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Subtitles/Movie/BDFF_END.subtitles",
+      "size": 264,
+      "sha256": "fc02e4a5c0bb2685213fa27d53ef5910a40d95484ff75192d43d2b751021269d",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Subtitles/Movie/BDFF_PROLOGUE.subtitles",
+      "size": 822,
+      "sha256": "389d6d2656825f8fedae2e7722dd2d49a448c5527197c896397f35a34dc301e0",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Subtitles/crowd.fs",
+      "size": 15572,
+      "sha256": "8ed86c8d8af9c6bbb4e4d4d9075c096e816521b1fa7391084dc4074ae4b187db",
+      "changed_from_build002": true
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/Subtitles/index.fs",
+      "size": 248,
+      "sha256": "177c55beb40bf7004dbcb4b5d10dbbb496d5552bde253b0e36c4392ea623a0e7",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/TextTable/crowd.fs",
+      "size": 3171904,
+      "sha256": "030e61626874a5bd99cb6bb238a8f6f82428c6736cb4877c4e3a3030b1b9f4f4",
+      "changed_from_build002": true
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/TextTable/index.fs",
+      "size": 1296,
+      "sha256": "a9cd98e65c428aac6f06e81096b1c066bd8ab0e2cbcee2bac637e2762a8d4afe",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/TreasureTable/crowd.fs",
+      "size": 9568,
+      "sha256": "317d7f53c9be8c392b370c54177dceea1e797b1df3f797da55136fcc3be7023e",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/TreasureTable/index.fs",
+      "size": 1052,
+      "sha256": "a583a76bab3b14a1ecddf1f0614433c3f36fe0e7003398768730a8ba43dca28c",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/TutorialTable/TutorialJob_Data.tbl",
+      "size": 8056,
+      "sha256": "be5e0a63d343572b8e3c2cd0e3d088a01974b69298dd6fe84835864dcda9be73",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/TutorialTable/Tutorial_Data.tbl",
+      "size": 27748,
+      "sha256": "84b8f2fe104e4a2958aef20c780f54cd182f3a237935492ee8abb03a79a22d09",
+      "changed_from_build002": true
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Common_en/TutorialTable/Tutorial_Index.tbl",
+      "size": 2226,
+      "sha256": "7f5c9f64c806260a0f0b2772faaf84bc5f8d0dca55a4f4d7a2bf396eb26b8bc6",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/Common/Effect2D/Effect2D",
+      "size": 516,
+      "sha256": "1917062569d970e383a6aa28121bfad80976f3ba73e067d0b34d5a13d3ea2c9a",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/Common/MenuModel/Title/crowd.fs",
+      "size": 995748,
+      "sha256": "97739e30f1c564adea2e65af33ae19544ea71bc0db03568de054db2f58558ebc",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/Common/MenuModel/Title/index.fs",
+      "size": 256,
+      "sha256": "ab17048312b5aebc3afa96422ab531c34658c58958e2da6a6cd9ab222a96bd27",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/Common/MenuModel/crowd.fs",
+      "size": 117172,
+      "sha256": "793876eba7458e884022e2c89f2896a29e149560297fa11bbc39484cf6e5623f",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/Common/MenuModel/index.fs",
+      "size": 536,
+      "sha256": "612ea4cb282913aad46de7e01f42f96d216fd05012fbfa84b0166bcab4b05b55",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Ability_job_skill_ss/crowd.fs",
+      "size": 3152832,
+      "sha256": "c8ca1fbffdd4d404513750f4cdb2f7c8b737e75de8fe850cd2d624e06d52c73f",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Ability_job_skill_ss/index.fs",
+      "size": 576,
+      "sha256": "d6c75420b8a6d9305da494a3f15043d5f067b58dd23a9090418fc4f8d4250fa3",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Character_image/PCF1",
+      "size": 262440,
+      "sha256": "7572c16e4ebd74ab01f055b41909a59bffaca9a50a5db17b060426f379bd84cd",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Character_image/PCF2",
+      "size": 262440,
+      "sha256": "fab7e52eeaccf444e2488fbe35639795386f222edcbfc9b86c84e5cf2d1b9467",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Character_image/PCM1",
+      "size": 262440,
+      "sha256": "e2ab203adda42bf5ce7ae54bf4409e100525c855b2fb76cea4de9a6ad46b7769",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Character_image/PCM2",
+      "size": 262440,
+      "sha256": "633e4a1fa66319f1b773e673ca76fdbd466f681526ab5ced4198d520773a36f9",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/ChargeShopFace/PCF1",
+      "size": 131368,
+      "sha256": "f99485fa2c0238cc89945d8687a28cc40e284e3e5e760fb376aa515d8493cc1b",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/ChargeShopFace/PCF2",
+      "size": 131368,
+      "sha256": "774e2f29d9e6b7a64d804b1b6759ca79b7dbc9aa1553b416e7debba771b20fc2",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/ChargeShopFace/PCM1",
+      "size": 131368,
+      "sha256": "c87e1690120ec7a8114e19be269e6d0e05add5b511f0d53186c0420889ff2aef",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/ChargeShopFace/PCM2",
+      "size": 131368,
+      "sha256": "3de020779d98f4277f6b316080fab8a45ab40a15eff8479449a1f788af57dfcf",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Character/crowd.fs",
+      "size": 3292192,
+      "sha256": "18e3f798653f9e2b757dbb0781909faf46cfeba75bd2b061e9a7b40a62355068",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Character/index.fs",
+      "size": 1344,
+      "sha256": "afd459449a0ed7031c4c3bd8c9181bc229cbaed5dc29736882d4f1b470dfc4a2",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Enemy/crowd.fs",
+      "size": 7754944,
+      "sha256": "ab2c6bfc7b8676b91d1d0d932e8307e565138712c969d4fcbf64ef1c2b116eb8",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Enemy/index.fs",
+      "size": 5020,
+      "sha256": "4897d737f4038f33e480c5333a6bd9fb91f889342c5c3a474704b202e3ca0fad",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Item/crowd.fs",
+      "size": 33067440,
+      "sha256": "34d32a842090bb82077af4f0e0ba18386cfcb4e4a152723590a431b14363f408",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Item/index.fs",
+      "size": 3024,
+      "sha256": "33853ad33f8eda842ecf664778959396dbb52af5da1ff03b1735ec8479127ceb",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Location/crowd.fs",
+      "size": 1586184,
+      "sha256": "7398ccccf5713586e95f9e480f954be5e35feced752ae98f7f891320f4c02341",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Location/index.fs",
+      "size": 1080,
+      "sha256": "9742644bd498e95131eb75fbc9557d59c82fae813ca5e7f89e40bf52d9312507",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Mystery/crowd.fs",
+      "size": 4502832,
+      "sha256": "14cfec750b59b614d5782312863f95d5a6b371b2df08a8772daa8c3eb7c10a1f",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Mystery/index.fs",
+      "size": 1104,
+      "sha256": "e9773f1884f35bfe07a824f8e9d4c3e69119b61764b5e48148a96cdbdbe06b65",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Syuki/crowd.fs",
+      "size": 198384,
+      "sha256": "81a4f94a3f54f56f640652f58cf9ffe320e7783189d1645947a27a03584838a9",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Syuki/index.fs",
+      "size": 144,
+      "sha256": "51e84acdc13486d929a5ce298ad9155ffa363742f1301a8e99f108979765af2b",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Title/crowd.fs",
+      "size": 329160,
+      "sha256": "7e0ca07017c1e0ba5b3af24b86b4c691ba35b63756c9e7fdfd6c40b884283236",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Title/index.fs",
+      "size": 116,
+      "sha256": "2ad452bb37ad33a9e6dcdc14881b6a5768c0102c1620675d1da6d702bfb75458",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Word/crowd.fs",
+      "size": 1018768,
+      "sha256": "a4984d0754c8b7d100851210bc876ace1da50865d04050c4d8a9472bd5f41fc7",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/D_Report/D_Word/index.fs",
+      "size": 280,
+      "sha256": "342d728cc3859515b8f7b0c9c62fb7e3c44fb88818f4d465d7b46e40cdd7ca0d",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/EventItemIcon/crowd.fs",
+      "size": 701448,
+      "sha256": "ac19d6c5ab33d183f2ba158029a52f0cc28f0edfa35ada7389e5399ce41e44df",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/EventItemIcon/index.fs",
+      "size": 1440,
+      "sha256": "232fd8d2319986d00c2cfe88eebb819709614f083d966b07e269af175c4460ec",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Face/Battle/crowd.fs",
+      "size": 48312,
+      "sha256": "d7d589212b6280b1ade3e725dfa9fb5d285b56771aa2d6f651278de23b8bef46",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Face/Battle/index.fs",
+      "size": 240,
+      "sha256": "55030cfe69c844e96d8b85731f48f8fb59c0f1d29877f19d978e00c90ad9e63d",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Face/Circle/PCF1",
+      "size": 16680,
+      "sha256": "1db1f66a25a6fc320d79e96e577d48166c4dee8db7703f0d76b85ec9b52da6bd",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Face/Circle/PCF2",
+      "size": 16680,
+      "sha256": "6036a2a77b2d58af5a3f6039d8ef4cd31b00c56af92546849b952f49c4c4f50b",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Face/Circle/PCM1",
+      "size": 16680,
+      "sha256": "e9f332b5cc48a8ef2cef58b77b3b09283f2db4b6a5550d2ece4472c1fc605d57",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Face/Circle/PCM2",
+      "size": 16680,
+      "sha256": "976583fa6ee104aa3c702e9438ab09f780b71b8258fea76ee6322daa84246683",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Face/Menu/PCF1",
+      "size": 16680,
+      "sha256": "f48b46d56994af94e0df933ad7c811b49adb21b33ecde7ff8ceec5197884c9a5",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Face/Menu/PCF2",
+      "size": 16680,
+      "sha256": "84f14554c6be5741190c33c0a6b5685ed2533f80896a257eda46d0c3f77927c4",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Face/Menu/PCM1",
+      "size": 16680,
+      "sha256": "07404e4cbf6fe8bf89820223836a98c2e761d7381bf049b03f30dcfefad3c62a",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Face/Menu/PCM2",
+      "size": 16680,
+      "sha256": "af4f919a09b67450c2b02fbe2013288840aaecc4195c7ec146815e95499473a3",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/JobPreview/PCF1/crowd.fs",
+      "size": 1613032,
+      "sha256": "908bbf61ee202f0a65ea10950fb7c302b5ed143f3df64cc52e49e30b576bb421",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/JobPreview/PCF1/index.fs",
+      "size": 600,
+      "sha256": "c0d8d21d1f066a7038c21f3e7118106195995fc722f6284a063c19d0e56ed446",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/JobPreview/PCF2/crowd.fs",
+      "size": 1579968,
+      "sha256": "2f5d1511ea73f7a0fbed1cd7e529d1532da916ca50a3be02a98bf771bb4f699e",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/JobPreview/PCF2/index.fs",
+      "size": 576,
+      "sha256": "6697ddb916baa2b99da30a79334300c56cd319f7400b6f416dac76e5379d0f26",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/JobPreview/PCM1/crowd.fs",
+      "size": 1579968,
+      "sha256": "198db468c244ae7fe4f278dedefe30493023f40c1060179d81e065b760092ebb",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/JobPreview/PCM1/index.fs",
+      "size": 576,
+      "sha256": "6697ddb916baa2b99da30a79334300c56cd319f7400b6f416dac76e5379d0f26",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/JobPreview/PCM2/crowd.fs",
+      "size": 1579968,
+      "sha256": "af126ff88d0949ed82e0d2f31d8e5fdbf3f7d057b63b1429553c6657206a3818",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/JobPreview/PCM2/index.fs",
+      "size": 576,
+      "sha256": "6697ddb916baa2b99da30a79334300c56cd319f7400b6f416dac76e5379d0f26",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/PartyChatFace/crowd.fs",
+      "size": 1070288,
+      "sha256": "ac5cd510a47cc16583da0d8c00e33598712476a054632eda8162b31767dfda4a",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/PartyChatFace/index.fs",
+      "size": 440,
+      "sha256": "09bd0cb08b71ac8a000c208056f3d49363dbd73464c22c23a36244cf841e5935",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/ShipAuto/crowd.fs",
+      "size": 2238288,
+      "sha256": "6a0efc017e1827ea3e824793031b3b262f4d3b9e9fc26955c8957c29bd8f6ce4",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/ShipAuto/index.fs",
+      "size": 816,
+      "sha256": "942872161f2632bf910c1c11b7845660d61aa26b7058a6dfb812bc6df4af6bbd",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/ShopMaster/crowd.fs",
+      "size": 3285680,
+      "sha256": "cbf77a927cad394285e204954cb889f31ad22b9ce4c22cc1e32b604106ee7efb",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/ShopMaster/index.fs",
+      "size": 840,
+      "sha256": "0925ae7fa95af9353d8f1158f8bda48fda7829b8d3557494866054241aab9dc8",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/TargetIcon/crowd.fs",
+      "size": 641272,
+      "sha256": "81c3a3e94d9bd221aab21a0a42a53682b95da0dbab56bd03c7cc13fbadc96a69",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/TargetIcon/index.fs",
+      "size": 6560,
+      "sha256": "31859937819eb1a1d104fd253618089e99a8d0daf678d8e184fb03a1f6e33457",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/TargetMarker/crowd.fs",
+      "size": 28128,
+      "sha256": "cf1d589a8e3e8b4d8ac2ed12cc2e5e46a75458e8194719a21c2d96d378b48a21",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/TargetMarker/index.fs",
+      "size": 336,
+      "sha256": "8e6d14cdfae38e898b7e4a2b2d2b038f1c042f0996443974b814fbc805aa16a4",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Tutorial/crowd.fs",
+      "size": 1678864,
+      "sha256": "6b76dbf322946dad3e7182cf543e74f9792899114b3cf71a3fa6d092616b93dc",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/Tutorial/index.fs",
+      "size": 624,
+      "sha256": "05a700d0201de749e16501c81b4a32e2d25b996a04b3eccca1b806f746769ef3",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/crowd.fs",
+      "size": 299456,
+      "sha256": "e9a0fdf057eea06f200b42edfbc604fd7600ba15e10a2d8f792071e4c20aba4e",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Common/index.fs",
+      "size": 212,
+      "sha256": "90b1d1ad3bb04d709730431a575507574b08457223d3eba1d2ef497805087e33",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Font/Font",
+      "size": 944240,
+      "sha256": "6d520539f91694733762de7d05a5188958aef154aaf8e1cf1673668fdcf59490",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Layout/31_MAP_TITLE/crowd.fs",
+      "size": 1852400,
+      "sha256": "67a49a31b0093e2add8bbdaa2dd7ef027f33842c4ee07f981b68642e0213f58a",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Layout/31_MAP_TITLE/index.fs",
+      "size": 1060,
+      "sha256": "6bd242a66094380e4bbce7411c9e454b0d5cf322630de24909505b2067a6dc0c",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Layout/ChapterTitle/crowd.fs",
+      "size": 8125624,
+      "sha256": "7a32f20dc74418ca0b7dd896e0b08bae03f338bce70d6856a41bc409c838a4f8",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Layout/ChapterTitle/index.fs",
+      "size": 308,
+      "sha256": "24155c132a97cfaec0aa20080c32ddd5f73e879332855fa27c92955832092b3e",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Layout/EndRoll/crowd.fs",
+      "size": 365348,
+      "sha256": "ad7203ac0393e68a3b00e7b1635ae5aa3726983fb1d87eeefb51f7ee7c4ab532",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Layout/EndRoll/index.fs",
+      "size": 836,
+      "sha256": "5896ad2ff4c7ad1162b2119d389783fb93d0ff666f83e5765e0a1d6b15ec54d2",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Layout/MiniMap/crowd.fs",
+      "size": 19309312,
+      "sha256": "1cb76c368dc061c23ad5ccc2dd2db5f155e6525a5c2db810cff11e3d240a9ded",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Layout/MiniMap/index.fs",
+      "size": 4608,
+      "sha256": "1208fb476d00bfe8a50651362a9db475ab7cfae64bb32d1b2acf3d4766012666",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Layout/crowd.fs",
+      "size": 38553748,
+      "sha256": "f0e325435a838d2f876ac81d9e0ad91d5e7cd7c79984276aed24fe8174afdaa0",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/Layout/index.fs",
+      "size": 2416,
+      "sha256": "7d0e32ae3bf7b7a57cd89b017d1a8883ddb7b1911d586354299e16eef9a532af",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/MenuModel/crowd.fs",
+      "size": 383900,
+      "sha256": "bb0b8c655dc5ef07009f6ce5f489bde3ac496d1c53d110873e1d2750c4dfed70",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI/MenuModel/index.fs",
+      "size": 668,
+      "sha256": "8367b72fcb60820c16f191bc50221d3d99affb545da5b3231e402f561fcff1e0",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Ability_job_skill_ss/crowd.fs",
+      "size": 3152832,
+      "sha256": "c8ca1fbffdd4d404513750f4cdb2f7c8b737e75de8fe850cd2d624e06d52c73f",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Ability_job_skill_ss/index.fs",
+      "size": 576,
+      "sha256": "d6c75420b8a6d9305da494a3f15043d5f067b58dd23a9090418fc4f8d4250fa3",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Character_image/PCF1",
+      "size": 262440,
+      "sha256": "7572c16e4ebd74ab01f055b41909a59bffaca9a50a5db17b060426f379bd84cd",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Character_image/PCF2",
+      "size": 262440,
+      "sha256": "fab7e52eeaccf444e2488fbe35639795386f222edcbfc9b86c84e5cf2d1b9467",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Character_image/PCM1",
+      "size": 262440,
+      "sha256": "e2ab203adda42bf5ce7ae54bf4409e100525c855b2fb76cea4de9a6ad46b7769",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Character_image/PCM2",
+      "size": 262440,
+      "sha256": "633e4a1fa66319f1b773e673ca76fdbd466f681526ab5ced4198d520773a36f9",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/ChargeShopFace/PCF1",
+      "size": 131368,
+      "sha256": "f99485fa2c0238cc89945d8687a28cc40e284e3e5e760fb376aa515d8493cc1b",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/ChargeShopFace/PCF2",
+      "size": 131368,
+      "sha256": "774e2f29d9e6b7a64d804b1b6759ca79b7dbc9aa1553b416e7debba771b20fc2",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/ChargeShopFace/PCM1",
+      "size": 131368,
+      "sha256": "c87e1690120ec7a8114e19be269e6d0e05add5b511f0d53186c0420889ff2aef",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/ChargeShopFace/PCM2",
+      "size": 131368,
+      "sha256": "3de020779d98f4277f6b316080fab8a45ab40a15eff8479449a1f788af57dfcf",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Character/crowd.fs",
+      "size": 3292192,
+      "sha256": "18e3f798653f9e2b757dbb0781909faf46cfeba75bd2b061e9a7b40a62355068",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Character/index.fs",
+      "size": 1344,
+      "sha256": "afd459449a0ed7031c4c3bd8c9181bc229cbaed5dc29736882d4f1b470dfc4a2",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Enemy/crowd.fs",
+      "size": 7754944,
+      "sha256": "ab2c6bfc7b8676b91d1d0d932e8307e565138712c969d4fcbf64ef1c2b116eb8",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Enemy/index.fs",
+      "size": 5020,
+      "sha256": "4897d737f4038f33e480c5333a6bd9fb91f889342c5c3a474704b202e3ca0fad",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Item/crowd.fs",
+      "size": 33067440,
+      "sha256": "34d32a842090bb82077af4f0e0ba18386cfcb4e4a152723590a431b14363f408",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Item/index.fs",
+      "size": 3024,
+      "sha256": "33853ad33f8eda842ecf664778959396dbb52af5da1ff03b1735ec8479127ceb",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Location/crowd.fs",
+      "size": 1586184,
+      "sha256": "7398ccccf5713586e95f9e480f954be5e35feced752ae98f7f891320f4c02341",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Location/index.fs",
+      "size": 1080,
+      "sha256": "9742644bd498e95131eb75fbc9557d59c82fae813ca5e7f89e40bf52d9312507",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Mystery/crowd.fs",
+      "size": 4502832,
+      "sha256": "14cfec750b59b614d5782312863f95d5a6b371b2df08a8772daa8c3eb7c10a1f",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Mystery/index.fs",
+      "size": 1104,
+      "sha256": "e9773f1884f35bfe07a824f8e9d4c3e69119b61764b5e48148a96cdbdbe06b65",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Syuki/crowd.fs",
+      "size": 198384,
+      "sha256": "81a4f94a3f54f56f640652f58cf9ffe320e7783189d1645947a27a03584838a9",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Syuki/index.fs",
+      "size": 144,
+      "sha256": "51e84acdc13486d929a5ce298ad9155ffa363742f1301a8e99f108979765af2b",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Title/crowd.fs",
+      "size": 329160,
+      "sha256": "7e0ca07017c1e0ba5b3af24b86b4c691ba35b63756c9e7fdfd6c40b884283236",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Title/index.fs",
+      "size": 116,
+      "sha256": "2ad452bb37ad33a9e6dcdc14881b6a5768c0102c1620675d1da6d702bfb75458",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Word/crowd.fs",
+      "size": 1018768,
+      "sha256": "a4984d0754c8b7d100851210bc876ace1da50865d04050c4d8a9472bd5f41fc7",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/D_Report/D_Word/index.fs",
+      "size": 280,
+      "sha256": "342d728cc3859515b8f7b0c9c62fb7e3c44fb88818f4d465d7b46e40cdd7ca0d",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/EventItemIcon/crowd.fs",
+      "size": 701448,
+      "sha256": "ac19d6c5ab33d183f2ba158029a52f0cc28f0edfa35ada7389e5399ce41e44df",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/EventItemIcon/index.fs",
+      "size": 1440,
+      "sha256": "232fd8d2319986d00c2cfe88eebb819709614f083d966b07e269af175c4460ec",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Face/Battle/crowd.fs",
+      "size": 48312,
+      "sha256": "d7d589212b6280b1ade3e725dfa9fb5d285b56771aa2d6f651278de23b8bef46",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Face/Battle/index.fs",
+      "size": 240,
+      "sha256": "55030cfe69c844e96d8b85731f48f8fb59c0f1d29877f19d978e00c90ad9e63d",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Face/Circle/PCF1",
+      "size": 16680,
+      "sha256": "1db1f66a25a6fc320d79e96e577d48166c4dee8db7703f0d76b85ec9b52da6bd",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Face/Circle/PCF2",
+      "size": 16680,
+      "sha256": "6036a2a77b2d58af5a3f6039d8ef4cd31b00c56af92546849b952f49c4c4f50b",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Face/Circle/PCM1",
+      "size": 16680,
+      "sha256": "e9f332b5cc48a8ef2cef58b77b3b09283f2db4b6a5550d2ece4472c1fc605d57",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Face/Circle/PCM2",
+      "size": 16680,
+      "sha256": "976583fa6ee104aa3c702e9438ab09f780b71b8258fea76ee6322daa84246683",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Face/Menu/PCF1",
+      "size": 16680,
+      "sha256": "f48b46d56994af94e0df933ad7c811b49adb21b33ecde7ff8ceec5197884c9a5",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Face/Menu/PCF2",
+      "size": 16680,
+      "sha256": "84f14554c6be5741190c33c0a6b5685ed2533f80896a257eda46d0c3f77927c4",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Face/Menu/PCM1",
+      "size": 16680,
+      "sha256": "07404e4cbf6fe8bf89820223836a98c2e761d7381bf049b03f30dcfefad3c62a",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Face/Menu/PCM2",
+      "size": 16680,
+      "sha256": "af4f919a09b67450c2b02fbe2013288840aaecc4195c7ec146815e95499473a3",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/JobPreview/PCF1/crowd.fs",
+      "size": 1613032,
+      "sha256": "908bbf61ee202f0a65ea10950fb7c302b5ed143f3df64cc52e49e30b576bb421",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/JobPreview/PCF1/index.fs",
+      "size": 600,
+      "sha256": "c0d8d21d1f066a7038c21f3e7118106195995fc722f6284a063c19d0e56ed446",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/JobPreview/PCF2/crowd.fs",
+      "size": 1579968,
+      "sha256": "2f5d1511ea73f7a0fbed1cd7e529d1532da916ca50a3be02a98bf771bb4f699e",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/JobPreview/PCF2/index.fs",
+      "size": 576,
+      "sha256": "6697ddb916baa2b99da30a79334300c56cd319f7400b6f416dac76e5379d0f26",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/JobPreview/PCM1/crowd.fs",
+      "size": 1579968,
+      "sha256": "198db468c244ae7fe4f278dedefe30493023f40c1060179d81e065b760092ebb",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/JobPreview/PCM1/index.fs",
+      "size": 576,
+      "sha256": "6697ddb916baa2b99da30a79334300c56cd319f7400b6f416dac76e5379d0f26",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/JobPreview/PCM2/crowd.fs",
+      "size": 1579968,
+      "sha256": "af126ff88d0949ed82e0d2f31d8e5fdbf3f7d057b63b1429553c6657206a3818",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/JobPreview/PCM2/index.fs",
+      "size": 576,
+      "sha256": "6697ddb916baa2b99da30a79334300c56cd319f7400b6f416dac76e5379d0f26",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/PartyChatFace/crowd.fs",
+      "size": 1070288,
+      "sha256": "ac5cd510a47cc16583da0d8c00e33598712476a054632eda8162b31767dfda4a",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/PartyChatFace/index.fs",
+      "size": 440,
+      "sha256": "09bd0cb08b71ac8a000c208056f3d49363dbd73464c22c23a36244cf841e5935",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/ShipAuto/crowd.fs",
+      "size": 2238288,
+      "sha256": "6a0efc017e1827ea3e824793031b3b262f4d3b9e9fc26955c8957c29bd8f6ce4",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/ShipAuto/index.fs",
+      "size": 816,
+      "sha256": "942872161f2632bf910c1c11b7845660d61aa26b7058a6dfb812bc6df4af6bbd",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/ShopMaster/crowd.fs",
+      "size": 3285680,
+      "sha256": "cbf77a927cad394285e204954cb889f31ad22b9ce4c22cc1e32b604106ee7efb",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/ShopMaster/index.fs",
+      "size": 840,
+      "sha256": "0925ae7fa95af9353d8f1158f8bda48fda7829b8d3557494866054241aab9dc8",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/TargetIcon/crowd.fs",
+      "size": 641272,
+      "sha256": "81c3a3e94d9bd221aab21a0a42a53682b95da0dbab56bd03c7cc13fbadc96a69",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/TargetIcon/index.fs",
+      "size": 6560,
+      "sha256": "31859937819eb1a1d104fd253618089e99a8d0daf678d8e184fb03a1f6e33457",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/TargetMarker/crowd.fs",
+      "size": 28128,
+      "sha256": "cf1d589a8e3e8b4d8ac2ed12cc2e5e46a75458e8194719a21c2d96d378b48a21",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/TargetMarker/index.fs",
+      "size": 336,
+      "sha256": "8e6d14cdfae38e898b7e4a2b2d2b038f1c042f0996443974b814fbc805aa16a4",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Tutorial/crowd.fs",
+      "size": 1678864,
+      "sha256": "6b76dbf322946dad3e7182cf543e74f9792899114b3cf71a3fa6d092616b93dc",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/Tutorial/index.fs",
+      "size": 624,
+      "sha256": "05a700d0201de749e16501c81b4a32e2d25b996a04b3eccca1b806f746769ef3",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/crowd.fs",
+      "size": 299456,
+      "sha256": "e9a0fdf057eea06f200b42edfbc604fd7600ba15e10a2d8f792071e4c20aba4e",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Common/index.fs",
+      "size": 212,
+      "sha256": "90b1d1ad3bb04d709730431a575507574b08457223d3eba1d2ef497805087e33",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Font/Font",
+      "size": 944240,
+      "sha256": "a4569a070f1223e73281c28645b99272a6204d3f3bc1ba8b082b9ea74f951837",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Layout/31_MAP_TITLE/crowd.fs",
+      "size": 1852400,
+      "sha256": "67a49a31b0093e2add8bbdaa2dd7ef027f33842c4ee07f981b68642e0213f58a",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Layout/31_MAP_TITLE/index.fs",
+      "size": 1060,
+      "sha256": "6bd242a66094380e4bbce7411c9e454b0d5cf322630de24909505b2067a6dc0c",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Layout/ChapterTitle/crowd.fs",
+      "size": 8125624,
+      "sha256": "7a32f20dc74418ca0b7dd896e0b08bae03f338bce70d6856a41bc409c838a4f8",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Layout/ChapterTitle/index.fs",
+      "size": 308,
+      "sha256": "24155c132a97cfaec0aa20080c32ddd5f73e879332855fa27c92955832092b3e",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Layout/EndRoll/crowd.fs",
+      "size": 365348,
+      "sha256": "ad7203ac0393e68a3b00e7b1635ae5aa3726983fb1d87eeefb51f7ee7c4ab532",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Layout/EndRoll/index.fs",
+      "size": 836,
+      "sha256": "5896ad2ff4c7ad1162b2119d389783fb93d0ff666f83e5765e0a1d6b15ec54d2",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Layout/MiniMap/crowd.fs",
+      "size": 19309312,
+      "sha256": "1cb76c368dc061c23ad5ccc2dd2db5f155e6525a5c2db810cff11e3d240a9ded",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Layout/MiniMap/index.fs",
+      "size": 4608,
+      "sha256": "1208fb476d00bfe8a50651362a9db475ab7cfae64bb32d1b2acf3d4766012666",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Layout/crowd.fs",
+      "size": 38553748,
+      "sha256": "f0e325435a838d2f876ac81d9e0ad91d5e7cd7c79984276aed24fe8174afdaa0",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/Layout/index.fs",
+      "size": 2416,
+      "sha256": "7d0e32ae3bf7b7a57cd89b017d1a8883ddb7b1911d586354299e16eef9a532af",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/MenuModel/crowd.fs",
+      "size": 383900,
+      "sha256": "bb0b8c655dc5ef07009f6ce5f489bde3ac496d1c53d110873e1d2750c4dfed70",
+      "changed_from_build002": false
+    },
+    {
+      "path": "luma/titles/00040000000FC500/romfs/Graphics/UI_en/MenuModel/index.fs",
+      "size": 668,
+      "sha256": "8367b72fcb60820c16f191bc50221d3d99affb545da5b3231e402f561fcff1e0",
+      "changed_from_build002": false
+    }
+  ],
+  "luma_zip_sha256": "234b913544b0bae5f3325fae61bee80d16ad4a849014723ee5bf1120fd826172",
+  "luma_zip_bytes": 70109702
+}

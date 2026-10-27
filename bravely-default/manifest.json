@@ -1,0 +1,17 @@
+{
+  "id": "bravely-default-thai-build003",
+  "name": "Bravely Default",
+  "platform": "Nintendo 3DS",
+  "version": "build003 / release008",
+  "format": "QGDELTA2",
+  "titleId": "00040000000FC500",
+  "sourceName": "Bravely Default (USA) (En,Ja,Fr,De,Es,It).3ds",
+  "sourceSize": 4294967296,
+  "sourceSha256": "6b4a89fa3385e967ab1db282b1616dc58df659c90a0626850d468334c70a0af2",
+  "targetSize": 4294967296,
+  "targetSha256": "3ef92bb8e39923e7ffed1693d1cc099aaa88643e688ff61558d9434f9ab5a7e7",
+  "patchUrl": "BravelyDefault_Thai_build003.qgdelta",
+  "patchSha256": "51792ff8df697b707b31a56785682dd689ad674f3659f55b796663e71a5fe4d4",
+  "patchSize": 96989008,
+  "outName": "BravelyDefault_Thai_build003.3ds"
+}
