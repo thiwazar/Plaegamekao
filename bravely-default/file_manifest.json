@@ -1142,6 +1142,7 @@
       "changed_from_build002": false
     }
   ],
-  "luma_zip_sha256": "234b913544b0bae5f3325fae61bee80d16ad4a849014723ee5bf1120fd826172",
-  "luma_zip_bytes": 70109702
+  "luma_zip_sha256": "7d6c72b21641182348d78b7c38963ec9be74122851120fd677e429c7ed62f3e0",
+  "luma_zip_bytes": 70109769,
+  "release_version": "2.0"
 }

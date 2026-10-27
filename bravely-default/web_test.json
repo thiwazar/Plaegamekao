@@ -1,5 +1,7 @@
 {
-  "baseline_commit": "9dfaa26beddaa489850f977a347566e632da6754",
+  "release_version": "2.0",
+  "baseline_commit": "7e3f59c96ef2b0ecbd5583330276134dc36a3802",
+  "game_payload": "UNCHANGED_FROM_BUILD003",
   "local_browser": {
     "browser": "Google Chrome (Chromium), headless",
     "source": "6b4a89fa3385e967ab1db282b1616dc58df659c90a0626850d468334c70a0af2",
@@ -25,64 +27,29 @@
     }
   },
   "library": {
-    "baseline_commit": "9dfaa26beddaa489850f977a347566e632da6754",
+    "baseline_commit": "7e3f59c96ef2b0ecbd5583330276134dc36a3802",
     "syntax": "PASS",
     "unrelated_baseline_unchanged": true,
-    "old_cards": 47,
+    "old_cards": 48,
     "new_cards": 48,
     "search": "PASS",
     "platform_filter": "PASS",
     "new_cover": "PASS",
+    "previous_game_detail_back": "PASS",
     "back_link": "PASS",
     "direct_link": "PASS",
-    "luma_browser_download_sha256": "234b913544b0bae5f3325fae61bee80d16ad4a849014723ee5bf1120fd826172",
+    "luma_browser_download_sha256": "7d6c72b21641182348d78b7c38963ec9be74122851120fd677e429c7ed62f3e0",
     "download_error": null,
     "mobile_overflow": false,
     "page_errors": [],
-    "online_patch": "PASS_SEE_FULL_BROWSER_REPORT",
-    "publication": "NOT_PUBLISHED",
-    "previous_game_detail_back": "PASS"
-  },
-  "rebuild": {
-    "original_roundtrip": "ALL_PAYLOADS_IDENTICAL",
-    "patched_romfs": "ALL_PAYLOADS_MATCH_EXPECTED",
-    "rom_rebuild_checks": {
-      "all_romfs_payloads": "PASS",
-      "unchanged_exefs_exheader_logo_plain": "PASS",
-      "other_partitions": "IDENTICAL",
-      "ncch_romfs_superblock_hash": "PASS",
-      "embedded_ncch_header": "PASS"
-    },
-    "ivfc_integrity": [
-      {
-        "level": "L3",
-        "blocks": 840557,
-        "sha256": "PASS"
-      },
-      {
-        "level": "L2",
-        "blocks": 6567,
-        "sha256": "PASS"
-      },
-      {
-        "level": "L1",
-        "blocks": 52,
-        "sha256": "PASS"
-      }
-    ],
-    "qgdelta": {
-      "operations": 3627,
-      "literal_bytes": 323274164,
-      "size": 96989008,
-      "sha256": "51792ff8df697b707b31a56785682dd689ad674f3659f55b796663e71a5fe4d4",
-      "replay": "TARGET_SHA256_MATCH"
-    }
+    "online_patch": "SEE_FULL_BROWSER_REPORT",
+    "publication": "NOT_PUBLISHED"
   },
   "gameplay": {
-    "build003_installed_mod": "PASS: Azahar 2126.0, one Party Chat at Norende Ravine - Trail, completed dialogue and moved afterwards",
-    "rebuilt_rom_gameplay": "NOT_TESTED",
+    "installed_mod": "One Party Chat completed in Azahar 2126.0 in runtime007",
+    "web_rom": "Boot, save load and Y Party Chat opened; dialogue advanced, but completion not verified due to unexplained app close and external window activity in runtime010",
     "real_hardware_Luma": "NOT_TESTED",
-    "ship_scene": "NOT_TESTED"
+    "ship_scene_and_full_playthrough": "NOT_TESTED"
   },
-  "publication": "PREPUBLICATION_CHECKS_PASS; live verification recorded separately after deployment"
+  "publication": "Local checks passed; live checks recorded separately after deployment"
 }
