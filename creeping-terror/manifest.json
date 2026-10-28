@@ -1,0 +1,13 @@
+{
+  "format": "QGDELTA2",
+  "sourceSize": 307089408,
+  "sourceSha256": "2fe05107e93599e9f074975abb5c92a03b27ff8d2573ac0f9f356e3eda51a582",
+  "targetSize": 308224000,
+  "targetSha256": "0ff6f8ef597dc716761c7666fcb85d0b4cfa50ac811b6b097e234d49cf73a5ab",
+  "patchUrl": "creeping-terror-thai.qgdelta",
+  "patchSize": 587856,
+  "patchSha256": "7060d50f5dbd90e74d5f0c351a9c4ec196995898fcd5842bd8268e361788c327",
+  "outName": "Creeping Terror Thai.3ds",
+  "titleId": "00040000001cb300",
+  "version": "build 015 test"
+}
