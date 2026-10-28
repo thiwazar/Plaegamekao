@@ -1,0 +1,17 @@
+{
+  "version": "v6",
+  "platform": "Nintendo 3DS",
+  "titleId": "00040000001C8F00",
+  "sourceName": "Radiant Historia: Perfect Chronology (UNDUB) Decrypted.3ds (USA)",
+  "sourceSize": 1283168256,
+  "sourceSha256": "535cd42b042020bd17d783c7096d280d544aa60310bc4f813df2de9a129c6312",
+  "targetSize": 1295409152,
+  "targetSha256": "5c04f413ca8d25acb7b20e33cc3cb2084dcc85e8532644906a618efe06c0d502",
+  "patchUrl": "Radiant_Historia_PC_Thai_v6.xdelta",
+  "patchSize": 3738899,
+  "patchSha256": "3091098f1dc59ec0b2b69c6aec514833b6252e83e277742ed280ed4e90fd842a",
+  "outName": "Radiant_Historia_PC_Thai_v6.3ds",
+  "lumaUrl": "RadiantHistoria_Thai_v6.zip",
+  "lumaSize": 41091152,
+  "lumaSha256": "a30f82babcf04bea6a3c1b6af040ea0f473cae4f5f9fb46439278b997292d20e"
+}
