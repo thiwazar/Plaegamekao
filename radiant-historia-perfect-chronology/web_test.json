@@ -9,19 +9,20 @@
   "nativeXdeltaRoundTrip": "passed",
   "webDecoderWasmRoundTrip": "passed",
   "workerPipelineTest": "passed: source hash verified, WASM patch applied, output size/SHA-256 matched expected target",
-  "webAppBrowserTest": "passed: local Edge preview; selected USA ROM, applied patch, and generated downloadable .3ds",
+  "webAppBrowserTest": "passed in Edge on local candidate: selected USA ROM, applied patch, downloaded .3ds, and verified output size/SHA-256",
+  "liveWebsiteTest": "passed on published GitHub Pages: loaded production assets, applied the USA ROM, and UI confirmed source and target SHA-256 checks passed",
   "patchedRomDownload": {
-    "status": "passed",
+    "status": "passed on local candidate",
     "size": 1295409152,
     "sha256": "5c04f413ca8d25acb7b20e33cc3cb2084dcc85e8532644906a618efe06c0d502"
   },
   "lumaZipDownload": {
-    "status": "passed",
+    "status": "passed from live GitHub Pages",
     "size": 41091152,
     "sha256": "a30f82babcf04bea6a3c1b6af040ea0f473cae4f5f9fb46439278b997292d20e",
     "contents": ["luma/", "README_TH.txt"]
   },
-  "liveWebsiteTest": "pending publication",
+  "livePatchedRomDownload": "not downloaded; production browser apply succeeded and target hash was validated before download link was offered",
   "gameplayTest": "not tested",
   "note": "file_manifest.json and web_test.json are separate from the Luma archive"
 }
