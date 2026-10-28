@@ -1,0 +1,13 @@
+{
+  "format": "QGDELTA2",
+  "sourceSize": 2147483648,
+  "sourceSha256": "bcba12046d2a52d48c2efacb5eeeb9f8cf834cf8fe9617cd9724ec28bcdf1a44",
+  "targetSize": 2147483648,
+  "targetSha256": "67fa34b8c13646a1d4772dbfd8a9617e82d438392b70a3c10fdc4e2a8a6a6ce7",
+  "patchUrl": "alliance-alive-thai.qgdelta",
+  "patchSize": 2225888,
+  "patchSha256": "e240298008316b52785b1467dbbeb751f949a5f2c06088b7630d262c22817e5e",
+  "outName": "Alliance Alive Thai v1.0.3ds",
+  "titleId": "00040000001ccd00",
+  "version": "v1.0 beta"
+}
