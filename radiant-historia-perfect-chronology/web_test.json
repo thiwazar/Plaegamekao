@@ -8,9 +8,20 @@
   "patchSha256": "3091098f1dc59ec0b2b69c6aec514833b6252e83e277742ed280ed4e90fd842a",
   "nativeXdeltaRoundTrip": "passed",
   "webDecoderWasmRoundTrip": "passed",
-  "webAppBrowserTest": "not completed",
-  "liveWebsiteTest": "not deployed",
+  "workerPipelineTest": "passed: source hash verified, WASM patch applied, output size/SHA-256 matched expected target",
+  "webAppBrowserTest": "passed: local Edge preview; selected USA ROM, applied patch, and generated downloadable .3ds",
+  "patchedRomDownload": {
+    "status": "passed",
+    "size": 1295409152,
+    "sha256": "5c04f413ca8d25acb7b20e33cc3cb2084dcc85e8532644906a618efe06c0d502"
+  },
+  "lumaZipDownload": {
+    "status": "passed",
+    "size": 41091152,
+    "sha256": "a30f82babcf04bea6a3c1b6af040ea0f473cae4f5f9fb46439278b997292d20e",
+    "contents": ["luma/", "README_TH.txt"]
+  },
+  "liveWebsiteTest": "pending publication",
   "gameplayTest": "not tested",
-  "note": "Luma ZIP contains exactly luma/ and README_TH.txt. File manifest and web test are separate from the Luma archive.",
-  "workerPipelineTest": "passed: worker loaded local manifest and patch, validated source SHA-256, applied xdelta WASM, generated a download Blob and matched output size/SHA-256"
+  "note": "file_manifest.json and web_test.json are separate from the Luma archive"
 }
