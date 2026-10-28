@@ -1,28 +1,22 @@
 {
-  "version": "v6",
+  "version": "v6 bootfix",
+  "platform": "Nintendo 3DS",
+  "titleId": "00040000001C8F00",
+  "sourceName": "Radiant Historia: Perfect Chronology (UNDUB) Decrypted.3ds (USA)",
   "sourceSize": 1283168256,
   "sourceSha256": "535cd42b042020bd17d783c7096d280d544aa60310bc4f813df2de9a129c6312",
-  "targetSize": 1295409152,
-  "targetSha256": "5c04f413ca8d25acb7b20e33cc3cb2084dcc85e8532644906a618efe06c0d502",
-  "patchSize": 3738899,
-  "patchSha256": "3091098f1dc59ec0b2b69c6aec514833b6252e83e277742ed280ed4e90fd842a",
-  "nativeXdeltaRoundTrip": "passed",
-  "webDecoderWasmRoundTrip": "passed",
-  "workerPipelineTest": "passed: source hash verified, WASM patch applied, output size/SHA-256 matched expected target",
-  "webAppBrowserTest": "passed in Edge on local candidate: selected USA ROM, applied patch, downloaded .3ds, and verified output size/SHA-256",
-  "liveWebsiteTest": "passed on published GitHub Pages: loaded production assets, applied the USA ROM, and UI confirmed source and target SHA-256 checks passed",
-  "patchedRomDownload": {
-    "status": "passed on local candidate",
-    "size": 1295409152,
-    "sha256": "5c04f413ca8d25acb7b20e33cc3cb2084dcc85e8532644906a618efe06c0d502"
-  },
-  "lumaZipDownload": {
-    "status": "passed from live GitHub Pages",
-    "size": 41091152,
-    "sha256": "a30f82babcf04bea6a3c1b6af040ea0f473cae4f5f9fb46439278b997292d20e",
-    "contents": ["luma/", "README_TH.txt"]
-  },
-  "livePatchedRomDownload": "not downloaded; production browser apply succeeded and target hash was validated before download link was offered",
+  "targetSize": 1190440960,
+  "targetSha256": "e0c3386c38bb71af091d0f0a71929e07382282e5b7b0f1d5521e84c4cc090920",
+  "patchUrl": "Radiant_Historia_PC_Thai_v6_bootfix.xdelta",
+  "patchSize": 12155843,
+  "patchSha256": "5e0fc2df0fda07721dee6f6791679d9fe8e3155edb1a95acc174aba1e6bbae4a",
+  "outName": "Radiant_Historia_PC_Thai_v6_bootfix.cxi",
+  "lumaUrl": "RadiantHistoria_Thai_v6.zip",
+  "lumaSize": 41091152,
+  "lumaSha256": "a30f82babcf04bea6a3c1b6af040ea0f473cae4f5f9fb46439278b997292d20e",
+  "webDecoderWasmRoundTrip": "passed; byte-identical to boot-tested CXI",
+  "bootTest": "Azahar 2126.0 Thai title menu passed; user confirmed",
   "gameplayTest": "not tested",
-  "note": "file_manifest.json and web_test.json are separate from the Luma archive"
+  "browserDownloadTest": "passed: local browser apply and download, size 1190440960 SHA-256 e0c3386c38bb71af091d0f0a71929e07382282e5b7b0f1d5521e84c4cc090920",
+  "liveWebsiteTest": "pending"
 }
