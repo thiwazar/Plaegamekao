@@ -1,4 +1,4 @@
-const expected='76f6e6ec12219bde08c04dbbb11840ecc3f5e45c032ddf18b8f09117ec441593';
+const expected='e0f8fae4622a7b0864c8b101892bff001b45c2257132dcf240cea3ae6eef7ace';
 const button=document.getElementById('make-luma');
 const link=document.getElementById('download');
 const status=document.getElementById('status');
@@ -13,7 +13,7 @@ button.addEventListener('click',async()=>{
     const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');
     if(digest!==expected)throw Error('ข้อมูลแพตช์ไม่ตรงรุ่น');
     url=URL.createObjectURL(new Blob([bytes],{type:'application/zip'}));
-    link.href=url;link.download='AllianceAlive_Thai_v1.0_Luma.zip';link.hidden=false;
+    link.href=url;link.download='AllianceAlive_Thai_v1.1_Luma.zip';link.hidden=false;
     status.textContent='ตรวจชุด Luma ผ่านแล้ว กดดาวน์โหลดและติดตั้งตามขั้นตอนด้านบน';
   }catch(error){status.textContent=`ไม่สำเร็จ: ${error.message}`;}
   finally{button.disabled=false;}
