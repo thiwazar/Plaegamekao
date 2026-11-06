@@ -1,15 +1,15 @@
 {
   "id": "sotn-ultimate-v13-thai",
-  "version": "build045",
-  "releasedAt": "2026-11-06T19:58:34+07:00",
+  "version": "build047",
+  "releasedAt": "2026-11-06T21:42:30+07:00",
   "status": "รุ่นทดสอบ",
   "format": "BPS1",
-  "patch": "SOTN_Ultimate_v1.3_Thai_build045.bps",
-  "patchSize": 1205438,
-  "patchSha256": "c8d1cacf14a044dfbc5a890a84d2db5bf9d391e7e836f2b2767a363ef9ae05a8",
+  "patch": "SOTN_Ultimate_v1.3_Thai_build047.bps",
+  "patchSize": 1259615,
+  "patchSha256": "d01c5ebb9a87e0f51c0ccfd10495bbab2d0cc1fedde3beedbecdc4b284d1917d",
   "sourceSize": 684653088,
   "sourceSha256": "c90dd095b6476fb20ad70dfac70e52b9e34dfb213158f4b57e4e4898baaec3a2",
   "targetSize": 685332816,
-  "targetSha256": "05324e09e5f8a07a1ca8f1e9fbac1ea699f2efc7f5741b286fe1e16cf08331de",
-  "outputName": "SOTN_Ultimate_v1.3_Thai_build045.bin"
+  "targetSha256": "03aaf27fe896a6f7a657c9f00dc5162b735ac4e4742da80d338e41a8b0df9af1",
+  "outputName": "SOTN_Ultimate_v1.3_Thai_build047.bin"
 }
