@@ -1,16 +1,17 @@
 {
   "id": "sotn-ultimate-v13-thai",
   "version": "1.0",
-  "releasedAt": "2026-11-06T22:28:42+07:00",
-  "status": "V1.0",
+  "releasedAt": "2026-11-06T23:29:50+07:00",
+  "status": "V1.0 r2",
   "format": "BPS1",
-  "patch": "SOTN_Ultimate_v1.3_Thai_V1.0.bps",
-  "patchSize": 1259652,
-  "patchSha256": "aa5783ff66522af191fd9a89d9e627b1a0f980aab61adc950376c2660bff21ac",
+  "patch": "SOTN_Ultimate_v1.3_Thai_V1.0_r2.bps",
+  "patchSize": 1259665,
+  "patchSha256": "ab143ac2f1e7e3963074cb320e1ffd747721edc5ca0e6941de3fb53fa639a357",
   "sourceSize": 684653088,
   "sourceSha256": "c90dd095b6476fb20ad70dfac70e52b9e34dfb213158f4b57e4e4898baaec3a2",
   "targetSize": 685332816,
-  "targetSha256": "03aaf27fe896a6f7a657c9f00dc5162b735ac4e4742da80d338e41a8b0df9af1",
-  "outputName": "SOTN_Ultimate_v1.3_Thai_V1.0.bin",
-  "internalBuild": "047"
+  "targetSha256": "feaf9a8f2d883cd9e2da8f40d38ec94f20c8316478d13e4efb0da26eee872770",
+  "outputName": "SOTN_Ultimate_v1.3_Thai_V1.0_r2.bin",
+  "internalBuild": "048",
+  "revision": 2
 }
