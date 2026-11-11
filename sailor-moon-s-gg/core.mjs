@@ -28,6 +28,6 @@ export async function patchRom(file) {
     end = offset + length;
     cursor += length;
   }
-  if (await sha256(output) !== TARGET) throw new Error('ผลลัพธ์ไม่ตรงกับ SHA-256 ของชุด 008');
+  if (await sha256(output) !== TARGET) throw new Error('ผลลัพธ์ไม่ตรงกับ SHA-256 ของภาษาไทย v1.0');
   return new Blob([output], {type: 'application/octet-stream'});
 }

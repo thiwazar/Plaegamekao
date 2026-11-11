@@ -29,7 +29,7 @@ button.addEventListener('click', async () => {
     url = URL.createObjectURL(await patchRom(file));
     download.href = url;
     download.hidden = false;
-    status.textContent = 'ตรวจ SHA-256 ผ่าน พร้อมดาวน์โหลด ROM ภาษาไทยชุด 008';
+    status.textContent = 'ตรวจ SHA-256 ผ่าน พร้อมดาวน์โหลด ROM ภาษาไทย v1.0';
   } catch (error) {
     status.textContent = error.message;
   } finally {
