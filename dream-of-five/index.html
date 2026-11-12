@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ไฟร์เอมเบลม ความฝันแห่งห้าวีรบุรุษ · แพตช์ภาษาไทย</title>
+<link rel="stylesheet" href="../pgk-theme.css?v=20261022-1">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4eddc;color:#26352f;font-family:Tahoma,"Segoe UI",sans-serif;line-height:1.65}
+main{max-width:1020px;margin:1.5rem auto;padding:clamp(1rem,4vw,2rem);background:#fffaf0;border-radius:18px}
+h1{font-size:clamp(1.65rem,4vw,2.6rem);line-height:1.25;margin:.25rem 0;color:#15395e}
+h2{font-size:1.15rem;margin:0 0 .4rem}.layout{display:grid;grid-template-columns:minmax(190px,32%) 1fr;gap:1.6rem;margin-top:1.3rem}
+.cover{width:100%;height:auto;display:block;border-radius:10px}.box{background:#f7efdc;border:1px solid #dac89f;border-radius:12px;padding:1rem;margin:1rem 0}
+.issue{background:#fff2cc}.box p{margin:.35rem 0}input{max-width:100%;font:inherit}button{font:inherit;border:0;border-radius:8px;background:#155f9e;color:white;padding:.55rem 1rem;cursor:pointer}
+button:disabled{opacity:.5;cursor:default}#status{min-height:1.65em}code{overflow-wrap:anywhere}a{color:#155f9e}
+@media(max-width:640px){main{margin:.65rem}.layout{grid-template-columns:1fr}.cover{max-width:300px;margin:auto}}
+</style>
+</head>
+<body class="pgk-theme pgk-detail">
+<div class="pgk-brandbar"><a href="../index.html"><img src="../covers/translator-bear.webp" alt=""><span>เพจแปลเกมเก่า<small>คลังแพตช์ภาษาไทย · ทำแจกฟรี</small></span></a><a class="pgk-back" href="../index.html">← เกมทั้งหมด</a></div>
+<main>
+<h1>ไฟร์เอมเบลม ความฝันแห่งห้าวีรบุรุษ</h1>
+<p>Fire Emblem: Dream of Five · GBA · Definitive Edition v1.7.6 ภาษาไทย</p>
+<div class="layout">
+<img class="cover" src="cover.png" width="1536" height="1024" alt="ปกไฟร์เอมเบลม ความฝันแห่งห้าวีรบุรุษ ฉบับภาษาไทย">
+<div>
+<h2>เรื่องย่อ</h2>
+<p>เรแนร์ นายทหารสาวแห่งออเคมา นำกองกำลังเล็ก ๆ ออกปราบโจร แต่ภารกิจชายแดนกลับพาเธอเข้าไปพัวพันกับความขัดแย้งระหว่างอาณาจักร เมื่อถึงคราวต้องเลือกเส้นทาง การตัดสินใจของเธอจะส่งผลต่อทั้งผู้ร่วมทางและเรื่องราวไปจนถึงช่วงท้ายเกม</p>
+<p><a href="https://feuniverse.us/t/fe8-complete-fe-dream-of-five-definitive-edition/21043">รู้จักโปรเจกต์แฟนเมด Dream of Five บน FEUniverse</a></p>
+<section class="box">
+<h2>เกมใหม่ · <time datetime="2026-11-12T07:49:58+07:00">12 พฤศจิกายน 2569</time></h2>
+<p>เปิดให้แพตช์ภาษาไทยสำหรับ Definitive Edition v1.7.6 ผ่านหน้าเว็บ</p>
+</section>
+<section class="box issue">
+<h2>ปัญหาที่ทราบ</h2>
+<p>เมื่อตั้งชื่อเป็นภาษาไทย ชื่ออาจแสดงเพี้ยนเป็นอักษรญี่ปุ่น (JP)</p>
+</section>
+<section class="box">
+<h2>แพตช์บนเว็บ</h2>
+<p>ใช้ ROM <b>Fire Emblem: Dream of Five (Definitive Edition v1.7.6)</b> ก่อนลงภาษาไทย ขนาด 30,972,940 ไบต์</p>
+<p>เลือกไฟล์ .gba จากเครื่อง เบราว์เซอร์จะตรวจและสร้าง ROM ภาษาไทยเป็นไฟล์ใหม่บนอุปกรณ์ของคุณ แพตช์ผ่านหน้านี้เท่านั้น ไม่มีไฟล์ IPS, xdelta หรือ BPS ให้ดาวน์โหลดแยก</p>
+<p><label for="rom">เลือก ROM Dream of Five v1.7.6</label><br><input id="rom" type="file" accept=".gba,application/octet-stream"></p>
+<button id="apply" type="button" disabled>สร้างไฟล์เกมภาษาไทย</button>
+<button id="download" type="button" hidden>ดาวน์โหลด ROM ภาษาไทย</button>
+<p id="status" role="status" aria-live="polite">เลือก ROM ต้นฉบับเพื่อเริ่ม</p>
+</section>
+<p>แปลโดยเพจแปลเกมเก่า</p>
+</div></div>
+</main>
+<script type="module" src="app.mjs"></script>
+</body>
+</html>
