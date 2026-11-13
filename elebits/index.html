@@ -21,8 +21,7 @@
     code { overflow-wrap: anywhere }
     @media (max-width: 700px) { .hero { grid-template-columns: 1fr } }
   </style>
-  <script src="../persona-q/jszip.min.js" defer></script>
-  <script type="module" src="patch.mjs"></script>
+  <script type="module" src="patch.mjs?v=web-014"></script>
 </head>
 <body class="pgk-theme pgk-detail">
   <div class="pgk-brandbar">
@@ -37,24 +36,23 @@
         <h1>Elebits: The Adventures of Kai and Zero</h1>
         <p>เมื่อรถบัสลึกลับพาไคกับซีโร่หลุดไปต่างโลก ทั้งคู่ต้องตามจับเอลีบิตตัวจิ๋ว ใช้พลังของเหล่าโอเมกาไขปริศนา และหาทางกลับบ้านผ่านเจ็ดโลกที่เต็มไปด้วยเรื่องไม่คาดคิด</p>
         <p>แปลโดยเพจแปลเกมเก่า</p>
-        <a id="patch-zip" class="button" href="Elebits_Thai_UNDUB_v1.0.zip" download>ดาวน์โหลด ZIP แพตช์ v1.0</a>
-        <p>ใน ZIP มีแพตช์ xdelta รุ่น 014 และคู่มือภาษาไทย</p>
+        <p>เลือก ROM ต้นฉบับฉบับ UNDUB รหัส YERE เพื่อแปะแพตช์ในเบราว์เซอร์ ไฟล์เกมจะประมวลผลในเครื่อง</p>
+        <label for="source-rom">เลือก ROM ต้นฉบับ (.nds)</label><br>
+        <input id="source-rom" type="file" accept=".nds">
+        <p id="patch-status" role="status"></p>
+        <a id="patched-rom" class="button" download="Elebits_Thai_UNDUB_v1.0.nds" hidden>ดาวน์โหลดเกมที่แปะแพตช์แล้ว</a>
       </div>
     </section>
     <section class="panel">
-      <h2>เกมใหม่ · ภาษาไทย v1.0</h2>
-      <p>เผยแพร่ <time datetime="2026-11-13T07:49:23+07:00">13 พฤศจิกายน 2569</time></p>
+      <h2>แก้ระบบแพตช์ · ภาษาไทย v1.0</h2>
+      <p>อัปเดต <time datetime="2026-11-13T08:05:58+07:00">13 พฤศจิกายน 2569</time></p>
+      <p>เลือก ROM และรับไฟล์ภาษาไทยจากหน้าเว็บได้โดยตรง ใช้แพตช์รุ่น 014</p>
       <p>แปลบทสนทนา เมนู และคำบรรยาย รวม 3,490 ระเบียน ใช้ฟอนต์ CotM และเพิ่มเครดิตบนหน้าเลือกไฟล์ ทดสอบฉากเปิดและโหลดเซฟใน DeSmuME แล้ว ส่วนโลก 5–7 ยังไม่ได้เล่นตรวจครบ</p>
     </section>
     <section class="panel">
-      <h2>ติดตั้งแพตช์</h2>
+      <h2>ROM ต้นฉบับที่รองรับ</h2>
       <p>ใช้ ROM ต้นฉบับฉบับ UNDUB รหัส YERE รุ่น 0 ขนาด 60,695,676 ไบต์</p>
       <p>SHA-256 ต้นฉบับ <code>0524cea911d47d77e2c903b10b80871383818a9cb82c8f72091cb6dac7182523</code></p>
-      <p>เลือกไฟล์ต้นฉบับเพื่อแปะแพตช์ในเบราว์เซอร์ ไฟล์เกมจะประมวลผลในเครื่อง หรือแตก ZIP แล้วลงแพตช์ด้วย xdelta3 ตามคู่มือ</p>
-      <label for="source-rom">เลือกไฟล์เกมต้นฉบับ (.nds)</label><br>
-      <input id="source-rom" type="file" accept=".nds">
-      <p id="patch-status" role="status"></p>
-      <a id="patched-rom" class="button" download="Elebits_Thai_UNDUB_v1.0.nds" hidden>บันทึกไฟล์ที่แปะแพตช์แล้ว</a>
     </section>
   </main>
 </body>

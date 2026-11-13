@@ -2,7 +2,7 @@ import loadXdelta from '../xdelta3-big.js?v=20261025-1';
 
 const sourceHash = '0524cea911d47d77e2c903b10b80871383818a9cb82c8f72091cb6dac7182523';
 const targetHash = 'd68674e44311d5ae5f594cc4a80d8a109e25a129440833a9d0fc0f164b6184c9';
-const zipHash = 'b69cf1d578b79856ace8deefd6a8b6fc83fdee135cabe0b7a6fecf0dc08bd41a';
+const patchHash = '5fcc2b586c125cabbf9461deffb22ccaf2ac6842338a3c9dca32b2e7b45c3093';
 const sourceSize = 60695676;
 const targetSize = 64774656;
 const input = document.querySelector('#source-rom');
@@ -48,12 +48,10 @@ input.addEventListener('change', async () => {
     const source = new Uint8Array(await file.arrayBuffer());
     if (await sha256(source) !== sourceHash) throw new Error('SHA-256 ไม่ตรงกับ ROM UNDUB ที่รองรับ');
     status.textContent = 'กำลังโหลดและแปะแพตช์…';
-    const response = await fetch(document.querySelector('#patch-zip').href);
-    if (!response.ok) throw new Error('โหลด ZIP แพตช์ไม่สำเร็จ');
-    const bytes = await response.arrayBuffer();
-    if (await sha256(bytes) !== zipHash) throw new Error('SHA-256 ของ ZIP แพตช์ไม่ตรง');
-    const zip = await window.JSZip.loadAsync(bytes, { checkCRC32: true });
-    const patch = await zip.file('Elebits_Thai_UNDUB_v014.xdelta').async('uint8array');
+    const response = await fetch(new URL('Elebits_Thai_UNDUB_v1.0.xdelta', import.meta.url));
+    if (!response.ok) throw new Error('โหลดไฟล์แพตช์ไม่สำเร็จ');
+    const patch = new Uint8Array(await response.arrayBuffer());
+    if (await sha256(patch) !== patchHash) throw new Error('SHA-256 ของไฟล์แพตช์ไม่ตรง');
     const output = await applyPatch(source, patch);
     if (await sha256(output) !== targetHash) throw new Error('SHA-256 ของไฟล์ผลลัพธ์ไม่ตรง');
     outputUrl = URL.createObjectURL(new Blob([output], { type: 'application/octet-stream' }));
