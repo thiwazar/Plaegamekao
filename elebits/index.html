@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="แพตช์ภาษาไทย Elebits สำหรับ Nintendo DS โดยเพจแปลเกมเก่า">
+  <title>Elebits ภาษาไทย v1.0 | เพจแปลเกมเก่า</title>
+  <link rel="stylesheet" href="../pgk-theme.css?v=20261022-1">
+  <style>
+    * { box-sizing: border-box }
+    body { margin: 0; font: 1rem/1.65 "Noto Sans Thai", "Segoe UI", Tahoma, sans-serif; background: #e9dfc9; color: #273c35 }
+    main { width: min(1040px, calc(100% - 28px)); margin: 24px auto; padding: clamp(18px, 4vw, 36px); background: #fff9ea; border: 1px solid #d4b77c; border-radius: 20px }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 28px; align-items: center }
+    .cover { display: block; width: 100%; height: auto; border-radius: 12px }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); line-height: 1.25; margin: .35em 0 }
+    h1, h2 { color: #195c43 }
+    .button { display: inline-block; padding: 10px 16px; border-radius: 8px; background: #195c43; color: #fff; font-weight: 700; text-decoration: none }
+    .button[hidden] { display: none }
+    .panel { margin-top: 24px; padding-top: 12px; border-top: 1px solid #d4b77c }
+    input { max-width: 100%; font: inherit }
+    code { overflow-wrap: anywhere }
+    @media (max-width: 700px) { .hero { grid-template-columns: 1fr } }
+  </style>
+  <script src="../persona-q/jszip.min.js" defer></script>
+  <script type="module" src="patch.mjs"></script>
+</head>
+<body class="pgk-theme pgk-detail">
+  <div class="pgk-brandbar">
+    <a href="../index.html"><img src="../covers/translator-bear.webp" alt=""><span>เพจแปลเกมเก่า<small>คลังแพตช์ภาษาไทย · ทำแจกฟรี</small></span></a>
+    <a class="pgk-back" href="../index.html">← กลับคลังเกม</a>
+  </div>
+  <main>
+    <section class="hero">
+      <img class="cover" src="cover.png" width="1254" height="1254" alt="ปก Elebits ฉบับภาษาไทย ภาพไคและซีโร่">
+      <div>
+        <p>Nintendo DS · ภาษาไทย v1.0</p>
+        <h1>Elebits: The Adventures of Kai and Zero</h1>
+        <p>เมื่อรถบัสลึกลับพาไคกับซีโร่หลุดไปต่างโลก ทั้งคู่ต้องตามจับเอลีบิตตัวจิ๋ว ใช้พลังของเหล่าโอเมกาไขปริศนา และหาทางกลับบ้านผ่านเจ็ดโลกที่เต็มไปด้วยเรื่องไม่คาดคิด</p>
+        <p>แปลโดยเพจแปลเกมเก่า</p>
+        <a id="patch-zip" class="button" href="Elebits_Thai_UNDUB_v1.0.zip" download>ดาวน์โหลด ZIP แพตช์ v1.0</a>
+        <p>ใน ZIP มีแพตช์ xdelta รุ่น 014 และคู่มือภาษาไทย</p>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>เกมใหม่ · ภาษาไทย v1.0</h2>
+      <p>เผยแพร่ <time datetime="2026-11-13T07:49:23+07:00">13 พฤศจิกายน 2569</time></p>
+      <p>แปลบทสนทนา เมนู และคำบรรยาย รวม 3,490 ระเบียน ใช้ฟอนต์ CotM และเพิ่มเครดิตบนหน้าเลือกไฟล์ ทดสอบฉากเปิดและโหลดเซฟใน DeSmuME แล้ว ส่วนโลก 5–7 ยังไม่ได้เล่นตรวจครบ</p>
+    </section>
+    <section class="panel">
+      <h2>ติดตั้งแพตช์</h2>
+      <p>ใช้ ROM ต้นฉบับฉบับ UNDUB รหัส YERE รุ่น 0 ขนาด 60,695,676 ไบต์</p>
+      <p>SHA-256 ต้นฉบับ <code>0524cea911d47d77e2c903b10b80871383818a9cb82c8f72091cb6dac7182523</code></p>
+      <p>เลือกไฟล์ต้นฉบับเพื่อแปะแพตช์ในเบราว์เซอร์ ไฟล์เกมจะประมวลผลในเครื่อง หรือแตก ZIP แล้วลงแพตช์ด้วย xdelta3 ตามคู่มือ</p>
+      <label for="source-rom">เลือกไฟล์เกมต้นฉบับ (.nds)</label><br>
+      <input id="source-rom" type="file" accept=".nds">
+      <p id="patch-status" role="status"></p>
+      <a id="patched-rom" class="button" download="Elebits_Thai_UNDUB_v1.0.nds" hidden>บันทึกไฟล์ที่แปะแพตช์แล้ว</a>
+    </section>
+  </main>
+</body>
+</html>
