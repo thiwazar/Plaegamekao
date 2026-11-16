@@ -7,33 +7,63 @@
 <title>Romancing SaGa 3 ภาษาไทย v1.0 | แปลเกมเก่า</title>
 <link rel="stylesheet" href="../pgk-theme.css">
 <style>
-body{margin:0;font:1rem/1.65 "Noto Sans Thai","Segoe UI",Tahoma,sans-serif;color:#273c35;background:#e9dfc9}
-main{max-width:54rem;margin:1.5rem auto;padding:clamp(1rem,4vw,2rem);background:#fff9ea;border-radius:1rem}
-img{width:100%;height:auto;border-radius:.65rem} a{color:#13523a} button{padding:.65rem 1rem;background:#195c43;color:white;border:0;border-radius:.5rem;font:inherit;cursor:pointer}button:disabled{opacity:.55;cursor:default}code{overflow-wrap:anywhere}#status{min-height:1.6em}input{display:block;margin:.7rem 0;max-width:100%}
+*{box-sizing:border-box}body{margin:0;font-family:"Noto Sans Thai","Segoe UI",Tahoma,sans-serif;line-height:1.65;background:#e9dfc9;color:#273c35;min-height:100vh}header{max-width:1040px;margin:10px auto 18px;padding:8px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;color:#195c43}header a{color:#195c43;text-decoration:none}main{max-width:1040px;margin:0 auto;padding:24px;background:#fff9ea;border:1px solid #d4b77c;border-radius:22px;box-shadow:0 16px 36px #5c42191a}.hero{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:26px;align-items:center}.hero .cover{width:100%;max-height:none;object-fit:contain;background:#071323;border:1px solid #d4b77c;border-radius:14px}.eyebrow{font-size:12px;letter-spacing:.08em;color:#99702f;text-transform:uppercase}.hero h1{font-family:Georgia,"Noto Sans Thai",serif;color:#195c43;font-size:clamp(26px,4vw,38px);line-height:1.25}.lead{font-size:18px;color:#195c43}.badges{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.badge{display:inline-block;padding:3px 10px;border-radius:999px;background:#e4f3e8;color:#195c43;border:1px solid #83aa90;font-size:12px}.button{display:inline-block;margin-top:10px;padding:11px 18px;border-radius:9px;background:#246fca;color:#fff;text-decoration:none;font-weight:700}.panel{padding:18px;margin-top:18px;background:#fff9ea;border:1px solid #d4b77c;border-radius:14px}.picker{padding:18px;border:1px dashed #b99a62;border-radius:14px;background:#fffaf0}.picker button{margin-top:10px;padding:10px 16px;border:1px solid #2365b2;border-radius:8px;background:#246fca;color:#fff;font:inherit;cursor:pointer}.status{min-height:1.6em}.status.error{color:#a5322b}.status.success{color:#176b48}.small{font-size:.9rem;color:#756b5b}.columns{display:grid;grid-template-columns:1fr 1fr;gap:18px}.columns ol{padding-left:22px}code{overflow-wrap:anywhere;background:#f6ead0;padding:1px 4px;border-radius:4px}progress{width:100%;height:12px}footer{max-width:1040px;margin:18px auto;padding:14px;text-align:center;color:#756b5b;font-size:13px}@media(max-width:760px){header{margin:10px 14px}.hero,.columns{grid-template-columns:1fr}main{margin:0 14px;padding:18px}.hero .cover{max-height:480px}}
+
+.picker button:disabled{opacity:.55;cursor:default}
+.status{overflow-wrap:anywhere}
+@media(max-width:760px){.hero .cover{max-height:none}}
 </style>
 </head>
-<body>
+<body class="pgk-theme pgk-detail">
+<div class="pgk-brandbar">
+  <a href="../index.html"><img src="../covers/translator-bear.webp" alt=""><span>เพจแปลเกมเก่า<small>คลังแพตช์ภาษาไทย · ทำแจกฟรี</small></span></a>
+  <a class="pgk-back" href="../index.html">← เกมทั้งหมด / อัปเดตล่าสุด</a>
+</div>
 <main>
-<p><a href="../index.html">← กลับหน้ารวมเกม</a></p>
-<img src="./cover.png" alt="ภาพปก Romancing SaGa 3 สำหรับ PS Vita" width="1674" height="940">
-<h1>Romancing SaGa 3 ภาษาไทย v1.0</h1>
-<p><strong>PS Vita · PCSE01337 · เกมต้นฉบับ v1.00</strong></p>
-<p>ทุกสามร้อยปี ดาวมืดจะบดบังดวงอาทิตย์และพรากชีวิตผู้ที่เกิดในปีนั้น แต่เด็กที่รอดชีวิตเคยเปลี่ยนชะตาของโลกมาแล้ว เมื่อภัยครั้งใหม่ใกล้เข้ามา เลือกหนึ่งในแปดตัวละคร แล้วออกเดินทางตามเส้นเรื่องของตัวเองเพื่อเผชิญภัยจากห้วงลึก</p>
-<p>แปลแล้ว <strong>95.10% ของข้อความที่ถอดได้</strong> ทดสอบผ่านจุดค้างหน้าโรงเตี๊ยมของจูเลียนบน Vita3K (OpenGL) แล้ว และยังไม่ได้ทดสอบบน PS Vita เครื่องจริง</p>
-<h2>แปะแพตช์บนเว็บ</h2>
-<p>เลือกโฟลเดอร์เกมต้นฉบับ <code>PCSE01337</code> ที่มี <code>archive.psarc</code> และ <code>Media/StreamingAssets/data.bin</code> กับ <code>data.idx</code> เว็บจะตรวจไฟล์และสร้าง ZIP rePatch บนอุปกรณ์ของคุณ</p>
-<label for="game">โฟลเดอร์เกมต้นฉบับ</label>
-<input id="game" type="file" webkitdirectory multiple>
-<button id="apply" type="button" disabled>แปะแพตช์และบันทึก ZIP</button>
-<p id="status" role="status" aria-live="polite"></p>
-<h2>ติดตั้ง rePatch บน PS Vita</h2>
-<ol>
-<li>ตรวจว่าเกมเป็น <code>PCSE01337</code> เวอร์ชัน <code>1.00</code> และเปิดใช้ปลั๊กอิน rePatch แล้ว</li>
-<li>แตก ZIP ที่เว็บสร้าง ใช้ VitaShell คัดลอกโฟลเดอร์ <code>rePatch</code> ไปที่ <code>ux0:</code> ให้ได้พาธ <code>ux0:rePatch/PCSE01337/</code></li>
-<li>หากมีแพตช์เดิม ให้สำรองโฟลเดอร์เดิมไว้นอก <code>rePatch</code> แล้วใช้ไฟล์ทั้งสามจาก ZIP ใหม่ จากนั้นปิดเกมและเปิดใหม่จาก LiveArea</li>
-</ol>
-<p>หากต้องการถอนแพตช์ ให้ปิดเกมและย้าย <code>ux0:rePatch/PCSE01337/</code> ออกจากโฟลเดอร์ rePatch</p>
+  <section class="hero">
+    <img class="cover" src="./cover.png" alt="ภาพปก Romancing SaGa 3 สำหรับ PS Vita" width="1674" height="940">
+    <div>
+      <p class="eyebrow">Romancing SaGa 3</p>
+      <h1>โรแมนซิ่ง ซาก้า 3</h1>
+      <p class="lead">แพตช์ภาษาไทยสำหรับ PS Vita</p>
+      <div class="badges"><span class="badge">PCSE01337</span><span class="badge">เกม v1.00</span><span class="badge">ไทย v1.0</span></div>
+      <p>ทุกสามร้อยปี ดาวมืดจะบดบังดวงอาทิตย์และพรากชีวิตผู้ที่เกิดในปีนั้น แต่เด็กที่รอดชีวิตเคยเปลี่ยนชะตาของโลกมาแล้ว เมื่อภัยครั้งใหม่ใกล้เข้ามา เลือกหนึ่งในแปดตัวละครออกเดินทางเพื่อเผชิญภัยจากห้วงลึก</p>
+      <a class="button" href="#patch">แปะแพตช์บนเว็บ</a>
+    </div>
+  </section>
+  <div class="columns">
+    <section id="patch" class="panel">
+      <p class="eyebrow">จัดชุดแพตช์ในเครื่อง</p>
+      <h2>แปะแพตช์และสร้าง ZIP rePatch</h2>
+      <p>เลือกโฟลเดอร์เกมต้นฉบับ <code>PCSE01337</code> ที่มี <code>archive.psarc</code> และ <code>Media/StreamingAssets/data.bin</code> กับ <code>data.idx</code> เว็บจะตรวจ SHA-256 แล้วสร้าง ZIP บนอุปกรณ์โดยไม่อัปโหลดไฟล์เกม</p>
+      <div class="picker">
+        <button id="choose" type="button">เลือกโฟลเดอร์ PCSE01337</button>
+        <input id="game" type="file" webkitdirectory multiple hidden>
+        <p id="selection" class="small">ยังไม่ได้เลือกโฟลเดอร์</p>
+        <p id="status" class="status" role="status" aria-live="polite">เลือกโฟลเดอร์เกมเพื่อเริ่ม</p>
+        <button id="apply" type="button" disabled>แปะแพตช์และบันทึก ZIP</button>
+      </div>
+    </section>
+    <aside>
+      <section class="panel">
+        <p class="eyebrow">ติดตั้งบนเครื่อง Vita</p>
+        <h2>วิธีติดตั้ง</h2>
+        <ol>
+          <li>ใช้เกม <strong>PCSE01337 v1.00</strong> บนเครื่องที่เปิดใช้ปลั๊กอิน rePatch แล้ว</li>
+          <li>แตก ZIP ที่เว็บสร้าง ใช้ VitaShell คัดลอกโฟลเดอร์ <code>rePatch</code> ไปที่ <code>ux0:</code> ให้ได้ <code>ux0:rePatch/PCSE01337/</code></li>
+          <li>หากมีแพตช์เดิม ให้สำรองไว้นอก <code>rePatch</code> แล้วใช้ไฟล์จาก ZIP ใหม่ทั้งชุด จากนั้นปิดเกมและเปิดใหม่จาก LiveArea</li>
+        </ol>
+        <p><a href="./README_TH.txt">คู่มือติดตั้งและถอนแพตช์</a></p>
+      </section>
+      <section class="panel">
+        <h2>สถานะแพตช์</h2>
+        <p>แปลแล้ว <strong>95.10% ของข้อความที่ถอดได้</strong></p>
+        <p class="small">ทดสอบผ่านจุดค้างหน้าโรงเตี๊ยมของจูเลียนบน Vita3K (OpenGL) แล้ว และยังไม่ได้ทดสอบบน PS Vita เครื่องจริง</p>
+      </section>
+    </aside>
+  </div>
 </main>
-<script type="module" src="./page.mjs"></script>
+<footer>เพจแปลเกมเก่า · งานแปลโดยชุมชน · เกมและภาพเป็นของเจ้าของลิขสิทธิ์</footer>
+<script type="module" src="./page.mjs?v=layout1"></script>
 </body>
 </html>

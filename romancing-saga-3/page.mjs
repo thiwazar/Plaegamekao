@@ -2,10 +2,18 @@ import { createPatch } from './patch.mjs';
 
 const input = document.querySelector('#game');
 const button = document.querySelector('#apply');
+const choose = document.querySelector('#choose');
+const selection = document.querySelector('#selection');
 const status = document.querySelector('#status');
-input.addEventListener('change', () => { button.disabled = !input.files.length; });
+choose.addEventListener('click', () => input.click());
+input.addEventListener('change', () => {
+  const selected = input.files[0];
+  button.disabled = !selected;
+  selection.textContent = selected ? 'โฟลเดอร์ที่เลือก: ' + selected.webkitRelativePath.split('/')[0] : 'ยังไม่ได้เลือกโฟลเดอร์';
+  status.textContent = selected ? 'พร้อมตรวจไฟล์และแปะแพตช์' : 'เลือกโฟลเดอร์เกมเพื่อเริ่ม';
+});
 button.addEventListener('click', async () => {
-  input.disabled = button.disabled = true;
+  input.disabled = button.disabled = choose.disabled = true;
   try {
     const files = [...input.files];
     const names = ['archive.psarc', 'Media/StreamingAssets/data.bin', 'Media/StreamingAssets/data.idx'];
@@ -27,7 +35,7 @@ button.addEventListener('click', async () => {
   } catch (error) {
     status.textContent = error.message;
   } finally {
-    input.disabled = false;
+    input.disabled = choose.disabled = false;
     button.disabled = !input.files.length;
   }
 });
