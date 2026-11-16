@@ -1,0 +1,37 @@
+{
+  "archive": {
+    "sourceSize": 224156495,
+    "sourceHash": "3d2aa52be393b9198231fb5c1901a33225eca3035c7edd9c86548c41932517a4",
+    "members": {
+      "5": {
+        "sourceSize": 232540896,
+        "sourceHash": "83d7b0c9c1296cbeddd752316d6a4fe630c08ab61282c905eb0534cde5db4a56",
+        "targetSize": 232700992,
+        "targetHash": "4fcdf91e39fda92c2e180cf044291ae5e5b7e753fa5928bb9374bec4654f9275",
+        "patch": "payload-5.bin"
+      },
+      "6": {
+        "sourceSize": 2709844,
+        "sourceHash": "f2380558743a45d847e89e78af502148e121935062e4841bd313e65d10fbc220",
+        "targetSize": 6904148,
+        "targetHash": "672a80a03f716fa1067e27ffd91e99d04fa9d0323f6587035f4db3f523d0e5f5",
+        "patch": "payload-6.bin"
+      }
+    }
+  },
+  "data.bin": {
+    "sourceSize": 395690640,
+    "sourceHash": "fb6ea2da780840aa5b6c982b73c61d748e3a7ada4c177f0082e0c6fd3df46974",
+    "targetSize": 396105006,
+    "targetHash": "1492074251c5e94cdc6a703b1f816e4da5d6676a5c1c7a2c8d4a7e3a49bd661b",
+    "patch": "data-tail.bin",
+    "append": true
+  },
+  "data.idx": {
+    "sourceSize": 117508,
+    "sourceHash": "73320f6924a852b09bd32e9207ee4f58fd54d890a0ddac98c9d9db9acf1fe89c",
+    "targetSize": 117508,
+    "targetHash": "d77db6951895195a54c635a358ed6576bdc474dc252e7c00af0ff35430422009",
+    "patch": "payload-data.idx.bin"
+  }
+}

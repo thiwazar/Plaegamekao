@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="แปะแพตช์ Romancing SaGa 3 ภาษาไทย v1.0 บนเว็บ สำหรับ PS Vita PCSE01337 v1.00">
+<title>Romancing SaGa 3 ภาษาไทย v1.0 | แปลเกมเก่า</title>
+<link rel="stylesheet" href="../pgk-theme.css">
+<style>
+body{margin:0;font:1rem/1.65 "Noto Sans Thai","Segoe UI",Tahoma,sans-serif;color:#273c35;background:#e9dfc9}
+main{max-width:54rem;margin:1.5rem auto;padding:clamp(1rem,4vw,2rem);background:#fff9ea;border-radius:1rem}
+img{width:100%;height:auto;border-radius:.65rem} a{color:#13523a} button{padding:.65rem 1rem;background:#195c43;color:white;border:0;border-radius:.5rem;font:inherit;cursor:pointer}button:disabled{opacity:.55;cursor:default}code{overflow-wrap:anywhere}#status{min-height:1.6em}input{display:block;margin:.7rem 0;max-width:100%}
+</style>
+</head>
+<body>
+<main>
+<p><a href="../index.html">← กลับหน้ารวมเกม</a></p>
+<img src="./cover.png" alt="ภาพปก Romancing SaGa 3 สำหรับ PS Vita" width="1674" height="940">
+<h1>Romancing SaGa 3 ภาษาไทย v1.0</h1>
+<p><strong>PS Vita · PCSE01337 · เกมต้นฉบับ v1.00</strong></p>
+<p>ทุกสามร้อยปี ดาวมืดจะบดบังดวงอาทิตย์และพรากชีวิตผู้ที่เกิดในปีนั้น แต่เด็กที่รอดชีวิตเคยเปลี่ยนชะตาของโลกมาแล้ว เมื่อภัยครั้งใหม่ใกล้เข้ามา เลือกหนึ่งในแปดตัวละคร แล้วออกเดินทางตามเส้นเรื่องของตัวเองเพื่อเผชิญภัยจากห้วงลึก</p>
+<p>แปลแล้ว <strong>95.10% ของข้อความที่ถอดได้</strong> ทดสอบผ่านจุดค้างหน้าโรงเตี๊ยมของจูเลียนบน Vita3K (OpenGL) แล้ว และยังไม่ได้ทดสอบบน PS Vita เครื่องจริง</p>
+<h2>แปะแพตช์บนเว็บ</h2>
+<p>เลือกโฟลเดอร์เกมต้นฉบับ <code>PCSE01337</code> ที่มี <code>archive.psarc</code> และ <code>Media/StreamingAssets/data.bin</code> กับ <code>data.idx</code> เว็บจะตรวจไฟล์และสร้าง ZIP rePatch บนอุปกรณ์ของคุณ</p>
+<label for="game">โฟลเดอร์เกมต้นฉบับ</label>
+<input id="game" type="file" webkitdirectory multiple>
+<button id="apply" type="button" disabled>แปะแพตช์และบันทึก ZIP</button>
+<p id="status" role="status" aria-live="polite"></p>
+<h2>ติดตั้ง rePatch บน PS Vita</h2>
+<ol>
+<li>ตรวจว่าเกมเป็น <code>PCSE01337</code> เวอร์ชัน <code>1.00</code> และเปิดใช้ปลั๊กอิน rePatch แล้ว</li>
+<li>แตก ZIP ที่เว็บสร้าง ใช้ VitaShell คัดลอกโฟลเดอร์ <code>rePatch</code> ไปที่ <code>ux0:</code> ให้ได้พาธ <code>ux0:rePatch/PCSE01337/</code></li>
+<li>หากมีแพตช์เดิม ให้สำรองโฟลเดอร์เดิมไว้นอก <code>rePatch</code> แล้วใช้ไฟล์ทั้งสามจาก ZIP ใหม่ จากนั้นปิดเกมและเปิดใหม่จาก LiveArea</li>
+</ol>
+<p>หากต้องการถอนแพตช์ ให้ปิดเกมและย้าย <code>ux0:rePatch/PCSE01337/</code> ออกจากโฟลเดอร์ rePatch</p>
+</main>
+<script type="module" src="./page.mjs"></script>
+</body>
+</html>
