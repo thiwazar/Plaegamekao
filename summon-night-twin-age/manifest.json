@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "sourceName": "Summon Night: Twin Age (USA)",
+  "gameCode": "AS7E",
+  "sourceSize": 134217728,
+  "sourceCrc32": "59a23213",
+  "sourceSha256": "e2ed841d2d6f3f8033f19175b89aea728a6acecf36e4bdd46dfd05533bc07d23",
+  "targetSize": 134217728,
+  "targetCrc32": "02972cef",
+  "targetSha256": "f28ee51d071c2bb85eb57220bedb43b062cdcf08f95cd76951e042a4335f7ea7",
+  "outputName": "Summon_Night_Twin_Age_Thai_v1.0.nds",
+  "patch": "web-patch.dat",
+  "patchSize": 7199655,
+  "patchSha256": "ed69cd0cc46027ae3ac8297e5f6c6cb8f79019ce676c9724d0f66b5b0278bedb"
+}
