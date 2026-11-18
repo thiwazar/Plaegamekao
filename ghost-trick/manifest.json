@@ -6,10 +6,10 @@
   "sourceCrc32": "5cd93fe5",
   "sourceSha256": "70893fad64333cf2ca12a9c332d5e2d3e83bcae4aac31d7eb635ac320f240685",
   "targetSize": 134217728,
-  "targetCrc32": "8fbbedae",
-  "targetSha256": "e072320e9fbbab5cb0403a28e7fb63fbca66255c1487eb886a0f6f03c21cb1a0",
+  "targetCrc32": "83beebed",
+  "targetSha256": "4f3da6dd699b16f8eadefbac6ccfe88b7e4a13e4a260124c8de68dc2e7408d8c",
   "outputName": "Ghost_Trick_Thai_v1.0.nds",
-  "patch": "release.bps",
+  "patch": "release.bps?v=title-credit",
   "patchSize": 70736301,
-  "patchSha256": "6c28bb304165ee568a15b8edffa28908680ed1893111961ba173e34117647235"
+  "patchSha256": "6fab4d9e9268615772de48e409d597c4fdf624bdbaa33dd82e1c927be3f2d979"
 }
