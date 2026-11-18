@@ -1,0 +1,19 @@
+{
+  "id": "sotn-ultimate-v14-thai",
+  "version": "preview",
+  "status": "แพตช์ไทย รุ่นทดสอบ 25",
+  "format": "BPS1",
+  "patch": "SOTN_Ultimate_v1.4_Thai_Preview_25.bps",
+  "patchSize": 1245331,
+  "patchSha256": "89d2994c10a07db7164cd5889b32b1abf2a906fe1b8788e3c2d2c094024e6eef",
+  "sourceName": "Castlevania Symphony of the Night (Ultimate v1.4).bin",
+  "sourceLabel": "Ultimate PS1 v1.4 ชุด JP Script Add-on",
+  "sourceSize": 704762688,
+  "sourceSha256": "dfa4afca2d85920ebc33a74f85765119235f3bd03f97822c4c1ac36e273d16af",
+  "targetSize": 705442416,
+  "targetSha256": "92c0dde21f2b2ce4ec2841d8fdfd0401786112b07044410b3441ed55a0e6c6ba",
+  "outputName": "SOTN_Ultimate_v1.4_Thai_Preview_25.bin",
+  "internalBuild": "25",
+  "releasedAt": "2026-11-18T22:51:54+07:00",
+  "releaseNotes": "เพิ่มบทสนทนาไทยจากบิลด์ก่อน 316 ช่วงเสียง จัดบรรทัดฉากเปิด PS1 ใหม่ ใช้ BIN Ultimate v1.4 ชุด JP Script Add-on ตาม SHA-256 ที่ระบุ ผ่านการตรวจฉากเปิดใน DuckStation แยก PS1, PSP และ JP ยังไม่ได้ทดสอบเล่นจบทุกฉาก"
+}

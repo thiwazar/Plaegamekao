@@ -1,0 +1,3 @@
+FILE "SOTN_Ultimate_v1.4_Thai_Preview_25.bin" BINARY
+  TRACK 01 MODE2/2352
+    INDEX 01 00:00:00
