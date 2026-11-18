@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "sourceName": "Summon Night (Japan)",
+  "gameCode": "YSMJ",
+  "sourceSize": 134217728,
+  "sourceCrc32": "798d1ab6",
+  "sourceSha256": "a3a19f31e5e3291b769738cc6e39e7a11707a371dda66c6aa38a31f2768de68d",
+  "targetSize": 134217728,
+  "targetCrc32": "7e07f1df",
+  "targetSha256": "0918fe1685f88d2e4890fe691528c31b64a911eea55b5330662c22947dba7efc",
+  "outputName": "Summon_Night_Thai_v1.0.nds",
+  "patch": "web-patch.dat",
+  "patchSize": 5300855,
+  "patchSha256": "24eebe905b5a10e319ae579509b6f87700d6f829674a829d08a753a785f46233"
+}
