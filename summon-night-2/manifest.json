@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "sourceName": "Summon Night 2 (Japan) (Caravan)",
+  "gameCode": "YSKJ",
+  "sourceSize": 134217728,
+  "sourceCrc32": "a47065f7",
+  "sourceSha256": "2a3c67282fd7290f8d8901b1482ba232c3d5fbe6df520da0132873e8bd23157f",
+  "targetSize": 134217728,
+  "targetCrc32": "4e67eb95",
+  "targetSha256": "2d9b5df5a47ba32ab5163b3422ce77f1da0e80b63058f05fc7eca0861b309cf4",
+  "outputName": "Summon_Night_2_Thai_v1.0.nds",
+  "patch": "web-patch.dat",
+  "patchSize": 12207189,
+  "patchSha256": "d6996b47b8c6713c87b45b7a84757ce487d3ec370b44cbeeb2a73d6657515048"
+}
