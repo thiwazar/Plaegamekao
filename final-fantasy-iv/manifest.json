@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "sourceName": "Final Fantasy IV (USA) [UNDUB]",
+  "gameCode": "YF4E",
+  "sourceSize": 132208128,
+  "sourceCrc32": "76dd2f21",
+  "sourceSha256": "2b8835b3d0e1b6a6e11599df40977b34cf618961a2d095a64fcd83dc8ec455b2",
+  "targetSize": 133025648,
+  "targetCrc32": "d57b6da4",
+  "targetSha256": "7863125b50eb2bf5ca1179df143b2f34d9a735910a3a846a8438dadc4cf95f3b",
+  "outputName": "Final_Fantasy_IV_UNDUB_Thai_v1.0.nds",
+  "patch": "data.bin?v=1.0",
+  "patchSize": 823288,
+  "patchSha256": "60078472ddd5b943e2c5d91e7b8bb8cc414c14e2d09c4e7d0bc69edf8f592df3"
+}
