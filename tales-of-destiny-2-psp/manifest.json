@@ -1,0 +1,12 @@
+{
+  "format": "TOD2BLK1",
+  "version": "v1.0",
+  "date": "2026-11-19T13:22:01.851Z",
+  "sourceSize": 2027954176,
+  "targetSize": 2035470336,
+  "sourceSha256": "4becabc5c76c144688e5e8621d745acc591a2013d590afd5e28ff7b6e763a02c",
+  "targetSha256": "ade48b2ec8237ba61a7a0fabd0df5215e4934aa23fc801ec3dcc76584ed47f77",
+  "patchSize": 28041270,
+  "patchSha256": "73dfefc461881aac0746b76d458d6afa16037a4a10738eff2656bff4722a4c60",
+  "outName": "TOD2_PSP_Thai_v1.0.iso"
+}
