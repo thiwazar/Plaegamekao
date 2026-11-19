@@ -2,9 +2,9 @@ import {Sha256,hashBlob} from '../dragons-crown/dragon-sha256.mjs';
 export async function applyPatch(source,{progress=()=>{},log=()=>{},fetchImpl=fetch,baseUrl=new URL('./',import.meta.url)}={}){
  const get=async n=>{const r=await fetchImpl(new URL(n,baseUrl));if(!r.ok)throw Error('โหลดแพตช์ไม่สำเร็จ: '+r.status);return r;};
  const m=await(await get('manifest.json')).json();
- if(m.format!=='TOD2BLK1'||source.size!==m.sourceSize)throw Error('ต้องใช้ ISO English v0.3.6 ขนาด 2,027,954,176 ไบต์');
+ if(m.format!=='TOD2BLK1'||source.size!==m.sourceSize)throw Error('ต้องใช้ ISO English v0.3.8 ขนาด 2,027,954,176 ไบต์');
  log('ตรวจ SHA-256 ต้นฉบับ…');
- if(await hashBlob(source,p=>progress(p*25))!==m.sourceSha256)throw Error('ISO ไม่ตรงรุ่น English v0.3.6 ที่รองรับ');
+ if(await hashBlob(source,p=>progress(p*25))!==m.sourceSha256)throw Error('ISO ไม่ตรงรุ่น English v0.3.8 ที่รองรับ');
  log('โหลดและตรวจข้อมูลแพตช์…');
  const b=new Uint8Array(await(await get('payload.bin')).arrayBuffer());
  if(b.length!==m.patchSize||new Sha256().update(b).hex()!==m.patchSha256)throw Error('ข้อมูลแพตช์เสียหาย');
