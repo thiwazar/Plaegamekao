@@ -16,12 +16,12 @@ async function fetchAsset(path) {
 }
 
 async function patchRom(file) {
-  const manifest = await (await fetchAsset("manifest.json?v=r4")).json();
+  const manifest = await (await fetchAsset("manifest.json?v=r5")).json();
   if (file.size !== manifest.sourceSize) throw new Error("ขนาด ROM ไม่ตรงกับDream of Five v1.7.6");
   const source = new Uint8Array(await file.arrayBuffer());
   if (await sha256(source) !== manifest.sourceSha256) throw new Error("SHA-256 ไม่ตรงกับ ROM Dream of Five v1.7.6 ที่รองรับ");
 
-  const compressed = await (await fetchAsset("thai-176.dat?v=r4")).arrayBuffer();
+  const compressed = await (await fetchAsset("thai-176.dat?v=r5")).arrayBuffer();
   if (await sha256(compressed) !== manifest.payloadSha256) throw new Error("ข้อมูลแพตช์เสียหาย");
   const stream = new Blob([compressed]).stream().pipeThrough(new DecompressionStream("gzip"));
   const data = await new Response(stream).arrayBuffer();
@@ -80,7 +80,7 @@ download.addEventListener("click", () => {
   const url = URL.createObjectURL(output);
   const link = document.createElement("a");
   link.href = url;
-  link.download = "Fire_Emblem_Dream_of_Five_v1.7.6_Thai_r4.gba";
+  link.download = "Fire_Emblem_Dream_of_Five_v1.7.6_Thai_r5.gba";
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
