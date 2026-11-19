@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "sourceName": "Nostalgia (USA)",
+  "gameCode": "CJKE",
+  "sourceSize": 134217728,
+  "sourceCrc32": "02835d38",
+  "sourceSha256": "0adcafc47dedb8dae8dca481f3e4860b7a57a8f545f3cd3821f7782c768ee1ab",
+  "targetSize": 134217728,
+  "targetCrc32": "54a2d903",
+  "targetSha256": "c8f988ec13f8efbfe5103ee4a5474adbcb34583eb759a0e603b4c9cd4d31498d",
+  "outputName": "Nostalgia_Thai_v1.0.nds",
+  "patch": "data.bin?v=1.0",
+  "patchSize": 16397548,
+  "patchSha256": "cc4571e9bba9d9f63b6373eb4034f8065b02bd7bda0ad7c3097cd11142bece52"
+}
