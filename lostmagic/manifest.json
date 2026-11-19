@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "sourceName": "LostMagic (Europe)",
+  "gameCode": "AM9P",
+  "sourceSize": 16777216,
+  "sourceCrc32": "0e34f28e",
+  "sourceSha256": "bb2fe7c6ec2d2e88a37c0fae4b6df0694883be8477e5298ea863906527d438d1",
+  "targetSize": 16777216,
+  "targetCrc32": "7132c15a",
+  "targetSha256": "b7bd67c8bb54628939a6cf5fb2cb196dc632a57c4f063295734a8012f03cb269",
+  "outputName": "LostMagic_Thai_v1.0.nds",
+  "patch": "data.bin?v=1.0",
+  "patchSize": 2175146,
+  "patchSha256": "afc2d8cdf7a869c01baa912b4fd99b0abe18a2c7b52c638c55bc7c3211202405"
+}
