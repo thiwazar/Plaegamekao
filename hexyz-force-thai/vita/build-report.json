@@ -1,0 +1,13 @@
+{
+  "status": "BUILT_DECODER_TEST_PENDING",
+  "sourceSha256": "5a821a490a725d3f9562d2ffa6d61c97007f87f49ab340586822c5bee60a1530",
+  "targetSha256": "adf10e83b5ad850488886067321582f6c54dbc24893e35c0d889327c7fc711b6",
+  "sourceSize": 592885760,
+  "targetSize": 598243328,
+  "commands": 375,
+  "copyBytes": 582825984,
+  "literalBytes": 15417344,
+  "downloadBytes": 11493630,
+  "parts": 4,
+  "seconds": 10.51
+}

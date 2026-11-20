@@ -1,0 +1,48 @@
+{
+  "format": "HFWEB1",
+  "version": 1,
+  "sourceName": "Hexyz Force Undub (v1.2b) — ULUS10506",
+  "sourceSize": 592885760,
+  "sourceSha256": "5a821a490a725d3f9562d2ffa6d61c97007f87f49ab340586822c5bee60a1530",
+  "targetSize": 598243328,
+  "targetSha256": "adf10e83b5ad850488886067321582f6c54dbc24893e35c0d889327c7fc711b6",
+  "outName": "Hexyz_Force_TH_Vita_062.iso",
+  "commandCount": 375,
+  "commandsUrl": "commands.bin",
+  "commandsSha256": "b46075ac96df5035ac0b862c6332e593e9749177d926668dc0b379cc6ec6c1f1",
+  "literalPoolSize": 15417344,
+  "parts": [
+    {
+      "url": "parts/part-000-4fbe54e58847.bin",
+      "codec": "deflate",
+      "size": 4054906,
+      "sha256": "4fbe54e588479a370f104aa0d303eee50db604c0808d9c3c799f02256854670c",
+      "rawSize": 4194304,
+      "rawSha256": "ab541724d5352839792f5863c5ef335f321551affb040de3272379ec4e4edcc3"
+    },
+    {
+      "url": "parts/part-001-fa5761d251e2.bin",
+      "codec": "deflate",
+      "size": 3998948,
+      "sha256": "fa5761d251e22e5cee6156f805c5c169b3f901c8d185686d6de9c425a1d3a146",
+      "rawSize": 4194304,
+      "rawSha256": "266fc99c6e35cb759d255d01c11bb8734c55a831484a11da41ed655d4615014b"
+    },
+    {
+      "url": "parts/part-002-bb4c03b3d726.bin",
+      "codec": "deflate",
+      "size": 2593405,
+      "sha256": "bb4c03b3d726e7d1808ce87de1b80be1d396319afbd5c2819f79d200759bb6ed",
+      "rawSize": 4194304,
+      "rawSha256": "f4ee36e89e6ec5d56a8b392eb1c0e22f0cb5d8f60226b2776e78d9ed927c0bd0"
+    },
+    {
+      "url": "parts/part-003-223677223f96.bin",
+      "codec": "deflate",
+      "size": 841496,
+      "sha256": "223677223f964bb30647f9346bf5b21bcb0b17cf050d4e01cd2a9169b54b27cd",
+      "rawSize": 2834432,
+      "rawSha256": "257e6ee56e846f9f3d6d8ffb5288e39d3e638bf00736da58c9bc538c2543b6af"
+    }
+  ]
+}
