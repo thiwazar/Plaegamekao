@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "sourceName": "Nanashi no Geemu (English Patched v1.2)",
+  "gameCode": "YFQJ",
+  "sourceSize": 68743360,
+  "sourceSha256": "777e950839aa99f2c4fc81560c4d6f437ad36f96fe967c05e392befb2541690c",
+  "targetSize": 74635996,
+  "targetSha256": "32e93eb96e858606e714d7d372b8c9a8d6f3bb50eeb26afdb1c9970e158db388",
+  "outputName": "Nanashi_no_Geemu_Thai_v1.0.nds",
+  "patch": "data.bin?v=1.0",
+  "patchSize": 3926656,
+  "patchSha256": "f23e6ae20837eb0330f364d3a1d2d97d997e5ecefd44ac56416372de6225ac6f"
+}
