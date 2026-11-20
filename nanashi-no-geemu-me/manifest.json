@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "sourceName": "Nanashi no Geemu Me (English Patched v1.13)",
+  "gameCode": "B74J",
+  "sourceSize": 63459948,
+  "sourceSha256": "486e5d92aad97be1884e15acc515d884c9c4b9023e1d383b9a82befbc23b3e0b",
+  "targetSize": 70864944,
+  "targetSha256": "6ed294aeec0989c9d4c87f98cd59fe58dd6364bb29886772ececb4418049994f",
+  "outputName": "Nanashi_no_Geemu_Me_Thai_v1.0.nds",
+  "patch": "data.bin?v=1.0",
+  "patchSize": 7496030,
+  "patchSha256": "785af85b640dd339b11ce56fbbedf5c2df46a3c6f3790aecd0bb378c34ba4070"
+}
