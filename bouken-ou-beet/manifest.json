@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "sourceName": "Bouken-ou Beet: Vandel vs. Busters (English v1.0)",
+  "gameCode": "ABVJ",
+  "sourceSize": 33554432,
+  "sourceCrc32": "06bb5c91",
+  "sourceSha256": "f0aee5f7073f4f009e10e7fa153247846c52ae374d99d14061fa37c376ce7242",
+  "targetSize": 33554432,
+  "targetCrc32": "415da45f",
+  "targetSha256": "485f6ec8d74362408025f30817fcb92ebb908a60a6f1975f9ade6a61c9bd7c36",
+  "outputName": "Bouken-ou_Beet_Vandel_vs_Busters_Thai_v1.0.nds",
+  "patch": "data.bin?v=1.0",
+  "patchSize": 2016899,
+  "patchSha256": "f5b22bc2972111c45537ad29e0c640aca7f080d62333ab2fc1d732e53c8ec41b"
+}
