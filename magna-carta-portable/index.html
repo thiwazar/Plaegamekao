@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="th">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magna Carta Portable ภาษาไทย v1.0 | เพจแปลเกมเก่า</title>
+<style>
+  :root{color-scheme:dark;--ink:#f4ebd6;--muted:#dbcfb7;--gold:#edbd69;--line:#574332}
+  *{box-sizing:border-box}
+  body{margin:0;background:#1b1513;color:var(--ink);font:1rem/1.65 system-ui,sans-serif}
+  main{max-width:974px;margin:auto;padding:32px 22px 52px}
+  a{color:var(--gold)}
+  .game{display:grid;grid-template-columns:minmax(175px,280px) 1fr;gap:32px;margin-top:28px;align-items:start}
+  img{display:block;width:100%;border:1px solid var(--line);border-radius:10px}
+  h1{font:clamp(2rem,5vw,3.3rem)/1.06 Georgia,serif;margin:.15em 0 .3em}
+  h2{font-size:1.18rem;margin:0 0 10px}
+  p{margin:.65em 0}
+  .meta,.note{color:var(--muted)}
+  .panel{margin-top:22px;border:1px solid var(--line);background:#281f1a;padding:18px;border-radius:10px}
+  code{overflow-wrap:anywhere}
+  .controls{display:grid;gap:12px;margin:14px 0}
+  button,.download{width:fit-content;border:0;border-radius:6px;padding:9px 16px;background:var(--gold);color:#251710;font:inherit;font-weight:700;text-decoration:none}
+  button:disabled{opacity:.6}
+  progress{width:100%;accent-color:var(--gold)}
+  @media(max-width:640px){.game{grid-template-columns:1fr;gap:18px}img{max-width:240px}}
+</style>
+<main>
+  <a href="../index.html">← กลับหน้ารวมเกม</a>
+  <article class="game">
+    <img src="./cover.webp" alt="ภาพปก Magna Carta Portable ภาษาไทย" width="950" height="1656">
+    <div>
+      <p class="meta">PSP · ภาษาไทย v1.0</p>
+      <h1>Magna Carta Portable</h1>
+      <p>บนทวีปอิเฟเรีย มนุษย์กับชาวยาซอนทำสงครามกันมาหลายชั่วอายุคน คาลินทซ์ หัวหน้ากองวายุแดง ใช้ชีวิตไล่ตามการแก้แค้น จนได้พบรีส หญิงสาวที่สูญเสียความทรงจำ การตามหาอดีตของเธอค่อย ๆ เปิดเผยความลับของสงคราม และทำให้เขาต้องถามตัวเองว่าอยากใช้พลังที่มีเพื่อแก้แค้นหรือเพื่อปกป้องใครกันแน่</p>
+      <p><strong>แปลโดยเพจแปลเกมเก่า</strong></p>
+      <section class="panel" aria-labelledby="patch-title">
+        <h2 id="patch-title">แพตช์ภาษาไทยบนเว็บ</h2>
+        <p>ใช้ ISO ญี่ปุ่น <strong>ULJS00042 รุ่น 1.03</strong> ชื่อ <code>Magna_Carta_Portable_JPN_PSP-DMU.iso</code> ฐานที่ใช้ทดสอบมาจาก RetroGameTalk</p>
+        <p class="note">เบราว์เซอร์ตรวจ SHA-256 ก่อนเริ่มและสร้าง ISO ไทยแยกออกมา ต้นฉบับคงเดิม เลือกไฟล์ ISO ที่แตกจากไฟล์บีบอัดแล้วและเปิดหน้านี้ไว้จนเสร็จ</p>
+        <div class="controls">
+          <label for="source">เลือก ISO ญี่ปุ่น</label>
+          <input id="source" type="file" accept=".iso,application/octet-stream">
+          <button id="apply" type="button" disabled>แพตช์เป็นภาษาไทย</button>
+          <progress hidden id="progress" max="100" value="0" aria-label="ความคืบหน้า"></progress>
+          <p id="status" role="status" aria-live="polite"></p>
+          <a id="download" class="download" hidden download="Magna_Carta_Portable_Thai_v1.0.iso">ดาวน์โหลด ISO ภาษาไทย</a>
+        </div>
+      </section>
+      <p class="note">ทดสอบใน PPSSPP แล้วในช่วงเปิดเกม เมนู บทสนทนา และบันทึกกับโหลด บางภาพและข้อความยังคงต้นฉบับ ชื่อบางส่วนในหน้ารายละเอียดเซฟของ PSP ยังเพี้ยน และยังไม่ได้ทดสอบเล่นจนจบ</p>
+    </div>
+  </article>
+</main>
+<script type="module">
+  const source = document.querySelector('#source');
+  const apply = document.querySelector('#apply');
+  const progress = document.querySelector('#progress');
+  const status = document.querySelector('#status');
+  const download = document.querySelector('#download');
+  function clearDownload() {
+    if (download.href) URL.revokeObjectURL(download.href);
+    download.removeAttribute('href');
+    download.hidden = true;
+  }
+  source.addEventListener('change', () => {
+    clearDownload();
+    progress.hidden = true;
+    status.textContent = '';
+    apply.disabled = !source.files.length;
+  });
+  apply.addEventListener('click', () => {
+    const file = source.files[0];
+    if (!file) return;
+    clearDownload();
+    apply.disabled = source.disabled = true;
+    progress.hidden = false;
+    progress.value = 0;
+    status.textContent = 'กำลังเริ่มตรวจไฟล์…';
+    let worker;
+    const finish = message => {
+      worker?.terminate();
+      source.disabled = apply.disabled = false;
+      progress.hidden = true;
+      status.textContent = message;
+    };
+    try {
+      worker = new Worker('./worker.mjs', {type:'module'});
+      worker.onerror = () => finish('เบราว์เซอร์เปิดตัวแพตช์ไม่สำเร็จ ลองใหม่อีกครั้ง');
+      worker.onmessage = ({ data }) => {
+        if (data.output) {
+          download.href = URL.createObjectURL(data.output);
+          download.hidden = false;
+          finish('แพตช์สำเร็จ ตรวจ SHA-256 ของ ISO ภาษาไทยแล้ว');
+        } else if (data.error) {
+          finish(data.error);
+        } else {
+          progress.value = data.percent;
+          status.textContent = data.phase + ' ' + data.percent + '%';
+        }
+      };
+      worker.postMessage(file);
+    } catch {
+      finish('เบราว์เซอร์เปิดตัวแพตช์ไม่สำเร็จ ลองใหม่อีกครั้ง');
+    }
+  });
+</script>
+</html>
