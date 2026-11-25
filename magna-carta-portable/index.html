@@ -3,36 +3,40 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Magna Carta Portable ภาษาไทย v1.0 | เพจแปลเกมเก่า</title>
+<link rel="stylesheet" href="../pgk-theme.css?v=20261022-1">
 <style>
-  :root{color-scheme:dark;--ink:#f4ebd6;--muted:#dbcfb7;--gold:#edbd69;--line:#574332}
   *{box-sizing:border-box}
-  body{margin:0;background:#1b1513;color:var(--ink);font:1rem/1.65 system-ui,sans-serif}
-  main{max-width:974px;margin:auto;padding:32px 22px 52px}
-  a{color:var(--gold)}
-  .game{display:grid;grid-template-columns:minmax(175px,280px) 1fr;gap:32px;margin-top:28px;align-items:start}
-  img{display:block;width:100%;border:1px solid var(--line);border-radius:10px}
-  h1{font:clamp(2rem,5vw,3.3rem)/1.06 Georgia,serif;margin:.15em 0 .3em}
+  body{margin:0;padding:0 16px 32px;font:1rem/1.65 Tahoma,system-ui,sans-serif}
+  main{max-width:1040px;margin:auto;padding:clamp(16px,4vw,34px);border:1px solid var(--line);border-radius:17px;box-shadow:0 8px 24px #5c42191a}
+  .pgk-brandbar{margin-left:auto;margin-right:auto;flex-wrap:wrap}
+  .game{display:grid;grid-template-columns:minmax(0,248px) minmax(0,1fr);gap:clamp(20px,4vw,36px);align-items:start}
+  .game-cover{display:block;width:100%;height:auto;max-width:248px;object-fit:contain;justify-self:center;border:1px solid var(--line);border-radius:12px}
+  h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.15;margin:.15em 0 .3em}
   h2{font-size:1.18rem;margin:0 0 10px}
   p{margin:.65em 0}
-  .meta,.note{color:var(--muted)}
-  .panel{margin-top:22px;border:1px solid var(--line);background:#281f1a;padding:18px;border-radius:10px}
+  .meta{color:var(--muted)}
+  .box{margin-top:22px;border:1px solid var(--line);padding:18px;border-radius:10px}
   code{overflow-wrap:anywhere}
   .controls{display:grid;gap:12px;margin:14px 0}
-  button,.download{width:fit-content;border:0;border-radius:6px;padding:9px 16px;background:var(--gold);color:#251710;font:inherit;font-weight:700;text-decoration:none}
-  button:disabled{opacity:.6}
-  progress{width:100%;accent-color:var(--gold)}
-  @media(max-width:640px){.game{grid-template-columns:1fr;gap:18px}img{max-width:240px}}
+  input[type=file]{max-width:100%;font:inherit}
+  button,.download{width:fit-content;border:1px solid;border-radius:8px;padding:9px 16px;font:inherit;font-weight:700;text-decoration:none}
+  progress{width:100%;accent-color:var(--accent)}
+  @media(max-width:640px){.game{grid-template-columns:minmax(0,1fr);gap:18px}.game-cover{max-width:216px}}
 </style>
+<body class="pgk-theme pgk-detail">
+<header class="pgk-brandbar">
+  <a href="../index.html">เพจแปลเกมเก่า</a>
+  <a class="pgk-back" href="../index.html">← กลับหน้ารวมเกม</a>
+</header>
 <main>
-  <a href="../index.html">← กลับหน้ารวมเกม</a>
   <article class="game">
-    <img src="./cover.webp" alt="ภาพปก Magna Carta Portable ภาษาไทย" width="950" height="1656">
+    <img class="game-cover" src="./cover.webp" alt="ภาพปก Magna Carta Portable ภาษาไทย" width="650" height="1133">
     <div>
       <p class="meta">PSP · ภาษาไทย v1.0</p>
       <h1>Magna Carta Portable</h1>
       <p>บนทวีปอิเฟเรีย มนุษย์กับชาวยาซอนทำสงครามกันมาหลายชั่วอายุคน คาลินทซ์ หัวหน้ากองวายุแดง ใช้ชีวิตไล่ตามการแก้แค้น จนได้พบรีส หญิงสาวที่สูญเสียความทรงจำ การตามหาอดีตของเธอค่อย ๆ เปิดเผยความลับของสงคราม และทำให้เขาต้องถามตัวเองว่าอยากใช้พลังที่มีเพื่อแก้แค้นหรือเพื่อปกป้องใครกันแน่</p>
       <p><strong>แปลโดยเพจแปลเกมเก่า</strong></p>
-      <section class="panel" aria-labelledby="patch-title">
+      <section class="box" aria-labelledby="patch-title">
         <h2 id="patch-title">แพตช์ภาษาไทยบนเว็บ</h2>
         <p>ใช้ ISO ญี่ปุ่น <strong>ULJS00042 รุ่น 1.03</strong> ชื่อ <code>Magna_Carta_Portable_JPN_PSP-DMU.iso</code> ฐานที่ใช้ทดสอบมาจาก RetroGameTalk</p>
         <p class="note">เบราว์เซอร์ตรวจ SHA-256 ก่อนเริ่มและสร้าง ISO ไทยแยกออกมา ต้นฉบับคงเดิม เลือกไฟล์ ISO ที่แตกจากไฟล์บีบอัดแล้วและเปิดหน้านี้ไว้จนเสร็จ</p>
@@ -102,4 +106,5 @@
     }
   });
 </script>
+</body>
 </html>
