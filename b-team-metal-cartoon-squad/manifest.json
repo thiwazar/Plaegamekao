@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "sourceName": "3264 - B Team - Metal Cartoon Squad (E)(Independent).nds",
+  "gameCode": "CB3P",
+  "sourceSize": 33554432,
+  "sourceCrc32": "3123109e",
+  "sourceSha256": "4d5972a38f3550f2207475c653c669051919899b0f374e1edc7ecb7b91b96528",
+  "targetSize": 33554432,
+  "targetCrc32": "d5480857",
+  "targetSha256": "fc5a3a7c24a49d8eb3201f1007c588b188b36be92af0a5dfcde3e03104791aed",
+  "outputName": "B_Team_Metal_Cartoon_Squad_Thai_v1.0.nds",
+  "patch": "data.bin?v=1.0",
+  "patchSize": 1023536,
+  "patchSha256": "00db5b6850c88c4c3505633681b87ad10982114058e9684b6f5da02a496dafc2"
+}
