@@ -1,0 +1,207 @@
+{
+  "format": "FF3SPARSE1",
+  "sourceSize": 1132273664,
+  "sourceSha256": "0f750a5d62e6ed08b935141965806b54b722638c9f8e0afaadec1b7200ed167b",
+  "targetSize": 1277298688,
+  "targetSha256": "c12dc62e37f69a13d5d091636e0d4d0e836a75d186d295ad25d1272ac7868781",
+  "parts": [
+    {
+      "offset": 32768,
+      "length": 2048,
+      "url": "segment-001.bin",
+      "sha256": "3f50a1fa1d5628c1709df7b4f6a1cf1b79b079f06504c0586590299ffdcca09f"
+    },
+    {
+      "offset": 57344,
+      "length": 2048,
+      "url": "segment-002.bin",
+      "sha256": "083f78c49ab8c329b065e7674cb7623fd2bf3bcb72e5845fc7c3c4eea8816088"
+    },
+    {
+      "offset": 61440,
+      "length": 2048,
+      "url": "segment-003.bin",
+      "sha256": "447fcaf645940d27670087ce240ac2ad5193461eb6e23ecbd7b3a5a6a175d7c2"
+    },
+    {
+      "offset": 63488,
+      "length": 2048,
+      "url": "segment-004.bin",
+      "sha256": "af518c3fb9c2810ad529dfc22343827e14df2f25dec525768e524f85d4379057"
+    },
+    {
+      "offset": 71680,
+      "length": 2048,
+      "url": "segment-005.bin",
+      "sha256": "dc96dea2617d67d38dbe063e77c2603d2697068595dcbd84e7dcda2640e499b9"
+    },
+    {
+      "offset": 149504,
+      "length": 2048,
+      "url": "segment-006.bin",
+      "sha256": "96f7a5e98677df8de6419229637a518bfe2d67a1bee0bcf16286112339b55e9b"
+    },
+    {
+      "offset": 151552,
+      "length": 2048,
+      "url": "segment-007.bin",
+      "sha256": "a715e5cf45b7697c8d409d59a591172a6334711b645ead58525216a9855b98d7"
+    },
+    {
+      "offset": 153600,
+      "length": 2048,
+      "url": "segment-008.bin",
+      "sha256": "1132e3aa49fbc367fabcd3f6a7052865abef7943ec01823522ed7d45fdba5bab"
+    },
+    {
+      "offset": 155648,
+      "length": 2048,
+      "url": "segment-009.bin",
+      "sha256": "02e332eee756aa3ff9deadcef2a660d5e2a68dac337f674c962a202afc23ac15"
+    },
+    {
+      "offset": 157696,
+      "length": 2048,
+      "url": "segment-010.bin",
+      "sha256": "ff601b1658493868efb4f780adf516620e5dcd5b7e3353a3cb3305c3dc3e6683"
+    },
+    {
+      "offset": 159744,
+      "length": 2048,
+      "url": "segment-011.bin",
+      "sha256": "e118adf73bbad32ab6c85aeb3468f16746a76a011513d8b29721c33ba11eb7dd"
+    },
+    {
+      "offset": 161792,
+      "length": 2048,
+      "url": "segment-012.bin",
+      "sha256": "b5c497091f67e1e2b78ac2ad0834a4bf9dbda344aaa32a3adc44836eeabf85ea"
+    },
+    {
+      "offset": 165888,
+      "length": 2048,
+      "url": "segment-013.bin",
+      "sha256": "ca1e5f35f4a258b4d565b5e1fdeb960f825c14416f2d88fc22aeee5d519f9793"
+    },
+    {
+      "offset": 169984,
+      "length": 2048,
+      "url": "segment-014.bin",
+      "sha256": "772bdbf0a8056d6963cd0c778c8047c90823f27cead8b7a44e14fdddc1982584"
+    },
+    {
+      "offset": 174080,
+      "length": 2048,
+      "url": "segment-015.bin",
+      "sha256": "b6117e16d33b18024e118503d8829dfde86234816dd6f665087dff1571b46780"
+    },
+    {
+      "offset": 1132273664,
+      "length": 8388608,
+      "url": "segment-016.bin",
+      "sha256": "47fbca93a05a1ccd24ef47e2c6bb6ef05e7f528ca0c895e2bde00d54e629709c"
+    },
+    {
+      "offset": 1140662272,
+      "length": 8388608,
+      "url": "segment-017.bin",
+      "sha256": "bd769304b20baa7596c738345b79d303c10c55454c95d14f146e498b45f1b7da"
+    },
+    {
+      "offset": 1149050880,
+      "length": 8388608,
+      "url": "segment-018.bin",
+      "sha256": "1a6bac06ef3ed10c9209f411968f520ce5919cc94a3f1070c4cf1bbf384f7812"
+    },
+    {
+      "offset": 1157439488,
+      "length": 8388608,
+      "url": "segment-019.bin",
+      "sha256": "1e9f332941ce0482b8c379fc2fedf04f75888f3681c1c1ec163ff500c7054893"
+    },
+    {
+      "offset": 1165828096,
+      "length": 8388608,
+      "url": "segment-020.bin",
+      "sha256": "6fdeeea2f1754947fd0ba82f79e812f927986d61f622b3bdbc0c695e3303fbb0"
+    },
+    {
+      "offset": 1174216704,
+      "length": 8388608,
+      "url": "segment-021.bin",
+      "sha256": "b3d5de59073955d8cca9a5fd6d18f06a060604a55cc6f11950592e89cc498b2f"
+    },
+    {
+      "offset": 1182605312,
+      "length": 8388608,
+      "url": "segment-022.bin",
+      "sha256": "dc996fad26c257d352a85035b7499c07f45b8d2e716fb90017358ac7436ac5a9"
+    },
+    {
+      "offset": 1190993920,
+      "length": 8388608,
+      "url": "segment-023.bin",
+      "sha256": "83142bc2f569c39dff10847b465faf61487cefec6ea0b5360f934d029ef63d85"
+    },
+    {
+      "offset": 1199382528,
+      "length": 8388608,
+      "url": "segment-024.bin",
+      "sha256": "230ea2e06290ad5b702d350f3f9fc23cdda167aab8c6429995437bb2ebb1299a"
+    },
+    {
+      "offset": 1207771136,
+      "length": 8388608,
+      "url": "segment-025.bin",
+      "sha256": "d64dd1976dc01f9ccc470845ca9a8bc87f5808b4028d28ecf5af36f768229cc3"
+    },
+    {
+      "offset": 1216159744,
+      "length": 8388608,
+      "url": "segment-026.bin",
+      "sha256": "a1bf411810922ec7866ca10b1704aef32064e9a399f832ea044f7260a9dab7b0"
+    },
+    {
+      "offset": 1224548352,
+      "length": 8388608,
+      "url": "segment-027.bin",
+      "sha256": "41d052b2b33e12923e07013285e029a56e4f55832f5dbe8fd73ba22d3ac5dbcb"
+    },
+    {
+      "offset": 1232936960,
+      "length": 8388608,
+      "url": "segment-028.bin",
+      "sha256": "839745dfa5c1654fcee6e0e95a2cadd91113a2d04280ac09c37882b91ca09c15"
+    },
+    {
+      "offset": 1241325568,
+      "length": 8388608,
+      "url": "segment-029.bin",
+      "sha256": "58a371edc6ee2719e85a597b1f9053f7d73a41ef47430955c55cdbe0bf514473"
+    },
+    {
+      "offset": 1249714176,
+      "length": 8388608,
+      "url": "segment-030.bin",
+      "sha256": "f7dd024463c2f288fb866a3a8c64c28722c86da4d68dfec3168f1fe868448994"
+    },
+    {
+      "offset": 1258102784,
+      "length": 8388608,
+      "url": "segment-031.bin",
+      "sha256": "1b5a0256e8fd3cba80906a4659cfa789b1ef79865f06a84e41d4e4be7dc4fa4a"
+    },
+    {
+      "offset": 1266491392,
+      "length": 8388608,
+      "url": "segment-032.bin",
+      "sha256": "59fd397a389ff19baa462065af6ee73fc1cfaa70f773d7928e1d07e9afe959b7"
+    },
+    {
+      "offset": 1274880000,
+      "length": 2418688,
+      "url": "segment-033.bin",
+      "sha256": "6b06e51c10eecb33d5d350d92ae8a9550a7761b984ac9c5907ca5c0bb58e5b25"
+    }
+  ]
+}
