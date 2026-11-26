@@ -1,4 +1,4 @@
-import { patch } from './patcher.mjs';
+import { patch } from './patcher.mjs?v=20261126-mobile';
 
 async function response(name) {
   const result = await fetch(new URL(name, import.meta.url));
@@ -22,3 +22,4 @@ self.onmessage = async ({ data: source }) => {
     self.postMessage({ error: error.message });
   }
 };
+
