@@ -39,7 +39,7 @@
       <section class="box" aria-labelledby="patch-title">
         <h2 id="patch-title">แพตช์ภาษาไทยบนเว็บ</h2>
         <p>ใช้ ISO ญี่ปุ่น <strong>ULJS00042 รุ่น 1.03</strong> ชื่อ <code>Magna_Carta_Portable_JPN_PSP-DMU.iso</code> ฐานที่ใช้ทดสอบมาจาก RetroGameTalk</p>
-        <p class="note">เบราว์เซอร์ตรวจ SHA-256 ก่อนเริ่มและสร้าง ISO ไทยแยกออกมา ต้นฉบับคงเดิม เลือกไฟล์ ISO ที่แตกจากไฟล์บีบอัดแล้วและเปิดหน้านี้ไว้จนเสร็จ</p>
+        <p class="note">โหมดประหยัด RAM: สร้าง ISO ลงพื้นที่ชั่วคราวของเบราว์เซอร์ แล้วตรวจ SHA-256 ก่อนดาวน์โหลด ต้นฉบับคงเดิม ใช้ Chrome หรือ Brave ในโหมดปกติ เว้นพื้นที่ว่างประมาณ 4 GB และเปิดหน้านี้ไว้จนดาวน์โหลดเสร็จ</p>
         <div class="controls">
           <label for="source">เลือก ISO ญี่ปุ่น</label>
           <input id="source" type="file" accept=".iso,application/octet-stream">
@@ -49,6 +49,7 @@
           <a id="download" class="download" hidden download="Magna_Carta_Portable_Thai_v1.0.iso">ดาวน์โหลด ISO ภาษาไทย</a>
         </div>
       </section>
+      <p class="note">อัปเดต 26 พ.ย. 2026: เพิ่มการสร้างไฟล์แบบประหยัด RAM สำหรับมือถือ การดาวน์โหลดและแพตช์บนมือถือรอการทดสอบกับ ISO จริง</p>
       <p class="note">ทดสอบใน PPSSPP แล้วในช่วงเปิดเกม เมนู บทสนทนา และบันทึกกับโหลด บางภาพและข้อความยังคงต้นฉบับ ชื่อบางส่วนในหน้ารายละเอียดเซฟของ PSP ยังเพี้ยน และยังไม่ได้ทดสอบเล่นจนจบ</p>
     </div>
   </article>
@@ -86,13 +87,13 @@
       status.textContent = message;
     };
     try {
-      worker = new Worker('./worker.mjs', {type:'module'});
+      worker = new Worker('./worker.mjs?v=20261126-mobile', {type:'module'});
       worker.onerror = () => finish('เบราว์เซอร์เปิดตัวแพตช์ไม่สำเร็จ ลองใหม่อีกครั้ง');
       worker.onmessage = ({ data }) => {
         if (data.output) {
           download.href = URL.createObjectURL(data.output);
           download.hidden = false;
-          finish('แพตช์สำเร็จ ตรวจ SHA-256 ของ ISO ภาษาไทยแล้ว');
+          finish('สร้าง ISO และตรวจ SHA-256 ผ่านแล้ว กดดาวน์โหลดและเปิดหน้านี้ค้างไว้จนเสร็จ');
         } else if (data.error) {
           finish(data.error);
         } else {
@@ -108,3 +109,4 @@
 </script>
 </body>
 </html>
+
