@@ -4,12 +4,12 @@
   "sourceSize": 857964544,
   "targetSize": 896274432,
   "sourceSha256": "291b197d6f9e7ac77985ad2c88d23501523a6085b2bbe8ac1491f167ee34d70d",
-  "targetSha256": "2fd4d1a16322950434864ec838342cee49760556e48e825859269f1aee778554",
-  "outName": "Crimson Gem Saga TH v1.0.2.iso",
-  "commandCount": 1421,
-  "commandsUrl": "commands-v1.0.2.bin",
-  "commandsSha256": "b1bedb0a1fce843570afa0b87e98a3dc8def837a07c679c1539167e8691792f2",
-  "literalPoolSize": 166072606,
+  "targetSha256": "8b04b098c91c9f6083b73e37d0aefcdcd42edef3572157fa786ef7bfec3ea246",
+  "outName": "Crimson Gem Saga TH v1.0.3.iso",
+  "commandCount": 1419,
+  "commandsUrl": "commands-v1.0.3.bin",
+  "commandsSha256": "918cadf70337a6fd0cc88e2d0e016adcaa16170a1e90df92aaa1b2b627ee1d0d",
+  "literalPoolSize": 166090276,
   "parts": [
     {
       "url": "parts/000-04e19f3463fc.bin",
@@ -330,6 +330,14 @@
       "sha256": "aaa1067301d3277c65fd1b233ed3fdcec69e67fa075743b8ad5b9e6363df831c",
       "rawSize": 326,
       "rawSha256": "aaa1067301d3277c65fd1b233ed3fdcec69e67fa075743b8ad5b9e6363df831c"
+    },
+    {
+      "url": "parts/quest-menu-2bf1ae112365.bin",
+      "codec": "raw",
+      "size": 17670,
+      "sha256": "2bf1ae112365ece399d7bb8c1110b8c74fe0bca138fdcb2e702e1909e8bbb0ee",
+      "rawSize": 17670,
+      "rawSha256": "2bf1ae112365ece399d7bb8c1110b8c74fe0bca138fdcb2e702e1909e8bbb0ee"
     }
   ]
 }
