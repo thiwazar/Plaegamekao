@@ -1,0 +1,319 @@
+{
+  "format": "HFWEB1",
+  "version": 1,
+  "sourceSize": 857964544,
+  "targetSize": 896274432,
+  "sourceSha256": "291b197d6f9e7ac77985ad2c88d23501523a6085b2bbe8ac1491f167ee34d70d",
+  "targetSha256": "95cecef43771a6e5c5b818a464a6c5bdc18b3c66998da6349c9129c9eb9e6bca",
+  "outName": "Crimson Gem Saga TH v1.0.iso",
+  "commandCount": 1418,
+  "commandsUrl": "commands.bin",
+  "commandsSha256": "f67ef355118e3e59de7318bee57a7b2912f2b166429877945b9c1dd1b13ec3f8",
+  "literalPoolSize": 166069448,
+  "parts": [
+    {
+      "url": "parts/000-04e19f3463fc.bin",
+      "codec": "deflate",
+      "size": 4130449,
+      "sha256": "04e19f3463fcab3cc2d56500dd4a9e67b4129d0a90036da851bf8b94182f8c70",
+      "rawSize": 4253696,
+      "rawSha256": "280095340b8d3aeada3f340f013afda87e712c338f02970fed0de3b0e9dfe3a1"
+    },
+    {
+      "url": "parts/001-34f8c9cd751b.bin",
+      "codec": "deflate",
+      "size": 4146611,
+      "sha256": "34f8c9cd751b47f4b347f9a0f8895195f58c850efde7e28e419187ebe814dbe9",
+      "rawSize": 4194304,
+      "rawSha256": "7ac4420458a42cb2989c4c697e48043467752f1c24888e8b5db3f680509cb698"
+    },
+    {
+      "url": "parts/002-392b92e8b566.bin",
+      "codec": "deflate",
+      "size": 1923032,
+      "sha256": "392b92e8b566cbe193d9b29c0c2c9a6a959a577589b10dc7f60643fc95777ea1",
+      "rawSize": 4194304,
+      "rawSha256": "963cd94711547c931deba005b51afca7ba06e20a1cc32b5339d6ba7b9a1a5c10"
+    },
+    {
+      "url": "parts/003-21d08ddda0f9.bin",
+      "codec": "deflate",
+      "size": 4084892,
+      "sha256": "21d08ddda0f9058ee48c6c27226b8c98983970ae6a783a601300441e2a22c86f",
+      "rawSize": 4747258,
+      "rawSha256": "ac13644fac113803d166b3f97a48654847c87b4d29a2b4bed9cf96d24c794fde"
+    },
+    {
+      "url": "parts/004-0f2e0f76627f.bin",
+      "codec": "deflate",
+      "size": 4146534,
+      "sha256": "0f2e0f76627f715b1816191700884508332f523ff1ee5724894fc3e4b3fd40d1",
+      "rawSize": 4194304,
+      "rawSha256": "ba411726ceb14c713517c9dfeea178507eecccc59f8a6aabd2a1a70ed2adad69"
+    },
+    {
+      "url": "parts/005-2e930ea99b22.bin",
+      "codec": "deflate",
+      "size": 4142638,
+      "sha256": "2e930ea99b22076e110a302f7dbc69ab122686c47f58cd16d3cf999b08dbed0e",
+      "rawSize": 4194304,
+      "rawSha256": "156f4dbaca1892e4b31f973fa99cdb29b180ae9556935bd4c7b78d71067f7ab6"
+    },
+    {
+      "url": "parts/006-d5fc21d9c496.bin",
+      "codec": "deflate",
+      "size": 4140969,
+      "sha256": "d5fc21d9c496fb85458be702bcf389a14f10e92afad1c6a7f96e907f07bcf574",
+      "rawSize": 4194304,
+      "rawSha256": "07c8d542e095b4985fdd90494d760ce638142fd85df8a152c5bdb98c1d103a2f"
+    },
+    {
+      "url": "parts/007-e3e48e2707e3.bin",
+      "codec": "deflate",
+      "size": 4141561,
+      "sha256": "e3e48e2707e3436f243c673c6985583ca49429363ae4e6c164cf679d12b57adc",
+      "rawSize": 4194304,
+      "rawSha256": "b1378f5dcc0236c063aa342e5ecbb49f5c936a3c87632b50a8a3e1077b3f5275"
+    },
+    {
+      "url": "parts/008-00ce996c1cf8.bin",
+      "codec": "deflate",
+      "size": 3914219,
+      "sha256": "00ce996c1cf8f35d66b1d99f789198c1e9f6cb60ed31ab4e79c527dce7aead79",
+      "rawSize": 4194304,
+      "rawSha256": "fe248856885d48891f9aab1fa5582bb71957012d2df739afa1d3e96098059e1e"
+    },
+    {
+      "url": "parts/009-0e55ed93af1e.bin",
+      "codec": "deflate",
+      "size": 4086,
+      "sha256": "0e55ed93af1eb2617fe6c67b57b5d3bd26257a7807d35f632e9b5d520aa9a01b",
+      "rawSize": 4194304,
+      "rawSha256": "bb9f8df61474d25e71fa00722318cd387396ca1736605e1248821cc0de3d3af8"
+    },
+    {
+      "url": "parts/010-d5da92b7e849.bin",
+      "codec": "deflate",
+      "size": 27017,
+      "sha256": "d5da92b7e84959e424dc2018fdb2081c3732a676ffe9f1b5dc813ab72d892e0d",
+      "rawSize": 4496765,
+      "rawSha256": "ce32b93afe307c16f5d84840439241e4b1440e915eb19bdc48d01b9fe9acc992"
+    },
+    {
+      "url": "parts/011-6bcc1c1ab219.bin",
+      "codec": "deflate",
+      "size": 4958646,
+      "sha256": "6bcc1c1ab219033407f83cd347329c5868a3c8af086f9a78030599d11ea22ace",
+      "rawSize": 5143421,
+      "rawSha256": "bd02110c1e0d82367ad1ee1fd5b9aa07212af3fb291bf0e2f244c2b87891d72b"
+    },
+    {
+      "url": "parts/012-1b32fb697445.bin",
+      "codec": "deflate",
+      "size": 4607096,
+      "sha256": "1b32fb69744550d94a0dab877e13782b95b27dc20e404bfff941a384ec70d4df",
+      "rawSize": 4739619,
+      "rawSha256": "9068d823c7530b7f62e1567b1479f40016ecf121454bde059eb70574c0873319"
+    },
+    {
+      "url": "parts/013-02990c10a514.bin",
+      "codec": "deflate",
+      "size": 4104730,
+      "sha256": "02990c10a51495072eecf1e2983c149de7ae693c80eb689fa51d8675c1a149c3",
+      "rawSize": 4222071,
+      "rawSha256": "d840855db6d8474bd1940e01c39905411faa7aaee07f843bcaf33e115547a559"
+    },
+    {
+      "url": "parts/014-773eb32b2083.bin",
+      "codec": "deflate",
+      "size": 4449642,
+      "sha256": "773eb32b20830cdb30685031d3e901f8eea5b95c42f9104fd9d4cbb58984fd2c",
+      "rawSize": 4593562,
+      "rawSha256": "2b61feb8d02b61aeb65bdec60b7ea3fbc62c983c9ad4a19a7db3ec09b3b8b7d5"
+    },
+    {
+      "url": "parts/015-1619df6f602e.bin",
+      "codec": "deflate",
+      "size": 4728775,
+      "sha256": "1619df6f602ea4f6c05257c2e3a8b93a1c5a3bd042d827d7c1a20b1ba18ac53a",
+      "rawSize": 4879468,
+      "rawSha256": "5adc4d2e4ba1ef37a2f1ccbe609173baf6dd00764bea22354d4b44e0eb099967"
+    },
+    {
+      "url": "parts/016-43f4f8dfef91.bin",
+      "codec": "deflate",
+      "size": 4142166,
+      "sha256": "43f4f8dfef9109842e1f36ff20b92f9ec36c98d01d31ffd47424d16ac6320af8",
+      "rawSize": 4322777,
+      "rawSha256": "ff9443700ab175f38058a10ca2c4c1158c7c8e7303a17f8f648a241a00b24c82"
+    },
+    {
+      "url": "parts/017-7075bba6db27.bin",
+      "codec": "deflate",
+      "size": 4514418,
+      "sha256": "7075bba6db277b653839e24ffe2a31e25791071c7c887ec3cd12aeac3675b08c",
+      "rawSize": 4678165,
+      "rawSha256": "453355c73bb5ee93cfce601642876b805c17ac90a555300345287a2cec6c8aa5"
+    },
+    {
+      "url": "parts/018-0c6bfacb6a8a.bin",
+      "codec": "deflate",
+      "size": 4205928,
+      "sha256": "0c6bfacb6a8ae8010a09c99239714a7f6e6c8dd9ca5b4b4fae182f8be912d739",
+      "rawSize": 4347696,
+      "rawSha256": "c2683b75b71ad32fcc17f5d500114103ac878cd19c9f4dc33848167f525ec163"
+    },
+    {
+      "url": "parts/019-c5a84e135bfd.bin",
+      "codec": "deflate",
+      "size": 3899508,
+      "sha256": "c5a84e135bfd1e7153d524ff8bf75d7fcfe364914faaf4e00c6b703956df1d29",
+      "rawSize": 4194729,
+      "rawSha256": "6d57e43071b0968e7c70ccd8cfa2dd8abd7c7d8c46811200947a4c5b4485e444"
+    },
+    {
+      "url": "parts/020-edf5b6f1d6de.bin",
+      "codec": "deflate",
+      "size": 3920092,
+      "sha256": "edf5b6f1d6de7dd9897036d5d4b6443ea0f4da3d59c914f54ffcb6c4389ac377",
+      "rawSize": 4393377,
+      "rawSha256": "129ffa29273c02be92c1077716e9e21b23c8cb70e4506e59b0a0f1a438681202"
+    },
+    {
+      "url": "parts/021-16708a707653.bin",
+      "codec": "deflate",
+      "size": 4206777,
+      "sha256": "16708a707653eadc7adea719a26eb0c301968992ee1bc3c9b7b34b8ba4f1f2ee",
+      "rawSize": 4330520,
+      "rawSha256": "32d2f58e0bd0e3243e627ced353ee11a06651ede09d4f67105a59d083f6ca86d"
+    },
+    {
+      "url": "parts/022-88a0d53e9c1b.bin",
+      "codec": "deflate",
+      "size": 4167151,
+      "sha256": "88a0d53e9c1ba54d1b8ec0d9bd4499c6e9b13d831c6736c9a6d63cb2dcf97372",
+      "rawSize": 4295556,
+      "rawSha256": "bb20a0e778a77229f57fdbc88dc6f67ca28a2ef8cc93a2cdfac494b081785da1"
+    },
+    {
+      "url": "parts/023-7c4737d0f197.bin",
+      "codec": "deflate",
+      "size": 4544464,
+      "sha256": "7c4737d0f19779a7bd832c28b667edd6114ba0e54621964d4f92a77501d066df",
+      "rawSize": 4729572,
+      "rawSha256": "26f7eb4f32a504dd15853d538a00734adbbe0eca557e76a0e397e00dffbdfb63"
+    },
+    {
+      "url": "parts/024-92905e9e1c9d.bin",
+      "codec": "deflate",
+      "size": 4650046,
+      "sha256": "92905e9e1c9d2888904468f61bf4807c307c05d2a38ab8e905c360e750f5bdcc",
+      "rawSize": 4797736,
+      "rawSha256": "1848cad4f19d789b63648b41b8ec817667932daf6678cb47f4577ceb4ec4ca0c"
+    },
+    {
+      "url": "parts/025-519e54aa7e5c.bin",
+      "codec": "deflate",
+      "size": 5013498,
+      "sha256": "519e54aa7e5c4686b27dbe21c4df200d06a5a80c14fec15de6a003d31ec67750",
+      "rawSize": 5169046,
+      "rawSha256": "2f4c75405a8e7e922b6d340c4e3d23212905ab2b1d973dfdab8feb2eb32574d4"
+    },
+    {
+      "url": "parts/026-5a36b59e051f.bin",
+      "codec": "deflate",
+      "size": 4460201,
+      "sha256": "5a36b59e051f4e2a918018b8f1c177fa87a940104a7bd7575e85bee794f95fd7",
+      "rawSize": 4588002,
+      "rawSha256": "b3f2010c887d9461823c84f8f71f92f7c75eaa3902726f524e7219d48fac4e42"
+    },
+    {
+      "url": "parts/027-35ae8123bf64.bin",
+      "codec": "deflate",
+      "size": 4522585,
+      "sha256": "35ae8123bf640514ee988df9f5badd008733303a0e07c26d516ca8e29e9e3b05",
+      "rawSize": 4645280,
+      "rawSha256": "70b3ee769e46163edcd07d92d475d6b0e2e4462192023a704de4b1a67960e160"
+    },
+    {
+      "url": "parts/028-e7775f3e2c7a.bin",
+      "codec": "deflate",
+      "size": 2493056,
+      "sha256": "e7775f3e2c7ad4e54ddd570f47437e7dc0ee7373a008bc7a06032637fa2955c7",
+      "rawSize": 4292849,
+      "rawSha256": "6eb4f507ab149e2749d4944c0d85f6e8824a9ace41f11289c961d51fb0799719"
+    },
+    {
+      "url": "parts/029-645eba4af3ba.bin",
+      "codec": "deflate",
+      "size": 3188944,
+      "sha256": "645eba4af3ba20c64a1add94d5585b9cae83fe20a164ad6b8ea9d3dd3b88f5f3",
+      "rawSize": 4402466,
+      "rawSha256": "773ce51cea070c0f3c383ef0d5ec4c97b3b4b87d5ac06d101bb43380483232f9"
+    },
+    {
+      "url": "parts/030-f2b053641e8c.bin",
+      "codec": "deflate",
+      "size": 4148794,
+      "sha256": "f2b053641e8cf7924dff2be31e8bf8dc99503ef4662cb5053c6b9f7dee74fec2",
+      "rawSize": 4194304,
+      "rawSha256": "c83f7db14ab4c7fda1775a1d8fff03f92ecb152101339ab4c3d85ab156c2defd"
+    },
+    {
+      "url": "parts/031-7606cddfe46b.bin",
+      "codec": "deflate",
+      "size": 4066434,
+      "sha256": "7606cddfe46b6dac61bbd5853252691488fb2e56442b92781fd8edd32980e3ed",
+      "rawSize": 4194304,
+      "rawSha256": "502a75f183e61252b699288c7d1632918ca022bd46c3cb6b7b1c7164e8fea9d3"
+    },
+    {
+      "url": "parts/032-9bcc6522000e.bin",
+      "codec": "deflate",
+      "size": 4148518,
+      "sha256": "9bcc6522000e720ddaf435f7a3235b360e8ff111ed53572cef6a366a6715dac2",
+      "rawSize": 4194304,
+      "rawSha256": "6c9b607a2d1dca5b346cca20558c7b1b1d785d2496f6dcf6fd481080f643c88b"
+    },
+    {
+      "url": "parts/033-e4c74dfd303a.bin",
+      "codec": "deflate",
+      "size": 4144630,
+      "sha256": "e4c74dfd303a8618a6ba1457a4dfa13e78f4dc478fc61d3a7d1382fca1a41e26",
+      "rawSize": 4194304,
+      "rawSha256": "a311efc2900817799d01fe87ddc834fa97d580e8645e5c0195ff03ff674c9e07"
+    },
+    {
+      "url": "parts/034-4b560535d24a.bin",
+      "codec": "deflate",
+      "size": 4140554,
+      "sha256": "4b560535d24abe62f4582160adf515ea803fbe4cd4e338b6f33c3b91045da91e",
+      "rawSize": 4194304,
+      "rawSha256": "0235033384fd964fb1a22a2a96fe90d7f8a13b02d1d8e7c3e58dd0263415f83c"
+    },
+    {
+      "url": "parts/035-c0d74df872e2.bin",
+      "codec": "deflate",
+      "size": 4141022,
+      "sha256": "c0d74df872e242f7ac24fbdf7202bf99d4fd607939d7e8e4e9ab84733c59735d",
+      "rawSize": 4194304,
+      "rawSha256": "d84aeb18fe2ffb1fd5b74cbf2b40ae84bdbda7f36527a7e78c047ccedcdb5686"
+    },
+    {
+      "url": "parts/036-8e9b1d75a51a.bin",
+      "codec": "deflate",
+      "size": 4145544,
+      "sha256": "8e9b1d75a51ac3c1cdc859e2f96800a892facd3074be470feba1192e5d7d6890",
+      "rawSize": 4194304,
+      "rawSha256": "c96ea7753ef2212c457cd18ee5314fea58ff1c3a13dedd9026c74225662b5b25"
+    },
+    {
+      "url": "parts/037-d534a497216e.bin",
+      "codec": "deflate",
+      "size": 2811982,
+      "sha256": "d534a497216e25fb57a8142b664872f6a0456af913976609bf6314d6ab7c55ea",
+      "rawSize": 2891257,
+      "rawSha256": "379f55ee53c2be2e4a6a74a8f272c9971ea9141ad564c68d154db32bdc709499"
+    }
+  ]
+}
